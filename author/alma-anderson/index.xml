@@ -29,7 +29,7 @@ binomial distribution (which we use) found in the supplementary (spoiler, it
 seems like it). Have a look at it if you are interested!&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Manuscript Link : &lt;a href=&#34;https://www.nature.com/articles/s42003-020-01247-y&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;HERE&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;stereoscope Link : [HERE](&lt;a href=&#34;https://github.com/almaan/stereoscope&#34;&gt;https://github.com/almaan/stereoscope&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;stereoscope Link : &lt;a href=&#34;https://github.com/almaan/stereoscope&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;HERE&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;P.S: I&amp;rsquo;m also planning to update the code base in the future, providing an API for
 &lt;code&gt;scanpy&lt;/code&gt;, but also add some features like subsampling and gene selection to the
