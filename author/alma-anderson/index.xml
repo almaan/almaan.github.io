@@ -5,12 +5,77 @@
     <link>/author/alma-anderson/</link>
       <atom:link href="/author/alma-anderson/index.xml" rel="self" type="application/rss+xml" />
     <description>Alma Anderson</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 09 Oct 2020 11:05:04 +0100</lastBuildDate>
     <image>
       <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Alma Anderson</title>
       <link>/author/alma-anderson/</link>
     </image>
+    
+    <item>
+      <title>Publication | Spatial Single Cell Mapping</title>
+      <link>/post/stereoscope-001/initial-post/</link>
+      <pubDate>Fri, 09 Oct 2020 11:05:04 +0100</pubDate>
+      <guid>/post/stereoscope-001/initial-post/</guid>
+      <description>&lt;p&gt;Delighted to say that our manuscript &lt;em&gt;Single-cell and spatial transcriptomics
+enables probabilistic inference of cell type topography&lt;/em&gt; is now published in
+&lt;em&gt;Communications Biology&lt;/em&gt; and thus out there for everyone to read in its final
+form. This is the paper that describes the theoretical underpinnings for
+&lt;a href=&#34;https://github.com/almaan/stereoscope&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;stereoscope&lt;/a&gt;, which allows you to
+spatial map cell types found in single cell data onto spatial transcriptomics
+data. There is also a nice bit of discussion as to whether spatial
+transcriptomics data (ST/Visium) can be properly modeled using a negative
+binomial distribution (which we use) found in the supplementary (spoiler, it
+seems like it). Have a look at it if you are interested!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Manuscript Link : &lt;a href=&#34;https://www.nature.com/articles/s42003-020-01247-y&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;HERE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;stereoscope Link : [HERE](&lt;a href=&#34;https://github.com/almaan/stereoscope&#34;&gt;https://github.com/almaan/stereoscope&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;P.S: I&amp;rsquo;m also planning to update the code base in the future, providing an API for
+&lt;code&gt;scanpy&lt;/code&gt;, but also add some features like subsampling and gene selection to the
+standard modules; but that is for later.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Manuscript | Spatial Exploration of Her2 Breast Cancer</title>
+      <link>/post/her2-001/initial-post/</link>
+      <pubDate>Wed, 15 Jul 2020 11:05:04 +0100</pubDate>
+      <guid>/post/her2-001/initial-post/</guid>
+      <description>&lt;p&gt;We&amp;rsquo;ve put out a new
+&lt;a href=&#34;%22https://www.biorxiv.org/content/10.1101/2020.07.14.200600v1.article-metrics%22&#34;&gt;manuscript&lt;/a&gt; on bioRxiv, where the expression landscape of HER2-positive
+breast cancer tumors is studied from a spatial perspective. This study contains
+several examples of how spatial data may be analyzed and what information beyond
+the obvious - like the spatial distribution of a certain gene - that can be
+mined from it. My hope is that anyone looking for ideas regarding how to analyze
+their own spatial data find this useful and relevant, irregardles of their
+interest in breast cancer. In the study we cluster spots by gene expression, but
+also take this one step further, using the clusters to find &lt;i&gt;core
+signatures&lt;/i&gt; of immune and tumor cell populations within our samples. We also
+use &lt;i&gt;stereoscope&lt;/i&gt; to map single cell data down onto our tissue sections,
+information which then is used to indentify potential TLS-sites as well as to
+study patterns of cell type co-localization. All the scripts and a neat app for
+visualization of the results can be found &lt;a href=&#34;%22https://github.com/almaan/her2st/%22&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Resource | Formal systems in Biology</title>
+      <link>/post/synt-bio-001/initial-post/</link>
+      <pubDate>Wed, 01 Jul 2020 10:05:04 +0100</pubDate>
+      <guid>/post/synt-bio-001/initial-post/</guid>
+      <description>&lt;p&gt;Browsing through my daily feed, I stumbled upon
+&lt;a href=&#34;%22https://github.com/prathyvsh/formal-systems-in-biology%22target=%22_blank%22&#34;&gt;this&lt;/a&gt;
+neat resource which lists (and links to) fundamental ideas that have shaped the
+field of systems biology. To me, many of these publications represent some of
+the earliest attempts to reduce complex biological systems and processes into
+something simpler, more comprehensible, by viewing them through the lense of
+mathematics; truly groundbreaking efforts that paved the way for the current
+trends of ML/AI in biology. I&amp;rsquo;d strongly recommend anyone with an interest in
+the field to have a look at it; something that contains work from both Alan
+Turing and John von Neumann can&amp;rsquo;t be anything but good!&lt;/p&gt;
+</description>
+    </item>
     
   </channel>
 </rss>
