@@ -5,12 +5,20 @@
     <link>/talk/</link>
       <atom:link href="/talk/index.xml" rel="self" type="application/rss+xml" />
     <description>Recent &amp; Upcoming Talks</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 22 Oct 2020 10:30:00 +0100</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 20 Nov 2020 15:55:00 +0100</lastBuildDate>
     <image>
       <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Recent &amp; Upcoming Talks</title>
       <link>/talk/</link>
     </image>
+    
+    <item>
+      <title>Exploring the cell type topography by integration of spatial and single cell data</title>
+      <link>/talk/2020-11-20-ugm/</link>
+      <pubDate>Fri, 20 Nov 2020 15:55:00 +0100</pubDate>
+      <guid>/talk/2020-11-20-ugm/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Exploring the cell type topography by integration of spatial and single cell data</title>
@@ -30,9 +38,9 @@
     
     <item>
       <title>Computational Analysis of Spatial Transcriptomics Data</title>
-      <link>/talk/2020-11-20-ugm/</link>
+      <link>/talk/2020-05-29-scadv/</link>
       <pubDate>Fri, 29 May 2020 17:00:00 +0100</pubDate>
-      <guid>/talk/2020-11-20-ugm/</guid>
+      <guid>/talk/2020-05-29-scadv/</guid>
       <description></description>
     </item>
     
