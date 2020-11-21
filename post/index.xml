@@ -17,8 +17,8 @@
       <link>/post/stereoscope-001/initial-post/</link>
       <pubDate>Fri, 09 Oct 2020 11:05:04 +0100</pubDate>
       <guid>/post/stereoscope-001/initial-post/</guid>
-      <description>&lt;p&gt;Delighted to say that our manuscript &lt;em&gt;Single-cell and spatial transcriptomics
-enables probabilistic inference of cell type topography&lt;/em&gt; is now published in
+      <description>&lt;p&gt;Delighted to say that our manuscript &amp;ldquo;&lt;em&gt;Single-cell and spatial transcriptomics
+enables probabilistic inference of cell type topography&lt;/em&gt;&amp;rdquo; is now published in
 &lt;em&gt;Communications Biology&lt;/em&gt; and thus out there for everyone to read in its final
 form. This is the paper that describes the theoretical underpinnings for
 &lt;a href=&#34;https://github.com/almaan/stereoscope&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;stereoscope&lt;/a&gt;, which allows you to

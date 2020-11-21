@@ -5,7 +5,7 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>Academic</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 09 Oct 2020 11:05:04 +0100</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 22 Oct 2020 10:30:00 +0100</lastBuildDate>
     <image>
       <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Academic</title>
@@ -13,12 +13,20 @@
     </image>
     
     <item>
+      <title>Exploring the cell type topography by integration of spatial and single cell data</title>
+      <link>/talk/2020-10-22-10xrs/</link>
+      <pubDate>Thu, 22 Oct 2020 10:30:00 +0100</pubDate>
+      <guid>/talk/2020-10-22-10xrs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Publication | Spatial Single Cell Mapping</title>
       <link>/post/stereoscope-001/initial-post/</link>
       <pubDate>Fri, 09 Oct 2020 11:05:04 +0100</pubDate>
       <guid>/post/stereoscope-001/initial-post/</guid>
-      <description>&lt;p&gt;Delighted to say that our manuscript &lt;em&gt;Single-cell and spatial transcriptomics
-enables probabilistic inference of cell type topography&lt;/em&gt; is now published in
+      <description>&lt;p&gt;Delighted to say that our manuscript &amp;ldquo;&lt;em&gt;Single-cell and spatial transcriptomics
+enables probabilistic inference of cell type topography&lt;/em&gt;&amp;rdquo; is now published in
 &lt;em&gt;Communications Biology&lt;/em&gt; and thus out there for everyone to read in its final
 form. This is the paper that describes the theoretical underpinnings for
 &lt;a href=&#34;https://github.com/almaan/stereoscope&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;stereoscope&lt;/a&gt;, which allows you to
@@ -78,6 +86,22 @@ Turing and John von Neumann can&amp;rsquo;t be anything but good!&lt;/p&gt;
     </item>
     
     <item>
+      <title>Exploring the cell type topography by integration of spatial and single cell data</title>
+      <link>/talk/2020-06-03-symp/</link>
+      <pubDate>Wed, 03 Jun 2020 14:00:00 +0100</pubDate>
+      <guid>/talk/2020-06-03-symp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Computational Analysis of Spatial Transcriptomics Data</title>
+      <link>/talk/2020-11-20-ugm/</link>
+      <pubDate>Fri, 29 May 2020 17:00:00 +0100</pubDate>
+      <guid>/talk/2020-11-20-ugm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Exercises | Spatial Transcriptomics Data Analysis</title>
       <link>/post/init/initial-post/</link>
       <pubDate>Fri, 29 May 2020 15:05:04 +0100</pubDate>
@@ -92,6 +116,14 @@ check out the material
 . It&amp;rsquo;s all written using standard python libraries for maximal transparency,
 allowing you to follow each and every step.&lt;/p&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>Exploring the cell type topography by integration of single cell and spatial transcriptomics data</title>
+      <link>/talk/2020-04-22-emea/</link>
+      <pubDate>Wed, 22 Apr 2020 12:09:43 +0100</pubDate>
+      <guid>/talk/2020-04-22-emea/</guid>
+      <description></description>
     </item>
     
   </channel>
