@@ -5,12 +5,74 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>almaan</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 20 Nov 2020 15:55:00 +0100</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 08 Jan 2021 10:25:51 +0100</lastBuildDate>
     <image>
       <url>/images/icon_hu0976d26fdaec5d0ec6c053b09a4e039a_2013_512x512_fill_lanczos_center_2.png</url>
       <title>almaan</title>
       <link>/</link>
     </image>
+    
+    <item>
+      <title>Automated Tracking of Cells</title>
+      <link>/post/2021-01-08-celltracker/</link>
+      <pubDate>Fri, 08 Jan 2021 10:25:51 +0100</pubDate>
+      <guid>/post/2021-01-08-celltracker/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve always found it appealing, or rather &lt;em&gt;enticing&lt;/em&gt;, to study biological
+systems from a more formal and mathematical perspective; with the main objective
+to somehow be able to describe them with equations rather than words. Equations
+are exact, definite, universal, but foremost, they are &lt;em&gt;predictive&lt;/em&gt;. The
+alluring property of mathematical models, is that they do not only provide a
+description of our system, but they are also responsive, we may ask &lt;em&gt;&amp;ldquo;if I
+replace parameter X with parameter Y, what will my system look like?&amp;quot;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Of course, our models - however beautiful or carefully constructed - are nothing
+but just that, models. And as the well known apohorism tells us, &lt;em&gt;&amp;ldquo;all models
+are wrong&amp;rdquo;&lt;/em&gt;. While this statement is true, it is far from detrimental.
+Sometimes, being wrong but within a certain marginal of error to the truth is
+just about good enough. When driving, none of us knows the exact distance to the
+other cars, or how much a push on the gas will accelerate our car, still (most
+of the time) we manage to zig-zag through the densely packed lanes without
+crashing into each other - all from the simple &lt;em&gt;incorrect&lt;/em&gt; model we constructed
+in our minds. So, yes - models are wrong, but they are most certainly useful and
+tremendously valuable in our quest to understand and analyze biological systems.&lt;/p&gt;
+&lt;p&gt;It was with this interest - and the need for Swedish PhD students to collect 60
+ECTS credits - that I enrolled in a course in Applied Estimation. In short, the
+course focus on how to estimate states or parameters from noisy measurements
+such as empirical data. Albeit designed for people working with
+robotics, the concepts are more than applicable to biology -
+where noise is more of a rule rather than an exception.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;anim.gif&#34; alt=&#34;tracking animation&#34;&gt;&lt;/p&gt;
+&lt;p&gt;As a part of the course, we had to devise our own project (where one estimation
+method was used) and implement it in code. My choice fell upon a subject (and
+method) that I have little previous experience with: cell tracking in brightfield
+images, using GM-PHD (Gaussian Mixture Probability Hypothesis Density) filters.
+The theory is very interesting, and I was particularly intrigued by the concept of
+&lt;em&gt;Random Finite Sets&lt;/em&gt;, here used to track multiple objects
+simultaneously. The method shares many similarities with the Kalman Filter, but
+rather than propagating a single state, the whole set is propagated in time.
+Easily explained, one might think of it as propagating a Gaussian Mixture in
+time, where each component represents a peak or cell. The &lt;a href=&#34;https://ieeexplore.ieee.org/document/1710358&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;original
+publication&lt;/a&gt; by Vo and Ma outlines
+the details of the GM-PHD filter better than I could ever attempt to, and I would refer anyone with
+an interest to have a close look at it.&lt;/p&gt;
+&lt;p&gt;As for the final product, I implemented the algorithm proposed by Vo and Ma in
+python, with an easy to use CLI; allowing anyone who might want to try it out to
+do so fairly (I hope) seamlessly. Instructions and examples of usage can be
+found at the &lt;a href=&#34;https://github.com/almaan/CellTracker&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;github&lt;/a&gt; page. The animated
+image above is the result of applying this implementation to a set of &amp;ldquo;HeLa
+cells stably expressing H2b-GFP&amp;rdquo;, downloaded from
+&lt;a href=&#34;http://celltrackingchallenge.net/2d-datasets/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;celltrackingchallenge.net&lt;/a&gt;. The
+implementation is far from perfect, and much work remains to even have a chance
+of competing with the more sophisticated alternatives. Still, for a couple of
+days of work, the performance is not too bad - and it was a fun experience
+implementing it. The course has also prompted a lot of new ideas and put new
+light on old problems, I believe a lot of the ideas found in SLAM (Simultaneous
+Localization and Mapping) could be used when working with problems related to
+trajectory inference for example. It&amp;rsquo;s always a very rewarding experience to
+enter a completely new field, where people come from a very different
+background - in my opinion this push out of the comfort zone really has a
+tendency to spark &lt;del&gt;great&lt;/del&gt; exciting ideas.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Exploring the cell type topography by integration of spatial and single cell data</title>
