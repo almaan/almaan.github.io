@@ -5,12 +5,88 @@
     <link>/post/</link>
       <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 08 Jan 2021 10:25:51 +0100</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 12 Jan 2021 11:59:19 +0100</lastBuildDate>
     <image>
       <url>/images/icon_hu0976d26fdaec5d0ec6c053b09a4e039a_2013_512x512_fill_lanczos_center_2.png</url>
       <title>Posts</title>
       <link>/post/</link>
     </image>
+    
+    <item>
+      <title>Manuscript | Spatial Transcriptomics to define transcriptional patterns of zonation and structural components in the liver</title>
+      <link>/post/2021-01-12-liver-biorxiv/</link>
+      <pubDate>Tue, 12 Jan 2021 11:59:19 +0100</pubDate>
+      <guid>/post/2021-01-12-liver-biorxiv/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m thrilled to announce that a collaboration with my good friend and colleague,
+&lt;a href=&#34;https://orcid.org/0000-0002-2673-1704&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Franziska Hildebrandt&lt;/a&gt;, now has matured
+to the state of being ready for journal submission, which also coincides with a
+pre-print upload to
+&lt;a href=&#34;https://www.biorxiv.org/content/10.1101/2021.01.11.426100v1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;bioRxiv&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The pre-print is titled &lt;em&gt;&amp;ldquo;Spatial Transcriptomics to define transcriptional
+patterns of zonation and structural components in the liver&amp;rdquo;&lt;/em&gt;, and focus on the
+application of ST2K (similar to the old legacy ST1K and the newer Visium
+platform). It is the first time that ST (Spatial Transcriptomics) has been
+applied to the mouse liver, and aims to show how the technique enables the liver
+to be explored from new, different and illuminating perspective. A lot of
+standard analysis, such as clustering and identification of differential genes
+(DEGs) are presented in the paper and show affirmative results, attesting to the
+(experimental) method&amp;rsquo;s ability to delineate regions with various expression
+profiles (often overlapping well with morphological structures).&lt;/p&gt;
+&lt;p&gt;My contribution to this paper was nevertheless slightly different and consisted mainly of two parts:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Construction of a framework to model feature signals as a function of the distance to a given object.&lt;/li&gt;
+&lt;li&gt;Development of a classifier to predict &lt;em&gt;vein type&lt;/em&gt; (a binary classification
+task) based on the expression profiles surrounding a certain genes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Both concepts are excellent examples of analyses that are exclusive to spatial
+data, i.e., similar information cannot be obtained from single cell experiments;
+something I&amp;rsquo;m keen to highlight, as it is often the case that one fails to make
+proper use of the &amp;ldquo;spatial&amp;rdquo; part in spatial transcriptomics data, and rather treat it as single
+cell data, to then visualize the results spatially. Both implementations are very
+simple, but I have not seen similar analyses in ST or Visium data yet, of course
+that could be due to me not having surveyed the field thoroughly enough, but
+still. Allow me to elaborate some on these two concepts below.&lt;/p&gt;
+&lt;h3 id=&#34;feature-by-distance&#34;&gt;Feature by distance&lt;/h3&gt;
+&lt;p&gt;In the liver tissue one can broadly classify vein structures as either &lt;em&gt;portal&lt;/em&gt;
+or &lt;em&gt;central&lt;/em&gt; based on their position and connections. Previous studies have
+shown that these structures are associated with slightly different expression
+profiles, as different celltypes (periportal respective pericentral
+hepatocytes) are present in them.&lt;/p&gt;
+&lt;p&gt;What we did in this study was to first &amp;ldquo;measure&amp;rdquo; the distance of each spot
+(spatial capture location) to the nearest vein (of respective type), and then
+for each gene create a set of distance-expression tuples that could be
+visualized in a scatter plot. While these values are discrete, once a curve
+smooting techniques is applied we can easily think of the resulting curve as a
+function that maps &lt;em&gt;distance to gene expression&lt;/em&gt;. By doing so one could
+really see how the associated marker genes (to each vein) had a high expression
+near their respective vein, and how this decreased as distance increased
+(inverse relationship). You can see some examples of these trends in the plots
+below, top row displays portal vein marker genes, bottom central:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;feature-by-distance.png&#34; alt=&#34;feature by distance&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;classification-of-vein-types-by-expression&#34;&gt;Classification of vein types by expression&lt;/h3&gt;
+&lt;p&gt;Now, while pathologists and experts in the field usually are able to annotate
+each vein type by visual inspection (this is how we obtained the annotations
+used for the feature by distance plots), there are sometimes ambiguities and
+limited access to such individuals. However, the expression profiles of portal
+and central veins should be the similar for all veins of the same type,
+independent of whether identity is easy to deduce from morphology or not.
+Hence, by creating &lt;em&gt;neighborhood expression profiles&lt;/em&gt; (NEPs) surrounding each
+vein, and training a classifier (actually logistic regression) using NEPs from
+veins with known identities; we were able to predict vein type of ambiguous
+veins. During cross-validation (leave one &lt;em&gt;sample&lt;/em&gt; out) the model also performed
+very well with higher than 80% accuracy.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;class.png&#34; alt=&#34;classification&#34;&gt;&lt;/p&gt;
+&lt;p&gt;To read more about the study, check out the manuscript
+&lt;a href=&#34;https://www.biorxiv.org/content/10.1101/2021.01.11.426100v1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;, and the
+Python package we released (&lt;em&gt;hepaquery&lt;/em&gt;) to perform similar analyses with any
+type of spatial transcriptomics data at the
+&lt;a href=&#34;https://github.com/almaan/ST-mLiver&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;github&lt;/a&gt; page.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m very happy to have worked with a nice team with complementary
+biology and computational skills, this really resulted in a neat manuscript;
+also a big kudos to the first author Franziska, who pushed very hard in the end
+to finalize this project.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Models and automated cell tracking</title>
