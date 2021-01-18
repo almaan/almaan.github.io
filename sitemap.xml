@@ -3,12 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/author/alma-anderson/</loc>
-    <lastmod>2021-01-08T10:25:51+01:00</lastmod>
+    <loc>/</loc>
+    <lastmod>2021-01-12T11:59:19+01:00</lastmod>
   </url>
   
   <url>
-    <loc>/</loc>
+    <loc>/post/2021-01-12-liver-biorxiv/</loc>
+    <lastmod>2021-01-12T11:59:19+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2021-01-12T11:59:19+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/alma-anderson/</loc>
     <lastmod>2021-01-08T10:25:51+01:00</lastmod>
   </url>
   
@@ -19,11 +29,6 @@
   
   <url>
     <loc>/post/2021-01-08-celltracker/</loc>
-    <lastmod>2021-01-08T10:25:51+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
     <lastmod>2021-01-08T10:25:51+01:00</lastmod>
   </url>
   
