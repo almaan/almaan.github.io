@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Alma Anderson | almaan</title>
-    <link>/author/alma-anderson/</link>
-      <atom:link href="/author/alma-anderson/index.xml" rel="self" type="application/rss+xml" />
-    <description>Alma Anderson</description>
+    <title>common coordinate framework | almaan</title>
+    <link>/tag/common-coordinate-framework/</link>
+      <atom:link href="/tag/common-coordinate-framework/index.xml" rel="self" type="application/rss+xml" />
+    <description>common coordinate framework</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 19 Jan 2021 15:01:37 +0100</lastBuildDate>
     <image>
       <url>/images/icon_hu0976d26fdaec5d0ec6c053b09a4e039a_2013_512x512_fill_lanczos_center_2.png</url>
-      <title>Alma Anderson</title>
-      <link>/author/alma-anderson/</link>
+      <title>common coordinate framework</title>
+      <link>/tag/common-coordinate-framework/</link>
     </image>
     
     <item>
@@ -156,136 +156,6 @@ the data dictate its own reference, using approaches inspired from methods of
 spatial reconstruction. All in all, CCFs brings structure to a very chaotic and
 seemingly unstructured space - and they are imperative to the process of
 creating a unified atlas of the human body.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Models and automated cell tracking</title>
-      <link>/post/2021-01-08-celltracker/</link>
-      <pubDate>Fri, 08 Jan 2021 10:25:51 +0100</pubDate>
-      <guid>/post/2021-01-08-celltracker/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve always found it appealing, or rather &lt;em&gt;enticing&lt;/em&gt;, to study biological
-systems from a more formal and mathematical perspective; with the main objective
-to somehow be able to describe them with equations rather than words. Equations
-are exact, definite, universal, but foremost, they are &lt;em&gt;predictive&lt;/em&gt;. The
-alluring property of mathematical models is that they do not only provide a
-description of our system, but they are also responsive, we may ask &lt;em&gt;&amp;ldquo;if I
-replace parameter X with parameter Y, what will my system look like?&amp;quot;&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;Of course, our models - however beautiful or carefully constructed - are nothing
-but just that, models. And as the well known apohorism states, &lt;em&gt;&amp;ldquo;all models
-are wrong&amp;rdquo;&lt;/em&gt;. While this statement is true, it is far from detrimental.
-Sometimes, being wrong but within a certain marginal of error to the truth is
-just about good enough. When driving, none of us knows the exact distance to the
-other cars, or how much a push on the gas will accelerate our car, still (most
-of the time) we manage to zig-zag through the densely packed lanes without
-crashing into each other - all from the simple &lt;em&gt;incorrect&lt;/em&gt; model we constructed
-in our minds. So, yes - models are wrong, but they are most certainly useful and
-tremendously valuable in our quest to understand and analyze biological systems.&lt;/p&gt;
-&lt;p&gt;It was with this interest - and a requirement for PhD students at KTH to collect
-60 ECTS credits - that I enrolled for a course in Applied Estimation. In short,
-the course focus on how to estimate states or parameters from noisy measurements
-such as empirical data. Albeit designed for people working with robotics, the
-concepts are indubitably applicable to biology - where noise is the rule
-rather than the exception.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;anim.gif&#34; alt=&#34;tracking animation&#34;&gt;&lt;/p&gt;
-&lt;p&gt;As a part of the course, we had to devise our own project (where one estimation
-method was to used) and implement it in code. My choice fell upon a subject (and
-method) that I have little previous experience with: automated &lt;em&gt;cell tracking&lt;/em&gt;
-in brightfield images, using GM-PHD (Gaussian Mixture Probability Hypothesis
-Density) filters. The theory is very interesting, and I was particularly
-intrigued by the concept of &lt;em&gt;Random Finite Sets&lt;/em&gt;, here used to track multiple
-objects simultaneously. The method shares many similarities with the Kalman
-Filter, but rather than propagating a single state, the whole set is propagated
-in time. Easily explained, one might think of it as propagating a Gaussian
-Mixture in time, where each component represents a peak or cell. The &lt;a href=&#34;https://ieeexplore.ieee.org/document/1710358&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;original
-publication&lt;/a&gt; by Vo and Ma outlines
-the details of the GM-PHD filter better than I could ever attempt to, and I
-would refer anyone with an interest to have a close look at it.&lt;/p&gt;
-&lt;p&gt;As for the final product, I implemented the algorithm proposed by Vo and Ma
-(Table I-III) in python, with an easy to use CLI; allowing anyone who might want
-to try it out to do so fairly (I hope) seamlessly. Instructions and examples of
-usage can be found at the &lt;a href=&#34;https://github.com/almaan/CellTracker&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;github&lt;/a&gt; page.
-The animated image above is the result of applying this implementation to a set
-of &amp;ldquo;&lt;em&gt;HeLa cells stably expressing H2b-GFP&lt;/em&gt;&amp;rdquo;, downloaded from
-&lt;a href=&#34;http://celltrackingchallenge.net/2d-datasets/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;celltrackingchallenge.net&lt;/a&gt;. The
-implementation is far from perfect, and much work remains to even have a chance
-of competing with the more sophisticated alternatives. Still, for a couple of
-days of work, the performance is not too bad - and it was a fun experience
-implementing it.&lt;/p&gt;
-&lt;p&gt;The course has prompted a lot of new ideas and really allowed me to see some old
-problems from a completely different lens. For example, I believe a lot of the
-ideas found in SLAM (Simultaneous Localization and Mapping) could be used when
-working with questions related to trajectory inferenc, where we partly want to
-assess the developmental landscape but also map a path through it. It&amp;rsquo;s always a
-very rewarding experience to enter a completely new field, where people come
-from a very different background - in my opinion this intentional &amp;ldquo;push&amp;rdquo; out of
-the comfort zone really has a tendency to spark &lt;del&gt;great&lt;/del&gt; exciting ideas,
-however uncofortable it feels at first.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Publication | Spatial Single Cell Mapping</title>
-      <link>/post/stereoscope-001/initial-post/</link>
-      <pubDate>Fri, 09 Oct 2020 11:05:04 +0100</pubDate>
-      <guid>/post/stereoscope-001/initial-post/</guid>
-      <description>&lt;p&gt;Delighted to say that our manuscript &amp;ldquo;&lt;em&gt;Single-cell and spatial transcriptomics
-enables probabilistic inference of cell type topography&lt;/em&gt;&amp;rdquo; is now published in
-&lt;em&gt;Communications Biology&lt;/em&gt; and thus out there for everyone to read in its final
-form. This is the paper that describes the theoretical underpinnings for
-&lt;a href=&#34;https://github.com/almaan/stereoscope&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;stereoscope&lt;/a&gt;, which allows you to
-spatial map cell types found in single cell data onto spatial transcriptomics
-data. There is also a nice bit of discussion as to whether spatial
-transcriptomics data (ST/Visium) can be properly modeled using a negative
-binomial distribution (which we use) found in the supplementary (spoiler, it
-seems like it). Have a look at it if you are interested!&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;manuscript link : &lt;a href=&#34;https://www.nature.com/articles/s42003-020-01247-y&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;HERE&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;stereoscope link : &lt;a href=&#34;https://github.com/almaan/stereoscope&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;HERE&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;P.S: I&amp;rsquo;m also planning to update the code base in the future, providing an API for
-&lt;code&gt;scanpy&lt;/code&gt;, but also add some features like subsampling and gene selection to the
-standard modules; but that is for later.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Manuscript | Spatial Exploration of Her2 Breast Cancer</title>
-      <link>/post/her2-001/initial-post/</link>
-      <pubDate>Wed, 15 Jul 2020 11:05:04 +0100</pubDate>
-      <guid>/post/her2-001/initial-post/</guid>
-      <description>&lt;p&gt;We&amp;rsquo;ve put out a new
-&lt;a href=&#34;%22https://www.biorxiv.org/content/10.1101/2020.07.14.200600v1.article-metrics%22&#34;&gt;manuscript&lt;/a&gt; on bioRxiv, where the expression landscape of HER2-positive
-breast cancer tumors is studied from a spatial perspective. This study contains
-several examples of how spatial data may be analyzed and what information beyond
-the obvious - like the spatial distribution of a certain gene - that can be
-mined from it. My hope is that anyone looking for ideas regarding how to analyze
-their own spatial data find this useful and relevant, irregardles of their
-interest in breast cancer. In the study we cluster spots by gene expression, but
-also take this one step further, using the clusters to find &lt;i&gt;core
-signatures&lt;/i&gt; of immune and tumor cell populations within our samples. We also
-use &lt;i&gt;stereoscope&lt;/i&gt; to map single cell data down onto our tissue sections,
-information which then is used to indentify potential TLS-sites as well as to
-study patterns of cell type co-localization. All the scripts and a neat app for
-visualization of the results can be found &lt;a href=&#34;%22https://github.com/almaan/her2st/%22&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Resource | Formal systems in Biology</title>
-      <link>/post/synt-bio-001/initial-post/</link>
-      <pubDate>Wed, 01 Jul 2020 10:05:04 +0100</pubDate>
-      <guid>/post/synt-bio-001/initial-post/</guid>
-      <description>&lt;p&gt;Browsing through my daily feed, I stumbled upon
-&lt;a href=&#34;%22https://github.com/prathyvsh/formal-systems-in-biology%22target=%22_blank%22&#34;&gt;this&lt;/a&gt;
-neat resource which lists (and links to) fundamental ideas that have shaped the
-field of systems biology. To me, many of these publications represent some of
-the earliest attempts to reduce complex biological systems and processes into
-something simpler, more comprehensible, by viewing them through the lense of
-mathematics; truly groundbreaking efforts that paved the way for the current
-trends of ML/AI in biology. I&amp;rsquo;d strongly recommend anyone with an interest in
-the field to have a look at it; something that contains work from both Alan
-Turing and John von Neumann can&amp;rsquo;t be anything but good!&lt;/p&gt;
 </description>
     </item>
     

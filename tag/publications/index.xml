@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>publications | almaan</title>
+    <link>/tag/publications/</link>
+      <atom:link href="/tag/publications/index.xml" rel="self" type="application/rss+xml" />
+    <description>publications</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 09 Oct 2020 11:05:04 +0100</lastBuildDate>
+    <image>
+      <url>/images/icon_hu0976d26fdaec5d0ec6c053b09a4e039a_2013_512x512_fill_lanczos_center_2.png</url>
+      <title>publications</title>
+      <link>/tag/publications/</link>
+    </image>
+    
+    <item>
+      <title>Publication | Spatial Single Cell Mapping</title>
+      <link>/post/stereoscope-001/initial-post/</link>
+      <pubDate>Fri, 09 Oct 2020 11:05:04 +0100</pubDate>
+      <guid>/post/stereoscope-001/initial-post/</guid>
+      <description>&lt;p&gt;Delighted to say that our manuscript &amp;ldquo;&lt;em&gt;Single-cell and spatial transcriptomics
+enables probabilistic inference of cell type topography&lt;/em&gt;&amp;rdquo; is now published in
+&lt;em&gt;Communications Biology&lt;/em&gt; and thus out there for everyone to read in its final
+form. This is the paper that describes the theoretical underpinnings for
+&lt;a href=&#34;https://github.com/almaan/stereoscope&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;stereoscope&lt;/a&gt;, which allows you to
+spatial map cell types found in single cell data onto spatial transcriptomics
+data. There is also a nice bit of discussion as to whether spatial
+transcriptomics data (ST/Visium) can be properly modeled using a negative
+binomial distribution (which we use) found in the supplementary (spoiler, it
+seems like it). Have a look at it if you are interested!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;manuscript link : &lt;a href=&#34;https://www.nature.com/articles/s42003-020-01247-y&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;HERE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;stereoscope link : &lt;a href=&#34;https://github.com/almaan/stereoscope&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;HERE&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;P.S: I&amp;rsquo;m also planning to update the code base in the future, providing an API for
+&lt;code&gt;scanpy&lt;/code&gt;, but also add some features like subsampling and gene selection to the
+standard modules; but that is for later.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -3,28 +3,63 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/author/alma-anderson/</loc>
+    <lastmod>2021-01-19T15:01:37+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/</loc>
-    <lastmod>2021-01-12T11:59:19+01:00</lastmod>
+    <lastmod>2021-01-19T15:01:37+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/</loc>
+    <lastmod>2021-01-19T15:01:37+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <lastmod>2021-01-19T15:01:37+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/ccf/</loc>
+    <lastmod>2021-01-19T15:01:37+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/common-coordinate-framework/</loc>
+    <lastmod>2021-01-19T15:01:37+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2021-01-19-ccf-rev/</loc>
+    <lastmod>2021-01-19T15:01:37+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2021-01-19T15:01:37+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/review/</loc>
+    <lastmod>2021-01-19T15:01:37+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/category/reviews/</loc>
+    <lastmod>2021-01-19T15:01:37+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2021-01-19T15:01:37+01:00</lastmod>
   </url>
   
   <url>
     <loc>/post/2021-01-12-liver-biorxiv/</loc>
     <lastmod>2021-01-12T11:59:19+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
-    <lastmod>2021-01-12T11:59:19+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/alma-anderson/</loc>
-    <lastmod>2021-01-08T10:25:51+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/</loc>
-    <lastmod>2021-01-08T10:25:51+01:00</lastmod>
   </url>
   
   <url>
@@ -49,6 +84,21 @@
   
   <url>
     <loc>/post/stereoscope-001/initial-post/</loc>
+    <lastmod>2020-10-09T11:05:04+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/publications/</loc>
+    <lastmod>2020-10-09T11:05:04+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/single-cell-mapping/</loc>
+    <lastmod>2020-10-09T11:05:04+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/stereoscope/</loc>
     <lastmod>2020-10-09T11:05:04+01:00</lastmod>
   </url>
   
@@ -83,19 +133,11 @@
   </url>
   
   <url>
-    <loc>/categories/</loc>
-  </url>
-  
-  <url>
     <loc>/publication_types/</loc>
   </url>
   
   <url>
     <loc>/publication/</loc>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
   </url>
   
 </urlset>
