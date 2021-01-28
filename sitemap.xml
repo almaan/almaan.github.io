@@ -3,12 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/author/alma-anderson/</loc>
-    <lastmod>2021-01-19T15:01:37+01:00</lastmod>
+    <loc>/publication-type/0/</loc>
+    <lastmod>2021-01-28T19:52:15+01:00</lastmod>
   </url>
   
   <url>
     <loc>/</loc>
+    <lastmod>2021-01-28T19:52:15+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication_types/</loc>
+    <lastmod>2021-01-28T19:52:15+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication/</loc>
+    <lastmod>2021-01-28T19:52:15+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication/test-001/</loc>
+    <lastmod>2021-01-28T19:52:15+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/talk/2021-01-28-nbis/</loc>
+    <lastmod>2021-01-20T13:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/talk/</loc>
+    <lastmod>2021-01-20T13:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/alma-anderson/</loc>
     <lastmod>2021-01-19T15:01:37+01:00</lastmod>
   </url>
   
@@ -73,11 +103,6 @@
   </url>
   
   <url>
-    <loc>/talk/</loc>
-    <lastmod>2020-11-20T15:55:00+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/talk/2020-10-22-10xrs/</loc>
     <lastmod>2020-10-22T10:30:00+01:00</lastmod>
   </url>
@@ -130,14 +155,6 @@
   <url>
     <loc>/talk/2020-04-22-emea/</loc>
     <lastmod>2020-04-22T12:09:43+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication_types/</loc>
-  </url>
-  
-  <url>
-    <loc>/publication/</loc>
   </url>
   
 </urlset>

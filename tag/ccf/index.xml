@@ -32,7 +32,7 @@ somehow managed to conjure a vision of myself being a more active &lt;del&gt;rea
 gatherer of information this year by committing to the task of doing bi-weekly
 paper reviews, starting today. I should say here, that these reviews will mainly
 be focused on &lt;em&gt;summarizing&lt;/em&gt; the material presented, rather than &lt;em&gt;evaluating&lt;/em&gt;
-them; but of course, if I have opinions or comments which I judge relevant, these
+them; but of course, if I have opinions or comments which I deem relevant, these
 will be shared as well. My hope is to continue this at least throughout the
 year, to then evaluate and reassess whether its an endeavor worth continuing.
 Alas, let&amp;rsquo;s get started.&lt;/p&gt;
@@ -49,7 +49,7 @@ multiple labs, as well as collection of data across multiple individuals, ages,
 phenotypes, both sexes and plenty of other features. This strategy is very apt
 for producing &lt;em&gt;large and diverse&lt;/em&gt; datasets; but unless we somehow harmonize and
 integrate all of the data into a common framework it will be nothing more than a
-big pile of messy data that is ought to bring more headaches than joy. The
+big mess that is ought to bring more headaches than joy. The
 authors of this paper discuss these issues in terms of a &lt;strong&gt;common coordinate framework&lt;/strong&gt;
 which they - very neatly - define as a reference map that can : &amp;ldquo;&lt;em&gt;[..] assign a
 reproducible address to every location&lt;/em&gt;&amp;rdquo;. CCFs can be constructed at different
@@ -67,16 +67,16 @@ it&amp;rsquo;s insufficient to only compare the images pixel-by-pixel as we have
 different motifs. Somehow, we need to use the &lt;em&gt;common&lt;/em&gt; features of a face, to
 identify the &lt;em&gt;unique&lt;/em&gt; elements of each artist. Similarly, when building an atlas
 of the human body, organs or sub-region of an organ using data from multiple
-sources, we need to know where each piece fits in to the larger picture. A CCF
+sources, we need to know where each piece fits into the larger picture. A CCF
 would further enable a very precise exploration of variation across individuals,
 and is obviously a fundamental tool in any quest to study heterogeneity.&lt;/p&gt;
 &lt;p&gt;In the paper they discuss some of the challenges associated with the
 creation of a CCF, and consider the inherent anatomical diversity across
 individuals as perhaps the most prominent one. They also bring up a good point
-about how consistent annotation (used to assemble the CCF) is not a
-straightforward task either, as biological compartments or structures do not
+about how consistent annotation (used to assemble the CCF) is not as
+straightforward of a task as it might seem, since biological compartments and structures do not
 always have well-defined boundaries. Another challenge in devising methods to
-construct CCFs arise from the fact that a sample&amp;rsquo;s character by en large
+construct CCFs arise from the fact that a sample&amp;rsquo;s character by and large
 dictates how appropriate a certain method is. To illustrate this, two extremes
 are given as examples: (1) when anatomical regions are highly similar across all
 samples (e.g., early stages of embryogenesis), and (2) when cells are
@@ -101,18 +101,18 @@ bundle) rather than anatomical planes. These landmarks allow one to anchor
 points in different samples to a reference. Having identified the landmarks, one
 may then apply a linear transformation to map a query image to the reference.
 For both the aforementioned strategies, the use of a &lt;em&gt;reference&lt;/em&gt; is
-quintessential - this may however be updated iteratively as the process
+essential - the template itself may however be updated iteratively as the process
 progress. The complex non-standard approaches are used when there&amp;rsquo;s a lack
 of anatomical structure or when no clear landmarks can be identified. In complex
 approaches, local non-linear (in contrast to the other methods) warping is
 applied to account for large anatomical variation.&lt;/p&gt;
 &lt;p&gt;Now of course, as you might have noted, both of the two first methods relies on
-the usage of a reference. Hence the question of how such a reference is
+a reference template. Hence the question of how such a template is
 obtained, to which the authors answers that it depends largely on the sample.
 For &lt;strong&gt;highly stereotypical&lt;/strong&gt; samples, a successful approach has been to use an
 iterative process, starting with a seeding set to which the whole dataset is
-aligned in order, from which a new reference is extracted and used as the seed
-for the next iteration; a procedure repeated until convergence. To
+aligned, a new reference is then extracted and used as a seed
+in the next iteration; a procedure repeated until convergence. To
 overcome the inter-individual variability in samples with &amp;ldquo;&lt;em&gt;similar
 inter-individual organ structure but differences in cell type location and organ
 dimensions&lt;/em&gt;&amp;rdquo; a certain degree of supervision was added to the procedure; by
@@ -131,7 +131,7 @@ problem in robot localization, where one tries to create the map while also
 finding ones current position within it.&lt;/p&gt;
 &lt;p&gt;They also discuss how, once a CCF is established, samples of the same and
 different modalities may be mapped to it. If we are operating with data of the
-same modality, the process should be nothing but straightforward. we simply use
+same modality, the process should be nothing but straightforward. We simply use
 the same strategy as when creating the CCF itself. For other
 cross-modality-mapping the case is slightly different, and integration will only
 be possible if the assumption that both modalities shares a latent
@@ -141,7 +141,7 @@ representation (e.g., chromatin accessibility) holds.&lt;/p&gt;
 challenges and how much influence a sample&amp;rsquo;s character has on the choice of
 method, is to dismiss the objective of creating a single CCF. Instead, multiple
 CCFs should be created in a hierarchical (by scale) fashion, which would allow
-both horizontal and vertical movement across the atlas, but where each CCF is
+both horizontal and vertical movements across the atlas, but where each CCF is
 adapted to best fit the data. This would represent a sort of &amp;ldquo;atlas of atlases&amp;rdquo;
 as they express it. To me, this makes perfect sense, although it would
 have been interesting to see some more discussion of how the vertical movements

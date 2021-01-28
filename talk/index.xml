@@ -5,12 +5,28 @@
     <link>/talk/</link>
       <atom:link href="/talk/index.xml" rel="self" type="application/rss+xml" />
     <description>Recent &amp; Upcoming Talks</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 20 Nov 2020 15:55:00 +0100</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 20 Jan 2021 13:00:00 +0100</lastBuildDate>
     <image>
       <url>/images/icon_hu0976d26fdaec5d0ec6c053b09a4e039a_2013_512x512_fill_lanczos_center_2.png</url>
       <title>Recent &amp; Upcoming Talks</title>
       <link>/talk/</link>
     </image>
+    
+    <item>
+      <title>An Orientation in the Spatial Transcriptomics landscsape</title>
+      <link>/talk/2021-01-28-nbis/</link>
+      <pubDate>Wed, 20 Jan 2021 13:00:00 +0100</pubDate>
+      <guid>/talk/2021-01-28-nbis/</guid>
+      <description>&lt;p&gt;Today I had the privilege to act as one of the teachers at the
+&lt;a href=&#34;https://www.scilifelab.se/facilities/nbis/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;NBIS&lt;/a&gt; workshop &amp;ldquo;&lt;em&gt;Single cell
+RNA-seq analysis workshop&lt;/em&gt;&amp;rdquo;, where I gave a lecture on spatial transcriptomics.
+The purpose was to give a broad overview of both the expermental and
+computational techniques that are available for generation and analysis of
+spatial transcriptomics data.&lt;/p&gt;
+&lt;p&gt;Big thanks to Åsa and Paulo for organizing the course and inviting me, and
+assembling a set of really got exercises for the students to work with.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Exploring the cell type topography by integration of spatial and single cell data</title>
