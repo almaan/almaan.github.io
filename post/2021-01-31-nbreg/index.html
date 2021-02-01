@@ -1,0 +1,1431 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  
+  
+  <meta name="generator" content="Wowchemy 5.0.0-beta.2 for Hugo">
+  
+
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Alma Anderson">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="For this bi-weekly paper review, my choice fell upon a paper that I&rsquo;ve skimmed through multiple times before, but never gave the proper read-through it deserves. It was a definite given when I started to curate a list of papers that would be fit to review in this series of reviews.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/post/2021-01-31-nbreg/">
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+
+  
+  
+  
+  <meta name="theme-color" content="hsl(339, 90%, 68%)">
+  
+
+  
+  
+  
+  <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous" media="print" onload="this.media='all'">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'">
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js" integrity="sha512-TmDwFLhg3UA4ZG0Eb4MIyT1O1Mb+Oww5kFG0uHqXsdbyZz9DcvYQhKpGgNkamAI6h2lGGZq2X8ftOJvF/XjTUg==" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.59c0fd11ecc63d6296b5dc7c00c3e0c9.css">
+
+  
+
+
+
+
+  
+
+  
+
+
+  
+  
+
+  
+
+  
+  <link rel="manifest" href="/index.webmanifest">
+  
+
+  <link rel="icon" type="image/png" href="/images/icon_hu0976d26fdaec5d0ec6c053b09a4e039a_2013_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0976d26fdaec5d0ec6c053b09a4e039a_2013_180x180_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="/post/2021-01-31-nbreg/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="almaan">
+  <meta property="og:url" content="/post/2021-01-31-nbreg/">
+  <meta property="og:title" content="Paper Review | Normalization and variance stabilization of single-cell RNA-seq data using regularized negative binomial regression | almaan">
+  <meta property="og:description" content="For this bi-weekly paper review, my choice fell upon a paper that I&rsquo;ve skimmed through multiple times before, but never gave the proper read-through it deserves. It was a definite given when I started to curate a list of papers that would be fit to review in this series of reviews."><meta property="og:image" content="/images/icon_hu0976d26fdaec5d0ec6c053b09a4e039a_2013_512x512_fill_lanczos_center_2.png">
+  <meta property="twitter:image" content="/images/icon_hu0976d26fdaec5d0ec6c053b09a4e039a_2013_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2021-01-31T12:47:31&#43;01:00">
+    
+    <meta property="article:modified_time" content="2021-01-31T12:47:31&#43;01:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/post/2021-01-31-nbreg/"
+  },
+  "headline": "Paper Review | Normalization and variance stabilization of single-cell RNA-seq data using regularized negative binomial regression",
+  
+  "datePublished": "2021-01-31T12:47:31+01:00",
+  "dateModified": "2021-01-31T12:47:31+01:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Alma Anderson"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "almaan",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/images/icon_hu0976d26fdaec5d0ec6c053b09a4e039a_2013_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "For this bi-weekly paper review, my choice fell upon a paper that I\u0026rsquo;ve skimmed through multiple times before, but never gave the proper read-through it deserves. It was a definite given when I started to curate a list of papers that would be fit to review in this series of reviews."
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Paper Review | Normalization and variance stabilization of single-cell RNA-seq data using regularized negative binomial regression | almaan</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper dark ">
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.44fd6ee47b794b1cbcf82527c5316954.js"></script>
+
+  
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">almaan</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">almaan</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#featured"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+      
+
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Paper Review | Normalization and variance stabilization of single-cell RNA-seq data using regularized negative binomial regression</h1>
+
+  
+  <p class="page-subtitle">Looking through the veil of technical bias</p>
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  <span >
+      <a href="/author/alma-anderson/">Alma Anderson</a></span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Jan 31, 2021
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    11 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+<div class="btn-links mb-3">
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <p>For this bi-weekly paper review, my choice fell upon a paper that I&rsquo;ve skimmed
+through multiple times before, but never gave the proper read-through it
+deserves. It was a definite given when I started to curate a list of papers that
+would be fit to review in this series of reviews. Not only do I find it to be an
+elegant and well-composed paper, but it has had a nothing but an imperative influence
+on the RNA-seq based analysis during these last years, by presenting a model for
+normalization (and variance stabilization) of single-cell RNA-seq
+data that has become widely adopted within the community. Almost every paper not
+focusing on method development that I&rsquo;ve stumbled across, use the
+&ldquo;<em>sctransform</em>&rdquo; package or derivatives of it to normalize the data. Thus,
+without further ado let us begin.</p>
+<hr>
+<p><strong>Paper Title :</strong> <em>Normalization and variance stabilization of single-cell RNA-seq data using regularized negative binomial regression</em></p>
+<p><strong>Authors :</strong> Christoph Hafemeister and Rahul Satija</p>
+<p><strong>Published</strong> 23 December 2019</p>
+<p><strong>doi :</strong> <a href="https://doi.org/10.1186/s13059-019-1874-1">https://doi.org/10.1186/s13059-019-1874-1</a></p>
+<p><strong>Review :</strong> Anyone who has ever worked with single cell RNA-seq data knows that
+before any &ldquo;flashy and cool&rdquo; results can be extracted, we need to apply some
+pre-processing steps to our data. Aside from filtering for low quality
+observations or irrelevant features, the very first step - and perhaps most
+important - tends to be <strong>normalization</strong> of the data. Normalization is a dead
+given in any analysis workflow, but let us just take one step back and ask why?
+Why do we care about normalization, why can&rsquo;t we just &ldquo;jump right at it&rdquo;?</p>
+<p>Probing our data with the right tools will allow us to identify cell types and
+cell states as well as cell-to-cell variations, however if we aren&rsquo;t careful <em>technical
+factors</em> might confound these results, making us come to incorrect and false
+conclusions regarding the trends in our data. One technical factor that has a
+huge influence on the result of our downstream analysis is the <em>sequencing
+depth</em>. For example, imagine that we have two cell types <em>A</em> and <em>B</em>, where
+cells of <em>A</em> in general have higher transcription activity than those of <em>B</em>.
+Now if we were to compare the (raw and unprocessed) expression of a houskeeping
+gene <em>hkpg</em> between cells from the two types, it would be listed as upregulated
+in <em>A</em>, even though we expect all housekeeping genes to be of equal relative
+expression across cell types. This is of course highly undesireable, and we
+therefore try to normalize the data, in order to remove technical variation
+while preferably maintaining biological variation.</p>
+<p>The authors define two &ldquo;objectives&rdquo; or criteria, that should hold for a
+single-cell data set to be considered sucessfully normalized:</p>
+<ol>
+<li>Normalized expression should be uncorrelated with sequencing depth of cells.</li>
+<li>Variance of a normalized gene (across cells) should not be affected by gene
+abundance or sequencing depth.</li>
+</ol>
+<p>In contrast to the two previously existing paradigms of using either
+cell-specific scaling factors or probabilistic approaches they consider their
+approach as more of a <em>statistical</em> approach, distinct from the others. I would
+perhaps say that their strategy could fit into to the set of probabilistic approaches,
+but that&rsquo;s a minor detail.</p>
+<p>The method they present builds on a generalized linear model (GLM) where they
+use a <em>constrained negative binomial</em> error model, with sequencing depth as a
+covariate, and a log-link function for the mean.</p>
+<p>After evaluating different error models such
+as: unconstrained Poisson, Negative Binomial and a Zero Inflated Negative
+Binomial (ZINB), they noticed that the Poisson was not flexible enough, while the
+unconstrained NB and ZINB models were very prone to overfitting. Therefore, as
+is common in several bulk normalization techniques, they decided to regularize
+the model parameters by pooling information from genes with similar mean
+expression values, resulting in a _regularized negative binomial regression**.
+The constrained part is one of the model&rsquo;s key features, the other one being to
+include the sequencing depth as a covariate. We will soon come back to the
+regularization, but let us first just briefly look at the GLM model they are
+using:</p>
+<p>$$\log(E[x_{gc}]) = \log(\mu_{gc}) = \beta_{0g} + \beta_{1g} \log_{ 10 }(m_c)$$</p>
+<p>Where $x_{gc}$ is the expression of gene $g$ in cell $c$, and $m_c$ is the
+library size (used as a proxy for sequencing depth. In short, this means that
+the authors make the implicit assumption that **most genes are not
+differentially expressed**; genes have a common baseline ($\beta_{0g}$) and
+differences across cells will mainly be due to their varying library size
+(influence controlled by $\beta_{1g}$).</p>
+<p>The negative binomial has one more parameter that we need to pay attention to,
+the dispersion parameter $\theta$ which gives us the variance of our data. That
+is, if:</p>
+<p>$$ x \sim NB(\mu,\theta)$$</p>
+<p>then</p>
+<p>$$E[x] = \mu, \quad Var[x] = \mu + \frac{\mu^2}{\theta}$$</p>
+<p>However, the authors convincingly show that if we were to learn one set of
+parameters for each gene, these will be severely overfitted. What really made me
+appreciate the prevalance of this overfitting, was the results they present in
+Figure 2 (included below).</p>
+<p><img src="./imgs/figure2.png" alt="figure2"></p>
+<p>In the top row they show the estimated parameter values plotted as a function of
+gene mean; in a good model we would expect to have similar parameter values for
+genes with similar mean values. In the bottom row, they fit their GLM model to a
+random subsets of the data and assessed the variance of the parameter values (in
+a bootstrap fashion), showing how the variance (red dots) was very high, especially for
+low and medium expressed genes.</p>
+<p>To remedy this issue of overfitting, they <em>regularize</em> their model, though not
+using the regularization terms that perhaps most of our familiar with like a
+$l_1$ or $l_2$ penalty. Instead, they pool information from several genes to
+make more robust estimates. The idea is to first fit, as described above,
+one GLM to each gene, <strong>but</strong> to then apply kernel regression to the resulting
+parameter estimates. The intent being to learn regularized parameters that depend
+on a gene&rsquo;s average expression. The blue dots in panel B of the figure above
+shows the variance after using this regularized approach.</p>
+<p>Though, we still have some work left to do. Having obtained the set of regularized
+parameters, one applies this regression model to the data in order to compute
+the residuals ($r_{gc}$).</p>
+<p>$$ r_{gc} = x_{gc} - \mu_{gc}, \quad \mu_{gc} = \exp[\beta_{0g}+ \beta_{1g}\log_{10}(m_c)] $$</p>
+<p>As can be seen the residuals represent the difference between the response
+variable (mean) and the observed value. But as one might remember, for the
+negative binomial, the variance can differ between genes even though they have
+the same mean ($\mu$), since we also have a dispersion parameter $\theta$. Thus, we will
+not make use of the <em>raw</em> residuals, but instead prefer what is known as the <em>Pearson residuals</em> ($z_{gc}$),
+which account for this variation:</p>
+<p>$$ z_{gc} = \frac{r_{gc}}{\sigma_{gc}}, \quad \sigma_{gc} = \sqrt{\mu_{gc} +
+\frac{\mu_{gc}^2}{\theta_g}} $$</p>
+<p>This transformation presents the residuals in units of standard deviations,
+correcting for the specific gene variance. Implementationwise they also clip
+their $z_{gc}$ values to be less than $\sqrt{N}$ (where $N = $ number of cells),
+in order to &ldquo;reduce the impact of extreme outliers&rdquo;. This value seems to have
+been determined fairly empirically.</p>
+<p>These Pearson residuals are then <strong>treated as normalized expression levels</strong>;
+the idea being that we&rsquo;ve now regressed out any contribution from the sequencing
+depth to the observed expression levels. Using Pearson residuals has one
+additional benefit, being that the transformation we apply to compute them is inherently
+<em>variance-stabilizing</em>.</p>
+<p>The image below is a merge between Figure 1C-E and Figure 3A-B and requires a
+bit of explanation. The curves represent the expression values as a function of
+cell UMI count where the genes have been divided into six groups based on their
+average expression in the data set. The bottom bar graphs are slightly more
+complex; the same six gene groups are used, and the cells are divided into five equally-sized
+groups with increasing average sequencing depth (group 1 having the highest value). Next,
+they calculated the total variance in each gene to then see how much each cell
+group contributed to this value. In perfectly normalized data, one would expect
+to see an equal contribution (here $20\%$) between the cell groups, as gene
+expression should be uncorrelated with sequencing depth (criterion 1 from their
+&ldquo;objectives&rdquo;).</p>
+<p><img src="./imgs/res.png" alt="compilation"></p>
+<p>Comparing the use of Pearson residuals with raw UMI counts and
+log-normaliztion, we observe the following:</p>
+<ul>
+<li>
+<p>in the raw UMI counts we see clear correlation between sequencing depth and
+gene expression in all ranges of gene expression. Log-normalization mitigate
+this issue among lowly expressed genes (group 4-5) but it persists in the high
+and medium expressed genes. The regularized negative binomial
+normalization renders values near completely independent (a horizontal line)
+of the sequencing depth, only very highly expressed genes still show some
+dependence; the authors explain this by the fact that only very few genes of
+such expression is present and the regularization process thus becomes less robust.</p>
+</li>
+<li>
+<p>There&rsquo;s an unequal variance contribution in the two alternative approaches.
+One example that they highlight is how cells with low UMI counts have a
+<em>disproportional influence</em> on the variance among high-abundance genes in the log-normalization
+method. Something that might dampen the contribution from other gene groups.
+In the regularization based method, we see a very - almost surprisingly -
+homogeneous distribution of the variance.</p>
+</li>
+</ul>
+<p>The authors also, which I appreciate, show how the normalization can impact the
+downstream results as well. The most striking example - in my opinion - is when
+they compare outcomes of a DE (Differential Expression) analysis. They construct
+a simple but clever experiment, where they first grabbed all CD14+ monocytes (5551
+cells) from the PBMC data set they use throughout the paper. They then split
+this set into two equally-sized (and mutually exhaustive) subsets, followed by
+downsampling of the UMIs in <em>one of the subsets</em>, giving them $50\%$ of their
+original UMI counts but equally distributed across the genes. They then
+subjected the two groups to a <em>t</em>-test in order to find DE genes. Obviously,
+since these are cells from the same population, we expect zero DE genes if our
+data is properly normalized. As you can see in the figure below (modified Figure
+6E), this was not quite the case for the log-normalized data:</p>
+<p><img src="./imgs/de.png" alt="de-genes"></p>
+<p>Rather than finding zero DE genes, using log-normalization gave us $2331$ DE
+genes. The regularized negative binomial regression wasn&rsquo;t perfect either, but
+it gave us $11$ false positives (about $0.5\%$ of $2331$). The authors also
+point out that these $11$ genes are all highly expressed genes, where we know
+the regularization process had some issues. They also looked into masking of
+true DE genes between populations of different sequencing depths and showed how
+log-normalization can give some weird results in these cases (incorrect
+assignment of DE genes) while their approach seemed to give the expected
+results.</p>
+<p>The paper contains some other highly interesting results, but what is presented
+above captures the &ldquo;geist&rdquo; of their method and is - at least to me - convincing enough.
+Thus, I&rsquo;d like to focus a bit on their implementation.</p>
+<p>First I should say that the claim that their procedure &ldquo;<em>omits the need for
+heuristic steps including psedocount addition or log-transformation</em>&rdquo;, might be
+a bit of a stretch. Indeed, they don&rsquo;t use a pseudocount in a
+log-transformation, but they use a variant of the geometric mean (more robust to
+outliers) when computing gene average expression:</p>
+<p>$$\exp(\frac{1}{|C|}\sum_{c\in C} \log(x_{gc}+\varepsilon)) - \varepsilon $$</p>
+<p>where $\varepsilon$ is &ldquo;<em>a small fixed value to avoid $\log(0)$</em>&rdquo;, which they set
+to $\varepsilon = 1$ after trying several values in the range $[0.0001,1]$. In
+my ears this sounds awfully lot like a pseudocount, but again, minor detail.</p>
+<p>The most time-consuming step, as expected, is their fit of the GLM to each gene
+(before the kernel regression). As the whole idea with the smoothing is to learn
+a mapping between average expression and parameter value, they reason that it
+should be sufficient to use a subset of the genes for this procedure. To
+properly sample the range of gene means they discard uniform sampling in favor
+of a categorical sampling with each gene&rsquo;s probability of being sampled defined as:</p>
+<p>$$ p_g \propto \frac{1}{\log_{10}(\bar{x}_g)}$$</p>
+<p>Where $\bar{x}_{g}$ is gene $g$&rsquo;s average expression. Assessing different
+values, they noted that using a subset of $2000$ genes gave near identical
+results to the full gene set, hence this is set to the default value.</p>
+<p>They also evaluated different approaches to estimate the gene specific
+parameters, and settled on a choice where they: assume a Poisson error
+distribution to estimate $(\beta_{0g},\beta_{1g})$, from which they can compute
+the mean $\mu_g$. The mean is then kept fixed in order to estimate $\theta_g$
+using maximum likelihood. This is, as the Poisson is a univariate
+distribution, much faster than the two parameter NB error model in the GLM.</p>
+<p>They also mention how their normalization approach can be extended to include
+other covariates than sequencing depth. When using these other covariates, two
+regression iterations will be performed: one where they only use sequencing
+depth as a covariate, followed by one round where they inlcude all covariates
+but keep the sequencing depth parameters fixed. This is because the other
+covariates can&rsquo;t be expected to share information across genes, hence no
+regularization can be perfromed with them.</p>
+<p>To summarize, this paper presents a fast and interpretable way of normalizing
+data that is built on a statistical framework using a regularized negative
+binomial GLM. They convincingly show how raw UMI and log-normalization is
+confounded by sequencing depth, as well as our need to regularize the fitted
+models to get robust parameter estimates. I also enjoyed reading it, it&rsquo;s very
+clearly and concise with good experiments to back-up their claims.</p>
+
+    </div>
+
+    
+
+
+
+
+
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=/post/2021-01-31-nbreg/&amp;text=Paper%20Review%20%7c%20Normalization%20and%20variance%20stabilization%20of%20single-cell%20RNA-seq%20data%20using%20regularized%20negative%20binomial%20regression" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=/post/2021-01-31-nbreg/&amp;t=Paper%20Review%20%7c%20Normalization%20and%20variance%20stabilization%20of%20single-cell%20RNA-seq%20data%20using%20regularized%20negative%20binomial%20regression" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Paper%20Review%20%7c%20Normalization%20and%20variance%20stabilization%20of%20single-cell%20RNA-seq%20data%20using%20regularized%20negative%20binomial%20regression&amp;body=/post/2021-01-31-nbreg/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=/post/2021-01-31-nbreg/&amp;title=Paper%20Review%20%7c%20Normalization%20and%20variance%20stabilization%20of%20single-cell%20RNA-seq%20data%20using%20regularized%20negative%20binomial%20regression" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Paper%20Review%20%7c%20Normalization%20and%20variance%20stabilization%20of%20single-cell%20RNA-seq%20data%20using%20regularized%20negative%20binomial%20regression%20/post/2021-01-31-nbreg/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=/post/2021-01-31-nbreg/&amp;title=Paper%20Review%20%7c%20Normalization%20and%20variance%20stabilization%20of%20single-cell%20RNA-seq%20data%20using%20regularized%20negative%20binomial%20regression" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <img class="avatar mr-3 avatar-circle" src="/author/alma-anderson/avatar_hu27f7dc34c9db8fd2b063f3fba6be9864_197873_270x270_fill_q75_lanczos_center.jpg" alt="Alma Anderson">
+    
+
+    <div class="media-body">
+      <h5 class="card-title">Alma Anderson</h5>
+      <h6 class="card-subtitle">PhD. Student Computational Biology</h6>
+      <p class="card-text">My passion lies in understanding and modelling the latent structures that governs biological systems.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/almaan@kth.se" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=t05MyGwAAAAJ&amp;hl=en" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/almaan" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Related</h3>
+    <ul>
+      
+      <li><a href="/post/2021-01-19-ccf-rev/">Paper Review | Toward a Common Coordinate Framework for the Human Body</a></li>
+      
+      <li><a href="/post/2021-01-08-celltracker/">Models and automated cell tracking</a></li>
+      
+      <li><a href="/post/stereoscope-001/initial-post/">Publication | Spatial Single Cell Mapping</a></li>
+      
+      <li><a href="/post/her2-001/initial-post/">Manuscript | Spatial Exploration of Her2 Breast Cancer</a></li>
+      
+      <li><a href="/post/synt-bio-001/initial-post/">Resource | Formal systems in Biology</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+    Published with
+    <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a>  —
+    the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">
+    open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+        <div class="search-hit-content">
+          <div class="search-hit-name">
+            <a href="{{relpermalink}}">{{title}}</a>
+            <div class="article-metadata search-hit-type">{{type}}</div>
+            <p class="search-hit-description">{{snippet}}</p>
+          </div>
+        </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/en/js/wowchemy.min.db25f1c075d050faafded35b9462523c.js"></script>
+
+    
+
+
+
+
+
+
+</body>
+</html>
