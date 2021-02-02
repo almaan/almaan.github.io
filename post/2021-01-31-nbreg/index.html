@@ -34,7 +34,7 @@
   
     
   
-  <meta name="description" content="For this bi-weekly paper review, my choice fell upon a paper that I&rsquo;ve skimmed through multiple times before, but never gave the proper read-through it deserves. It was a definite given when I started to curate a list of papers that would be fit to review in this series of reviews.">
+  <meta name="description" content="For this bi-weekly paper review, my choice fell upon a paper that I&rsquo;ve skimmed through multiple times before, but never gave the proper read-through it deserves. It was a definite given when I started to curate a list of papers that I wanted to include in this series of reviews.">
 
   
   <link rel="alternate" hreflang="en-us" href="/post/2021-01-31-nbreg/">
@@ -286,7 +286,7 @@
   <meta property="og:site_name" content="almaan">
   <meta property="og:url" content="/post/2021-01-31-nbreg/">
   <meta property="og:title" content="Paper Review | Normalization and variance stabilization of single-cell RNA-seq data using regularized negative binomial regression | almaan">
-  <meta property="og:description" content="For this bi-weekly paper review, my choice fell upon a paper that I&rsquo;ve skimmed through multiple times before, but never gave the proper read-through it deserves. It was a definite given when I started to curate a list of papers that would be fit to review in this series of reviews."><meta property="og:image" content="/images/icon_hu0976d26fdaec5d0ec6c053b09a4e039a_2013_512x512_fill_lanczos_center_2.png">
+  <meta property="og:description" content="For this bi-weekly paper review, my choice fell upon a paper that I&rsquo;ve skimmed through multiple times before, but never gave the proper read-through it deserves. It was a definite given when I started to curate a list of papers that I wanted to include in this series of reviews."><meta property="og:image" content="/images/icon_hu0976d26fdaec5d0ec6c053b09a4e039a_2013_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="/images/icon_hu0976d26fdaec5d0ec6c053b09a4e039a_2013_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     
@@ -336,7 +336,7 @@
       "url": "/images/icon_hu0976d26fdaec5d0ec6c053b09a4e039a_2013_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "For this bi-weekly paper review, my choice fell upon a paper that I\u0026rsquo;ve skimmed through multiple times before, but never gave the proper read-through it deserves. It was a definite given when I started to curate a list of papers that would be fit to review in this series of reviews."
+  "description": "For this bi-weekly paper review, my choice fell upon a paper that I\u0026rsquo;ve skimmed through multiple times before, but never gave the proper read-through it deserves. It was a definite given when I started to curate a list of papers that I wanted to include in this series of reviews."
 }
 </script>
 
@@ -822,13 +822,13 @@
       <p>For this bi-weekly paper review, my choice fell upon a paper that I&rsquo;ve skimmed
 through multiple times before, but never gave the proper read-through it
 deserves. It was a definite given when I started to curate a list of papers that
-would be fit to review in this series of reviews. Not only do I find it to be an
-elegant and well-composed paper, but it has had a nothing but an imperative influence
-on the RNA-seq based analysis during these last years, by presenting a model for
+I wanted to include in this series of reviews. Not only do I find it to be an
+elegant and well-composed paper, but it has had nothing but an /imperative/ influence
+on the RNA-seq based analysis these last years. In the paper, they present a model for
 normalization (and variance stabilization) of single-cell RNA-seq
-data that has become widely adopted within the community. Almost every paper not
+data, which now has become widely adopted within the community. Almost every paper not
 focusing on method development that I&rsquo;ve stumbled across, use the
-&ldquo;<em>sctransform</em>&rdquo; package or derivatives of it to normalize the data. Thus,
+&ldquo;<em>sctransform</em>&rdquo; package or derivatives of it to normalize scRNA-seq data. Thus,
 without further ado let us begin.</p>
 <hr>
 <p><strong>Paper Title :</strong> <em>Normalization and variance stabilization of single-cell RNA-seq data using regularized negative binomial regression</em></p>
@@ -843,18 +843,18 @@ important - tends to be <strong>normalization</strong> of the data. Normalizatio
 given in any analysis workflow, but let us just take one step back and ask why?
 Why do we care about normalization, why can&rsquo;t we just &ldquo;jump right at it&rdquo;?</p>
 <p>Probing our data with the right tools will allow us to identify cell types and
-cell states as well as cell-to-cell variations, however if we aren&rsquo;t careful <em>technical
+cell states as well as cell-to-cell variations. However if we aren&rsquo;t careful <em>technical
 factors</em> might confound these results, making us come to incorrect and false
-conclusions regarding the trends in our data. One technical factor that has a
+conclusions regarding the patterns in our data. One technical factor that has a
 huge influence on the result of our downstream analysis is the <em>sequencing
 depth</em>. For example, imagine that we have two cell types <em>A</em> and <em>B</em>, where
-cells of <em>A</em> in general have higher transcription activity than those of <em>B</em>.
+cells of <em>A</em> in general have higher transcriptional activity than those of <em>B</em>.
 Now if we were to compare the (raw and unprocessed) expression of a houskeeping
-gene <em>hkpg</em> between cells from the two types, it would be listed as upregulated
-in <em>A</em>, even though we expect all housekeeping genes to be of equal relative
-expression across cell types. This is of course highly undesireable, and we
-therefore try to normalize the data, in order to remove technical variation
-while preferably maintaining biological variation.</p>
+gene between cells from the two types, it would be listed as upregulated
+in <em>A</em>, even though we expect all housekeeping genes to be of approximately equal relative
+expression across cell types. This is of course undesireable, and we
+therefore attempt to normalize the data, in order to remove any technical variation
+while preferably maintaining biological differences.</p>
 <p>The authors define two &ldquo;objectives&rdquo; or criteria, that should hold for a
 single-cell data set to be considered sucessfully normalized:</p>
 <ol>
@@ -871,30 +871,29 @@ but that&rsquo;s a minor detail.</p>
 use a <em>constrained negative binomial</em> error model, with sequencing depth as a
 covariate, and a log-link function for the mean.</p>
 <p>After evaluating different error models such
-as: unconstrained Poisson, Negative Binomial and a Zero Inflated Negative
+as: an unconstrained Poisson, a Negative Binomial and a Zero Inflated Negative
 Binomial (ZINB), they noticed that the Poisson was not flexible enough, while the
-unconstrained NB and ZINB models were very prone to overfitting. Therefore, as
-is common in several bulk normalization techniques, they decided to regularize
-the model parameters by pooling information from genes with similar mean
-expression values, resulting in a _regularized negative binomial regression**.
+unconstrained NB and ZINB models were prone to overfitting. Therefore, as
+is common in several bulk normalization methods, they decided to regularize
+the model parameters by <em>pooling information</em> from genes with similar mean
+expression values, resulting in a <strong>regularized negative binomial regression</strong>.
 The constrained part is one of the model&rsquo;s key features, the other one being to
 include the sequencing depth as a covariate. We will soon come back to the
-regularization, but let us first just briefly look at the GLM model they are
-using:</p>
-<p>$$\log(E[x_{gc}]) = \log(\mu_{gc}) = \beta_{0g} + \beta_{1g} \log_{ 10 }(m_c)$$</p>
-<p>Where $x_{gc}$ is the expression of gene $g$ in cell $c$, and $m_c$ is the
-library size (used as a proxy for sequencing depth. In short, this means that
-the authors make the implicit assumption that **most genes are not
-differentially expressed**; genes have a common baseline ($\beta_{0g}$) and
-differences across cells will mainly be due to their varying library size
-(influence controlled by $\beta_{1g}$).</p>
+regularization, but let us first just briefly look at their GLM model:</p>
+<p>$$ \log(E[x_{gc}]) = \log(\mu_{gc}) = \beta_{0g} + \beta_{1g} \log_{ 10 }(m_c) $$</p>
+<p>Where $x_{gc}$ is the expression of gene $g$ in cell $c$, and $m_{c}$ is the
+library size used as a proxy for sequencing depth.</p>
+<p>In short, this means that the authors make the implicit assumption that <strong>most
+genes are not differentially expressed</strong>; genes have a common baseline
+($\beta_{0g}$) and differences across cells will mainly be due to their varying
+library size (influence controlled by $\beta_{1g}$).</p>
 <p>The negative binomial has one more parameter that we need to pay attention to,
 the dispersion parameter $\theta$ which gives us the variance of our data. That
 is, if:</p>
 <p>$$ x \sim NB(\mu,\theta)$$</p>
 <p>then</p>
 <p>$$E[x] = \mu, \quad Var[x] = \mu + \frac{\mu^2}{\theta}$$</p>
-<p>However, the authors convincingly show that if we were to learn one set of
+<p>Interestingly, the authors convincingly show that if we were to learn one set of
 parameters for each gene, these will be severely overfitted. What really made me
 appreciate the prevalance of this overfitting, was the results they present in
 Figure 2 (included below).</p>
@@ -907,22 +906,23 @@ a bootstrap fashion), showing how the variance (red dots) was very high, especia
 low and medium expressed genes.</p>
 <p>To remedy this issue of overfitting, they <em>regularize</em> their model, though not
 using the regularization terms that perhaps most of our familiar with like a
-$l_1$ or $l_2$ penalty. Instead, they pool information from several genes to
-make more robust estimates. The idea is to first fit, as described above,
-one GLM to each gene, <strong>but</strong> to then apply kernel regression to the resulting
-parameter estimates. The intent being to learn regularized parameters that depend
-on a gene&rsquo;s average expression. The blue dots in panel B of the figure above
-shows the variance after using this regularized approach.</p>
-<p>Though, we still have some work left to do. Having obtained the set of regularized
-parameters, one applies this regression model to the data in order to compute
-the residuals ($r_{gc}$).</p>
+$l_1$ or $l_2$ penalty. Instead they pool information from several genes to make
+more robust estimates. They first fit one GLM to each gene, <strong>but</strong> then proceed to
+apply kernel regression to the resulting parameter estimates. The intent being
+to learn regularized parameters that depend on a gene&rsquo;s average expression. The
+blue dots in panel B of the figure above show the variance after using this
+regularized approach; as you can see the variance in parameter estimates is
+significantly reduced.</p>
+<p>Though, we still have some work left to do before our data is normalized. Having
+obtained the set of regularized parameters, one applies this regression model to
+the data in order to compute the residuals ($r_{gc}$).</p>
 <p>$$ r_{gc} = x_{gc} - \mu_{gc}, \quad \mu_{gc} = \exp[\beta_{0g}+ \beta_{1g}\log_{10}(m_c)] $$</p>
-<p>As can be seen the residuals represent the difference between the response
-variable (mean) and the observed value. But as one might remember, for the
+<p>The residuals represent the difference between the response
+estimated mean and the observed expression value. But as one might remember, for the
 negative binomial, the variance can differ between genes even though they have
-the same mean ($\mu$), since we also have a dispersion parameter $\theta$. Thus, we will
-not make use of the <em>raw</em> residuals, but instead prefer what is known as the <em>Pearson residuals</em> ($z_{gc}$),
-which account for this variation:</p>
+the same mean ($\mu$), an effect of the dispersion parameter $\theta$. Thus, we will
+not use the <em>raw</em> residuals, but what is known as the <em>Pearson residuals</em> ($z_{gc}$),
+which account for the gene-specific variation term:</p>
 <p>$$ z_{gc} = \frac{r_{gc}}{\sigma_{gc}}, \quad \sigma_{gc} = \sqrt{\mu_{gc} +
 \frac{\mu_{gc}^2}{\theta_g}} $$</p>
 <p>This transformation presents the residuals in units of standard deviations,
@@ -930,17 +930,19 @@ correcting for the specific gene variance. Implementationwise they also clip
 their $z_{gc}$ values to be less than $\sqrt{N}$ (where $N = $ number of cells),
 in order to &ldquo;reduce the impact of extreme outliers&rdquo;. This value seems to have
 been determined fairly empirically.</p>
-<p>These Pearson residuals are then <strong>treated as normalized expression levels</strong>;
+<p>The Pearson residuals are <strong>treated as normalized expression levels</strong>;
 the idea being that we&rsquo;ve now regressed out any contribution from the sequencing
 depth to the observed expression levels. Using Pearson residuals has one
 additional benefit, being that the transformation we apply to compute them is inherently
 <em>variance-stabilizing</em>.</p>
 <p>The image below is a merge between Figure 1C-E and Figure 3A-B and requires a
-bit of explanation. The curves represent the expression values as a function of
-cell UMI count where the genes have been divided into six groups based on their
-average expression in the data set. The bottom bar graphs are slightly more
-complex; the same six gene groups are used, and the cells are divided into five equally-sized
-groups with increasing average sequencing depth (group 1 having the highest value). Next,
+bit of explanation in order to make sense. The curves represent the expression
+values as a function of cell UMI count where the genes have been divided into
+six groups based on their average expression in the data set. The six groups are
+not equally sized, but represent bins with equal width spanning the expression
+range. The bottom bar graphs are slightly more complex; the same six gene groups
+are used, and the cells are divided into five equally-sized groups with
+increasing average sequencing depth (group 1 having the highest value). Next,
 they calculated the total variance in each gene to then see how much each cell
 group contributed to this value. In perfectly normalized data, one would expect
 to see an equal contribution (here $20\%$) between the cell groups, as gene
@@ -951,18 +953,19 @@ expression should be uncorrelated with sequencing depth (criterion 1 from their
 log-normaliztion, we observe the following:</p>
 <ul>
 <li>
-<p>in the raw UMI counts we see clear correlation between sequencing depth and
-gene expression in all ranges of gene expression. Log-normalization mitigate
-this issue among lowly expressed genes (group 4-5) but it persists in the high
-and medium expressed genes. The regularized negative binomial
+<p>Using raw UMI counts, a clear correlation between sequencing depth and gene
+expression in all ranges of gene expression is present. Log-normalization
+mitigate this issue among lowly expressed genes (group 4-5), but it persists
+in the high and medium expressed genes. The regularized negative binomial
 normalization renders values near completely independent (a horizontal line)
 of the sequencing depth, only very highly expressed genes still show some
-dependence; the authors explain this by the fact that only very few genes of
-such expression is present and the regularization process thus becomes less robust.</p>
+dependence; the authors claim that this is likely due to very few genes of
+such expression being present in the data and the regularization process thus
+becomes less robust.</p>
 </li>
 <li>
 <p>There&rsquo;s an unequal variance contribution in the two alternative approaches.
-One example that they highlight is how cells with low UMI counts have a
+One example that the authors highlight is how cells with low UMI counts have a
 <em>disproportional influence</em> on the variance among high-abundance genes in the log-normalization
 method. Something that might dampen the contribution from other gene groups.
 In the regularization based method, we see a very - almost surprisingly -
@@ -976,61 +979,63 @@ a simple but clever experiment, where they first grabbed all CD14+ monocytes (55
 cells) from the PBMC data set they use throughout the paper. They then split
 this set into two equally-sized (and mutually exhaustive) subsets, followed by
 downsampling of the UMIs in <em>one of the subsets</em>, giving them $50\%$ of their
-original UMI counts but equally distributed across the genes. They then
+original UMI counts but with the same distribution as before across the genes. They then
 subjected the two groups to a <em>t</em>-test in order to find DE genes. Obviously,
 since these are cells from the same population, we expect zero DE genes if our
 data is properly normalized. As you can see in the figure below (modified Figure
 6E), this was not quite the case for the log-normalized data:</p>
 <p><img src="./imgs/de.png" alt="de-genes"></p>
-<p>Rather than finding zero DE genes, using log-normalization gave us $2331$ DE
-genes. The regularized negative binomial regression wasn&rsquo;t perfect either, but
-it gave us $11$ false positives (about $0.5\%$ of $2331$). The authors also
-point out that these $11$ genes are all highly expressed genes, where we know
-the regularization process had some issues. They also looked into masking of
-true DE genes between populations of different sequencing depths and showed how
+<p>Rather than finding zero DE genes, using log-normalization gave us $2331$ of them. The
+regularized negative binomial regression wasn&rsquo;t perfect either, but it gave us
+$11$ false positives, about $0.5\%$ of $2331$. The authors also point out that
+these $11$ genes are all highly expressed genes, where we know the
+regularization process had some issues. They also looked into masking of true DE
+genes between populations of different sequencing depths and showed how
 log-normalization can give some weird results in these cases (incorrect
 assignment of DE genes) while their approach seemed to give the expected
 results.</p>
-<p>The paper contains some other highly interesting results, but what is presented
-above captures the &ldquo;geist&rdquo; of their method and is - at least to me - convincing enough.
-Thus, I&rsquo;d like to focus a bit on their implementation.</p>
-<p>First I should say that the claim that their procedure &ldquo;<em>omits the need for
-heuristic steps including psedocount addition or log-transformation</em>&rdquo;, might be
-a bit of a stretch. Indeed, they don&rsquo;t use a pseudocount in a
-log-transformation, but they use a variant of the geometric mean (more robust to
-outliers) when computing gene average expression:</p>
+<p>The paper contains some other interesting results, but what I&rsquo;ve presented above
+captures the &ldquo;geist&rdquo; of their method and is - at least to me - convincing
+enough. Thus, I&rsquo;d like to focus a bit on their implementation.</p>
+<p>First I should say that the claim (in the abstract) that their procedure &ldquo;<em>omits
+the need for heuristic steps including psedocount addition or
+log-transformation</em>&rdquo;, might be a bit of a stretch. Indeed, they don&rsquo;t use a
+pseudocount in a log-transformation, but they use a variant of the geometric
+mean (more robust than the arithmetic mean to outliers) when computing gene
+average expression:</p>
 <p>$$\exp(\frac{1}{|C|}\sum_{c\in C} \log(x_{gc}+\varepsilon)) - \varepsilon $$</p>
-<p>where $\varepsilon$ is &ldquo;<em>a small fixed value to avoid $\log(0)$</em>&rdquo;, which they set
+<p>where $\varepsilon$ is &ldquo;<em>a small fixed value to avoid $\:\log(0)$</em>&rdquo;, which they set
 to $\varepsilon = 1$ after trying several values in the range $[0.0001,1]$. In
-my ears this sounds awfully lot like a pseudocount, but again, minor detail.</p>
-<p>The most time-consuming step, as expected, is their fit of the GLM to each gene
-(before the kernel regression). As the whole idea with the smoothing is to learn
-a mapping between average expression and parameter value, they reason that it
-should be sufficient to use a subset of the genes for this procedure. To
+my ears this sounds an awful lot like a pseudocount, but again, minor detail.</p>
+<p>The most time-consuming step, as expected, is to fit a GLM to each gene (before
+the kernel regression). As the whole idea with the smoothing is to learn a
+<em>mapping between average expression and parameter value</em>, they reason that it
+should be sufficient to use a subset of the genes for this procedure (I agree). To
 properly sample the range of gene means they discard uniform sampling in favor
-of a categorical sampling with each gene&rsquo;s probability of being sampled defined as:</p>
+of a categorical sampling with each gene&rsquo;s probability of being sampled defined
+as:</p>
 <p>$$ p_g \propto \frac{1}{\log_{10}(\bar{x}_g)}$$</p>
 <p>Where $\bar{x}_{g}$ is gene $g$&rsquo;s average expression. Assessing different
-values, they noted that using a subset of $2000$ genes gave near identical
+values, they noted that using a subset of $\sim2000$ genes gave near identical
 results to the full gene set, hence this is set to the default value.</p>
 <p>They also evaluated different approaches to estimate the gene specific
 parameters, and settled on a choice where they: assume a Poisson error
 distribution to estimate $(\beta_{0g},\beta_{1g})$, from which they can compute
 the mean $\mu_g$. The mean is then kept fixed in order to estimate $\theta_g$
-using maximum likelihood. This is, as the Poisson is a univariate
-distribution, much faster than the two parameter NB error model in the GLM.</p>
+using maximum likelihood. This is, due to the Poisson being a univariate
+distribution, much faster than using a two parameter NB error model in the GLM.</p>
 <p>They also mention how their normalization approach can be extended to include
 other covariates than sequencing depth. When using these other covariates, two
-regression iterations will be performed: one where they only use sequencing
+rounds of regression will be performed: one where they only use sequencing
 depth as a covariate, followed by one round where they inlcude all covariates
 but keep the sequencing depth parameters fixed. This is because the other
 covariates can&rsquo;t be expected to share information across genes, hence no
-regularization can be perfromed with them.</p>
+regularization can be performed with them.</p>
 <p>To summarize, this paper presents a fast and interpretable way of normalizing
 data that is built on a statistical framework using a regularized negative
 binomial GLM. They convincingly show how raw UMI and log-normalization is
 confounded by sequencing depth, as well as our need to regularize the fitted
-models to get robust parameter estimates. I also enjoyed reading it, it&rsquo;s very
+models to get robust parameter estimates. I truly enjoyed reading this work, it&rsquo;s
 clearly and concise with good experiments to back-up their claims.</p>
 
     </div>
