@@ -34,7 +34,7 @@
   
     
   
-  <meta name="description" content="Having covered two somewhat old papers &ndash; at least by our field&rsquo;s standards &ndash; in the previous reviews, my idea was to select something a bit more &ldquo;up to date&rdquo; this time.">
+  <meta name="description" content="t-SNE is one of the most commonly used methods for dimensionality reduction in RNA-seq analysis, yet few people know how it actually works. Here we&#39;ll walk through the original t-SNE paper by van der Maaten and Hinton; looking at the motivation behind it, the mathematics that fuel its power, and how to interpret its hyperparameters.">
 
   
   <link rel="alternate" hreflang="en-us" href="/post/2021-02-20-tsne/">
@@ -286,7 +286,7 @@
   <meta property="og:site_name" content="almaan">
   <meta property="og:url" content="/post/2021-02-20-tsne/">
   <meta property="og:title" content="Paper Review | Visualizing Data using t-SNE | almaan">
-  <meta property="og:description" content="Having covered two somewhat old papers &ndash; at least by our field&rsquo;s standards &ndash; in the previous reviews, my idea was to select something a bit more &ldquo;up to date&rdquo; this time."><meta property="og:image" content="/images/icon_hu0976d26fdaec5d0ec6c053b09a4e039a_2013_512x512_fill_lanczos_center_2.png">
+  <meta property="og:description" content="t-SNE is one of the most commonly used methods for dimensionality reduction in RNA-seq analysis, yet few people know how it actually works. Here we&#39;ll walk through the original t-SNE paper by van der Maaten and Hinton; looking at the motivation behind it, the mathematics that fuel its power, and how to interpret its hyperparameters."><meta property="og:image" content="/images/icon_hu0976d26fdaec5d0ec6c053b09a4e039a_2013_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="/images/icon_hu0976d26fdaec5d0ec6c053b09a4e039a_2013_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     
@@ -336,7 +336,7 @@
       "url": "/images/icon_hu0976d26fdaec5d0ec6c053b09a4e039a_2013_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "Having covered two somewhat old papers \u0026ndash; at least by our field\u0026rsquo;s standards \u0026ndash; in the previous reviews, my idea was to select something a bit more \u0026ldquo;up to date\u0026rdquo; this time."
+  "description": "t-SNE is one of the most commonly used methods for dimensionality reduction in RNA-seq analysis, yet few people know how it actually works. Here we'll walk through the original t-SNE paper by van der Maaten and Hinton; looking at the motivation behind it, the mathematics that fuel its power, and how to interpret its hyperparameters."
 }
 </script>
 
@@ -823,16 +823,16 @@
 in the previous reviews, my idea was to select something a bit more &ldquo;up to date&rdquo;
 this time. The path from this ambition to ending up reviewing a 13 year old
 paper is not obvious, but also not completely random. The t-SNE technique that
-van Maaten and Hinton presented more than a decade ago is widely used and still
+van der Maaten and Hinton (yes it&rsquo;s <em>the</em> <a href="https://en.wikipedia.org/wiki/Geoffrey_Hinton" target="_blank" rel="noopener">Hinton</a>) presented more than a decade ago is widely used and still
 spurs discussion. In 2019 <a href="https://www.nature.com/articles/nbt.4314" target="_blank" rel="noopener">Becht
 et.al</a> made an argument about UMAP&rsquo;s
-(Uniform Manifold Approximation and Projection) superiority to other methods for dimensional
-reduction, including t-SNE. And early this February (01-02-2021), <a href="https://www.nature.com/articles/s41587-020-00809-z" target="_blank" rel="noopener">Kobak
-et.al</a>. presented a <em>Matters
-Arising</em> from Becht.et.al. where they argue that t-SNE is not inferior to UMAP
-when it comes to preserving global structure, <strong>if the two methods are
-initialized by the same procedure</strong>. New
-methods, heavily influenced by t-SNE, continue to emerge; for example
+(Uniform Manifold Approximation and Projection) superiority to other methods for
+dimensional reduction, including t-SNE, when working with single cell transcriptomics data. And early this February (01-02-2021),
+<a href="https://www.nature.com/articles/s41587-020-00809-z" target="_blank" rel="noopener">Kobak et.al</a>. presented a
+<em>Matters Arising</em> from Becht.et.al. where they argue that t-SNE is not inferior
+to UMAP when it comes to preserving global structure, <strong>if the two methods are
+initialized by the same procedure</strong>. New methods, heavily influenced by t-SNE,
+continue to emerge; for example
 <a href="https://www.biorxiv.org/content/10.1101/2020.07.17.207993v1.full" target="_blank" rel="noopener">this</a>
 variatonal autoencoder by Graving and Couzin. The t-SNE paper has $17996$
 citations (2021-02-20, Google Scholar), and would probably have more, had it not
@@ -1319,14 +1319,6 @@ Laurens van der Maaten&rsquo;s <a href="https://lvdmaaten.github.io/tsne/" targe
     <ul>
       
       <li><a href="/post/2021-01-19-ccf-rev/">Paper Review | Toward a Common Coordinate Framework for the Human Body</a></li>
-      
-      <li><a href="/post/2021-01-31-nbreg/">Paper Review | Normalization and variance stabilization of single-cell RNA-seq data using regularized negative binomial regression</a></li>
-      
-      <li><a href="/post/2021-01-08-celltracker/">Models and automated cell tracking</a></li>
-      
-      <li><a href="/post/stereoscope-001/initial-post/">Publication | Spatial Single Cell Mapping</a></li>
-      
-      <li><a href="/post/her2-001/initial-post/">Manuscript | Spatial Exploration of Her2 Breast Cancer</a></li>
       
     </ul>
   </div>

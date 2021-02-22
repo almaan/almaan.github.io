@@ -21,16 +21,16 @@
 in the previous reviews, my idea was to select something a bit more &amp;ldquo;up to date&amp;rdquo;
 this time. The path from this ambition to ending up reviewing a 13 year old
 paper is not obvious, but also not completely random. The t-SNE technique that
-van Maaten and Hinton presented more than a decade ago is widely used and still
+van der Maaten and Hinton (yes it&amp;rsquo;s &lt;em&gt;the&lt;/em&gt; &lt;a href=&#34;https://en.wikipedia.org/wiki/Geoffrey_Hinton&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hinton&lt;/a&gt;) presented more than a decade ago is widely used and still
 spurs discussion. In 2019 &lt;a href=&#34;https://www.nature.com/articles/nbt.4314&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Becht
 et.al&lt;/a&gt; made an argument about UMAP&amp;rsquo;s
-(Uniform Manifold Approximation and Projection) superiority to other methods for dimensional
-reduction, including t-SNE. And early this February (01-02-2021), &lt;a href=&#34;https://www.nature.com/articles/s41587-020-00809-z&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Kobak
-et.al&lt;/a&gt;. presented a &lt;em&gt;Matters
-Arising&lt;/em&gt; from Becht.et.al. where they argue that t-SNE is not inferior to UMAP
-when it comes to preserving global structure, &lt;strong&gt;if the two methods are
-initialized by the same procedure&lt;/strong&gt;. New
-methods, heavily influenced by t-SNE, continue to emerge; for example
+(Uniform Manifold Approximation and Projection) superiority to other methods for
+dimensional reduction, including t-SNE, when working with single cell transcriptomics data. And early this February (01-02-2021),
+&lt;a href=&#34;https://www.nature.com/articles/s41587-020-00809-z&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Kobak et.al&lt;/a&gt;. presented a
+&lt;em&gt;Matters Arising&lt;/em&gt; from Becht.et.al. where they argue that t-SNE is not inferior
+to UMAP when it comes to preserving global structure, &lt;strong&gt;if the two methods are
+initialized by the same procedure&lt;/strong&gt;. New methods, heavily influenced by t-SNE,
+continue to emerge; for example
 &lt;a href=&#34;https://www.biorxiv.org/content/10.1101/2020.07.17.207993v1.full&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this&lt;/a&gt;
 variatonal autoencoder by Graving and Couzin. The t-SNE paper has $17996$
 citations (2021-02-20, Google Scholar), and would probably have more, had it not
