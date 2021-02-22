@@ -21,8 +21,8 @@
 in the previous reviews, my idea was to select something a bit more &amp;ldquo;up to date&amp;rdquo;
 this time. The path from this ambition to ending up reviewing a 13 year old
 paper is not obvious, but also not completely random. The t-SNE technique that
-van der Maaten and Hinton (yes it&amp;rsquo;s &lt;em&gt;the&lt;/em&gt; &lt;a href=&#34;https://en.wikipedia.org/wiki/Geoffrey_Hinton&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hinton&lt;/a&gt;) presented more than a decade ago is widely used and still
-spurs discussion. In 2019 &lt;a href=&#34;https://www.nature.com/articles/nbt.4314&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Becht
+van der Maaten and Hinton (yes it&amp;rsquo;s &lt;em&gt;the&lt;/em&gt; &lt;a href=&#34;https://en.wikipedia.org/wiki/Geoffrey_Hinton&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hinton&lt;/a&gt;) presented more than a decade ago is still widely used and continues to spur
+discussion. In 2019 &lt;a href=&#34;https://www.nature.com/articles/nbt.4314&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Becht
 et.al&lt;/a&gt; made an argument about UMAP&amp;rsquo;s
 (Uniform Manifold Approximation and Projection) superiority to other methods for
 dimensional reduction, including t-SNE, when working with single cell transcriptomics data. And early this February (01-02-2021),
