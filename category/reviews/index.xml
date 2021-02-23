@@ -201,7 +201,7 @@ about our system collapsing. Conveniently, we also get rid of the
 exponentials in the $q_{ij}$ expression, which reduces computational cost.&lt;/p&gt;
 &lt;p&gt;Gradients for t-SNE are given as:&lt;/p&gt;
 &lt;p&gt;$$
-\frac{\partial C}{\partial y_i} 4 \sum_j (p_{ij} - q_{ij})(y_i - y_j)(1+||y_i -
+\frac{\partial C}{\partial y_i} =  4 \sum_j (p_{ij} - q_{ij})(y_i - y_j)(1+||y_i -
 y_j||^2)^{-1}
 $$&lt;/p&gt;
 &lt;p&gt;The authors derive this gradient in Appendix A, though I found their procedure a bit
