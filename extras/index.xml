@@ -82,7 +82,12 @@
 &lt;/li&gt;
 &lt;li&gt;Slide 12
 &lt;ul&gt;
-&lt;li&gt;NA&lt;/li&gt;
+&lt;li&gt;Seurat &amp;raquo; &lt;a href=&#34;https://satijalab.org/seurat/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;link&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Scanpy &amp;raquo; &lt;a href=&#34;https://scanpy.readthedocs.io/en/stable/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;link&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;STUtility &amp;raquo; &lt;a href=&#34;https://ludvigla.github.io/STUtility_web_site/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;link&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;stLearn &amp;raquo; &lt;a href=&#34;https://github.com/BiomedicalMachineLearning/stLearn&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;link&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;SpatialExperiment &amp;raquo; &lt;a href=&#34;https://bioconductor.org/packages/release/bioc/html/SpatialExperiment.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;link&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Giotto &amp;raquo; &lt;a href=&#34;http://spatialgiotto.rc.fas.harvard.edu/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;link&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Slide 13
@@ -295,7 +300,7 @@ fluorescence in situ hybridization data &amp;raquo; DOI : &lt;a href=&#34;https:
 &lt;/li&gt;
 &lt;li&gt;Slide 48
 &lt;ul&gt;
-&lt;li&gt;Camilla Engblom Twitter Handle &amp;raquo; &lt;a href=&#34;https://twitter.com/camillaengblom&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;@camillaaengblom&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Camilla Engblom Twitter Handle &amp;raquo; &lt;a href=&#34;https://twitter.com/camillaengblom&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;@camillaengblom&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Camilla Engblom Publications &amp;raquo; &lt;a href=&#34;https://scholar.google.com/citations?user=lXDdWjAAAAAJ&amp;amp;hl=en&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Google Scholar&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
