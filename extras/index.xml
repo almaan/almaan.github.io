@@ -34,7 +34,7 @@
 &lt;/li&gt;
 &lt;li&gt;Slide 3
 &lt;ul&gt;
-&lt;li&gt;Spatially Resolved Transcriptomes—Next Generation Tools for Tissue Exploration &amp;raquo; &lt;a href=&#34;https://onlinelibrary.wiley.com/doi/full/10.1002/bies.201900221&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI 10.1002/bies.201900221&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Spatially Resolved Transcriptomes—Next Generation Tools for Tissue Exploration &amp;raquo; DOI &lt;a href=&#34;https://onlinelibrary.wiley.com/doi/full/10.1002/bies.201900221&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;10.1002/bies.201900221&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Slide 4
@@ -117,7 +117,7 @@
 &lt;/li&gt;
 &lt;li&gt;Slide 19
 &lt;ul&gt;
-&lt;li&gt;Single-cell and spatial transcriptomics enables probabilistic inference of cell type topography &amp;raquo; DOI : &lt;a href=&#34;https://www.nature.com/articles/s42003-020-01247-y&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI : 10.1038/s42003-020-01247-y&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Single-cell and spatial transcriptomics enables probabilistic inference of cell type topography &amp;raquo; DOI : &lt;a href=&#34;https://www.nature.com/articles/s42003-020-01247-y&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;10.1038/s42003-020-01247-y&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Slide 20
@@ -125,7 +125,7 @@
 &lt;li&gt;Moncada et al. &amp;raquo; DOI : &lt;a href=&#34;https://www.nature.com/articles/s41587-019-0392-8&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;10.1038/s41587-019-0392-8&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Seurat spatial and single cell data integration &amp;raquo; &lt;a href=&#34;https://satijalab.org/seurat/archive/v3.2/spatial_vignette.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;link&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;stereoscope GitHub &amp;raquo; &lt;a href=&#34;https://github.com/almaan/stereoscope&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/almaan/stereoscope&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;stereoscope paper &amp;raquo; &lt;a href=&#34;https://www.nature.com/articles/s42003-020-01247-y&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI : 10.1038/s42003-020-01247-y&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;stereoscope paper &amp;raquo; DOI : &lt;a href=&#34;https://www.nature.com/articles/s42003-020-01247-y&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;10.1038/s42003-020-01247-y&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;RCTD GitHub &amp;raquo; &lt;a href=&#34;https://github.com/dmcable/RCTD/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/dmcable/RCTD/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;RCTD paper &amp;raquo; DOI : &lt;a href=&#34;https://www.nature.com/articles/s41587-021-00830-w&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;10.1038/s41587-021-00830-w&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;cell2location GitHub &amp;raquo; &lt;a href=&#34;https://github.com/BayraktarLab/cell2location&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/BayraktarLab/cell2location&lt;/a&gt;&lt;/li&gt;
