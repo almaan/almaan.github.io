@@ -5,7 +5,7 @@
     <link>/extras/</link>
       <atom:link href="/extras/index.xml" rel="self" type="application/rss+xml" />
     <description>Extras</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 28 Jun 2018 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 30 Jul 2021 05:03:42 +0000</lastBuildDate>
     <image>
       <url>/images/icon_hu0976d26fdaec5d0ec6c053b09a4e039a_2013_512x512_fill_lanczos_center_2.png</url>
       <title>Extras</title>
@@ -13,11 +13,358 @@
     </image>
     
     <item>
-      <title></title>
+      <title>2021 EMBL course resources</title>
       <link>/extras/embl-info/</link>
-      <pubDate>Thu, 28 Jun 2018 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 30 Jul 2021 05:03:42 +0000</pubDate>
       <guid>/extras/embl-info/</guid>
-      <description>&lt;p&gt;Add your &lt;em&gt;content&lt;/em&gt; here&amp;hellip;&lt;/p&gt;
+      <description>&lt;p&gt;Here you will find links to the publications, resources, tools, and people mentioned in the lecture &lt;em&gt;&amp;ldquo;An Orientation in the Spatial Transcriptomics landscape&amp;rdquo;&lt;/em&gt; given at the virtual EMBL course &lt;a href=&#34;https://www.embl.org/about/info/course-and-conference-office/events/spa21-01/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;em&gt;Gene Expression at Spatial Resolution&lt;/em&gt;&lt;/a&gt;. The links are sorted according to which slide they relate to, listed in sequential order.&lt;/p&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;Slide 1
+&lt;ul&gt;
+&lt;li&gt;GitHub &amp;raquo; &lt;a href=&#34;https://github.com/almaan&#34;&gt;https://github.com/almaan&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Webpage &amp;raquo; &lt;a href=&#34;https://almaan.github.io&#34;&gt;https://almaan.github.io&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Twitter Handle &amp;raquo; &lt;a href=&#34;https://twitter.com/aalmaander&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;@aalmaander&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 2
+&lt;ul&gt;
+&lt;li&gt;NA&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 3
+&lt;ul&gt;
+&lt;li&gt;Spatially Resolved Transcriptomes—Next Generation Tools for Tissue Exploration &amp;raquo; &lt;a href=&#34;https://onlinelibrary.wiley.com/doi/full/10.1002/bies.201900221&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI 10.1002/bies.201900221&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 4
+&lt;ul&gt;
+&lt;li&gt;Method of the year 2020 &amp;raquo; DOI :  &lt;a href=&#34;https://www.nature.com/articles/s41592-020-01033-y&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;10.1038/s41592-020-01033-y&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 5
+&lt;ul&gt;
+&lt;li&gt;Spatially Resolved Transcriptomes—Next Generation Tools for Tissue Exploration &amp;raquo; DOI 10.1002/bies.201900221&lt;/li&gt;
+&lt;li&gt;Spatially resolved transcriptomics adds a new dimension to genomics &amp;raquo; DOI: 10.1038/s41592-020-01038-7&lt;/li&gt;
+&lt;li&gt;Museum of Spatial Transcriptomics &amp;raquo; &lt;a href=&#34;https://pachterlab.github.io/LP_2021/&#34;&gt;https://pachterlab.github.io/LP_2021/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 6
+&lt;ul&gt;
+&lt;li&gt;NA&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 7
+&lt;ul&gt;
+&lt;li&gt;NA&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 8
+&lt;ul&gt;
+&lt;li&gt;NA&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 9
+&lt;ul&gt;
+&lt;li&gt;Visium specifications &amp;raquo; &lt;a href=&#34;https://kb.10xgenomics.com/hc/en-us/articles/360035487572-What-is-the-spatial-resolution-and-configuration-of-the-capture-area-of-the-Visium-Gene-Expression-Slide-&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;link&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 10
+&lt;ul&gt;
+&lt;li&gt;10x Human Breast cancer data &amp;raquo; &lt;a href=&#34;https://support.10xgenomics.com/spatial-gene-expression/datasets/1.1.0/V1_Breast_Cancer_Block_A_Section_1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;link&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;10x Public data sets &amp;raquo; &lt;a href=&#34;https://support.10xgenomics.com/spatial-gene-expression/datasets&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;link&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 11
+&lt;ul&gt;
+&lt;li&gt;Spatial Deconvolution of HER2-positive Breast Tumors Reveals Novel Intercellular Relationships &amp;raquo; DOI : &lt;a href=&#34;https://www.biorxiv.org/content/10.1101/2020.07.14.200600v1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;10.1101/2020.07.14.200600&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 12
+&lt;ul&gt;
+&lt;li&gt;NA&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 13
+&lt;ul&gt;
+&lt;li&gt;NA&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 14
+&lt;ul&gt;
+&lt;li&gt;NA&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 15
+&lt;ul&gt;
+&lt;li&gt;NA&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 16
+&lt;ul&gt;
+&lt;li&gt;NA&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 17
+&lt;ul&gt;
+&lt;li&gt;NA&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 18
+&lt;ul&gt;
+&lt;li&gt;NA&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 19
+&lt;ul&gt;
+&lt;li&gt;Single-cell and spatial transcriptomics enables probabilistic inference of cell type topography &amp;raquo; DOI : &lt;a href=&#34;https://www.nature.com/articles/s42003-020-01247-y&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI : 10.1038/s42003-020-01247-y&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 20
+&lt;ul&gt;
+&lt;li&gt;Moncada et al. &amp;raquo; DOI : &lt;a href=&#34;https://www.nature.com/articles/s41587-019-0392-8&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;10.1038/s41587-019-0392-8&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Seurat spatial and single cell data integration &amp;raquo; &lt;a href=&#34;https://satijalab.org/seurat/archive/v3.2/spatial_vignette.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;link&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;stereoscope GitHub &amp;raquo; &lt;a href=&#34;https://github.com/almaan/stereoscope&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/almaan/stereoscope&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;stereoscope paper &amp;raquo; &lt;a href=&#34;https://www.nature.com/articles/s42003-020-01247-y&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI : 10.1038/s42003-020-01247-y&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;RCTD GitHub &amp;raquo; &lt;a href=&#34;https://github.com/dmcable/RCTD/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/dmcable/RCTD/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;RCTD paper &amp;raquo; DOI : &lt;a href=&#34;https://www.nature.com/articles/s41587-021-00830-w&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;10.1038/s41587-021-00830-w&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;cell2location GitHub &amp;raquo; &lt;a href=&#34;https://github.com/BayraktarLab/cell2location&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/BayraktarLab/cell2location&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;cell2location preprint &amp;raquo; DOI : &lt;a href=&#34;https://doi.org/10.1101/2020.11.15.378125&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;10.1101/2020.11.15.378125&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Tangram GitHub &amp;raquo; &lt;a href=&#34;https://github.com/broadinstitute/Tangram&#34;&gt;https://github.com/broadinstitute/Tangram&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Tangram preprint &amp;raquo; DOI : &lt;a href=&#34;https://www.biorxiv.org/content/10.1101/2020.08.29.272831v1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;10.1101/2020.08.29.272831&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 20
+&lt;ul&gt;
+&lt;li&gt;stereoscope GitHub &amp;raquo; &lt;a href=&#34;https://github.com/almaan/stereoscope&#34;&gt;https://github.com/almaan/stereoscope&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;stereoscope paper &amp;raquo; DOI : &lt;a href=&#34;https://doi.org/10.1038/s42003-020-01247-y&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;10.1038/s42003-020-01247-y&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 21
+&lt;ul&gt;
+&lt;li&gt;Developmental heart data source &amp;raquo; DOI: 10.1016/j.cell.2019.11.025&lt;/li&gt;
+&lt;li&gt;10x Mouse Brain Visium data &amp;raquo; &lt;a href=&#34;https://support.10xgenomics.com/spatial-gene-expression/datasets/1.1.0/V1_Adult_Mouse_Brain&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;link&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Mouse Brain Single Cell data &amp;raquo; &lt;a href=&#34;http://loom.linnarssonlab.org/dataset/cellmetadata/Mousebrain.org.level1/L1_Hippocampus.loom&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;link&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 22
+&lt;ul&gt;
+&lt;li&gt;Single-cell and spatial transcriptomics enables probabilistic inference of cell type topography &amp;raquo; DOI : &lt;a href=&#34;https://www.nature.com/articles/s42003-020-01247-y&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;10.1038/s42003-020-01247-y&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 23
+&lt;ul&gt;
+&lt;li&gt;NA&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 24
+&lt;ul&gt;
+&lt;li&gt;Robust decomposition of cell type mixtures in spatial transcriptomics &amp;raquo; DOI : &lt;a href=&#34;https://www.nature.com/articles/s41587-021-00830-w&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;10.1038/s41587-021-00830-w&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 25
+&lt;ul&gt;
+&lt;li&gt;Deep learning and alignment of spatially-resolved whole transcriptomes of single cells in the mouse brain with Tangram &amp;raquo; DOI : &lt;a href=&#34;https://www.biorxiv.org/content/10.1101/2020.08.29.272831v1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;10.1101/2020.08.29.272831&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 26
+&lt;ul&gt;
+&lt;li&gt;Open Problems in Single-Cell Analysis &amp;raquo; &lt;a href=&#34;https://openproblems.bio/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://openproblems.bio/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Spatial Decomposition task issue &amp;raquo; &lt;a href=&#34;https://github.com/openproblems-bio/openproblems/issues/233&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;link&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 27
+&lt;ul&gt;
+&lt;li&gt;NA&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 28
+&lt;ul&gt;
+&lt;li&gt;NA&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 29
+&lt;ul&gt;
+&lt;li&gt;SpatialDE GitHub &amp;raquo; &lt;a href=&#34;https://github.com/Teichlab/SpatialDE&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/Teichlab/SpatialDE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;SpatialDE paper &amp;raquo; DOI : &lt;a href=&#34;https://www.nature.com/articles/nmeth.4636&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;doi.org/10.1038/nmeth.4636&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;SVCA GitHub &amp;raquo; &lt;a href=&#34;https://github.com/damienArnol/svca&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/damienArnol/svca&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;SVCA paper &amp;raquo; DOI : &lt;a href=&#34;https://www.sciencedirect.com/science/article/pii/S2211124719311325&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;10.1016/j.celrep.2019.08.077&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;SPARK GitHub &amp;raquo; &lt;a href=&#34;https://github.com/xzhoulab/SPARK&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/xzhoulab/SPARK&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;SPARK paper &amp;raquo; DOI : &lt;a href=&#34;https://www.nature.com/articles/s41592-019-0701-7&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;10.1038/s41592-019-0701-7&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Gaussian Processes Info &amp;raquo; &lt;a href=&#34;https://distill.pub/2019/visual-exploration-gaussian-processes/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;link&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 30
+&lt;ul&gt;
+&lt;li&gt;NA&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 31
+&lt;ul&gt;
+&lt;li&gt;NA&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 32
+&lt;ul&gt;
+&lt;li&gt;NA&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 33
+&lt;ul&gt;
+&lt;li&gt;dentification of spatially associated subpopulations by combining scRNAseq and sequential
+fluorescence in situ hybridization data &amp;raquo; DOI : &lt;a href=&#34;https://www.nature.com/articles/nbt.4260&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;10.1038/nbt.4260&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 34
+&lt;ul&gt;
+&lt;li&gt;STARCH publication &amp;raquo; DOI : &lt;a href=&#34;https://iopscience.iop.org/article/10.1088/1478-3975/abbe99&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;10.1088/1478-3975/abbe99 &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;scHOT publication &amp;raquo; DOI : &lt;a href=&#34;https://www.nature.com/articles/s41592-020-0885-x&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;10.1038/s41592-020-0885-x&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 35
+&lt;ul&gt;
+&lt;li&gt;MULTILAYER publication &amp;raquo; DOI : &lt;a href=&#34;https://www.sciencedirect.com/science/article/pii/S2405471221001514&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;10.1016/j.cels.2021.04.008&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 36
+&lt;ul&gt;
+&lt;li&gt;Science publication &amp;raquo; DOI : &lt;a href=&#34;https://science.sciencemag.org/content/364/6435/89&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;10.1126/science.aav9776&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Splotch publication &amp;raquo; DOI : &lt;a href=&#34;https://www.biorxiv.org/content/10.1101/757096v1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;10.1101/757096&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 37
+&lt;ul&gt;
+&lt;li&gt;NA&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 38
+&lt;ul&gt;
+&lt;li&gt;NA&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 39
+&lt;ul&gt;
+&lt;li&gt;XFuse GitHub &amp;raquo; &lt;a href=&#34;https://github.com/ludvb/xfuse&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/ludvb/xfuse&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;stPlus GitHub &amp;raquo; &lt;a href=&#34;https://github.com/xy-chen16/stPlus&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/xy-chen16/stPlus&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;SpaGCN GitHub &amp;raquo; &lt;a href=&#34;https://github.com/jianhuupenn/SpaGCN&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/jianhuupenn/SpaGCN&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;RESEPT GitHub &amp;raquo; &lt;a href=&#34;https://github.com/OSU-BMBL/RESEPT&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/OSU-BMBL/RESEPT&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 40
+&lt;ul&gt;
+&lt;li&gt;Super-resolved spatial transcriptomics by deep data fusion (prepint) &amp;raquo; DOI : &lt;a href=&#34;https://www.biorxiv.org/content/10.1101/2020.02.28.963413v1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;10.1101/2020.02.28.963413 &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;XFuse GitHub &amp;raquo; &lt;a href=&#34;https://github.com/ludvb/xfuse&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/ludvb/xfuse&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 41
+&lt;ul&gt;
+&lt;li&gt;Squidpy &amp;raquo; &lt;a href=&#34;https://squidpy.readthedocs.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://squidpy.readthedocs.io/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 42
+&lt;ul&gt;
+&lt;li&gt;NA&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 43
+&lt;ul&gt;
+&lt;li&gt;NA&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 44
+&lt;ul&gt;
+&lt;li&gt;HER2 study code &amp;raquo; &lt;a href=&#34;https://github.com/almaan/her2st/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/almaan/her2st/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;HER2 study paper &amp;raquo; DOI : &lt;a href=&#34;https://www.biorxiv.org/content/10.1101/2020.07.14.200600v1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;10.1101/2020.07.14.200600&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 45
+&lt;ul&gt;
+&lt;li&gt;Swarbrick Lab &amp;raquo; &lt;a href=&#34;https://www.garvan.org.au/research/cancer/tumour-progression&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;link&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Human breast cancer single cell data &amp;raquo; DOI : &lt;a href=&#34;https://doi.org/10.5281/zenodo.4739739&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;10.5281/zenodo.4739739&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 46
+&lt;ul&gt;
+&lt;li&gt;NA&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 47
+&lt;ul&gt;
+&lt;li&gt;NA&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 48
+&lt;ul&gt;
+&lt;li&gt;Camilla Engblom Twitter Handle &amp;raquo; &lt;a href=&#34;https://twitter.com/camillaengblom&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;@camillaaengblom&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Camilla Engblom Publications &amp;raquo; &lt;a href=&#34;https://scholar.google.com/citations?user=lXDdWjAAAAAJ&amp;amp;hl=en&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Google Scholar&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 49
+&lt;ul&gt;
+&lt;li&gt;NA&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 50
+&lt;ul&gt;
+&lt;li&gt;NA&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 51
+&lt;ul&gt;
+&lt;li&gt;NA&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 52
+&lt;ul&gt;
+&lt;li&gt;HER2 study code &amp;raquo; &lt;a href=&#34;https://github.com/almaan/her2st/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/almaan/her2st/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;HER2 study paper &amp;raquo; DOI : &lt;a href=&#34;https://www.biorxiv.org/content/10.1101/2020.07.14.200600v1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;10.1101/2020.07.14.200600&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 53
+&lt;ul&gt;
+&lt;li&gt;Liver study code &amp;raquo; &lt;a href=&#34;https://github.com/almaan/ST-mLiver&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/almaan/ST-mLiver&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Liver study paper &amp;raquo; DOI &lt;a href=&#34;https://doi.org/10.1101/2021.01.11.426100&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;10.1101/2021.01.11.426100&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 54
+&lt;ul&gt;
+&lt;li&gt;NA&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 55
+&lt;ul&gt;
+&lt;li&gt;Liver study code &amp;raquo; &lt;a href=&#34;https://github.com/almaan/ST-mLiver&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/almaan/ST-mLiver&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Liver study paper &amp;raquo; DOI &lt;a href=&#34;https://doi.org/10.1101/2021.01.11.426100&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;10.1101/2021.01.11.426100&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 56
+&lt;ul&gt;
+&lt;li&gt;Liver study code &amp;raquo; &lt;a href=&#34;https://github.com/almaan/ST-mLiver&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/almaan/ST-mLiver&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Liver study paper &amp;raquo; DOI &lt;a href=&#34;https://doi.org/10.1101/2021.01.11.426100&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;10.1101/2021.01.11.426100&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 57
+&lt;ul&gt;
+&lt;li&gt;NA&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 58
+&lt;ul&gt;
+&lt;li&gt;Spatial Research Group &amp;raquo; &lt;a href=&#34;www.spatialresearch.org&#34;&gt;www.spatialresearch.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;10x &amp;raquo; &lt;a href=&#34;https://www.10xgenomics.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.10xgenomics.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;EMBL &amp;raquo; &lt;a href=&#34;https://www.embl.org&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.embl.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Tommaso Biancalani &amp;raquo; &lt;a href=&#34;https://scholar.google.it/citations?user=s_qd9x0AAAAJ&amp;amp;hl=en&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Google Scholar&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Dyalan Cable &amp;raquo; &lt;a href=&#34;https://scholar.google.com/citations?user=5XSOqjwAAAAJ&amp;amp;hl=en&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Google Scholar&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slide 60
+&lt;ul&gt;
+&lt;li&gt;GitHub &amp;raquo; &lt;a href=&#34;https://github.com/almaan&#34;&gt;https://github.com/almaan&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Webpage &amp;raquo; &lt;a href=&#34;https://almaan.github.io&#34;&gt;https://almaan.github.io&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Twitter Handle &amp;raquo; &lt;a href=&#34;https://twitter.com/aalmaander&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;@aalmaander&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
