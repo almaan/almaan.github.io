@@ -3,12 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/author/alma-anderson/</loc>
-    <lastmod>2021-02-20T10:53:05+01:00</lastmod>
+    <loc>/extras/embl-info/</loc>
+    <lastmod>2021-07-30T05:03:42+00:00</lastmod>
   </url>
   
   <url>
     <loc>/</loc>
+    <lastmod>2021-07-30T05:03:42+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/extras/</loc>
+    <lastmod>2021-07-30T05:03:42+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/alma-anderson/</loc>
     <lastmod>2021-02-20T10:53:05+01:00</lastmod>
   </url>
   
@@ -195,16 +205,6 @@
   <url>
     <loc>/talk/2020-04-22-emea/</loc>
     <lastmod>2020-04-22T12:09:43+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/rsc/embl-info/</loc>
-    <lastmod>2018-06-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/rsc/</loc>
-    <lastmod>2018-06-28T00:00:00+00:00</lastmod>
   </url>
   
 </urlset>
