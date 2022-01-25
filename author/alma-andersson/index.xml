@@ -1,0 +1,807 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Alma Andersson | almaan</title>
+    <link>/author/alma-andersson/</link>
+      <atom:link href="/author/alma-andersson/index.xml" rel="self" type="application/rss+xml" />
+    <description>Alma Andersson</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 20 Feb 2021 10:53:05 +0100</lastBuildDate>
+    <image>
+      <url>/author/alma-andersson/avatar_hu27f7dc34c9db8fd2b063f3fba6be9864_197873_270x270_fill_q75_lanczos_center.jpg</url>
+      <title>Alma Andersson</title>
+      <link>/author/alma-andersson/</link>
+    </image>
+    
+    <item>
+      <title>Paper Review | Visualizing Data using t-SNE</title>
+      <link>/post/2021-02-20-tsne/</link>
+      <pubDate>Sat, 20 Feb 2021 10:53:05 +0100</pubDate>
+      <guid>/post/2021-02-20-tsne/</guid>
+      <description>&lt;p&gt;Having covered two somewhat old papers &amp;ndash; at least by our field&amp;rsquo;s standards &amp;ndash;
+in the previous reviews, my idea was to select something a bit more &amp;ldquo;up to date&amp;rdquo;
+this time. The path from this ambition to ending up reviewing a 13 year old
+paper is not obvious, but also not completely random. The t-SNE technique that
+van der Maaten and Hinton (yes it&amp;rsquo;s &lt;em&gt;the&lt;/em&gt; &lt;a href=&#34;https://en.wikipedia.org/wiki/Geoffrey_Hinton&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hinton&lt;/a&gt;) presented more than a decade ago is still widely used and continues to spur
+discussion. In 2019 &lt;a href=&#34;https://www.nature.com/articles/nbt.4314&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Becht
+et.al&lt;/a&gt; made an argument about UMAP&amp;rsquo;s
+(Uniform Manifold Approximation and Projection) superiority to other methods for
+dimensional reduction, including t-SNE, when working with single cell transcriptomics data. And early this February (01-02-2021),
+&lt;a href=&#34;https://www.nature.com/articles/s41587-020-00809-z&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Kobak et.al&lt;/a&gt;. presented a
+&lt;em&gt;Matters Arising&lt;/em&gt; from Becht.et.al. where they argue that t-SNE is not inferior
+to UMAP when it comes to preserving global structure, &lt;strong&gt;if the two methods are
+initialized by the same procedure&lt;/strong&gt;. New methods, heavily influenced by t-SNE,
+continue to emerge; for example
+&lt;a href=&#34;https://www.biorxiv.org/content/10.1101/2020.07.17.207993v1.full&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this&lt;/a&gt;
+variatonal autoencoder by Graving and Couzin. The t-SNE paper has $17996$
+citations (2021-02-20, Google Scholar), and would probably have more, had it not
+become so widely known that people stopped citing it (and rather cites the
+analysis suites used to apply it). To put that number into context, that&amp;rsquo;s about
+4 citations a day, every day since published. With such an important paper, the
+temptation to review it became too large, and so here we are.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Paper Title&lt;/strong&gt; : Visualizing Data using t-SNE
+&lt;br&gt;
+&lt;strong&gt;Authors&lt;/strong&gt; : Laurens van der Maaten and Geoffrey Hinton
+&lt;br&gt;
+&lt;strong&gt;Published&lt;/strong&gt; : November 2008
+&lt;br&gt;
+&lt;strong&gt;Link&lt;/strong&gt; : &lt;a href=&#34;https://www.jmlr.org/papers/v9/vandermaaten08a.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;JMLR&lt;/a&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;In short, this paper presents a technique for dimensionality reduction that is
+specifically designed to offer better visualization of high dimensional data
+while also requiring less parameter tuning and being competitive
+performance-wise. The method, t-SNE (t-distributed Stochastich Neighborhood Embedding), is
+actually a modification an the earlier SNE (Stochastich Neighborhood Embedding)
+method, proposed in 2002 by Hinton and Roweis and designed for the same purpose. SNE
+however, the authors argue, constructs fairly good visualizations of high
+dimensional data, but has two big
+drawbacks : (1) It does not allow for convex optimization, and has a
+inconvenient cost function which is sensitive to hyperparameter choice; (2) it
+suffers from what the authors call a &amp;ldquo;crowding&amp;rdquo; problem (more on this later).&lt;/p&gt;
+&lt;p&gt;They also mention, and compare, t-SNE to seven other methods for dimensionality
+reduction. One of the authors main motivations for developing t-SNE was that the
+currently available techniques failed to perform well on real world data. Linear
+techniques are know for being notoriously bad at maintaining close local
+relationships between data points, rather focusing on placing distant points far
+away. The pre-existing non-linear techniques sought to remedy this, but failed
+to preserve &lt;em&gt;global and local&lt;/em&gt; structures when applied to real (noisy) data,
+even though performing well on artificial data.&lt;/p&gt;
+&lt;p&gt;The authors first present the older SNE technique to then discuss what sets
+t-SNE appart from this, a setup that I will follow as well. For convince,
+the same notation as the authors will be used: $x_i$ denotes data points in the higher
+dimensional space, $y_i$ in the lower dimensional space. Note, the $x_i$ values
+constitute our original data, the $y_i$ values are unknown, and what we seek to
+find the best fit for given our stated objective. We will also speak about
+probabilities, here $p$ and $q$ will be associated with high and low dimensional
+space respectively. As a final note, the authors use the terms &lt;em&gt;&amp;ldquo;conditional&amp;rdquo;&lt;/em&gt;
+and &lt;em&gt;&amp;ldquo;joint&amp;rdquo;&lt;/em&gt; probabilities in a kind of sloppy way, but I will keep their
+terminology for the sake of easy referencing.&lt;/p&gt;
+&lt;p&gt;Now, the core concept in SNE/t-SNE is to first think of &amp;ldquo;closeness&amp;rdquo; between two data
+points in terms of how likely they are to pick each other as &lt;em&gt;neighbors&lt;/em&gt;; a
+point &lt;em&gt;could&lt;/em&gt; any pick another point as it&amp;rsquo;s neighbor, but the &lt;em&gt;probability&lt;/em&gt; of these
+events differs. Then, we try to make the distributions over neighbors as similar
+as possible in high and low dimensional space, mathematically translating to
+minimizing their Kullback-Leibler Divergence (KLD).&lt;/p&gt;
+&lt;p&gt;In SNE the conditional probability that point $i$ would pick point $j$ as
+it&amp;rsquo;s neighbor is written as $p_{j|i}$ in high dimensional space, and $q_{j|i}$ in
+low dimensional space, with:&lt;/p&gt;
+&lt;p&gt;$$
+\begin{array}{ll}
+&amp;amp;p_{j|i} = \frac{\exp(-||x_i - x_j||^2 / 2\sigma_i^2)}{\sum_{k\neq i} \exp(-||x_i -
+x_k||^2/2\sigma_i^2)},\quad p_{i|i} = 0 \\&lt;br&gt;
+&amp;amp;q_{j|i} = \frac{\exp(-||y_i - y_j||^2 )}{\sum_{k\neq i} \exp(-||y_i -
+y_k||^2)},\quad q_{i|i} = 0
+\end{array}
+$$&lt;/p&gt;
+&lt;p&gt;The value $\sigma_i$ is indiricely determined by the user and the data. The user provides a
+desired perplexity value ($\rho$). Once the perplexity is given $\sigma_i$ is
+given by the value that gives:&lt;/p&gt;
+&lt;p&gt;$$
+\rho = 2^{H(P_i)}, \quad H(P_i) = - \sum_j p_{j|i}\log_2 p_{j|i}
+$$&lt;/p&gt;
+&lt;p&gt;The $H(P_i)$ function is as you might notice the &lt;em&gt;entropy&lt;/em&gt; of the neighborhood
+distribution for point $i$. Entropy can be interpreted in many ways, but here
+it&amp;rsquo;s helpful to think of it as the &amp;ldquo;peakiness&amp;rdquo; of your distribution, i.e.,
+whether the probability mass is evenly spread or just found at a few
+concentrated sites. Meaning that, with a higher perplexity we have a higher
+entropy and the probability of picking a neighbor is more spread out, i.e., we
+expect more neighbors. In fact, the perplexity can be thought of as an estimate
+of the expected number of neighbors each point has, to see why this is, imagine
+you have nine points in a $3\times 3$ grid, and the probability of that the
+center point $i$ picks one of the eight points as it&amp;rsquo;s neighbor is set to: $0$ for the
+corner points and $1/4$ for the remaining ones. Then the perplexity becomes:&lt;/p&gt;
+&lt;p&gt;$$
+P(P_i) = 2^{-H(P_i)}= 2^{-(4\cdot 0 + 4\cdot 0.25 * \log_2 0.25)} = 2^{1\cdot\log_2(4)} = 4
+$$&lt;/p&gt;
+&lt;p&gt;Which makes perfect sense, since we said that the center point only could pick
+the four non-corners as it&amp;rsquo;s neighbors. Actually, we could even plot the
+perplexity as a function of the corner points probability value:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./imgs/nn.png&#34; alt=&#34;perplexity by prob&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The number of expected neighbors will then obviously be largest if all points
+have equal probability (that is, $\frac{1}{8}$). For &lt;strong&gt;t-SNE&lt;/strong&gt; the authors
+recommend to use perplexity values between 5-50, but this is highly dependent on
+the data.&lt;/p&gt;
+&lt;p&gt;Having clarified how we calculate $\sigma_i$ and what the perplexity is, you
+might now ask why is there no $\sigma$ in the definition of $q_{j|i}$? In fact
+there is, but it&amp;rsquo;s static and set to $1/\sqrt{2}$. Hence ,since $(1/\sqrt{2})^2
+\cdot 2 = 1$ we end up with the above expression for $q_{j|i}$.&lt;/p&gt;
+&lt;p&gt;So why are we using these forms for the conditional probabilities then? Well, the
+observant reader have probably noted the similarity of the probabilities to the pdf
+(probability density function) of the Univariate Gaussian. And indeed, there is
+a relationship between the two. The conditional probabilities above represent: &lt;em&gt;&amp;ldquo;the probability that point
+$i$ would pick point $j$ as its neighbor
+if neighbors were picked in proportion to their probability density under a
+Gaussian centered at point $i$.&amp;quot;&lt;/em&gt;. This is makes sense, but has one disadvantage;
+the conditional probabilities (defined as above) are not symmetric, meaning that
+in general $p_{j|i} \neq p_{i|j}$ (and the same for $q$). And why does this
+matter again? Well, it renders a cost function ($C$) that is hard to optimize:&lt;/p&gt;
+&lt;p&gt;$$
+\begin{array}{l}
+&amp;amp;C = \sum_i KL(P_i||Q_i) = \sum_i\sum_j p_{j|i}\log \frac{p_{j|i}}{q_{j|i}}\rightarrow\\&lt;br&gt;
+&amp;amp;\rightarrow \frac{\partial C}{\partial y_i} = 2 \sum_j (p_{j|i} - q_{j|i} + p_{i|j}- q_{i|j})(y_i-y_j)
+\end{array}
+$$&lt;/p&gt;
+&lt;p&gt;One intuitive solution to this issue is to simply use &lt;em&gt;joint&lt;/em&gt; rather than conditional probabilities:&lt;/p&gt;
+&lt;p&gt;$$
+\begin{array}{ll}
+&amp;amp;p_{ij} = \frac{\exp(-||x_i - x_j||^2 / 2\sigma_i^2)}{\sum_k\sum_{l\neq k} \exp(-||x_k -
+x_l||^2/2\sigma_i^2)},\quad  p_{ii} = 0 \\&lt;br&gt;
+&amp;amp;q_{ij} = \frac{\exp(-||y_i - y_j||^2)}{\sum_k\sum_{l\neq k} \exp(-||y_k -
+y_l||^2)},\quad q_{ii} = 0
+\end{array}
+$$&lt;/p&gt;
+&lt;p&gt;These joint probabilities are symmetric, and thus provide more friendly
+gradients. So, problem solved? No, unfortunately this doesn&amp;rsquo;t quite make the
+cut. The above definition of the joint probability, in high dimensional space, is
+sensitive to otuliers. If  $x_i$ was an outlier it would have very small $p_{ij}$ values for
+all $x_j$&amp;rsquo;s, meaning its position wouldn&amp;rsquo;t be well determined by the remaining
+data. To circumvent this we discard the previous definition of the joint distribution
+(in high dimensional space) and instead use the (also symmetric) alternative:&lt;/p&gt;
+&lt;p&gt;$$ p_{ij} = \frac{p_{j|i} + p_{i|j}}{2n}$$&lt;/p&gt;
+&lt;p&gt;This means that $\sum_j p_{ij} &amp;gt; \frac{1}{2n}$, which will ensure that every
+$x_i$ have a significant contribution to the cost function, meaning it&amp;rsquo;s
+placement in the low dimensional space actually matters now. Excellent.&lt;/p&gt;
+&lt;p&gt;Finally, thanks to our symmetric joint probabilities we end up with &amp;ldquo;friendlier&amp;rdquo;
+gradients that are more convenient to use:&lt;/p&gt;
+&lt;p&gt;$$
+\frac{\partial C}{\partial y_i} = 4\sum_j (p_{ij} - q_{ij})(y_i - y_j)
+$$&lt;/p&gt;
+&lt;p&gt;Reducing the computational complexity of the gradients speeds up the learning
+process, but it does &lt;strong&gt;not&lt;/strong&gt; avoid the second problem with SNE, &lt;em&gt;crowding&lt;/em&gt; of
+data. In a nutshell, the crowding problem arise because we run out of space when
+we go from high to low dimensions. As the dimensions shrinks it becomes increasingly hard to
+keep moderately distant points away from each other while also making sure they
+reside near their closest neighbors. The authors put it very well in the
+sentence: &lt;em&gt;&amp;quot;[..], in ten dimensions it is possible to have eleven data points that
+are mutually equidistant and there is no way to model this faithfully in a
+two-dimensional map.&amp;quot;&lt;/em&gt;. As a consequence data points at a moderate distance from
+$x_i$ are placed &lt;strong&gt;too&lt;/strong&gt; far away; if this occurs for every data point, then it
+will eventually collapse the system into the center of the map.&lt;/p&gt;
+&lt;p&gt;Other approaches had already been suggested to overcome the crowding problem,
+but the authors found these efficient, remarking on how &amp;ndash; in some methods &amp;ndash; early separation of point
+clusters rarely could be revoked, even though incorrect. Evidently, they saw
+room for improvements, and thus the idea of t-SNE was born.&lt;/p&gt;
+&lt;p&gt;The joint probabilities in t-SNE are given as:&lt;/p&gt;
+&lt;p&gt;$$\begin{array}{l}
+&amp;amp;p_{ij} = \frac{p_{j|i} + p_{i|j}}{2n}, \quad p_{j|i} = \frac{\exp(-||x_i - x_j||^2 / 2\sigma_i^2)}{\sum_k\sum_{l\neq k} \exp(-||x_k -x_l||^2/2\sigma_i^2)}, \quad p_{i|i} = 0 \\&lt;br&gt;
+&amp;amp;q_{ij} = \frac{(1+||y_i - y_j||^2)^{-1}}{\sum_k\sum_{l\neq k} (1+||y_k-y_l||^2)^{-1}}, \quad q_{ii}=0
+\end{array}$$&lt;/p&gt;
+&lt;p&gt;$p_{ij}$ is the same as for the symmetric SNE, but the $q_{ij}$ expression
+has changed; and albeit similar to SNE, the modifications are &lt;strong&gt;imperative&lt;/strong&gt; for
+the superiority of t-SNE. The new form of $q_{ii}$ also relates to a statistical
+distribution, namely the Student&amp;rsquo;s &lt;strong&gt;t-distribution&lt;/strong&gt; with one degree of freedom
+(a.k.a. Cauchy distribution). The Cauchy distribution has the pdf:&lt;/p&gt;
+&lt;p&gt;$$
+p(x) = \frac{1}{\pi\gamma}\Bigg{[}1+ \Big{(}\frac{x-x_0}{\gamma}\Big{)}^2\Bigg{]}^{-1}, \quad \gamma &amp;gt;0
+$$&lt;/p&gt;
+&lt;p&gt;Furthermore, the Cauchy distribution has heavier tails than the Gaussian distribution, which
+better accommodates for outlier values; this allows us to place points with moderate
+distances in the high-dimensional space very far away without having to worry
+about our system collapsing. Conveniently, we also get rid of the
+exponentials in the $q_{ij}$ expression, which reduces computational cost.&lt;/p&gt;
+&lt;p&gt;Gradients for t-SNE are given as:&lt;/p&gt;
+&lt;p&gt;$$
+\frac{\partial C}{\partial y_i} =  4 \sum_j (p_{ij} - q_{ij})(y_i - y_j)(1+||y_i -
+y_j||^2)^{-1}
+$$&lt;/p&gt;
+&lt;p&gt;The authors derive this gradient in Appendix A, though I found their procedure a bit
+unclear and could recommend
+&lt;a href=&#34;http://pages.di.unipi.it/errica/assets/files/sne_tsne.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this&lt;/a&gt; resource for an
+alternative and very straightforward explanation.&lt;/p&gt;
+&lt;p&gt;As a consequence of the modifications from the old SNE technique, t-SNE manages to
+model both &lt;strong&gt;dissimilar data points as far apart and similar data points as
+nearby&lt;/strong&gt;, which is just want we want.&lt;/p&gt;
+&lt;p&gt;The authors suggest to use a &lt;em&gt;momentum term&lt;/em&gt; during the gradient descent
+procedure. The update being:&lt;/p&gt;
+&lt;p&gt;$$
+\mathcal{Y}^{(t)} = \mathcal{Y}^{(t-1)} + \eta \frac{\partial
+C}{\partial\mathcal{Y}} + \alpha(t)(\mathcal{Y}^{t-1} - \mathcal{Y}^{t-1})
+$$&lt;/p&gt;
+&lt;p&gt;Where $\mathcal{Y}$ is the complete set of lower dimensional points. They
+further suggest two &amp;ldquo;tricks&amp;rdquo; to improve the results. The first one being
+referred to as &lt;em&gt;&amp;ldquo;early compression&amp;rdquo;&lt;/em&gt;, where they force map points ($y_i$) to stay together
+in the initial phase of the optimization, implemented by adding an $L_{2}$
+penalty to the cost function (proportional to the sum of squared distances from
+the center). The second trick is &lt;em&gt;&amp;ldquo;early exaggeration&amp;rdquo;&lt;/em&gt; where they &amp;ldquo;enlarge&amp;rdquo; the
+$p_{ij}$ value early on, which makes the $q_{ij}$ values too small to properly
+model their corresponding $p_{ij}$ value and thus encourage larger $q_{ij}$
+values (when appropriate); the result being that tight clusters tend to form.
+Tight clusters means more open space, and increase the clusters&#39; freedom of
+movement, allowing them to find a favorable global organization.&lt;/p&gt;
+&lt;p&gt;Once the theory behind t-SNE has been presented, the authors proceed to compare
+their method to seven others, using five different data sets. I will not really
+devote too much time to this as the results are best gauged by visual inspection
+and I don&amp;rsquo;t have the rights to reproduce any figures. The general trends are
+however obvious, clusters in the t-SNE plot are better separated, arrange more
+logically in relation to each other (e.g., in the MNIST data sets, the clusters
+for 3&amp;rsquo;s and 5&amp;rsquo;s are close as well as clusters of 9&amp;rsquo;s and 4&amp;rsquo;s), and they also
+captures the axes of variance very well. The image below shows a t-SNE
+visualization of some spatial transcriptomics data (30k dimensions) compressed
+into two dimensions using t-SNE, data points are colored according to expression
+levels of a certain marker.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./imgs/tsne.png&#34; alt=&#34;tsne&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The authors then continue to state that their method runs efficiently with up to
+$10000$ data points, but as the computational and memory complexity of t-SNE is
+$\mathcal{O}(n^2)$, performance gets a bit shaky after this. Their solution is
+to only use a subset of the data (hopefully representative of the whole
+population). The authors &amp;ndash; and I fully agree that this is a must &amp;ndash; are very keen
+to still use the complete data set somehow to learn the correct character of the
+underlying manifold. Thus, what they do is that they compute their $p_{ij}$
+values from the complete data set, but only embed a subset in the low
+dimensional space. To do this, they randomly select their
+landmark points (the subset that will be used), construct a neighborhood graph
+including all points, and simulate a random walk from each landmark; the random
+walk is terminated when a different landmark point is reached. The fraction of
+times landmark $i$ lands at landmark $j$ gives the conditional probability
+$p_{j|i}$. Illustrating their results on the MNIST data set (60000 total data
+points, 6000 in the subset), the results looks decent; but MNIST is also a
+relatively easy data set to work with.&lt;/p&gt;
+&lt;p&gt;The next part of the paper compares t-SNE to other methods for dimensionality
+reduction, I will actually skip this part - even though it is interesting -
+since a lot of the methods they compare to are a bit &amp;ldquo;out of date&amp;rdquo; and I don&amp;rsquo;t
+have enough knowledge about them to put them into proper context or evaluate the
+authors&#39; claims. What I can say, is that the authors more or less claim
+superiority to all the other methods, being: Sammon mapping, Isomap, LLE, CCA,
+SNE, MVU, and Laplacian Eigenmaps. From the results and their discussion, it
+seems like they have good grounds for these claims.&lt;/p&gt;
+&lt;p&gt;Something i deem slighlty more interesting, is the last part of the paper, where
+weaknesses of t-SNE are examined. The authors themselves identify three
+potential weaknesses of their method:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;em&gt;Dimensionality reduction for other purposes&lt;/em&gt;: the authors say that they have
+not examined performance of t-SNE when the low dimensional space is supposed
+to be higher than 2 or 3 dimensions. It&amp;rsquo;s likely that if we want the output
+to be in higher dimensions ($d&amp;gt;3$) a different degree of freedom is required
+for the Student&amp;rsquo;s t-distribution.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Curse of intrinsinc dimensionality&lt;/em&gt; : since euclidean distances are used,
+t-SNE implicitly assumes a local linearity of the data manifold. If the data
+has a high intrinsic dimensionality and is highly variable, this assumption
+might not hold. They believe that the issue can be mitigated by using a
+pre-processing step that compresses the data more efficiently and reduces the
+variance, for example an autoencoder.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Non-convexity of the t-SNE cost function&lt;/em&gt; : The cost function of t-SNE is
+still not convex (just like SNE), and thus requires a choice of several optimization parameters.
+Still, the authors show that t-SNE is not too sensitive to hyperparameter
+choice and that robust results are obtained. They also argue &amp;ndash; and I&amp;rsquo;m inclined to
+agree &amp;ndash; that a local optimum of a cost function fit for our objectives is
+better than a global optimum of a cost function that is ill-suited for our
+task. I guess the real question actually is how poor the cost function of
+other dimensionality reduction techniques really are compared to t-SNE&amp;rsquo;s.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;And by that we have, with highly varying depth, walked through the different
+parts of the paper. It was a true pleasure reading the paper this thoroughly, it
+made me reflect and think quite a lot. t-SNE might be an &amp;ldquo;old technique&amp;rdquo; by now,
+but its simplicity is still appealing (to me t-SNE is way more intuitive than
+UMAP). Worth mentioning is that the technique have been &amp;ldquo;enhanced&amp;rdquo; several times
+since its birth, most prominent is perhaps the Barnes-Hut approximation that
+reduces run time to $\mathcal{O}(N\log N)$ (the scikit implementation uses
+this). For a record of t-SNE&amp;rsquo;s development throughout the years I would refer to
+Laurens van der Maaten&amp;rsquo;s &lt;a href=&#34;https://lvdmaaten.github.io/tsne/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;webpage&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Paper Review | Normalization and variance stabilization of single-cell RNA-seq data using regularized negative binomial regression</title>
+      <link>/post/2021-01-31-nbreg/</link>
+      <pubDate>Sun, 31 Jan 2021 12:47:31 +0100</pubDate>
+      <guid>/post/2021-01-31-nbreg/</guid>
+      <description>&lt;p&gt;For this bi-weekly paper review, my choice fell upon a paper that I&amp;rsquo;ve skimmed
+through multiple times before, but never gave the proper read-through it
+deserves. It was a definite given when I started to curate a list of papers that
+I wanted to include in this series of reviews. Not only do I find it to be an
+elegant and well-composed paper, but it has had nothing but an /imperative/ influence
+on the RNA-seq based analysis these last years. In the paper, they present a model for
+normalization (and variance stabilization) of single-cell RNA-seq
+data, which now has become widely adopted within the community. Almost every paper not
+focusing on method development that I&amp;rsquo;ve stumbled across, use the
+&amp;ldquo;&lt;em&gt;sctransform&lt;/em&gt;&amp;rdquo; package or derivatives of it to normalize scRNA-seq data. Thus,
+without further ado let us begin.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Paper Title :&lt;/strong&gt; &lt;em&gt;Normalization and variance stabilization of single-cell RNA-seq data using regularized negative binomial regression&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Authors :&lt;/strong&gt; Christoph Hafemeister and Rahul Satija&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Published&lt;/strong&gt; 23 December 2019&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;doi :&lt;/strong&gt; &lt;a href=&#34;https://doi.org/10.1186/s13059-019-1874-1&#34;&gt;https://doi.org/10.1186/s13059-019-1874-1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Review :&lt;/strong&gt; Anyone who has ever worked with single cell RNA-seq data knows that
+before any &amp;ldquo;flashy and cool&amp;rdquo; results can be extracted, we need to apply some
+pre-processing steps to our data. Aside from filtering for low quality
+observations or irrelevant features, the very first step - and perhaps most
+important - tends to be &lt;strong&gt;normalization&lt;/strong&gt; of the data. Normalization is a dead
+given in any analysis workflow, but let us just take one step back and ask why?
+Why do we care about normalization, why can&amp;rsquo;t we just &amp;ldquo;jump right at it&amp;rdquo;?&lt;/p&gt;
+&lt;p&gt;Probing our data with the right tools will allow us to identify cell types and
+cell states as well as cell-to-cell variations. However if we aren&amp;rsquo;t careful &lt;em&gt;technical
+factors&lt;/em&gt; might confound these results, making us come to incorrect and false
+conclusions regarding the patterns in our data. One technical factor that has a
+huge influence on the result of our downstream analysis is the &lt;em&gt;sequencing
+depth&lt;/em&gt;. For example, imagine that we have two cell types &lt;em&gt;A&lt;/em&gt; and &lt;em&gt;B&lt;/em&gt;, where
+cells of &lt;em&gt;A&lt;/em&gt; in general have higher transcriptional activity than those of &lt;em&gt;B&lt;/em&gt;.
+Now if we were to compare the (raw and unprocessed) expression of a houskeeping
+gene between cells from the two types, it would be listed as upregulated
+in &lt;em&gt;A&lt;/em&gt;, even though we expect all housekeeping genes to be of approximately equal relative
+expression across cell types. This is of course undesireable, and we
+therefore attempt to normalize the data, in order to remove any technical variation
+while preferably maintaining biological differences.&lt;/p&gt;
+&lt;p&gt;The authors define two &amp;ldquo;objectives&amp;rdquo; or criteria, that should hold for a
+single-cell data set to be considered sucessfully normalized:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Normalized expression should be uncorrelated with sequencing depth of cells.&lt;/li&gt;
+&lt;li&gt;Variance of a normalized gene (across cells) should not be affected by gene
+abundance or sequencing depth.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;In contrast to the two previously existing paradigms of using either
+cell-specific scaling factors or probabilistic approaches they consider their
+approach as more of a &lt;em&gt;statistical&lt;/em&gt; approach, distinct from the others. I would
+perhaps say that their strategy could fit into to the set of probabilistic approaches,
+but that&amp;rsquo;s a minor detail.&lt;/p&gt;
+&lt;p&gt;The method they present builds on a generalized linear model (GLM) where they
+use a &lt;em&gt;constrained negative binomial&lt;/em&gt; error model, with sequencing depth as a
+covariate, and a log-link function for the mean.&lt;/p&gt;
+&lt;p&gt;After evaluating different error models such
+as: an unconstrained Poisson, a Negative Binomial and a Zero Inflated Negative
+Binomial (ZINB), they noticed that the Poisson was not flexible enough, while the
+unconstrained NB and ZINB models were prone to overfitting. Therefore, as
+is common in several bulk normalization methods, they decided to regularize
+the model parameters by &lt;em&gt;pooling information&lt;/em&gt; from genes with similar mean
+expression values, resulting in a &lt;strong&gt;regularized negative binomial regression&lt;/strong&gt;.
+The constrained part is one of the model&amp;rsquo;s key features, the other one being to
+include the sequencing depth as a covariate. We will soon come back to the
+regularization, but let us first just briefly look at their GLM model:&lt;/p&gt;
+&lt;p&gt;$$ \log(E[x_{gc}]) = \log(\mu_{gc}) = \beta_{0g} + \beta_{1g} \log_{ 10 }(m_c) $$&lt;/p&gt;
+&lt;p&gt;Where $x_{gc}$ is the expression of gene $g$ in cell $c$, and $m_{c}$ is the
+library size used as a proxy for sequencing depth.&lt;/p&gt;
+&lt;p&gt;In short, this means that the authors make the implicit assumption that &lt;strong&gt;most
+genes are not differentially expressed&lt;/strong&gt;; genes have a common baseline
+($\beta_{0g}$) and differences across cells will mainly be due to their varying
+library size (influence controlled by $\beta_{1g}$).&lt;/p&gt;
+&lt;p&gt;The negative binomial has one more parameter that we need to pay attention to,
+the dispersion parameter $\theta$ which gives us the variance of our data. That
+is, if:&lt;/p&gt;
+&lt;p&gt;$$ x \sim NB(\mu,\theta)$$&lt;/p&gt;
+&lt;p&gt;then&lt;/p&gt;
+&lt;p&gt;$$E[x] = \mu, \quad Var[x] = \mu + \frac{\mu^2}{\theta}$$&lt;/p&gt;
+&lt;p&gt;Interestingly, the authors convincingly show that if we were to learn one set of
+parameters for each gene, these will be severely overfitted. What really made me
+appreciate the prevalance of this overfitting, was the results they present in
+Figure 2 (included below).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./imgs/figure2.png&#34; alt=&#34;figure2&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In the top row they show the estimated parameter values plotted as a function of
+gene mean; in a good model we would expect to have similar parameter values for
+genes with similar mean values. In the bottom row, they fit their GLM model to a
+random subsets of the data and assessed the variance of the parameter values (in
+a bootstrap fashion), showing how the variance (red dots) was very high, especially for
+low and medium expressed genes.&lt;/p&gt;
+&lt;p&gt;To remedy this issue of overfitting, they &lt;em&gt;regularize&lt;/em&gt; their model, though not
+using the regularization terms that perhaps most of our familiar with like a
+$l_1$ or $l_2$ penalty. Instead they pool information from several genes to make
+more robust estimates. They first fit one GLM to each gene, &lt;strong&gt;but&lt;/strong&gt; then proceed to
+apply kernel regression to the resulting parameter estimates. The intent being
+to learn regularized parameters that depend on a gene&amp;rsquo;s average expression. The
+blue dots in panel B of the figure above show the variance after using this
+regularized approach; as you can see the variance in parameter estimates is
+significantly reduced.&lt;/p&gt;
+&lt;p&gt;Though, we still have some work left to do before our data is normalized. Having
+obtained the set of regularized parameters, one applies this regression model to
+the data in order to compute the residuals ($r_{gc}$).&lt;/p&gt;
+&lt;p&gt;$$ r_{gc} = x_{gc} - \mu_{gc}, \quad \mu_{gc} = \exp[\beta_{0g}+ \beta_{1g}\log_{10}(m_c)] $$&lt;/p&gt;
+&lt;p&gt;The residuals represent the difference between the response
+estimated mean and the observed expression value. But as one might remember, for the
+negative binomial, the variance can differ between genes even though they have
+the same mean ($\mu$), an effect of the dispersion parameter $\theta$. Thus, we will
+not use the &lt;em&gt;raw&lt;/em&gt; residuals, but what is known as the &lt;em&gt;Pearson residuals&lt;/em&gt; ($z_{gc}$),
+which account for the gene-specific variation term:&lt;/p&gt;
+&lt;p&gt;$$ z_{gc} = \frac{r_{gc}}{\sigma_{gc}}, \quad \sigma_{gc} = \sqrt{\mu_{gc} +
+\frac{\mu_{gc}^2}{\theta_g}} $$&lt;/p&gt;
+&lt;p&gt;This transformation presents the residuals in units of standard deviations,
+correcting for the specific gene variance. Implementationwise they also clip
+their $z_{gc}$ values to be less than $\sqrt{N}$ (where $N = $ number of cells),
+in order to &amp;ldquo;reduce the impact of extreme outliers&amp;rdquo;. This value seems to have
+been determined fairly empirically.&lt;/p&gt;
+&lt;p&gt;The Pearson residuals are &lt;strong&gt;treated as normalized expression levels&lt;/strong&gt;;
+the idea being that we&amp;rsquo;ve now regressed out any contribution from the sequencing
+depth to the observed expression levels. Using Pearson residuals has one
+additional benefit, being that the transformation we apply to compute them is inherently
+&lt;em&gt;variance-stabilizing&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;The image below is a merge between Figure 1C-E and Figure 3A-B and requires a
+bit of explanation in order to make sense. The curves represent the expression
+values as a function of cell UMI count where the genes have been divided into
+six groups based on their average expression in the data set. The six groups are
+not equally sized, but represent bins with equal width spanning the expression
+range. The bottom bar graphs are slightly more complex; the same six gene groups
+are used, and the cells are divided into five equally-sized groups with
+increasing average sequencing depth (group 1 having the highest value). Next,
+they calculated the total variance in each gene to then see how much each cell
+group contributed to this value. In perfectly normalized data, one would expect
+to see an equal contribution (here $20\%$) between the cell groups, as gene
+expression should be uncorrelated with sequencing depth (criterion 1 from their
+&amp;ldquo;objectives&amp;rdquo;).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./imgs/res.png&#34; alt=&#34;compilation&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Comparing the use of Pearson residuals with raw UMI counts and
+log-normaliztion, we observe the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Using raw UMI counts, a clear correlation between sequencing depth and gene
+expression in all ranges of gene expression is present. Log-normalization
+mitigate this issue among lowly expressed genes (group 4-5), but it persists
+in the high and medium expressed genes. The regularized negative binomial
+normalization renders values near completely independent (a horizontal line)
+of the sequencing depth, only very highly expressed genes still show some
+dependence; the authors claim that this is likely due to very few genes of
+such expression being present in the data and the regularization process thus
+becomes less robust.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;There&amp;rsquo;s an unequal variance contribution in the two alternative approaches.
+One example that the authors highlight is how cells with low UMI counts have a
+&lt;em&gt;disproportional influence&lt;/em&gt; on the variance among high-abundance genes in the log-normalization
+method. Something that might dampen the contribution from other gene groups.
+In the regularization based method, we see a very - almost surprisingly -
+homogeneous distribution of the variance.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The authors also, which I appreciate, show how the normalization can impact the
+downstream results as well. The most striking example - in my opinion - is when
+they compare outcomes of a DE (Differential Expression) analysis. They construct
+a simple but clever experiment, where they first grabbed all CD14+ monocytes (5551
+cells) from the PBMC data set they use throughout the paper. They then split
+this set into two equally-sized (and mutually exhaustive) subsets, followed by
+downsampling of the UMIs in &lt;em&gt;one of the subsets&lt;/em&gt;, giving them $50\%$ of their
+original UMI counts but with the same distribution as before across the genes. They then
+subjected the two groups to a &lt;em&gt;t&lt;/em&gt;-test in order to find DE genes. Obviously,
+since these are cells from the same population, we expect zero DE genes if our
+data is properly normalized. As you can see in the figure below (modified Figure
+6E), this was not quite the case for the log-normalized data:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./imgs/de.png&#34; alt=&#34;de-genes&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Rather than finding zero DE genes, using log-normalization gave us $2331$ of them. The
+regularized negative binomial regression wasn&amp;rsquo;t perfect either, but it gave us
+$11$ false positives, about $0.5\%$ of $2331$. The authors also point out that
+these $11$ genes are all highly expressed genes, where we know the
+regularization process had some issues. They also looked into masking of true DE
+genes between populations of different sequencing depths and showed how
+log-normalization can give some weird results in these cases (incorrect
+assignment of DE genes) while their approach seemed to give the expected
+results.&lt;/p&gt;
+&lt;p&gt;The paper contains some other interesting results, but what I&amp;rsquo;ve presented above
+captures the &amp;ldquo;geist&amp;rdquo; of their method and is - at least to me - convincing
+enough. Thus, I&amp;rsquo;d like to focus a bit on their implementation.&lt;/p&gt;
+&lt;p&gt;First I should say that the claim (in the abstract) that their procedure &amp;ldquo;&lt;em&gt;omits
+the need for heuristic steps including psedocount addition or
+log-transformation&lt;/em&gt;&amp;rdquo;, might be a bit of a stretch. Indeed, they don&amp;rsquo;t use a
+pseudocount in a log-transformation, but they use a variant of the geometric
+mean (more robust than the arithmetic mean to outliers) when computing gene
+average expression:&lt;/p&gt;
+&lt;p&gt;$$\exp(\frac{1}{|C|}\sum_{c\in C} \log(x_{gc}+\varepsilon)) - \varepsilon $$&lt;/p&gt;
+&lt;p&gt;where $\varepsilon$ is &amp;ldquo;&lt;em&gt;a small fixed value to avoid $\:\log(0)$&lt;/em&gt;&amp;rdquo;, which they set
+to $\varepsilon = 1$ after trying several values in the range $[0.0001,1]$. In
+my ears this sounds an awful lot like a pseudocount, but again, minor detail.&lt;/p&gt;
+&lt;p&gt;The most time-consuming step, as expected, is to fit a GLM to each gene (before
+the kernel regression). As the whole idea with the smoothing is to learn a
+&lt;em&gt;mapping between average expression and parameter value&lt;/em&gt;, they reason that it
+should be sufficient to use a subset of the genes for this procedure (I agree). To
+properly sample the range of gene means they discard uniform sampling in favor
+of a categorical sampling with each gene&amp;rsquo;s probability of being sampled defined
+as:&lt;/p&gt;
+&lt;p&gt;$$ p_g \propto \frac{1}{\log_{10}(\bar{x}_g)}$$&lt;/p&gt;
+&lt;p&gt;Where $\bar{x}_{g}$ is gene $g$&amp;rsquo;s average expression. Assessing different
+values, they noted that using a subset of $\sim2000$ genes gave near identical
+results to the full gene set, hence this is set to the default value.&lt;/p&gt;
+&lt;p&gt;They also evaluated different approaches to estimate the gene specific
+parameters, and settled on a choice where they: assume a Poisson error
+distribution to estimate $(\beta_{0g},\beta_{1g})$, from which they can compute
+the mean $\mu_g$. The mean is then kept fixed in order to estimate $\theta_g$
+using maximum likelihood. This is, due to the Poisson being a univariate
+distribution, much faster than using a two parameter NB error model in the GLM.&lt;/p&gt;
+&lt;p&gt;They also mention how their normalization approach can be extended to include
+other covariates than sequencing depth. When using these other covariates, two
+rounds of regression will be performed: one where they only use sequencing
+depth as a covariate, followed by one round where they inlcude all covariates
+but keep the sequencing depth parameters fixed. This is because the other
+covariates can&amp;rsquo;t be expected to share information across genes, hence no
+regularization can be performed with them.&lt;/p&gt;
+&lt;p&gt;To summarize, this paper presents a fast and interpretable way of normalizing
+data that is built on a statistical framework using a regularized negative
+binomial GLM. They convincingly show how raw UMI and log-normalization is
+confounded by sequencing depth, as well as our need to regularize the fitted
+models to get robust parameter estimates. I truly enjoyed reading this work, it&amp;rsquo;s
+clearly and concise with good experiments to back-up their claims.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Paper Review | Toward a Common Coordinate Framework for the Human Body</title>
+      <link>/post/2021-01-19-ccf-rev/</link>
+      <pubDate>Tue, 19 Jan 2021 15:01:37 +0100</pubDate>
+      <guid>/post/2021-01-19-ccf-rev/</guid>
+      <description>&lt;p&gt;For quite some while now, I&amp;rsquo;ve carried a slight sensation of guilt within me.
+Guilt for being so caught up in my own projects and activities that I&amp;rsquo;ve come to
+neglect one of the most essential duties as a researcher: to survey, read, and
+contemplate upon new (and old) material that have been published. It&amp;rsquo;s so easy
+to put that interesting paper aside in order to finish a project deadline, as no
+immediate gains are observed from reading through the former in contrast to
+completing the latter. Once a habit, this behavior efficiently imprints the idea
+that &amp;ldquo;making&amp;rdquo; is more important than learning; this might give a false sense of
+efficiency at first, but (I believe) has a severe negative impact on the quality
+and creativity of one&amp;rsquo;s work in the long run. How am one supposed to grow and
+expand the knowledge sphere if one never travels beyond its borders? Hence, I&amp;rsquo;ve
+somehow managed to conjure a vision of myself being a more active &lt;del&gt;reader&lt;/del&gt;
+gatherer of information this year by committing to the task of doing bi-weekly
+paper reviews, starting today. I should say here, that these reviews will mainly
+be focused on &lt;em&gt;summarizing&lt;/em&gt; the material presented, rather than &lt;em&gt;evaluating&lt;/em&gt;
+them; but of course, if I have opinions or comments which I deem relevant, these
+will be shared as well. My hope is to continue this at least throughout the
+year, to then evaluate and reassess whether its an endeavor worth continuing.
+Alas, let&amp;rsquo;s get started.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Paper Title :&lt;/strong&gt; &lt;em&gt;Toward a Common Coordinate Framework for the Human Body&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Authors :&lt;/strong&gt; &lt;em&gt;Jennifer E. Rood, Tim Stuart, Shila Ghazanfar, Tommaso
+Biancalani, Eyal Fisher, Andrew Butler, Anna Hupalowska, Leslie Gaffney, William
+Mauck, Gökçen Eraslan, John C. Marioni, Aviv Regev, Rahul Satija&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Published :&lt;/strong&gt; 12-12-2019&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;doi :&lt;/strong&gt; &lt;a href=&#34;https://doi.org/10.1016/j.cell.2019.11.019&#34;&gt;https://doi.org/10.1016/j.cell.2019.11.019&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Review :&lt;/strong&gt; In ambitious projects like the &lt;a href=&#34;https://www.humancellatlas.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Human Cell
+Atlas&lt;/a&gt; we often rely on joint efforts from
+multiple labs, as well as collection of data across multiple individuals, ages,
+phenotypes, both sexes and plenty of other features. This strategy is very apt
+for producing &lt;em&gt;large and diverse&lt;/em&gt; datasets; but unless we somehow harmonize and
+integrate all of the data into a common framework it will be nothing more than a
+big mess that is ought to bring more headaches than joy. The
+authors of this paper discuss these issues in terms of a &lt;strong&gt;common coordinate framework&lt;/strong&gt;
+which they - very neatly - define as a reference map that can : &amp;ldquo;&lt;em&gt;[..] assign a
+reproducible address to every location&lt;/em&gt;&amp;rdquo;. CCFs can be constructed at different
+scales (macro, meso, micro and fine are used as examples here), but its purpose
+always remains the same, to relate regions in independent samples in a shared context.&lt;/p&gt;
+&lt;p&gt;Personally, I think it&amp;rsquo;s easiest to motivate the need of a CCF through an
+analogy. Imagine you have a set of portraits, painted by different artists. Some
+paintings depict the same individual, but not all of them. An example of this
+scenario is illustrated below:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;good-v-bad.png&#34; alt=&#34;NaN&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Now, if we wanted to assess how skilled each painter was at recreating certain
+facial features (e.g., eyes or noses), we must somehow identify these different
+parts in each of the pictures before we could speak of comparing them. However,
+it&amp;rsquo;s insufficient to only compare the images pixel-by-pixel as we have several
+different motifs. Somehow, we need to use the &lt;em&gt;common&lt;/em&gt; features of a face, to
+identify the &lt;em&gt;unique&lt;/em&gt; elements of each artist. Similarly, when building an atlas
+of the human body, organs or sub-region of an organ using data from multiple
+sources, we need to know where each piece fits into the larger picture. A CCF
+would further enable a very precise exploration of variation across individuals,
+and is obviously a fundamental tool in any quest to study heterogeneity.&lt;/p&gt;
+&lt;p&gt;In the paper they discuss some of the challenges associated with the
+creation of a CCF, and consider the inherent anatomical diversity across
+individuals as perhaps the most prominent one. They also bring up a good point
+about how consistent annotation (used to assemble the CCF) is not as
+straightforward of a task as it might seem, since biological compartments and structures do not
+always have well-defined boundaries. Another challenge in devising methods to
+construct CCFs arise from the fact that a sample&amp;rsquo;s character by and large
+dictates how appropriate a certain method is. To illustrate this, two extremes
+are given as examples: (1) when anatomical regions are highly similar across all
+samples (e.g., early stages of embryogenesis), and (2) when cells are
+(seemingly) randomly organized (for example in a tumor). Of course, these two
+extremes represent end-points on a continuum, and most samples place somewhere
+in-between the two. For samples more like (1) leveraging the consistency and &lt;em&gt;a
+priori&lt;/em&gt; knowledge is preferable, while for samples like (2) one would instead do
+better by employing data-driven methods where the locations are learnt from the
+data. Of course, in both scenarios it is appealing to envision a form of
+Bayesian approach, where we update our beliefs regarding a sample&amp;rsquo;s location as
+more data is gathered.&lt;/p&gt;
+&lt;p&gt;Different variants of CCFs exist, three broad classes are
+given in the paper: using Anatomical Plane Coordinates, Landmark based
+construction and complex non-standard approaches. The first (anatomical plane
+coordinates) more or less aligns samples by registration to a reference (to account for
+inter-specimen variation). It uses a standard coordinate axis as the reference
+point to which distances are measured. One huge benefit is that distances
+between objects in this space, represent true distances. The landmark
+based approach is more or less an extension of the anatomical plane coordinates,
+but where one uses known landmarks (e.g., a vein bifurcation or a certain axon
+bundle) rather than anatomical planes. These landmarks allow one to anchor
+points in different samples to a reference. Having identified the landmarks, one
+may then apply a linear transformation to map a query image to the reference.
+For both the aforementioned strategies, the use of a &lt;em&gt;reference&lt;/em&gt; is
+essential - the template itself may however be updated iteratively as the process
+progress. The complex non-standard approaches are used when there&amp;rsquo;s a lack
+of anatomical structure or when no clear landmarks can be identified. In complex
+approaches, local non-linear (in contrast to the other methods) warping is
+applied to account for large anatomical variation.&lt;/p&gt;
+&lt;p&gt;Now of course, as you might have noted, both of the two first methods relies on
+a reference template. Hence the question of how such a template is
+obtained, to which the authors answers that it depends largely on the sample.
+For &lt;strong&gt;highly stereotypical&lt;/strong&gt; samples, a successful approach has been to use an
+iterative process, starting with a seeding set to which the whole dataset is
+aligned, a new reference is then extracted and used as a seed
+in the next iteration; a procedure repeated until convergence. To
+overcome the inter-individual variability in samples with &amp;ldquo;&lt;em&gt;similar
+inter-individual organ structure but differences in cell type location and organ
+dimensions&lt;/em&gt;&amp;rdquo; a certain degree of supervision was added to the procedure; by
+manual annotation of landmarks etc. Semi-supervised processes are also predicted
+to be of great use in the construction of a human atlas. For highly
+&lt;strong&gt;non-stereotypical&lt;/strong&gt; samples, there were no good strategies for template
+construction at the date of their writing, and they mention how this will have
+to be remedied by new methodological developments.&lt;/p&gt;
+&lt;p&gt;Interestingly the authors highlight a fourth orthogonal, and fairly
+unconventional, approach that discards the use of a &lt;em&gt;pre-defined&lt;/em&gt; coordinate
+system, landmarks and templates, in favor of learning it from the data itself.
+Multiple examples of methods for spatial reconstruction (see Seurat v3
+and novoSpaRc) can be seen as testimonies to spatial information being contained
+within the expression profiles of cells. To me, this is very similar to the SLAM
+problem in robot localization, where one tries to create the map while also
+finding ones current position within it.&lt;/p&gt;
+&lt;p&gt;They also discuss how, once a CCF is established, samples of the same and
+different modalities may be mapped to it. If we are operating with data of the
+same modality, the process should be nothing but straightforward. We simply use
+the same strategy as when creating the CCF itself. For other
+cross-modality-mapping the case is slightly different, and integration will only
+be possible if the assumption that both modalities shares a latent
+representation (e.g., chromatin accessibility) holds.&lt;/p&gt;
+&lt;p&gt;Now, one idea that the authors introduce, and which according to them is novel
+(I can find nothing that would contradict the claim) is that given all these
+challenges and how much influence a sample&amp;rsquo;s character has on the choice of
+method, is to dismiss the objective of creating a single CCF. Instead, multiple
+CCFs should be created in a hierarchical (by scale) fashion, which would allow
+both horizontal and vertical movements across the atlas, but where each CCF is
+adapted to best fit the data. This would represent a sort of &amp;ldquo;atlas of atlases&amp;rdquo;
+as they express it. To me, this makes perfect sense, although it would
+have been interesting to see some more discussion of how the vertical movements
+(between scales) were envisioned.&lt;/p&gt;
+&lt;p&gt;Their conclusions are brief, and so shall mine be. They make a strong argument
+for the value of CCFs, and why they deserve our attention.
+Inter-individual variability is the biggest hurdle to tackle, but there are
+strategies for it, though highly dependent on the data; this is not a &amp;ldquo;one-size
+fits all&amp;rdquo; type of problem. When the data is complex and we can&amp;rsquo;t establish
+natural anatomical templates or find good landmarks, perhaps it&amp;rsquo;s better to let
+the data dictate its own reference, using approaches inspired from methods of
+spatial reconstruction. All in all, CCFs brings structure to a very chaotic and
+seemingly unstructured space - and they are imperative to the process of
+creating a unified atlas of the human body.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Models and automated cell tracking</title>
+      <link>/post/2021-01-08-celltracker/</link>
+      <pubDate>Fri, 08 Jan 2021 10:25:51 +0100</pubDate>
+      <guid>/post/2021-01-08-celltracker/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve always found it appealing, or rather &lt;em&gt;enticing&lt;/em&gt;, to study biological
+systems from a more formal and mathematical perspective; with the main objective
+to somehow be able to describe them with equations rather than words. Equations
+are exact, definite, universal, but foremost, they are &lt;em&gt;predictive&lt;/em&gt;. The
+alluring property of mathematical models is that they do not only provide a
+description of our system, but they are also responsive, we may ask &lt;em&gt;&amp;ldquo;if I
+replace parameter X with parameter Y, what will my system look like?&amp;quot;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Of course, our models - however beautiful or carefully constructed - are nothing
+but just that, models. And as the well known apohorism states, &lt;em&gt;&amp;ldquo;all models
+are wrong&amp;rdquo;&lt;/em&gt;. While this statement is true, it is far from detrimental.
+Sometimes, being wrong but within a certain marginal of error to the truth is
+just about good enough. When driving, none of us knows the exact distance to the
+other cars, or how much a push on the gas will accelerate our car, still (most
+of the time) we manage to zig-zag through the densely packed lanes without
+crashing into each other - all from the simple &lt;em&gt;incorrect&lt;/em&gt; model we constructed
+in our minds. So, yes - models are wrong, but they are most certainly useful and
+tremendously valuable in our quest to understand and analyze biological systems.&lt;/p&gt;
+&lt;p&gt;It was with this interest - and a requirement for PhD students at KTH to collect
+60 ECTS credits - that I enrolled for a course in Applied Estimation. In short,
+the course focus on how to estimate states or parameters from noisy measurements
+such as empirical data. Albeit designed for people working with robotics, the
+concepts are indubitably applicable to biology - where noise is the rule
+rather than the exception.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;anim.gif&#34; alt=&#34;tracking animation&#34;&gt;&lt;/p&gt;
+&lt;p&gt;As a part of the course, we had to devise our own project (where one estimation
+method was to used) and implement it in code. My choice fell upon a subject (and
+method) that I have little previous experience with: automated &lt;em&gt;cell tracking&lt;/em&gt;
+in brightfield images, using GM-PHD (Gaussian Mixture Probability Hypothesis
+Density) filters. The theory is very interesting, and I was particularly
+intrigued by the concept of &lt;em&gt;Random Finite Sets&lt;/em&gt;, here used to track multiple
+objects simultaneously. The method shares many similarities with the Kalman
+Filter, but rather than propagating a single state, the whole set is propagated
+in time. Easily explained, one might think of it as propagating a Gaussian
+Mixture in time, where each component represents a peak or cell. The &lt;a href=&#34;https://ieeexplore.ieee.org/document/1710358&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;original
+publication&lt;/a&gt; by Vo and Ma outlines
+the details of the GM-PHD filter better than I could ever attempt to, and I
+would refer anyone with an interest to have a close look at it.&lt;/p&gt;
+&lt;p&gt;As for the final product, I implemented the algorithm proposed by Vo and Ma
+(Table I-III) in python, with an easy to use CLI; allowing anyone who might want
+to try it out to do so fairly (I hope) seamlessly. Instructions and examples of
+usage can be found at the &lt;a href=&#34;https://github.com/almaan/CellTracker&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;github&lt;/a&gt; page.
+The animated image above is the result of applying this implementation to a set
+of &amp;ldquo;&lt;em&gt;HeLa cells stably expressing H2b-GFP&lt;/em&gt;&amp;rdquo;, downloaded from
+&lt;a href=&#34;http://celltrackingchallenge.net/2d-datasets/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;celltrackingchallenge.net&lt;/a&gt;. The
+implementation is far from perfect, and much work remains to even have a chance
+of competing with the more sophisticated alternatives. Still, for a couple of
+days of work, the performance is not too bad - and it was a fun experience
+implementing it.&lt;/p&gt;
+&lt;p&gt;The course has prompted a lot of new ideas and really allowed me to see some old
+problems from a completely different lens. For example, I believe a lot of the
+ideas found in SLAM (Simultaneous Localization and Mapping) could be used when
+working with questions related to trajectory inferenc, where we partly want to
+assess the developmental landscape but also map a path through it. It&amp;rsquo;s always a
+very rewarding experience to enter a completely new field, where people come
+from a very different background - in my opinion this intentional &amp;ldquo;push&amp;rdquo; out of
+the comfort zone really has a tendency to spark &lt;del&gt;great&lt;/del&gt; exciting ideas,
+however uncofortable it feels at first.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Publication | Spatial Single Cell Mapping</title>
+      <link>/post/stereoscope-001/initial-post/</link>
+      <pubDate>Fri, 09 Oct 2020 11:05:04 +0100</pubDate>
+      <guid>/post/stereoscope-001/initial-post/</guid>
+      <description>&lt;p&gt;Delighted to say that our manuscript &amp;ldquo;&lt;em&gt;Single-cell and spatial transcriptomics
+enables probabilistic inference of cell type topography&lt;/em&gt;&amp;rdquo; is now published in
+&lt;em&gt;Communications Biology&lt;/em&gt; and thus out there for everyone to read in its final
+form. This is the paper that describes the theoretical underpinnings for
+&lt;a href=&#34;https://github.com/almaan/stereoscope&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;stereoscope&lt;/a&gt;, which allows you to
+spatial map cell types found in single cell data onto spatial transcriptomics
+data. There is also a nice bit of discussion as to whether spatial
+transcriptomics data (ST/Visium) can be properly modeled using a negative
+binomial distribution (which we use) found in the supplementary (spoiler, it
+seems like it). Have a look at it if you are interested!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;manuscript link : &lt;a href=&#34;https://www.nature.com/articles/s42003-020-01247-y&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;HERE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;stereoscope link : &lt;a href=&#34;https://github.com/almaan/stereoscope&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;HERE&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;P.S: I&amp;rsquo;m also planning to update the code base in the future, providing an API for
+&lt;code&gt;scanpy&lt;/code&gt;, but also add some features like subsampling and gene selection to the
+standard modules; but that is for later.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Manuscript | Spatial Exploration of Her2 Breast Cancer</title>
+      <link>/post/her2-001/initial-post/</link>
+      <pubDate>Wed, 15 Jul 2020 11:05:04 +0100</pubDate>
+      <guid>/post/her2-001/initial-post/</guid>
+      <description>&lt;p&gt;We&amp;rsquo;ve put out a new
+&lt;a href=&#34;%22https://www.biorxiv.org/content/10.1101/2020.07.14.200600v1.article-metrics%22&#34;&gt;manuscript&lt;/a&gt; on bioRxiv, where the expression landscape of HER2-positive
+breast cancer tumors is studied from a spatial perspective. This study contains
+several examples of how spatial data may be analyzed and what information beyond
+the obvious - like the spatial distribution of a certain gene - that can be
+mined from it. My hope is that anyone looking for ideas regarding how to analyze
+their own spatial data find this useful and relevant, irregardles of their
+interest in breast cancer. In the study we cluster spots by gene expression, but
+also take this one step further, using the clusters to find &lt;i&gt;core
+signatures&lt;/i&gt; of immune and tumor cell populations within our samples. We also
+use &lt;i&gt;stereoscope&lt;/i&gt; to map single cell data down onto our tissue sections,
+information which then is used to indentify potential TLS-sites as well as to
+study patterns of cell type co-localization. All the scripts and a neat app for
+visualization of the results can be found &lt;a href=&#34;%22https://github.com/almaan/her2st/%22&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Resource | Formal systems in Biology</title>
+      <link>/post/synt-bio-001/initial-post/</link>
+      <pubDate>Wed, 01 Jul 2020 10:05:04 +0100</pubDate>
+      <guid>/post/synt-bio-001/initial-post/</guid>
+      <description>&lt;p&gt;Browsing through my daily feed, I stumbled upon
+&lt;a href=&#34;%22https://github.com/prathyvsh/formal-systems-in-biology%22target=%22_blank%22&#34;&gt;this&lt;/a&gt;
+neat resource which lists (and links to) fundamental ideas that have shaped the
+field of systems biology. To me, many of these publications represent some of
+the earliest attempts to reduce complex biological systems and processes into
+something simpler, more comprehensible, by viewing them through the lense of
+mathematics; truly groundbreaking efforts that paved the way for the current
+trends of ML/AI in biology. I&amp;rsquo;d strongly recommend anyone with an interest in
+the field to have a look at it; something that contains work from both Alan
+Turing and John von Neumann can&amp;rsquo;t be anything but good!&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
