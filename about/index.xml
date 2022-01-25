@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Abouts | almaan</title>
+    <link>/about/</link>
+      <atom:link href="/about/index.xml" rel="self" type="application/rss+xml" />
+    <description>Abouts</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 30 Jul 2021 05:03:42 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hu0976d26fdaec5d0ec6c053b09a4e039a_2013_512x512_fill_lanczos_center_2.png</url>
+      <title>Abouts</title>
+      <link>/about/</link>
+    </image>
+    
+    <item>
+      <title>2021 EMBL course resources</title>
+      <link>/about/about/</link>
+      <pubDate>Fri, 30 Jul 2021 05:03:42 +0000</pubDate>
+      <guid>/about/about/</guid>
+      <description>&lt;h2&gt; Podcasts I listen to &lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt; This American Life &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt; Computer related &lt;/h2&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
