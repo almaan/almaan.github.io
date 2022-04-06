@@ -3,12 +3,52 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/extras/scadv-info/</loc>
-    <lastmod>2021-08-29T06:13:42+00:00</lastmod>
+    <loc>/author/alma-andersson/</loc>
+    <lastmod>2022-04-06T06:01:05+01:00</lastmod>
   </url>
   
   <url>
     <loc>/</loc>
+    <lastmod>2022-04-06T06:01:05+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/</loc>
+    <lastmod>2022-04-06T06:01:05+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <lastmod>2022-04-06T06:01:05+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2022-04-06T06:01:05+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/reflections/</loc>
+    <lastmod>2022-04-06T06:01:05+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/category/reviews/</loc>
+    <lastmod>2022-04-06T06:01:05+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2022-04-06T06:01:05+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2022-04-06-epilogue/</loc>
+    <lastmod>2022-04-06T06:01:05+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/extras/scadv-info/</loc>
     <lastmod>2021-08-29T06:13:42+00:00</lastmod>
   </url>
   
@@ -48,21 +88,6 @@
   </url>
   
   <url>
-    <loc>/author/alma-andersson/</loc>
-    <lastmod>2021-02-20T10:53:05+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/</loc>
-    <lastmod>2021-02-20T10:53:05+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/</loc>
-    <lastmod>2021-02-20T10:53:05+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tag/machine-learning/</loc>
     <lastmod>2021-02-20T10:53:05+01:00</lastmod>
   </url>
@@ -78,22 +103,7 @@
   </url>
   
   <url>
-    <loc>/post/</loc>
-    <lastmod>2021-02-20T10:53:05+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tag/review/</loc>
-    <lastmod>2021-02-20T10:53:05+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/category/reviews/</loc>
-    <lastmod>2021-02-20T10:53:05+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
     <lastmod>2021-02-20T10:53:05+01:00</lastmod>
   </url>
   
