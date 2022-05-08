@@ -391,5 +391,206 @@ course &amp;ndash; complete the race.&lt;/p&gt;
 </description>
     </item>
     
+    <item>
+      <title>What is thy name?</title>
+      <link>/post/2022-05-06-capture-locations/</link>
+      <pubDate>Wed, 06 Apr 2022 06:01:05 +0100</pubDate>
+      <guid>/post/2022-05-06-capture-locations/</guid>
+      <description>&lt;p&gt;You know that feeling when you&amp;rsquo;re frustrated over something that has absolutely
+no real importance, but you just can&amp;rsquo;t let it go. That&amp;rsquo;s me right now. &lt;span
+style=&#34;color:#86fc8e&#34;&gt;I&amp;rsquo;m seriously bothered by the fact that every single
+publication seems to use a different term to denote the locations in
+spatial transcriptomics data.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s not that people aren&amp;rsquo;t using &lt;em&gt;my favorite&lt;/em&gt; term (FYI, I don&amp;rsquo;t have one)
+that annoys me, but the fact that there&amp;rsquo;s no consensus on which term to use.
+There are &lt;em&gt;beads, cells, features, voxels, pixels, spots, capture locations&lt;/em&gt;,
+and many other innovative alternatives. The current practice is &lt;strong&gt;confusing&lt;/strong&gt;,
+and settling on one term should not be that hard.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;If names are not correct, language will not be in accordance with the truth of things.&amp;rdquo;
+&amp;ndash; Confucius&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;My idea with this post was to present some of the different terms I&amp;rsquo;ve
+encountered so far (disclaimer: this is not an exhaustive list), together with a
+bit of personal commentary - mainly to provide some context. To then couple this
+with a poll of some sort, and see what the thoughts of the community are.
+Perhaps this could spark some sort of discussion or reflection on the topic.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Bead&lt;/strong&gt; : popularized by
+&lt;a href=&#34;https://www.science.org/doi/10.1126/science.aaw1219&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Slide-seq&lt;/a&gt;, in which
+beads are used to capture the transcripts within the tissue. This also
+resonates well with data from the HDST platform. However, it makes zero sense
+with data from other platforms, like Visium, where capture probes are
+immobilized to a solid surface, nor to imaging-based techniques like MERFISH or
+SeqFISH where single molecules are visualized and there&amp;rsquo;s no &amp;ldquo;capture&amp;rdquo; going
+on.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Spot&lt;/strong&gt; : is used somewhat ambiguously in different techniques. In the
+&lt;a href=&#34;https://www.science.org/doi/10.1126/science.aaf2403&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ST&lt;/a&gt; and
+&lt;a href=&#34;https://www.10xgenomics.com/products/spatial-gene-expression&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Visium&lt;/a&gt;
+platform, the mRNA capture locations are printed onto the surface in a fashion
+similar to how
+&lt;a href=&#34;https://www.nature.com/scitable/definition/microarray-202/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;microarrays&lt;/a&gt; were
+constructed, which made the use of &amp;ldquo;spot&amp;rdquo; to describe the capture locations
+quite natural. But just as &amp;ldquo;beads&amp;rdquo; makes little sense to describe the capture
+locations in Visium data, &amp;ldquo;spots&amp;rdquo; makes no sense in Slide-seq data. What adds
+another layer of confusion is that in &lt;a href=&#34;https://www.nature.com/articles/s41598-019-43943-8&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;imaging-based
+methods&lt;/a&gt;, &amp;ldquo;spot&amp;rdquo; is
+sometimes used to describe the signal from a single molecule. This kind of
+ambiguity adds even more confusion to the already confusing situation. &amp;ldquo;Spot&amp;rdquo;
+is currently (2022-05-06) favored by 10x Genomics (the distributor of Visium).
+10x Genomics has a large reach and, i.e., whatever term they chose, a lot of
+people will use it.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Feature&lt;/strong&gt; : have been used by some authors to describe the spatial
+locations, for example, &lt;a href=&#34;https://doi.org/10.1016/j.molcel.2021.03.016&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this&lt;/a&gt;
+review. Without bashing too hard on the people who prefer this term, I must
+confess that I find it extremely impractical to use the word &amp;ldquo;feature&amp;rdquo; to
+describe the &amp;ldquo;observations&amp;rdquo;. To me, a feature is the information associated
+with the spatial location (i.e., gene expression). Also, most analysis
+frameworks (e.g., Seurat) tend to call the genes (if you&amp;rsquo;re analyzing gene
+expression data) features. If we were to use the term feature also for our
+spatial locations, would we then say that we have a &amp;ldquo;feature times feature&amp;rdquo;
+matrix? That&amp;rsquo;s not very helpful. If confusion is something we want to avoid,
+we should not pursue the use of this term.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Pixel&lt;/strong&gt; : a term that most of us are familiar with, but usually in the
+context of pictures or camera lenses. The word pixel is a portmanteau of the
+two words &amp;ldquo;picture&amp;rdquo; and &amp;ldquo;element&amp;rdquo; (where &amp;ldquo;pix&amp;rdquo; is used as short form of
+&amp;ldquo;picture&amp;rdquo;). I first saw this being used in the &lt;a href=&#34;https://www.nature.com/articles/s41587-021-00830-w&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RCTD
+paper&lt;/a&gt;, but have also
+heard other people use the term in presentations. To some extent, this is a
+slightly more general term than &amp;ldquo;bead&amp;rdquo; or &amp;ldquo;spot&amp;rdquo;, and it works with
+imaging-based spatial transcriptomics methods. Also, to some extent, you could
+consider the Visium or Slide-seq data as an &amp;ldquo;image&amp;rdquo; with ~20,000 channels (one
+channel - one gene) instead of the standard three channels (RGB), but that&amp;rsquo;s a
+bit of a stretch. Calling the spatial data a &amp;ldquo;picture&amp;rdquo; when it&amp;rsquo;s not really
+image data that we&amp;rsquo;re working does not really vibe with me.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Voxel&lt;/strong&gt; : is a lesser known relative to the pixel, where &amp;ldquo;vo&amp;rdquo; for &lt;em&gt;volume&lt;/em&gt;
+has replaced &amp;ldquo;pix&amp;rdquo; for picture; giving us a &lt;em&gt;&amp;ldquo;volume element&amp;rdquo;&lt;/em&gt;. My first
+exposure to the usage of this term to denote spatial locations was the
+&lt;a href=&#34;https://www.nature.com/articles/s41592-021-01264-7&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Tangram paper&lt;/a&gt;. I&amp;rsquo;m not
+fully sure why this term was preferred over pixel, but perhaps &amp;ldquo;volume&amp;rdquo; was
+considered a more general term that could describe elements in both 2D and 3D
+methods (if you consider area as a &amp;ldquo;2D volume&amp;rdquo;). Although, I believe, for most
+people, volume relates very much to 3D objects; thus, potentially puzzling
+some people.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Spatial location&lt;/strong&gt; : sometimes, often in an attempt to be method agnostic, I
+(and others) have used this term instead of any of the aforementioned
+alternatives. It definitely does the trick, it states exactly what we&amp;rsquo;re
+dealing with and there&amp;rsquo;s no room for confusion. But it&amp;rsquo;s terribly &lt;del&gt;unsexy&lt;/del&gt;
+boring, as well as being quite long (two words!) and inconvenient to use.
+Sure, one could go for yet another portmanteau, but referring to spatial locations
+as &lt;em&gt;&amp;ldquo;splocs&amp;rdquo;&lt;/em&gt; sounds&amp;hellip; ehm&amp;hellip; ridiculous.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Gexel&lt;/strong&gt; : a what? Yeah you read that correct, a &lt;em&gt;gexel&lt;/em&gt;. I stumbled upon
+this term when reading the 2021 &lt;a href=&#34;https://www.sciencedirect.com/science/article/pii/S2405471221001514&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MULTILAYER
+paper&lt;/a&gt;,
+where the authors got inspired by the pixels and conceived (I could not find
+any earlier use) of the &amp;ldquo;gexel&amp;rdquo;, being short for &lt;strong&gt;&amp;ldquo;gene expression
+element&amp;rdquo;&lt;/strong&gt;. At first I kind of frowned at this term, but the more I&amp;rsquo;ve been
+thinking about it, the more I&amp;rsquo;ve come to like it. It&amp;rsquo;s fully method agnostic,
+it&amp;rsquo;s short and convenient to use, and &amp;ldquo;gene expression element&amp;rdquo; captures the
+essence of what our spatial locations are. The big downside to this term is
+its lack of &lt;em&gt;generalization to other modalities&lt;/em&gt;, or multimodal assays where
+different kinds of information are registered at the same location. Perhaps
+one could use &lt;em&gt;daxel&lt;/em&gt; for &amp;ldquo;data element&amp;rdquo; or &lt;em&gt;spexel&lt;/em&gt; for &amp;ldquo;spatial expression
+element&amp;rdquo;, but both sound a bit &amp;ldquo;forced&amp;rdquo;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We can summarize this is a very basic table:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Term&lt;/th&gt;
+&lt;th&gt;Agnostic&lt;/th&gt;
+&lt;th&gt;Descriptive&lt;/th&gt;
+&lt;th&gt;Unambiguous&lt;/th&gt;
+&lt;th&gt;Convenient&lt;/th&gt;
+&lt;th&gt;Multimodal&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;bead&lt;/td&gt;
+&lt;td&gt;no&lt;/td&gt;
+&lt;td&gt;no&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;spot&lt;/td&gt;
+&lt;td&gt;no&lt;/td&gt;
+&lt;td&gt;no&lt;/td&gt;
+&lt;td&gt;no&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;feature&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;no&lt;/td&gt;
+&lt;td&gt;no&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;pixel&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;no&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;voxel&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;no&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;spatial location&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;no&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;gexel&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;yes (+)&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;no&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Columns: Agnostic - method agnostic, Descriptive - conveys information about what it
+represents, Unambiguous - will not be confused with other elements of the data,
+Convenient - easy to use and say, Multimodal - can be used in mulitmodal
+assays.&lt;/p&gt;
+&lt;p&gt;P.S. I&amp;rsquo;m acutely aware of the fact that &lt;em&gt;&amp;ldquo;being bothered by the inconsistency in
+naming of spatial locations&amp;rdquo;&lt;/em&gt; would be the perfect answer to &lt;em&gt;&amp;ldquo;tell me you have
+no real problems without saying you have no real problems.&amp;quot;&lt;/em&gt; Other &lt;em&gt;more
+important&lt;/em&gt; things are happening around the world, I acknowledge that 100%, but I
+don&amp;rsquo;t want those things to engulf my whole existence. Silly discussions must
+also be allowed, just as happiness must be allowed space in times of grief and
+sorrow.&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>
