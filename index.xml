@@ -5,12 +5,374 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>almaan</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 06 Apr 2022 06:01:05 +0100</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 06 May 2022 06:01:05 +0100</lastBuildDate>
     <image>
       <url>/images/icon_hu0976d26fdaec5d0ec6c053b09a4e039a_2013_512x512_fill_lanczos_center_2.png</url>
       <title>almaan</title>
       <link>/</link>
     </image>
+    
+    <item>
+      <title>What I listen to</title>
+      <link>/listens/</link>
+      <pubDate>Sat, 20 Aug 2022 00:00:00 +0000</pubDate>
+      <guid>/listens/</guid>
+      <description>&lt;p&gt;Below you&amp;rsquo;ll find a curated and moderately updated list of podcast shows that I enjoy listening to.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Name&lt;/span&gt;: Radiolab&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Brief description&lt;/span&gt;:  A science focused podcast with the most odd and fantastic topics. Each episode leaves you full of new thoughts and questions to ponder about, it&amp;rsquo;s a joy for the mind.&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Why?&lt;/span&gt;: This is one of my &lt;strong&gt;favorite&lt;/strong&gt; podcasts, and one that I&amp;rsquo;ve followed for 5+ years.&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Language&lt;/span&gt;: English&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Name&lt;/span&gt;: The Jordan Harbinger Show&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Brief description&lt;/span&gt;: Jordan (the host) sits down with people from all branches of life (athletes, spies, scientists) to have some truly mind-blowing conversations.&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Why?&lt;/span&gt;: The range people Jordan manages to bring on to this podcast is nothing but impressive. Every episode gives you new insights into topics that you sometimes even didn&amp;rsquo;t know existed or that you cared about. Jordan is also a very skillful interviewer.&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Language&lt;/span&gt;: English&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Name&lt;/span&gt;: Theory and Practice&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Brief description&lt;/span&gt;:  Interviews with some of the brightest minds in the AI field. Hosted by Google AI and GV.&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Why?&lt;/span&gt;: Here you have the opportunity to listen to their thoughts on topics in machine learning and AI, but also in larger more widely spanning questions.&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Language&lt;/span&gt;: English&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Name&lt;/span&gt;: Tyngre Träningssnack&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Brief description&lt;/span&gt;: Two guys speaking about different aspects of training._&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Why?&lt;/span&gt;: This podcast is educative, has interesting guests, and also operates with an investigative mindset. They present interesting research and studies, but also calls out on bullshit science. Also, importantly, the two guys have a good vibe.&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Language&lt;/span&gt;: Swedish&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Name&lt;/span&gt;: Prestera Mera med Umara&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Brief description&lt;/span&gt;:  Two biomedics who breaks down scientific papers and news relating to exercise and phycial performance.&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Why?&lt;/span&gt;: Great guests, interesting and useful content, discussion of relevant questions.&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Language&lt;/span&gt;: Swedish&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Name&lt;/span&gt;: Theory and Practice&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Brief description&lt;/span&gt;:  Interviews with some of the brightest minds in the AI field.&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Why?&lt;/span&gt;: Here you have the opportunity to listen to their thoughts on topics in machine learning and AI, but also in larger more widely spanning questions.&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Language&lt;/span&gt;: English&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Name&lt;/span&gt;: People I (Mostly) Admire&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Brief description&lt;/span&gt;: Freakonomics co-author Steven Levitt somehow manages to get an array of high-achieving individuals and asks questions that you didn&amp;rsquo;t even realize you had. These conversations are always nuanced and quite eye-opening.&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Why?&lt;/span&gt;: Inspiring, amusing, educative, and eloquently put-together interviews.&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Language&lt;/span&gt;: English&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Name&lt;/span&gt;: Presidental&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Brief description&lt;/span&gt;: Produced by the Washington Post and hosted by Lillian Cunningham, this podcast paint illustrative portraits of each of the presidents in American history and current times. These are not sleep-inducing history lessons, but fun and intelligent descriptions of the individuals ending up at the position of POTUS.&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Why?&lt;/span&gt;: It&amp;rsquo;s both fun and educative, and as someone who&amp;rsquo;s not taught the names and defining characteristics of each president in school but with an interest in politics and history, these episodes are excellent!&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Language&lt;/span&gt;: English&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Name&lt;/span&gt;: Code Swtich&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Brief description&lt;/span&gt;: A podcast hosted by some excellent people and produced by NPR that &lt;em&gt;&amp;ldquo;explore how race affects every part of society&amp;rdquo;&lt;/em&gt;. They bring stories about culture, bias, food, history, and technology and how race often has a sublime but important presence in all of these topics.&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Why?&lt;/span&gt;: Coming from Europe where racism and discrimination is present, but not at all to the same extent as in the US this podcast has really helped me to understand some of the challenges that POC and minorities are facing.&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Language&lt;/span&gt;: English&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Name&lt;/span&gt;: Throughline&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Brief description&lt;/span&gt;: Produced by NPR this podcast analyze current events through the lense of history.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Why?&lt;/span&gt;: Again, as someone with a non-American background, this has helped me immensely to understand some of the current events and why people or groups react the way they do.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Language&lt;/span&gt;: English&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Name&lt;/span&gt;: Planet Money&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Brief description&lt;/span&gt;: The larger theme is &amp;ldquo;economy&amp;rdquo;, put presented with a different narrative. Also, this is not the kind of &amp;ldquo;boring&amp;rdquo; economy, but rather how, for example, a computer game (RuneScape) predicted the economic collapse of Venezuela and other quirky phenomena.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Why?&lt;/span&gt;: Interesting, sparks my curiosity, great stories.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Language&lt;/span&gt;: English&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Name&lt;/span&gt;: The joy of x&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Brief description&lt;/span&gt;: A podcast hosted by mathematician and author Steven Strogatz (big in chaos theory), who sits down and interview people in the STEM fields.&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Why?&lt;/span&gt;: Great guests, exposure to new and interesting topics, educative. It&amp;rsquo;s also amazing to hear about the many different paths to success in these fields.&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Language&lt;/span&gt;: English&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Name&lt;/span&gt;: American Scandal&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Brief description&lt;/span&gt;: Documentaries told in more of a &amp;ldquo;drama&amp;rdquo; style outlining some of the biggest scandals in American history. Examples are: the Watergate scandal, the DuPont chemical cover up, and the Waco raid.&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Why?&lt;/span&gt;: The way these stories are told are both engaging and informative, the producers have done some really excellent work putting these episodes together and the narrator is also stellar. I also, and this is my personal opinion, find the stories being told in a very unbiased way, outlining the facts but not taking an obvious side.&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Language&lt;/span&gt;: English&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Name&lt;/span&gt;: American Innovations&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Brief description&lt;/span&gt;: Presenting the stories about some of the biggest innovations in American history through a storytelling narrative.&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Why?&lt;/span&gt;: The way these stories are told are both engaging and informative, the producers have done some really excellent work putting these episodes together and the narrator is also stellar. I also, and this is my personal opinion, find the stories being told in a very unbiased way, outlining the facts but not taking an obvious side.&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Language&lt;/span&gt;: English&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Name&lt;/span&gt;: DeepMind: the Podcast&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Brief description&lt;/span&gt;: An inside view of the research that Google AI conducts. This is very non-technical and &amp;ldquo;pop-sciency&amp;rdquo;, but still very interesting. This is hosted by Hannah Fry, who&amp;rsquo;s full of enthusiasm and does an excellent job prodding the researchers about the projects they work on.&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Why?&lt;/span&gt;: Interesting, tech-focused, fun, and educative.&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Language&lt;/span&gt;:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Name&lt;/span&gt;:  99% Invisible&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Brief description&lt;/span&gt;: Hosted by Roman Mars (who might have the best radio voice in history). This podcast discuss how design influences every aspect of our lives, in ways we never could have expected.&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Why?&lt;/span&gt;: These stories are just so fascinating and amusing, it&amp;rsquo;s very similar to the &amp;ldquo;Freakonomics-vibe&amp;rdquo; in the sense that you often realize how two things that seem completely unrelated actually can have major impacts on each other.&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Language&lt;/span&gt;: English&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Name&lt;/span&gt;: Ultrarunning News&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Brief description&lt;/span&gt;: News in ultrarunning, covering the most high-profile and recent events. Interviews with top athletes and people in the organizations.&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Why?&lt;/span&gt;: If you&amp;rsquo;re a running nerd like me, with a palate for ultrarunning this is an excellent podcast&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;Language&lt;/span&gt;: English&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>What is thy name?</title>
+      <link>/post/2022-05-06-capture-locations/</link>
+      <pubDate>Fri, 06 May 2022 06:01:05 +0100</pubDate>
+      <guid>/post/2022-05-06-capture-locations/</guid>
+      <description>&lt;p&gt;You know that feeling when you&amp;rsquo;re frustrated over something that has absolutely
+no real importance, but you just can&amp;rsquo;t let it go. That&amp;rsquo;s me right now. &lt;span
+style=&#34;color:#86fc8e&#34;&gt;I&amp;rsquo;m seriously bothered by the fact that every single
+publication seems to use a different term to denote the locations in
+spatial transcriptomics data.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s not that people aren&amp;rsquo;t using &lt;em&gt;my favorite&lt;/em&gt; term (FYI, I don&amp;rsquo;t have one)
+that annoys me, but the fact that there&amp;rsquo;s no consensus on which term to use.
+There are &lt;em&gt;beads, cells, features, voxels, pixels, spots, capture locations&lt;/em&gt;,
+and many other innovative alternatives. The current practice is &lt;strong&gt;confusing&lt;/strong&gt;,
+and settling on one term should not be that hard.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;If names are not correct, language will not be in accordance with the truth of things.&amp;rdquo;
+&amp;ndash; Confucius&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;My idea with this post was to present some of the different terms I&amp;rsquo;ve
+encountered so far (disclaimer: this is not an exhaustive list**, together with a
+bit of personal commentary - mainly to provide some context. To then couple this
+with a poll of some sort, and see what the thoughts of the community are.
+Perhaps this could spark some sort of discussion or reflection on the topic.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt; : this list was updated (2022-05-09) after posting
+&lt;a href=&#34;https://twitter.com/aalmaander/status/1523290638422188034?s=20&amp;amp;t=04LQK9AF-yQHLcgYT_K2dA&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this&lt;/a&gt;
+twitter post, where some other suggestions were presented. Thanks to all the
+people who contributed to a really nice discussion!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Bead&lt;/strong&gt; : popularized by
+&lt;a href=&#34;https://www.science.org/doi/10.1126/science.aaw1219&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Slide-seq&lt;/a&gt;, in which
+beads are used to capture the transcripts within the tissue. This also
+resonates well with data from the HDST platform. However, it makes zero sense
+with data from other platforms, like Visium, where capture probes are
+immobilized to a solid surface, nor to imaging-based techniques like MERFISH or
+SeqFISH where single molecules are visualized and there&amp;rsquo;s no &amp;ldquo;capture&amp;rdquo; going
+on.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Spot&lt;/strong&gt; : is used somewhat ambiguously in different techniques. In the
+&lt;a href=&#34;https://www.science.org/doi/10.1126/science.aaf2403&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ST&lt;/a&gt; and
+&lt;a href=&#34;https://www.10xgenomics.com/products/spatial-gene-expression&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Visium&lt;/a&gt;
+platform, the mRNA capture locations are printed onto the surface in a fashion
+similar to how
+&lt;a href=&#34;https://www.nature.com/scitable/definition/microarray-202/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;microarrays&lt;/a&gt; were
+constructed, which made the use of &amp;ldquo;spot&amp;rdquo; to describe the capture locations
+quite natural. But just as &amp;ldquo;beads&amp;rdquo; makes little sense to describe the capture
+locations in Visium data, &amp;ldquo;spots&amp;rdquo; makes no sense in Slide-seq data. What adds
+another layer of confusion is that in &lt;a href=&#34;https://www.nature.com/articles/s41598-019-43943-8&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;imaging-based
+methods&lt;/a&gt;, &amp;ldquo;spot&amp;rdquo; is
+sometimes used to describe the signal from a single molecule. This kind of
+ambiguity adds even more confusion to the already confusing situation. &amp;ldquo;Spot&amp;rdquo;
+is currently (2022-05-06) favored by 10x Genomics (the distributor of Visium).
+10x Genomics has a large reach and, i.e., whatever term they chose, a lot of
+people will use it.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Feature&lt;/strong&gt; : have been used by some authors to describe the spatial
+locations, for example, &lt;a href=&#34;https://doi.org/10.1016/j.molcel.2021.03.016&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this&lt;/a&gt;
+review. Without bashing too hard on the people who prefer this term, I must
+confess that I find it extremely impractical to use the word &amp;ldquo;feature&amp;rdquo; to
+describe the &amp;ldquo;observations&amp;rdquo;. To me, a feature is the information associated
+with the spatial location (i.e., gene expression). Also, most analysis
+frameworks (e.g., Seurat) tend to call the genes (if you&amp;rsquo;re analyzing gene
+expression data) features. If we were to use the term feature also for our
+spatial locations, would we then say that we have a &amp;ldquo;feature times feature&amp;rdquo;
+matrix? That&amp;rsquo;s not very helpful. If confusion is something we want to avoid,
+we should not pursue the use of this term.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Pixel&lt;/strong&gt; : a term that most of us are familiar with, but usually in the
+context of pictures or camera lenses. The word pixel is a portmanteau of the
+two words &amp;ldquo;picture&amp;rdquo; and &amp;ldquo;element&amp;rdquo; (where &amp;ldquo;pix&amp;rdquo; is used as short form of
+&amp;ldquo;picture&amp;rdquo;). I first saw this being used in the &lt;a href=&#34;https://www.nature.com/articles/s41587-021-00830-w&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RCTD
+paper&lt;/a&gt;, but have also
+heard other people use the term in presentations. To some extent, this is a
+slightly more general term than &amp;ldquo;bead&amp;rdquo; or &amp;ldquo;spot&amp;rdquo;, and it works with
+imaging-based spatial transcriptomics methods. Also, to some extent, you could
+consider the Visium or Slide-seq data as an &amp;ldquo;image&amp;rdquo; with ~20,000 channels (one
+channel - one gene) instead of the standard three channels (RGB), but that&amp;rsquo;s a
+bit of a stretch. Calling the spatial data a &amp;ldquo;picture&amp;rdquo; when it&amp;rsquo;s not really
+image data that we&amp;rsquo;re working does not really vibe with me.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Voxel&lt;/strong&gt; : is a lesser known relative to the pixel, where &amp;ldquo;vo&amp;rdquo; for &lt;em&gt;volume&lt;/em&gt;
+has replaced &amp;ldquo;pix&amp;rdquo; for picture; giving us a &lt;em&gt;&amp;ldquo;volume element&amp;rdquo;&lt;/em&gt;. My first
+exposure to the usage of this term to denote spatial locations was the
+&lt;a href=&#34;https://www.nature.com/articles/s41592-021-01264-7&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Tangram paper&lt;/a&gt;. I&amp;rsquo;m not
+fully sure why this term was preferred over pixel, but perhaps &amp;ldquo;volume&amp;rdquo; was
+considered a more general term that could describe elements in both 2D and 3D
+methods (if you consider area as a &amp;ldquo;2D volume&amp;rdquo;). Although, I believe, for most
+people, volume relates very much to 3D objects; thus, potentially puzzling
+some people.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Spatial location&lt;/strong&gt; : sometimes, often in an attempt to be method agnostic, I
+(and others) have used this term instead of any of the aforementioned
+alternatives. It definitely does the trick, it states exactly what we&amp;rsquo;re
+dealing with and there&amp;rsquo;s no room for confusion. But it&amp;rsquo;s terribly &lt;del&gt;unsexy&lt;/del&gt;
+boring, as well as being quite long (two words!) and inconvenient to use.
+Sure, one could go for yet another portmanteau, but referring to spatial locations
+as &lt;em&gt;&amp;ldquo;splocs&amp;rdquo;&lt;/em&gt; sounds&amp;hellip; ehm&amp;hellip; ridiculous.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Gexel&lt;/strong&gt; : a what? Yeah you read that correct, a &lt;em&gt;gexel&lt;/em&gt;. I stumbled upon
+this term when reading the 2021 &lt;a href=&#34;https://www.sciencedirect.com/science/article/pii/S2405471221001514&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MULTILAYER
+paper&lt;/a&gt;,
+where the authors got inspired by the pixels and conceived (I could not find
+any earlier use) of the &amp;ldquo;gexel&amp;rdquo;, being short for &lt;strong&gt;&amp;ldquo;gene expression
+element&amp;rdquo;&lt;/strong&gt;. At first I kind of frowned at this term, but the more I&amp;rsquo;ve been
+thinking about it, the more I&amp;rsquo;ve come to like it. It&amp;rsquo;s fully method agnostic,
+it&amp;rsquo;s short and convenient to use, and &amp;ldquo;gene expression element&amp;rdquo; captures the
+essence of what our spatial locations are. The big downside to this term is
+its lack of &lt;em&gt;generalization to other modalities&lt;/em&gt;, or multimodal assays where
+different kinds of information are registered at the same location. Perhaps
+one could use &lt;em&gt;daxel&lt;/em&gt; for &amp;ldquo;data element&amp;rdquo; or &lt;em&gt;spexel&lt;/em&gt; for &amp;ldquo;spatial expression
+element&amp;rdquo;, but both sound a bit &amp;ldquo;forced&amp;rdquo;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We can summarize this is a very basic table:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Term&lt;/th&gt;
+&lt;th&gt;Agnostic&lt;/th&gt;
+&lt;th&gt;Descriptive&lt;/th&gt;
+&lt;th&gt;Unambiguous&lt;/th&gt;
+&lt;th&gt;Convenient&lt;/th&gt;
+&lt;th&gt;Multimodal&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;bead&lt;/td&gt;
+&lt;td&gt;no&lt;/td&gt;
+&lt;td&gt;no&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;spot&lt;/td&gt;
+&lt;td&gt;no&lt;/td&gt;
+&lt;td&gt;no&lt;/td&gt;
+&lt;td&gt;no&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;feature&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;no&lt;/td&gt;
+&lt;td&gt;no&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;pixel&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;no&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;voxel&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;no&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;spatial location&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;no&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;gexel&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;yes (+)&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;no&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Columns: Agnostic - method agnostic, Descriptive - conveys information about what it
+represents, Unambiguous - will not be confused with other elements of the data,
+Convenient - easy to use and say, Multimodal - can be used in mulitmodal
+assays.&lt;/p&gt;
+&lt;p&gt;P.S. I&amp;rsquo;m acutely aware of the fact that &lt;em&gt;&amp;ldquo;being bothered by the inconsistency in
+naming of spatial locations&amp;rdquo;&lt;/em&gt; would be the perfect answer to &lt;em&gt;&amp;ldquo;tell me you have
+no real problems without saying you have no real problems.&amp;quot;&lt;/em&gt; Other &lt;em&gt;more
+important&lt;/em&gt; things are happening around the world, I acknowledge that 100%, but I
+don&amp;rsquo;t want those things to engulf my whole existence. Silly discussions must
+also be allowed, just as happiness must be allowed space in times of grief and
+sorrow.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Thesis Epilogue</title>
@@ -392,207 +754,6 @@ course &amp;ndash; complete the race.&lt;/p&gt;
     </item>
     
     <item>
-      <title>What is thy name?</title>
-      <link>/post/2022-05-06-capture-locations/</link>
-      <pubDate>Wed, 06 Apr 2022 06:01:05 +0100</pubDate>
-      <guid>/post/2022-05-06-capture-locations/</guid>
-      <description>&lt;p&gt;You know that feeling when you&amp;rsquo;re frustrated over something that has absolutely
-no real importance, but you just can&amp;rsquo;t let it go. That&amp;rsquo;s me right now. &lt;span
-style=&#34;color:#86fc8e&#34;&gt;I&amp;rsquo;m seriously bothered by the fact that every single
-publication seems to use a different term to denote the locations in
-spatial transcriptomics data.&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;It&amp;rsquo;s not that people aren&amp;rsquo;t using &lt;em&gt;my favorite&lt;/em&gt; term (FYI, I don&amp;rsquo;t have one)
-that annoys me, but the fact that there&amp;rsquo;s no consensus on which term to use.
-There are &lt;em&gt;beads, cells, features, voxels, pixels, spots, capture locations&lt;/em&gt;,
-and many other innovative alternatives. The current practice is &lt;strong&gt;confusing&lt;/strong&gt;,
-and settling on one term should not be that hard.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&amp;ldquo;If names are not correct, language will not be in accordance with the truth of things.&amp;rdquo;
-&amp;ndash; Confucius&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;My idea with this post was to present some of the different terms I&amp;rsquo;ve
-encountered so far (disclaimer: this is not an exhaustive list), together with a
-bit of personal commentary - mainly to provide some context. To then couple this
-with a poll of some sort, and see what the thoughts of the community are.
-Perhaps this could spark some sort of discussion or reflection on the topic.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Bead&lt;/strong&gt; : popularized by
-&lt;a href=&#34;https://www.science.org/doi/10.1126/science.aaw1219&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Slide-seq&lt;/a&gt;, in which
-beads are used to capture the transcripts within the tissue. This also
-resonates well with data from the HDST platform. However, it makes zero sense
-with data from other platforms, like Visium, where capture probes are
-immobilized to a solid surface, nor to imaging-based techniques like MERFISH or
-SeqFISH where single molecules are visualized and there&amp;rsquo;s no &amp;ldquo;capture&amp;rdquo; going
-on.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Spot&lt;/strong&gt; : is used somewhat ambiguously in different techniques. In the
-&lt;a href=&#34;https://www.science.org/doi/10.1126/science.aaf2403&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ST&lt;/a&gt; and
-&lt;a href=&#34;https://www.10xgenomics.com/products/spatial-gene-expression&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Visium&lt;/a&gt;
-platform, the mRNA capture locations are printed onto the surface in a fashion
-similar to how
-&lt;a href=&#34;https://www.nature.com/scitable/definition/microarray-202/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;microarrays&lt;/a&gt; were
-constructed, which made the use of &amp;ldquo;spot&amp;rdquo; to describe the capture locations
-quite natural. But just as &amp;ldquo;beads&amp;rdquo; makes little sense to describe the capture
-locations in Visium data, &amp;ldquo;spots&amp;rdquo; makes no sense in Slide-seq data. What adds
-another layer of confusion is that in &lt;a href=&#34;https://www.nature.com/articles/s41598-019-43943-8&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;imaging-based
-methods&lt;/a&gt;, &amp;ldquo;spot&amp;rdquo; is
-sometimes used to describe the signal from a single molecule. This kind of
-ambiguity adds even more confusion to the already confusing situation. &amp;ldquo;Spot&amp;rdquo;
-is currently (2022-05-06) favored by 10x Genomics (the distributor of Visium).
-10x Genomics has a large reach and, i.e., whatever term they chose, a lot of
-people will use it.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Feature&lt;/strong&gt; : have been used by some authors to describe the spatial
-locations, for example, &lt;a href=&#34;https://doi.org/10.1016/j.molcel.2021.03.016&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this&lt;/a&gt;
-review. Without bashing too hard on the people who prefer this term, I must
-confess that I find it extremely impractical to use the word &amp;ldquo;feature&amp;rdquo; to
-describe the &amp;ldquo;observations&amp;rdquo;. To me, a feature is the information associated
-with the spatial location (i.e., gene expression). Also, most analysis
-frameworks (e.g., Seurat) tend to call the genes (if you&amp;rsquo;re analyzing gene
-expression data) features. If we were to use the term feature also for our
-spatial locations, would we then say that we have a &amp;ldquo;feature times feature&amp;rdquo;
-matrix? That&amp;rsquo;s not very helpful. If confusion is something we want to avoid,
-we should not pursue the use of this term.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Pixel&lt;/strong&gt; : a term that most of us are familiar with, but usually in the
-context of pictures or camera lenses. The word pixel is a portmanteau of the
-two words &amp;ldquo;picture&amp;rdquo; and &amp;ldquo;element&amp;rdquo; (where &amp;ldquo;pix&amp;rdquo; is used as short form of
-&amp;ldquo;picture&amp;rdquo;). I first saw this being used in the &lt;a href=&#34;https://www.nature.com/articles/s41587-021-00830-w&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RCTD
-paper&lt;/a&gt;, but have also
-heard other people use the term in presentations. To some extent, this is a
-slightly more general term than &amp;ldquo;bead&amp;rdquo; or &amp;ldquo;spot&amp;rdquo;, and it works with
-imaging-based spatial transcriptomics methods. Also, to some extent, you could
-consider the Visium or Slide-seq data as an &amp;ldquo;image&amp;rdquo; with ~20,000 channels (one
-channel - one gene) instead of the standard three channels (RGB), but that&amp;rsquo;s a
-bit of a stretch. Calling the spatial data a &amp;ldquo;picture&amp;rdquo; when it&amp;rsquo;s not really
-image data that we&amp;rsquo;re working does not really vibe with me.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Voxel&lt;/strong&gt; : is a lesser known relative to the pixel, where &amp;ldquo;vo&amp;rdquo; for &lt;em&gt;volume&lt;/em&gt;
-has replaced &amp;ldquo;pix&amp;rdquo; for picture; giving us a &lt;em&gt;&amp;ldquo;volume element&amp;rdquo;&lt;/em&gt;. My first
-exposure to the usage of this term to denote spatial locations was the
-&lt;a href=&#34;https://www.nature.com/articles/s41592-021-01264-7&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Tangram paper&lt;/a&gt;. I&amp;rsquo;m not
-fully sure why this term was preferred over pixel, but perhaps &amp;ldquo;volume&amp;rdquo; was
-considered a more general term that could describe elements in both 2D and 3D
-methods (if you consider area as a &amp;ldquo;2D volume&amp;rdquo;). Although, I believe, for most
-people, volume relates very much to 3D objects; thus, potentially puzzling
-some people.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Spatial location&lt;/strong&gt; : sometimes, often in an attempt to be method agnostic, I
-(and others) have used this term instead of any of the aforementioned
-alternatives. It definitely does the trick, it states exactly what we&amp;rsquo;re
-dealing with and there&amp;rsquo;s no room for confusion. But it&amp;rsquo;s terribly &lt;del&gt;unsexy&lt;/del&gt;
-boring, as well as being quite long (two words!) and inconvenient to use.
-Sure, one could go for yet another portmanteau, but referring to spatial locations
-as &lt;em&gt;&amp;ldquo;splocs&amp;rdquo;&lt;/em&gt; sounds&amp;hellip; ehm&amp;hellip; ridiculous.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Gexel&lt;/strong&gt; : a what? Yeah you read that correct, a &lt;em&gt;gexel&lt;/em&gt;. I stumbled upon
-this term when reading the 2021 &lt;a href=&#34;https://www.sciencedirect.com/science/article/pii/S2405471221001514&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MULTILAYER
-paper&lt;/a&gt;,
-where the authors got inspired by the pixels and conceived (I could not find
-any earlier use) of the &amp;ldquo;gexel&amp;rdquo;, being short for &lt;strong&gt;&amp;ldquo;gene expression
-element&amp;rdquo;&lt;/strong&gt;. At first I kind of frowned at this term, but the more I&amp;rsquo;ve been
-thinking about it, the more I&amp;rsquo;ve come to like it. It&amp;rsquo;s fully method agnostic,
-it&amp;rsquo;s short and convenient to use, and &amp;ldquo;gene expression element&amp;rdquo; captures the
-essence of what our spatial locations are. The big downside to this term is
-its lack of &lt;em&gt;generalization to other modalities&lt;/em&gt;, or multimodal assays where
-different kinds of information are registered at the same location. Perhaps
-one could use &lt;em&gt;daxel&lt;/em&gt; for &amp;ldquo;data element&amp;rdquo; or &lt;em&gt;spexel&lt;/em&gt; for &amp;ldquo;spatial expression
-element&amp;rdquo;, but both sound a bit &amp;ldquo;forced&amp;rdquo;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;We can summarize this is a very basic table:&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Term&lt;/th&gt;
-&lt;th&gt;Agnostic&lt;/th&gt;
-&lt;th&gt;Descriptive&lt;/th&gt;
-&lt;th&gt;Unambiguous&lt;/th&gt;
-&lt;th&gt;Convenient&lt;/th&gt;
-&lt;th&gt;Multimodal&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;bead&lt;/td&gt;
-&lt;td&gt;no&lt;/td&gt;
-&lt;td&gt;no&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;spot&lt;/td&gt;
-&lt;td&gt;no&lt;/td&gt;
-&lt;td&gt;no&lt;/td&gt;
-&lt;td&gt;no&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;feature&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;td&gt;no&lt;/td&gt;
-&lt;td&gt;no&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;pixel&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;td&gt;no&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;voxel&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;td&gt;no&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;spatial location&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;td&gt;no&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;gexel&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;td&gt;yes (+)&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;td&gt;no&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;Columns: Agnostic - method agnostic, Descriptive - conveys information about what it
-represents, Unambiguous - will not be confused with other elements of the data,
-Convenient - easy to use and say, Multimodal - can be used in mulitmodal
-assays.&lt;/p&gt;
-&lt;p&gt;P.S. I&amp;rsquo;m acutely aware of the fact that &lt;em&gt;&amp;ldquo;being bothered by the inconsistency in
-naming of spatial locations&amp;rdquo;&lt;/em&gt; would be the perfect answer to &lt;em&gt;&amp;ldquo;tell me you have
-no real problems without saying you have no real problems.&amp;quot;&lt;/em&gt; Other &lt;em&gt;more
-important&lt;/em&gt; things are happening around the world, I acknowledge that 100%, but I
-don&amp;rsquo;t want those things to engulf my whole existence. Silly discussions must
-also be allowed, just as happiness must be allowed space in times of grief and
-sorrow.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>2021 SIB/NBIS course resources</title>
       <link>/extras/scadv-info/</link>
       <pubDate>Sun, 29 Aug 2021 06:13:42 +0000</pubDate>
@@ -947,19 +1108,6 @@ Slide 39&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>2021 EMBL course resources</title>
-      <link>/about/about/</link>
-      <pubDate>Fri, 30 Jul 2021 05:03:42 +0000</pubDate>
-      <guid>/about/about/</guid>
-      <description>&lt;h2&gt; Podcasts I listen to &lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt; This American Life &lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt; Computer related &lt;/h2&gt;
 </description>
     </item>
     
@@ -2043,6 +2191,19 @@ fluorescence in situ hybridization data &amp;raquo; DOI : &lt;a href=&#34;https:
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>/about/about/</link>
+      <pubDate>Fri, 30 Jul 2021 05:03:42 +0000</pubDate>
+      <guid>/about/about/</guid>
+      <description>&lt;h2&gt; Podcasts I listen to &lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt; This American Life &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt; Computer related &lt;/h2&gt;
 </description>
     </item>
     
