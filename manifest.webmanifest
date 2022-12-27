@@ -1,0 +1,18 @@
+{
+  "name": "almaan",
+  "short_name": "almaan",
+  "lang": "en-us",
+  "theme_color": "hsl(113, 100%, 50%)",
+  "background_color": "hsl(113, 100%, 50%)",
+  "icons": [{
+    "src": "/images/icon_hu0976d26fdaec5d0ec6c053b09a4e039a_2013_192x192_fill_lanczos_center_3.png",
+    "sizes": "192x192",
+    "type": "image/png"
+    }, {
+    "src": "/images/icon_hu0976d26fdaec5d0ec6c053b09a4e039a_2013_512x512_fill_lanczos_center_3.png",
+    "sizes": "512x512",
+    "type": "image/png"
+     }],
+  "display": "standalone",
+  "start_url": "/?utm_source=web_app_manifest"
+}

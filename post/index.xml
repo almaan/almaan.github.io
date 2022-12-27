@@ -5,594 +5,232 @@
     <link>/post/</link>
       <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 06 May 2022 06:01:05 +0100</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 27 Dec 2022 00:53:05 +0100</lastBuildDate>
     <image>
-      <url>/images/icon_hu0976d26fdaec5d0ec6c053b09a4e039a_2013_512x512_fill_lanczos_center_2.png</url>
+      <url>/images/icon_hu0976d26fdaec5d0ec6c053b09a4e039a_2013_512x512_fill_lanczos_center_3.png</url>
       <title>Posts</title>
       <link>/post/</link>
     </image>
     
     <item>
-      <title>What is thy name?</title>
-      <link>/post/2022-05-06-capture-locations/</link>
-      <pubDate>Fri, 06 May 2022 06:01:05 +0100</pubDate>
-      <guid>/post/2022-05-06-capture-locations/</guid>
-      <description>&lt;p&gt;You know that feeling when you&amp;rsquo;re frustrated over something that has absolutely
-no real importance, but you just can&amp;rsquo;t let it go. That&amp;rsquo;s me right now. &lt;span
-style=&#34;color:#86fc8e&#34;&gt;I&amp;rsquo;m seriously bothered by the fact that every single
-publication seems to use a different term to denote the locations in
-spatial transcriptomics data.&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;It&amp;rsquo;s not that people aren&amp;rsquo;t using &lt;em&gt;my favorite&lt;/em&gt; term (FYI, I don&amp;rsquo;t have one)
-that annoys me, but the fact that there&amp;rsquo;s no consensus on which term to use.
-There are &lt;em&gt;beads, cells, features, voxels, pixels, spots, capture locations&lt;/em&gt;,
-and many other innovative alternatives. The current practice is &lt;strong&gt;confusing&lt;/strong&gt;,
-and settling on one term should not be that hard.&lt;/p&gt;
+      <title>How to book a camping site in the US</title>
+      <link>/post/2022-12-26-camp/</link>
+      <pubDate>Tue, 27 Dec 2022 00:53:05 +0100</pubDate>
+      <guid>/post/2022-12-26-camp/</guid>
+      <description>&lt;h2 id=&#34;tldr&#34;&gt;TLDR&lt;/h2&gt;
+&lt;p&gt;I built a Python application that checks the availability of specific campsites
+listed at &lt;a href=&#34;https://www.recreation.gov&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Recration.gov&lt;/a&gt;, and if there is anything
+available, it sends you an email. The code can be found
+&lt;a href=&#34;https://github.com/almaan/campsite-checker&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;
+&lt;p&gt;A few weeks ago, me and some friends were eating popcorn at a bar in Oakland
+(genious concept); in addition the the normal banter, we ventured into the
+domain of hiking and camping. Especially, how hard it is to get a spot at the
+campsites in the more &amp;ldquo;popular&amp;rdquo; recreational areas (e.g., Yosemite). I
+have yet to figure exactly what laws apply and where you can camp, but I&amp;rsquo;m not
+stoked about getting shot for trespassing, so going to a designated campsite seems
+like the better option. However, there are some issues with this, which my
+friends explained as follows:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Almost everyone wants to use the campsites (because of the convinience)&lt;/li&gt;
+&lt;li&gt;There&amp;rsquo;s only a limited number of spots at each site&lt;/li&gt;
+&lt;li&gt;Due to the high demand, spots are being booked almost instantly after being
+released&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;My friend also made the following statement:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&amp;ldquo;If names are not correct, language will not be in accordance with the truth of things.&amp;rdquo;
-&amp;ndash; Confucius&lt;/p&gt;
+&lt;p&gt;All the engineers in SF knows how to code, so they just write bots that books
+the sites for them, meaning &amp;rsquo;normal&amp;rsquo; people never have a chance to book anything.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;My idea with this post was to present some of the different terms I&amp;rsquo;ve
-encountered so far (disclaimer: this is not an exhaustive list**, together with a
-bit of personal commentary - mainly to provide some context. To then couple this
-with a poll of some sort, and see what the thoughts of the community are.
-Perhaps this could spark some sort of discussion or reflection on the topic.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt; : this list was updated (2022-05-09) after posting
-&lt;a href=&#34;https://twitter.com/aalmaander/status/1523290638422188034?s=20&amp;amp;t=04LQK9AF-yQHLcgYT_K2dA&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this&lt;/a&gt;
-twitter post, where some other suggestions were presented. Thanks to all the
-people who contributed to a really nice discussion!&lt;/p&gt;
+&lt;p&gt;Now, I&amp;rsquo;m not a software engineer and I very rarley write code to interact with
+the web, but boldened by a few drinks I volunteered to assemble something that
+would help us in the battle of the campsites. As the old saying goes: &lt;em&gt;&amp;ldquo;if you
+can&amp;rsquo;t beat them, join them.&amp;rdquo;&lt;/em&gt;, so that&amp;rsquo;s how I decided to write a bot of our own.&lt;/p&gt;
+&lt;h2 id=&#34;project&#34;&gt;Project&lt;/h2&gt;
+&lt;p&gt;&lt;ins&gt;Initial objective&lt;/ins&gt;: &lt;strong&gt;Create a bot that will scrape the web for available campgrounds
+and notify the stakeholders if anything becomes/is available.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;After thinking a bit more about the intital objective and looking into the
+resources, a more specific objective and workflow emerged.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Bead&lt;/strong&gt; : popularized by
-&lt;a href=&#34;https://www.science.org/doi/10.1126/science.aaw1219&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Slide-seq&lt;/a&gt;, in which
-beads are used to capture the transcripts within the tissue. This also
-resonates well with data from the HDST platform. However, it makes zero sense
-with data from other platforms, like Visium, where capture probes are
-immobilized to a solid surface, nor to imaging-based techniques like MERFISH or
-SeqFISH where single molecules are visualized and there&amp;rsquo;s no &amp;ldquo;capture&amp;rdquo; going
-on.&lt;/p&gt;
+&lt;p&gt;Instead of scraping &amp;rsquo;the web&amp;rsquo; - the focus would be on a single site
+&lt;a href=&#34;https://www.recreation.gov&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Recration.gov&lt;/a&gt;. This holds &lt;em&gt;a lot&lt;/em&gt; of campgrounds
+(113&#39;000) and had a decent web API that you could query for available dates
+(though with limited options)&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Spot&lt;/strong&gt; : is used somewhat ambiguously in different techniques. In the
-&lt;a href=&#34;https://www.science.org/doi/10.1126/science.aaf2403&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ST&lt;/a&gt; and
-&lt;a href=&#34;https://www.10xgenomics.com/products/spatial-gene-expression&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Visium&lt;/a&gt;
-platform, the mRNA capture locations are printed onto the surface in a fashion
-similar to how
-&lt;a href=&#34;https://www.nature.com/scitable/definition/microarray-202/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;microarrays&lt;/a&gt; were
-constructed, which made the use of &amp;ldquo;spot&amp;rdquo; to describe the capture locations
-quite natural. But just as &amp;ldquo;beads&amp;rdquo; makes little sense to describe the capture
-locations in Visium data, &amp;ldquo;spots&amp;rdquo; makes no sense in Slide-seq data. What adds
-another layer of confusion is that in &lt;a href=&#34;https://www.nature.com/articles/s41598-019-43943-8&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;imaging-based
-methods&lt;/a&gt;, &amp;ldquo;spot&amp;rdquo; is
-sometimes used to describe the signal from a single molecule. This kind of
-ambiguity adds even more confusion to the already confusing situation. &amp;ldquo;Spot&amp;rdquo;
-is currently (2022-05-06) favored by 10x Genomics (the distributor of Visium).
-10x Genomics has a large reach and, i.e., whatever term they chose, a lot of
-people will use it.&lt;/p&gt;
+&lt;p&gt;Not every campground needs to be checked, only those of interest to us. This
+should be amenable to change, i.e., adding/removing campgrounds to our list
+needs to be seamless.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Feature&lt;/strong&gt; : have been used by some authors to describe the spatial
-locations, for example, &lt;a href=&#34;https://doi.org/10.1016/j.molcel.2021.03.016&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this&lt;/a&gt;
-review. Without bashing too hard on the people who prefer this term, I must
-confess that I find it extremely impractical to use the word &amp;ldquo;feature&amp;rdquo; to
-describe the &amp;ldquo;observations&amp;rdquo;. To me, a feature is the information associated
-with the spatial location (i.e., gene expression). Also, most analysis
-frameworks (e.g., Seurat) tend to call the genes (if you&amp;rsquo;re analyzing gene
-expression data) features. If we were to use the term feature also for our
-spatial locations, would we then say that we have a &amp;ldquo;feature times feature&amp;rdquo;
-matrix? That&amp;rsquo;s not very helpful. If confusion is something we want to avoid,
-we should not pursue the use of this term.&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;re not available all the time, so campground availability should only be
+reported within certain windows of time.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Pixel&lt;/strong&gt; : a term that most of us are familiar with, but usually in the
-context of pictures or camera lenses. The word pixel is a portmanteau of the
-two words &amp;ldquo;picture&amp;rdquo; and &amp;ldquo;element&amp;rdquo; (where &amp;ldquo;pix&amp;rdquo; is used as short form of
-&amp;ldquo;picture&amp;rdquo;). I first saw this being used in the &lt;a href=&#34;https://www.nature.com/articles/s41587-021-00830-w&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RCTD
-paper&lt;/a&gt;, but have also
-heard other people use the term in presentations. To some extent, this is a
-slightly more general term than &amp;ldquo;bead&amp;rdquo; or &amp;ldquo;spot&amp;rdquo;, and it works with
-imaging-based spatial transcriptomics methods. Also, to some extent, you could
-consider the Visium or Slide-seq data as an &amp;ldquo;image&amp;rdquo; with ~20,000 channels (one
-channel - one gene) instead of the standard three channels (RGB), but that&amp;rsquo;s a
-bit of a stretch. Calling the spatial data a &amp;ldquo;picture&amp;rdquo; when it&amp;rsquo;s not really
-image data that we&amp;rsquo;re working does not really vibe with me.&lt;/p&gt;
+&lt;p&gt;Minimal effort should be required to take part of the information. Because&amp;hellip;
+well I&amp;rsquo;m lazy and busy.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Voxel&lt;/strong&gt; : is a lesser known relative to the pixel, where &amp;ldquo;vo&amp;rdquo; for &lt;em&gt;volume&lt;/em&gt;
-has replaced &amp;ldquo;pix&amp;rdquo; for picture; giving us a &lt;em&gt;&amp;ldquo;volume element&amp;rdquo;&lt;/em&gt;. My first
-exposure to the usage of this term to denote spatial locations was the
-&lt;a href=&#34;https://www.nature.com/articles/s41592-021-01264-7&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Tangram paper&lt;/a&gt;. I&amp;rsquo;m not
-fully sure why this term was preferred over pixel, but perhaps &amp;ldquo;volume&amp;rdquo; was
-considered a more general term that could describe elements in both 2D and 3D
-methods (if you consider area as a &amp;ldquo;2D volume&amp;rdquo;). Although, I believe, for most
-people, volume relates very much to 3D objects; thus, potentially puzzling
-some people.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Spatial location&lt;/strong&gt; : sometimes, often in an attempt to be method agnostic, I
-(and others) have used this term instead of any of the aforementioned
-alternatives. It definitely does the trick, it states exactly what we&amp;rsquo;re
-dealing with and there&amp;rsquo;s no room for confusion. But it&amp;rsquo;s terribly &lt;del&gt;unsexy&lt;/del&gt;
-boring, as well as being quite long (two words!) and inconvenient to use.
-Sure, one could go for yet another portmanteau, but referring to spatial locations
-as &lt;em&gt;&amp;ldquo;splocs&amp;rdquo;&lt;/em&gt; sounds&amp;hellip; ehm&amp;hellip; ridiculous.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Gexel&lt;/strong&gt; : a what? Yeah you read that correct, a &lt;em&gt;gexel&lt;/em&gt;. I stumbled upon
-this term when reading the 2021 &lt;a href=&#34;https://www.sciencedirect.com/science/article/pii/S2405471221001514&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MULTILAYER
-paper&lt;/a&gt;,
-where the authors got inspired by the pixels and conceived (I could not find
-any earlier use) of the &amp;ldquo;gexel&amp;rdquo;, being short for &lt;strong&gt;&amp;ldquo;gene expression
-element&amp;rdquo;&lt;/strong&gt;. At first I kind of frowned at this term, but the more I&amp;rsquo;ve been
-thinking about it, the more I&amp;rsquo;ve come to like it. It&amp;rsquo;s fully method agnostic,
-it&amp;rsquo;s short and convenient to use, and &amp;ldquo;gene expression element&amp;rdquo; captures the
-essence of what our spatial locations are. The big downside to this term is
-its lack of &lt;em&gt;generalization to other modalities&lt;/em&gt;, or multimodal assays where
-different kinds of information are registered at the same location. Perhaps
-one could use &lt;em&gt;daxel&lt;/em&gt; for &amp;ldquo;data element&amp;rdquo; or &lt;em&gt;spexel&lt;/em&gt; for &amp;ldquo;spatial expression
-element&amp;rdquo;, but both sound a bit &amp;ldquo;forced&amp;rdquo;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;We can summarize this is a very basic table:&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Term&lt;/th&gt;
-&lt;th&gt;Agnostic&lt;/th&gt;
-&lt;th&gt;Descriptive&lt;/th&gt;
-&lt;th&gt;Unambiguous&lt;/th&gt;
-&lt;th&gt;Convenient&lt;/th&gt;
-&lt;th&gt;Multimodal&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;bead&lt;/td&gt;
-&lt;td&gt;no&lt;/td&gt;
-&lt;td&gt;no&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;spot&lt;/td&gt;
-&lt;td&gt;no&lt;/td&gt;
-&lt;td&gt;no&lt;/td&gt;
-&lt;td&gt;no&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;feature&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;td&gt;no&lt;/td&gt;
-&lt;td&gt;no&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;pixel&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;td&gt;no&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;voxel&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;td&gt;no&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;spatial location&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;td&gt;no&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;gexel&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;td&gt;yes (+)&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;td&gt;yes&lt;/td&gt;
-&lt;td&gt;no&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;Columns: Agnostic - method agnostic, Descriptive - conveys information about what it
-represents, Unambiguous - will not be confused with other elements of the data,
-Convenient - easy to use and say, Multimodal - can be used in mulitmodal
-assays.&lt;/p&gt;
-&lt;p&gt;P.S. I&amp;rsquo;m acutely aware of the fact that &lt;em&gt;&amp;ldquo;being bothered by the inconsistency in
-naming of spatial locations&amp;rdquo;&lt;/em&gt; would be the perfect answer to &lt;em&gt;&amp;ldquo;tell me you have
-no real problems without saying you have no real problems.&amp;quot;&lt;/em&gt; Other &lt;em&gt;more
-important&lt;/em&gt; things are happening around the world, I acknowledge that 100%, but I
-don&amp;rsquo;t want those things to engulf my whole existence. Silly discussions must
-also be allowed, just as happiness must be allowed space in times of grief and
-sorrow.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Thesis Epilogue</title>
-      <link>/post/2022-04-06-epilogue/</link>
-      <pubDate>Wed, 06 Apr 2022 06:01:05 +0100</pubDate>
-      <guid>/post/2022-04-06-epilogue/</guid>
-      <description>&lt;p&gt;On the 18th of March 2022 I defended my PhD thesis: &lt;em&gt;&amp;ldquo;Computational methods for analysis of spatial transcriptomics data&amp;rdquo;&lt;/em&gt;. About a month before this date, I
-finalized the actual document to be defended. Having spent a considerable amount
-of time writing the thesis, I had two realizations upon submission: (1) aside
-from my supervisor, the opponent, and my thesis committee - only a handful
-people would at most read this thing I&amp;rsquo;ve worked so hard to compile; (2) the
-part I deemed most valuable was the &lt;em&gt;Epilogue&lt;/em&gt;, where I
-took the freedom to share some personal insights from these years.&lt;/p&gt;
-&lt;p&gt;Hence, I&amp;rsquo;ve decided to post an excerpt from the Epilogue here on the website. I
-like it not because it&amp;rsquo;s a literary masterpiece (it most certainly is not), but
-because it contains advice I wish I had known when starting my PhD. It consists
-of three parts:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;What I&amp;rsquo;ve learnt&lt;/strong&gt; : lessons learnt from my time as a PhD&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;What I predict&lt;/strong&gt; : some humble prediction about the future&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;What I hope&lt;/strong&gt; : hopes for the future&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;For anyone interested in the full thesis, it can be found &lt;a href=&#34;http://kth.diva-portal.org/smash/record.jsf?pid=diva2%3A1639545&amp;amp;dswid=4029&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1 id=&#34;what-ive-learnt&#34;&gt;What I&amp;rsquo;ve learnt&lt;/h1&gt;
-&lt;p&gt;The &lt;em&gt;&amp;ldquo;end of history illusion&amp;rdquo;&lt;/em&gt; is a phenomenon in psychology where
-individuals agree that up until the current point in time they&amp;rsquo;ve
-experienced continuous and significant growth, but believe that,
-henceforth, they will not change by any considerable amount. This
-illusion is persistent across all ages, and repeatedly proven to be
-incorrect. We humans are malleable and never seem to solidify. No matter
-where in life we are, we continue to develop, change, and grow.&lt;br&gt;
-&lt;br&gt;
-I was convinced that I&amp;rsquo;d learn a lot during my PhD, scientifically &amp;ndash;
-but would I be affected on a personal level? Most likely not. Despite me
-being aware of the aforementioned illusion, I was impermeable to the
-idea that this experience would leave much of an imprint on me. I guess
-that this is at its best described as arrogance and at its worst as
-stupidity.&lt;br&gt;
-&lt;br&gt;
-Starting my PhD on the 12:th of June 2019, I&amp;rsquo;ve spent exactly 1010 days
-&amp;ndash; or 2 years, 9 months, and 6 days &amp;ndash; pursuing my degree. This time has
-been nothing short of transformative. Agreeably, approximately three
-years is not a huge amount of time, but these years have been densely
-packed with new experiences, encounters, and impressions. I&amp;rsquo;ve acquired
-many new skills, but I also leave this era of my life as a very
-different person than the one who entered it. Below follows a curated
-list of insights that I&amp;rsquo;ve collected over the course of my PhD, relating
-to science as well as personal topics.&lt;/p&gt;
+&lt;p&gt;The bot should not book anything, there are several reasons for this, but the
+two main ones are:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;span style=&#34;color:#1eff00&#34;&gt;&lt;strong&gt;A high level of complexity does not equal a high level of
-success&lt;/strong&gt;&lt;/span&gt;. Among computational methods, it&amp;rsquo;s rarely the most
-advanced methods that surface as the most popular ones. If you
-desire spread and impact, study the field, seek questions that are
-frequently being asked but rarely answered; then tailor your method
-towards this. Never develop a method and &lt;em&gt;then&lt;/em&gt; invent a question
-for it to address.&lt;/p&gt;
+&lt;p&gt;I don&amp;rsquo;t want to get into payments and validation of credit cards etc., that
+feels a bit risky (especially if you need to host that on an external
+site)&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;span style=&#34;color:#1eff00&#34;&gt;&lt;strong&gt;Develop for you audience, not yourself&lt;/strong&gt;&lt;/span&gt;. If you&amp;rsquo;re capable of
-formulating a statistical or mathematical model, and then implement
-it in code, you are likely more proficient in these areas than the
-average user of your tool. Therefore, if you want people to use your
-software, make the interface intuitive and provide a layman&amp;rsquo;s
-explanation of how it works. Good documentation with loads of
-examples is key to success. If possible, integrate your method into
-already existing frameworks, this makes it easy for users to explore
-without having to learn a new syntax. From my experience, methods
-that are easy to operate are often favored over less user friendly
-ones, even though the latter might have much better performance.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;span style=&#34;color:#1eff00&#34;&gt;&lt;strong&gt;Listen to people when they complain&lt;/strong&gt;&lt;/span&gt;. If someone expresses that
-they are struggling with something, they are likely not alone.
-Embrace the opportunity and be the one to deliver the solution. This
-is one of the easiest ways to identify areas where you can make a
-useful contribution.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;span style=&#34;color:#1eff00&#34;&gt;&lt;strong&gt;Seek diversity and honor others&#39; expertise&lt;/strong&gt;&lt;/span&gt;. The best
-collaborations are those where the people involved have
-complementary strengths and show mutual respect for each other&amp;rsquo;s
-skills. There&amp;rsquo;s a difference to being proud of your expertise and
-being arrogant about it. A project thrives when the members don&amp;rsquo;t
-consider their own contribution more (or less) important than anyone
-else&amp;rsquo;s, but acknowledge that everyone is essential for the process
-to move forward.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;span style=&#34;color:#1eff00&#34;&gt;&lt;strong&gt;Time spent planning is often doubly rewarded.&lt;/strong&gt;&lt;/span&gt; I&amp;rsquo;m addicted to
-fast progress, but have learnt that a short pause can save plenty of
-time. Making informed design choices, and not just blindly throwing
-yourself at the first idea, almost always results in a more pleasant
-and faster overall process. A quick fix for the situation at hand
-might seem tempting, but adapting general solutions usually pays off
-in the end.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;span style=&#34;color:#1eff00&#34;&gt;&lt;strong&gt;Garbage data will give you garbage results&lt;/strong&gt;&lt;/span&gt;. You wouldn&amp;rsquo;t pick up
-a roadkill, cook it, and then expect it to taste like a dish from a
-Michelin star restaurant. The same should hold true for data; one
-needs to have reasonable expectations about what information that
-can be derived from it. There&amp;rsquo;s a difference between a
-bioinformat&lt;em&gt;ician&lt;/em&gt; and a mag&lt;em&gt;ician&lt;/em&gt;, the latter can turn nothing
-into something, the former cannot. Sometimes, the data is just not
-good enough to answer certain questions, if such is the case, there
-are only two reasonable options: (i) ask a different question,
-or (ii) generate new data.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;span style=&#34;color:#1eff00&#34;&gt;&lt;strong&gt;Don&amp;rsquo;t bring nuclear weapons to a gun fight.&lt;/strong&gt;&lt;/span&gt; Sometimes enthusiasm
-and excitement about new powerful methods makes us blind to the fact
-that the problem at hand likely could be solved with simpler means.
-For some questions, a simple regression model will do just as fine
-&amp;ndash; and possibly even better &amp;ndash; than a fancy deep learning model.
-It&amp;rsquo;s easy to be caught up in the storm of buzz words, but take some
-time to contemplate what level of complexity your problem actually
-requires.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;span style=&#34;color:#1eff00&#34;&gt;&lt;strong&gt;Aim to be the dumbest person in the room&lt;/strong&gt;.&lt;/span&gt; The best way to grow
-is to position yourself in an environment where people are more
-skilled than yourself, it accelerates learning and forces you to be
-alert. Comfort is truly the enemy of improvement.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;span style=&#34;color:#1eff00&#34;&gt;&lt;strong&gt;Don&amp;rsquo;t set yourself on fire to keep others warm&lt;/strong&gt;.&lt;/span&gt; I believe one
-should always strive to help others when we can, but at some point,
-it can also become problematic. If you &lt;em&gt;consistently&lt;/em&gt; are the one
-who does the extra work, covers for others, and stays late &amp;ndash; then
-you&amp;rsquo;re not helping, you&amp;rsquo;re being taken advantage of. We&amp;rsquo;re all
-familiar with the airplane safety instructions telling us to put on
-our own masks before helping someone else, this is equally
-applicable to the workplace. If you want to have a positive impact
-on the people around you, the most important thing is that you feel
-good about your own situation.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;span style=&#34;color:#1eff00&#34;&gt;&lt;strong&gt;Never compromise on health&lt;/strong&gt;.&lt;/span&gt; In January 2021 I experienced
-something close to a physical collapse, my body simply quit on me. I
-could barely walk for two months, and for six more months, every day
-of my life felt like a living hell &amp;ndash; I did not enjoy living. Every
-morning, I put on an alarm that counted down the hours that I had
-left to be awake and aware of my situation. Still, when night came,
-I barely slept. Instead, I woke up multiple times having issues
-breathing or in a state of complete sleep paralysis. A combination
-of bad nutrition, an extreme (according to some people) amount of
-exercise, and working ten to twelve hours a day (including weekends)
-put me in a state of severe exhaustion. It was not until I became a
-prisoner of my own body that I realized how much my previous freedom
-meant to me. It&amp;rsquo;s hard realizing that you&amp;rsquo;re not an exception, but
-just as human as everyone else. However, in the end, this
-realization is healthy. If there&amp;rsquo;s one thing I will bring with me
-from these years, it&amp;rsquo;s that &lt;em&gt;nothing&lt;/em&gt; is worth sacrificing one&amp;rsquo;s
-well-being or health for.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;span style=&#34;color:#1eff00&#34;&gt;&lt;strong&gt;Perspective is everything.&lt;/strong&gt;&lt;/span&gt; There&amp;rsquo;s a quote from the, truly
-awful, series &lt;em&gt;&amp;ldquo;Pirates of the Caribbean&amp;rdquo;&lt;/em&gt; that reads: &lt;em&gt;&amp;ldquo;The problem
-is not the problem. The problem is your attitude about the
-problem.&amp;quot;&lt;/em&gt; Even though I cringe just by thinking about Captain Jack
-Sparrow, these words have stayed with me. I&amp;rsquo;ve experienced first
-hand how you can&amp;rsquo;t plan every aspect of life. Unexpected things can,
-and will, happen. Our attitude determines how we experience these
-events, whether it becomes a tragedy or a lesson. I&amp;rsquo;ve tried to
-adopt more of a &amp;ldquo;gratitude mindset&amp;rdquo;; instead of being frustrated
-when things don&amp;rsquo;t go my way, I try to celebrate what has gone right
-so far. This attitude is not always easy to maintain, and one is of
-course allowed to feel anger, but it&amp;rsquo;s a feeling that becomes toxic
-if we let it linger for too long. Implementing this mindset have
-made me a much happier individual and helped me through some really
-dark times.&lt;/p&gt;
+&lt;p&gt;I don&amp;rsquo;t want to risk excessive booking or unwanted transactions in case any
+bugs enter the codebase&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;what-i-predict&#34;&gt;What I predict&lt;/h1&gt;
-&lt;p&gt;In 2016, when the Spatial Transcriptomics (ST) technique was published,
-I had just finished the second year of my bachelor and was yet to hear
-the term &amp;ldquo;transcriptomics&amp;rdquo;. Thus, I&amp;rsquo;m acutely aware of the fact that I
-belong to the younger generation of the transcriptomics field, and do
-not have the same experience as many of my peers. Still, having worked
-somewhat intensively in the niche of computational method development
-for spatial transcriptomics, I have a few predictions about the future,
-which I&amp;rsquo;ll take the freedom to share here.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;We want assess availability continously, so repeated queries should be made.
+However, we want to avoid redundant information - &lt;em&gt;&amp;ldquo;if you don&amp;rsquo;t have anything
+new to say, then don&amp;rsquo;t say anything at all.&amp;rdquo;&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Having figured out and formalized &lt;em&gt;what&lt;/em&gt; I actually wanted to create, it was
+just to start building. Also, I decided to write this whole thing in Python,
+because that&amp;rsquo;s the language I&amp;rsquo;m most comfortable with - and I wanted this to be a small
+project not involving learning a new syntax/language.&lt;/p&gt;
+&lt;p&gt;The very first thing I had to do was to figure out how to query Recration.gov
+for availability. They have an &lt;a href=&#34;https://github.com/almaan/campsite-checker&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;API&lt;/a&gt;
+with documentation, but this was honestly not very helpful. Browsing
+other github projects with similar objectives, I figured that I
+could get all the information that I needed by sending a &lt;code&gt;GET&lt;/code&gt; request to their
+website. The tricky part was to understand exactly how this worked, after some
+time, I managed to wrap my had around it, using the &lt;code&gt;get&lt;/code&gt; function from the
+&lt;code&gt;requests&lt;/code&gt; module to send the &lt;code&gt;GET&lt;/code&gt; request, the arguments were:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;span style=&#34;color:#1eff00&#34;&gt;&lt;strong&gt;Deep learning methods will become staple goods&lt;/strong&gt;&lt;/span&gt;. Although I&amp;rsquo;m
-fascinated by deep learning (DL) methods, none of my works have so
-far exploited the power of these architectures &amp;ndash; mainly because
-I&amp;rsquo;ve felt as if the questions I had could be addressed with simpler
-methods, or because the data wasn&amp;rsquo;t there. However, the trend of
-access to more data, increasingly sophisticated and user friendly
-frameworks &amp;ndash; paired with the development of new kinds of models &amp;ndash;
-makes me certain that DL will revolutionize the single cell and
-spatial transcriptomics fields, just as it has many other aspects of
-our life. Currently, a lot of the DL-based methods simply apply
-existing general models (e.g., taken from the natural language
-processing field) to a problem in the transcriptomics sphere.
-However, I believe we&amp;rsquo;ll migrate from this approach towards using
-&lt;em&gt;bespoke models&lt;/em&gt;, where prior information about the biological
-systems are integrated into the model architecture. In the very near
-future, methods leveraging graph convolutional networks (GCNs) and
-their aptitude for irregular data will likely become a popular
-element in many methods for analysis of spatial transcriptomics
-data.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;span style=&#34;color:#1eff00&#34;&gt;&lt;strong&gt;Emergence of perturbation studies.&lt;/strong&gt;&lt;/span&gt; The majority of publications
-and projects that include spatial transcriptomics data have so far
-been observational. A sample is collected, analyzed, and relevant
-observations presented. At some rare occasions, samples representing
-case and control exist, but usually with limited meta data and no
-control over confounding variables. While interesting, this setup
-mainly permits exploratory data analysis (EDA), but does not lend
-itself well to infer causal relationships. To go beyond mere
-associations or correlations, an intervention or &lt;em&gt;perturbation&lt;/em&gt; of
-the system is necessary. Thus, I&amp;rsquo;m certain that it&amp;rsquo;s just a question
-of time until techniques to the likes of Perturb-seq are combined
-with spatial assays. With the introduction of perturbations, we&amp;rsquo;ll
-be able to deduce how gene expression impacts spatial structure, and
-potentially also the reciprocal relationships. With access to such
-data, &lt;em&gt;causal inference&lt;/em&gt; will likely become an essential tool for
-modeling and understanding causative effects. This is something I&amp;rsquo;m
-genuinely excited about.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;span style=&#34;color:#1eff00&#34;&gt;&lt;strong&gt;Preference of generative models.&lt;/strong&gt;&lt;/span&gt; Many of the models we currently
-employ are of a discriminative nature, but I anticipate a shift
-towards &lt;em&gt;generative models&lt;/em&gt;. Discriminative models assumes some
-functional form of the posterior, in contrast, generative models
-learns the joint probability distribution over all variables.
-Generative models are more susceptible to incorporation of prior
-information about the systems being studied, and better at
-representing causal relationships. Thus, they neatly tie together
-the two previous statement about a need for bespoke models and
-causal links.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;span style=&#34;color:#1eff00&#34;&gt;&lt;strong&gt;Challenges of multimodal analysis.&lt;/strong&gt;&lt;/span&gt; To me, the trend in
-technology development can best be summarized with the Pokémon
-slogan: &lt;em&gt;&amp;ldquo;Gotta Catch &amp;lsquo;Em All.&amp;quot;&lt;/em&gt; The transcriptome, epigenome,
-proteome, and metabolome &amp;ndash; we want them all, at the same time, from
-the same cell. Alas, 10x Genomics already have an assay where
-RNA-seq and ATAC-seq data from the same cell can be obtained, as
-well as an second assay where spatial RNA-seq information and
-protein abundance are collected simultaneously. Except for increased
-ability to resolve cell types and states, very few examples where
-multimodal data is superior to unimodal data have so far been
-presented, but there&amp;rsquo;s no lack of ideas.&lt;br&gt;
-&lt;br&gt;
-One of the commonly mentioned aspirations is to learn relationships
-between the different modalities, which can be used to &lt;em&gt;predict&lt;/em&gt; one
-modality from another, for example, deducing protein levels from
-gene expression. Here, I will take a somewhat controversial and
-conservative stance by stating that: prediction of one modality from
-another will prove to be more challenging than many expect. I base
-this statement on two concepts: &lt;em&gt;temporal delays&lt;/em&gt; and &lt;em&gt;missing
-information&lt;/em&gt;. I&amp;rsquo;ll elaborate on both these issues below.&lt;br&gt;
-&lt;br&gt;
-Changes to one part of the central dogma usually don&amp;rsquo;t manifest
-immediately in other parts, some form of delay tends to be present.
-Thus, data ($x_t$) collected from one modality at time $t$
-isn&amp;rsquo;t necessarily informative about the feature values ($y_t$)
-of a different modality at the same time point. Instead &amp;ndash; due to
-the lag &amp;ndash; $x_t$ relates to the values ($y_{t&amp;rsquo;}$) at a
-later point $t&#39;$. This discrepancy causes an issue in learning,
-because the two modalities are related according to:
-$$y_{t&#39;} = f(x_t)$$
-However, in most multimodal assays, we observe
-$(x_t,y_t)$, meaning the data required to learn $f$ is not
-available. Potentially, $y_{t&#39;}$ could be inferred from
-$y_t$ by learning a second map $g$ such that
-$y_{t&#39;} = g(y_t)$. Then $f$ can be learnt by first
-transforming $y_t$ through $g$. Now, to find $g$, the
-derivative $\partial y_{t}/\partial t$ must likely be deduced.
-To estimate this derivative, at least one more data point close in
-time (w.r.t. protein turnover timescales) is required.
-Unfortunately, experimental assays only capture a single snapshot of
-the system at a particular time. As a consequence, estimation of
-such derivatives is usually infeasible. The dilemma described above
-is what I refer to as temporal delay.&lt;br&gt;
-&lt;br&gt;
-Next, I&amp;rsquo;ll address the second caveat, that of missing data. The path
-from one modality to another often involves several steps and
-regulatory mechanisms, not exclusively relying on elements of the
-observed modality. Thus, the previous equation should be updated to:
-$$y_{t&#39;} = f(x_t,u_t)$$
-Where $u_t$ represent entities with an
-influence over the regulatory mechanisms (e.g., enzyme levels or
-metabolic concentrations). Note that it&amp;rsquo;s possible that $u_t$ and
-$y_t$ overlaps. Assuming that the above equation is true, data must also be collected on
-$u_t$ for predictions about $y_{t&#39;}$ to be made, solely
-relying on $x_t$ is not sufficient. Thus, $x_t$ does not
-contain all the information needed to predict $y_t$. Of course,
-if $t \approx t&#39;$ and $f(x_t,u_t) \approx f(x_t)$, the
-problem is reduced to a much simpler one. Still, when such is not
-the case, we should accept that the prediction task is challenging.
-I definitely don&amp;rsquo;t think it&amp;rsquo;s beyond our capabilities, but while I
-expect methods for *integration* of different data modalities to
-emerge soon after the experimental technologies, general methods to
-model intermodal relationships will take more time to mature.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;span style=&#34;color:#1eff00&#34;&gt;&lt;strong&gt;The group before the individual.&lt;/strong&gt;&lt;/span&gt; As mentioned in the background, both
-internal and external factors influence a cell&amp;rsquo;s state. In my opinion,
-there&amp;rsquo;s still a need for general methods that tries to model how the local
-environment of a cell affects its behavior. Conditional models for gene
-expression already exist, one example being those that condition on cell
-type, often resulting in sets of marker genes or gene signatures. These
-models could be expanded to also include conditioning on the local
-environment of a cell, for example, the proportion of different cell types
-in its neighborhood. Such models add a new, interconnected, layer of
-information to our understanding of how cells operate in biological systems.
-Indeed, early attempts to construct models of this kind have already been
-made (e.g., node-centric expression modeling by the Theis Lab), and I dare
-to predict an abundance of them in a couple of years from now.&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;ins&gt;url&lt;/ins&gt;:
+&lt;code&gt;https://www.recreation.gov/api/camps/availability/campground/CAMPGROUND_ID/month&lt;/code&gt;
+Where &lt;code&gt;CAMPGROUND_ID&lt;/code&gt; is the ID of the campground you are interested in. This ID
+is easily extracted from the campground&amp;rsquo;s URL. For example, the campground
+&amp;ldquo;Rob Hill&amp;rdquo; has the following URL:
+&lt;code&gt;https://www.recreation.gov/camping/campgrounds/10172170&lt;/code&gt;. The ID of Rob
+Hill is &lt;code&gt;10172170&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;ins&gt;headers&lt;/ins&gt;: any valid header seemed to work, but I went with &lt;code&gt;{&amp;quot;User-Agent&amp;quot;:&amp;quot;Defined&amp;quot;}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;ins&gt;params&lt;/ins&gt;: this was actually the trickiest thing to figure out, but you need to
+specify a &amp;ldquo;start date&amp;rdquo;, but this &lt;strong&gt;has&lt;/strong&gt; to be the first of the month you are
+interested in, and also the format is very specific, namely:
+&lt;code&gt;YYYY-MM-01T00:00:00.000Z&lt;/code&gt;. A bit peculiar (to me at least) but easily done
+once I figured out the pattern.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;what-i-hope&#34;&gt;What I hope&lt;/h1&gt;
-&lt;p&gt;Having outlined the lessons I&amp;rsquo;ve learnt and my predictions for the
-future, only one thing remains: listing some of the thing I hope for,
-but am less certain of.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;span style=&#34;color:#1eff00&#34;&gt;&lt;strong&gt;Revised educational programs.&lt;/strong&gt;&lt;/span&gt; In genomics, almost every new
-technological method is accompanied by a suite of computational
-tools to analyze the data. Ever more frequently, high impact
-journals publish purely computational methods designed to unveil
-previously occluded insights that only emerge by clever modeling of
-the data. Thus, it&amp;rsquo;s evident that computational expertise is just as
-important to advance life science as biological and technical
-knowledge. If further proof is needed, in 2021, SciLifeLab and the
-Wallenberg National Program announced several DDLS (data driven life
-science) fellowships, acknowledging the importance of computational
-competence. Still, the essential skills needed in computational
-biology, such as: statistics, mathematics, probability theory,
-modeling, and programming, are severely underrepresented in many of
-the biotechnology programs at Swedish universities. We need to step
-up our game if we want maintain our status within the life sciences
-as an innovative and leading nation, and remain competitive with
-international institutions like the Broad or the Wellcome Trust
-Sanger Institute. The foundation must be laid early on, educating
-PhD students is not good enough, computational biology tracks should
-be instituted already at the Master level and potentially even seep
-into the bachelor programs. I sincerely hope that the educational
-programs will be updated, to also prepare students &amp;ndash; with an
-interest &amp;ndash; for the challenges a computational biologist faces.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;span style=&#34;color:#1eff00&#34;&gt;&lt;strong&gt;Increased diversity.&lt;/strong&gt;&lt;/span&gt; If there&amp;rsquo;s one thing I&amp;rsquo;m not stoked about,
-it&amp;rsquo;s gender quotation and female-exclusive events; to me they have
-an opposite effect of their intended purpose. These actions belittle
-women&amp;rsquo;s competence and give the impression that we need extra help
-or special rules to succeed. However, women are clearly
-underrepresented in the computational field; at many hackathons or
-meetings, I&amp;rsquo;ve found myself &amp;ndash; as a woman &amp;ndash; in a very small
-minority, and am often assumed to be someone representing the
-wet-lab side. I&amp;rsquo;m not upset by this, and have never been met with
-anything but respect when correcting people, but I don&amp;rsquo;t think it
-has to be like this. Girls and young women should be equally
-encouraged to purse STEM subjects as their male counterparts, and
-all of us &amp;ndash; me included &amp;ndash; should probably revise or abolish some
-of our stereotypes. So, I dearly hope for a future where the
-computational fields become more diverse and inclusive. Of course,
-diversity extends beyond gender, the same arguments can &amp;ndash; and
-should &amp;ndash; be made about ethnicity, age, religion, sexual identity,
-etc. Being a white woman living in Sweden, I fully acknowledge my
-privileges, and that my encounters with prejudice are probably
-dwarfed by those from other &amp;ndash; less fortunate &amp;ndash; groups. Still, I
-can only speak of my own experiences and observations.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;span style=&#34;color:#1eff00&#34;&gt;&lt;strong&gt;Breaking the limit&lt;/strong&gt;.&lt;/span&gt; My third, and final, wish for the future is
-to pass the qualifying time for the Boston Marathon. To then &amp;ndash; of
-course &amp;ndash; complete the race.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;A successful query would return a status &lt;code&gt;200&lt;/code&gt; and a response object with a
+&lt;code&gt;.json&lt;/code&gt; method, from which a dictionary containing all the relevant information
+can be extracted.&lt;/p&gt;
+&lt;p&gt;A brief comment on camping lingo:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;a &lt;strong&gt;campground&lt;/strong&gt; is a larger area that
+holds multiple &lt;strong&gt;campsites&lt;/strong&gt;. At Recretion.gov you search for a campground and
+get availability for the different campsites within that campground.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The dictionary obtained from our (hopefully) successful query, will hold
+different layers of information, but what&amp;rsquo;s most interesting to us is what we
+can access using the &lt;code&gt;campsites&lt;/code&gt; key; there we&amp;rsquo;ll have an entry for each
+campsite within a given campground, with the availability listed for all dates
+in the specified month. So this is exactly what we are looking for. The only
+addditional implementations was a loop over all the months of interest and
+filtering to only include dates that actually are available in the return value
+listing available dates.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m using a &lt;code&gt;config&lt;/code&gt; file (YAML) so specify the some of the parameters to this
+application, such as the months of interest (one could do specific dates, but I
+found it more conveinient to just say which month you want to check for dates
+since we want as many options as possible). I found a nice package called
+&lt;a href=&#34;https://dateparser.readthedocs.io/en/latest/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;em&gt;dateparser&lt;/em&gt;&lt;/a&gt; to help with
+parsing of the dates, using this allows for a more sloppy and more human
+friendly entry of dates.&lt;/p&gt;
+&lt;p&gt;Finally, this information is converted to an HTML text output which can be saved
+as an html file or added as the body of an email. HTML was the first
+&amp;lsquo;programming&amp;rsquo; language I learned, unfortunately my skills peaked at 12y/o&amp;hellip; so
+all I did was to convert this to a very basic table listing the campsites for
+each campground together with the available dates. For each &lt;em&gt;campsite&lt;/em&gt; there&amp;rsquo;s also a
+direct link to the booking page. Something like:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;Campground: Point Reyes National Seashore Campground
+
+    Campsite: BOAT A, 1-6 people
+      2023-03-01
+      2023-03-02
+      2023-03-03
+      2023-03-04
+    Campsite: BOAT B, 7-14 people
+      2023-03-01
+      2023-03-02
+      2023-03-03
+      ...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now, one of the criteria was that it should easy to add/remove campgrounds, and
+what&amp;rsquo;s more, I wanted different people to be able to make these changes -
+several people are in on this, and I don&amp;rsquo;t want every single change to go
+through me (that&amp;rsquo;d be a massive bottleneck). The solution to this was to create
+a &lt;em&gt;public&lt;/em&gt; Google Sheets document, where anyone we shared the link with could
+add/remove campgrounds as we went along. This was also very easy to implement, I
+used the &lt;code&gt;subprocess&lt;/code&gt; module&amp;rsquo;s &lt;code&gt;run&lt;/code&gt; function to make a &lt;code&gt;curl&lt;/code&gt; query, more
+specifically:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;curl -L https://docs.google.com/spreadsheets/d/SHEET_ID/export?format=csv&amp;amp;gid=GID --output TEMPFILE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Where &lt;code&gt;SHEET_ID&lt;/code&gt; is the ID of your sheet id and &lt;code&gt;GID&lt;/code&gt; is the tab id, you can
+grab both of these from the URL of your sheet.
+I found &lt;a href=&#34;https://stackoverflow.com/questions/24255472/download-export-public-google-spreadsheet-as-tsv-from-command-line&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this&lt;/a&gt;
+stackoverflow post quite helpfull.&lt;/p&gt;
+&lt;p&gt;As for how updates should be shared with those of us who are in on this
+whole scheme, I settled on the old traditional email. Everyone checks their
+email and it&amp;rsquo;s easy to set up. I&amp;rsquo;ll loop back to the email feature soon - but exactly how
+this would be implemented was more or less completely dictated by my choice of
+hosting service, so let&amp;rsquo;s say something about how this is being run.&lt;/p&gt;
+&lt;p&gt;I decided to host this whole thing on
+&lt;a href=&#34;https://www.pythonanywhere.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;pythonanywhere.com&lt;/a&gt; which was very affordable
+and seemed to allow enough customization. They also had a &amp;ldquo;Tasks&amp;rdquo; feature where
+you could launch reoccuring tasks just like a cronjob. Being cheap, I first went
+for the free subscription plan - and this made me choose
+&lt;a href=&#34;https://www.mailgun.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;mailgun.com&lt;/a&gt; which was whitelisted and didn&amp;rsquo;t require
+loads of configurations to be made (I&amp;rsquo;m looking at you Gmail&amp;hellip;). Now, in the
+end I went for a paid subscription of pythonanywhere, but I stayed with mailgun
+anyway. Why? Well honestly, they had a really simple API, for real - to send an
+email, all you need is your API key is:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def send_simple_message():
+    return requests.post(
+        &amp;quot;https://api.mailgun.net/v3/YOUR_DOMAIN_NAME/messages&amp;quot;,
+        auth=(&amp;quot;api&amp;quot;, &amp;quot;YOUR_API_KEY&amp;quot;),
+        data={&amp;quot;from&amp;quot;: &amp;quot;Excited User &amp;lt;mailgun@YOUR_DOMAIN_NAME&amp;gt;&amp;quot;,
+              &amp;quot;to&amp;quot;: [&amp;quot;bar@example.com&amp;quot;, &amp;quot;YOU@YOUR_DOMAIN_NAME&amp;quot;],
+              &amp;quot;subject&amp;quot;: &amp;quot;Hello&amp;quot;,
+              &amp;quot;text&amp;quot;: &amp;quot;Testing some Mailgun awesomness!&amp;quot;})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;However, what I didn&amp;rsquo;t register immediately was that you needed an external
+domain to send your emails through (to avoid spamers&amp;hellip; I think?). Fortunately I
+had this one (&lt;code&gt;differentiable.net&lt;/code&gt;) to use. It required me to setup some DNS
+configurations, but following their guide it took me at most ~20min.&lt;/p&gt;
+&lt;p&gt;To avoid redundant emails with the same availability information being sent over
+and over again, I opted for a semi-lazy solution. I&amp;rsquo;m saving the md5sum of the
+latest email (content) query, and if the result from a new query is the same -
+no email is sent. Evidently, this means that &lt;em&gt;any&lt;/em&gt; change would prompt a new
+email, additions of campsites as well as campsites being booked. The former is
+probably the most interesting, but filtering for this would require a bit more
+work (maybe for the future) and it&amp;rsquo;s kinda good to know when spots begin to
+disappear.&lt;/p&gt;
+&lt;p&gt;Ok, almost there. I wrapped the workflow into a CLI where the two input
+arguments consiting of the paths to two config files (YAML). Without getting
+into the nitty gritty details, one of these config files (static) contains
+emails to the people who should recieve the updates, API keys etc. this
+information never really changes and I don&amp;rsquo;t keep it in a public space. The
+other config file (dynamic) contains paths to the output directory as well as
+the dates that should be queried; this I keep at github, for reasons that soon
+will become clear.&lt;/p&gt;
+&lt;p&gt;Finally, I wrote a bash script that runs the CLI application every hour (by
+using the Task feature at pythonanywhere.com). However, in the bash script,
+before running the &amp;lsquo;campsite checker&amp;rsquo; I pull all the code from the github repo.
+Hence, any updates/changes to the code or the dynamic design file will be
+integrated in the next query.&lt;/p&gt;
+&lt;p&gt;So that&amp;rsquo;s about it. You can find the code
+&lt;a href=&#34;https://github.com/almaan/campsite-checker/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;, although with limited
+documentation as of now.&lt;/p&gt;
+&lt;p&gt;In total I think this project took somewhere between 5-8h,
+which is not a lot of time. It was a fun exercise in web interaction and made me
+somewhat inclined to look into JavaScript and React. Maybe for the next project?&lt;/p&gt;
 </description>
     </item>
     
@@ -672,7 +310,7 @@ low dimensional space, with:&lt;/p&gt;
 &lt;p&gt;$$
 \begin{array}{ll}
 &amp;amp;p_{j|i} = \frac{\exp(-||x_i - x_j||^2 / 2\sigma_i^2)}{\sum_{k\neq i} \exp(-||x_i -
-x_k||^2/2\sigma_i^2)},\quad p_{i|i} = 0 \\&lt;br&gt;
+x_k||^2/2\sigma_i^2)},\quad p_{i|i} = 0 \\
 &amp;amp;q_{j|i} = \frac{\exp(-||y_i - y_j||^2 )}{\sum_{k\neq i} \exp(-||y_i -
 y_k||^2)},\quad q_{i|i} = 0
 \end{array}
@@ -715,13 +353,13 @@ observant reader have probably noted the similarity of the probabilities to the 
 a relationship between the two. The conditional probabilities above represent: &lt;em&gt;&amp;ldquo;the probability that point
 $i$ would pick point $j$ as its neighbor
 if neighbors were picked in proportion to their probability density under a
-Gaussian centered at point $i$.&amp;quot;&lt;/em&gt;. This is makes sense, but has one disadvantage;
+Gaussian centered at point $i$.&amp;rdquo;&lt;/em&gt;. This is makes sense, but has one disadvantage;
 the conditional probabilities (defined as above) are not symmetric, meaning that
 in general $p_{j|i} \neq p_{i|j}$ (and the same for $q$). And why does this
 matter again? Well, it renders a cost function ($C$) that is hard to optimize:&lt;/p&gt;
 &lt;p&gt;$$
 \begin{array}{l}
-&amp;amp;C = \sum_i KL(P_i||Q_i) = \sum_i\sum_j p_{j|i}\log \frac{p_{j|i}}{q_{j|i}}\rightarrow\\&lt;br&gt;
+&amp;amp;C = \sum_i KL(P_i||Q_i) = \sum_i\sum_j p_{j|i}\log \frac{p_{j|i}}{q_{j|i}}\rightarrow\\
 &amp;amp;\rightarrow \frac{\partial C}{\partial y_i} = 2 \sum_j (p_{j|i} - q_{j|i} + p_{i|j}- q_{i|j})(y_i-y_j)
 \end{array}
 $$&lt;/p&gt;
@@ -729,7 +367,7 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{array}{ll}
 &amp;amp;p_{ij} = \frac{\exp(-||x_i - x_j||^2 / 2\sigma_i^2)}{\sum_k\sum_{l\neq k} \exp(-||x_k -
-x_l||^2/2\sigma_i^2)},\quad  p_{ii} = 0 \\&lt;br&gt;
+x_l||^2/2\sigma_i^2)},\quad  p_{ii} = 0 \\
 &amp;amp;q_{ij} = \frac{\exp(-||y_i - y_j||^2)}{\sum_k\sum_{l\neq k} \exp(-||y_k -
 y_l||^2)},\quad q_{ii} = 0
 \end{array}
@@ -767,7 +405,7 @@ clusters rarely could be revoked, even though incorrect. Evidently, they saw
 room for improvements, and thus the idea of t-SNE was born.&lt;/p&gt;
 &lt;p&gt;The joint probabilities in t-SNE are given as:&lt;/p&gt;
 &lt;p&gt;$$\begin{array}{l}
-&amp;amp;p_{ij} = \frac{p_{j|i} + p_{i|j}}{2n}, \quad p_{j|i} = \frac{\exp(-||x_i - x_j||^2 / 2\sigma_i^2)}{\sum_k\sum_{l\neq k} \exp(-||x_k -x_l||^2/2\sigma_i^2)}, \quad p_{i|i} = 0 \\&lt;br&gt;
+&amp;amp;p_{ij} = \frac{p_{j|i} + p_{i|j}}{2n}, \quad p_{j|i} = \frac{\exp(-||x_i - x_j||^2 / 2\sigma_i^2)}{\sum_k\sum_{l\neq k} \exp(-||x_k -x_l||^2/2\sigma_i^2)}, \quad p_{i|i} = 0 \\
 &amp;amp;q_{ij} = \frac{(1+||y_i - y_j||^2)^{-1}}{\sum_k\sum_{l\neq k} (1+||y_k-y_l||^2)^{-1}}, \quad q_{ii}=0
 \end{array}$$&lt;/p&gt;
 &lt;p&gt;$p_{ij}$ is the same as for the symmetric SNE, but the $q_{ij}$ expression
@@ -810,7 +448,7 @@ the center). The second trick is &lt;em&gt;&amp;ldquo;early exaggeration&amp;rdq
 $p_{ij}$ value early on, which makes the $q_{ij}$ values too small to properly
 model their corresponding $p_{ij}$ value and thus encourage larger $q_{ij}$
 values (when appropriate); the result being that tight clusters tend to form.
-Tight clusters means more open space, and increase the clusters&#39; freedom of
+Tight clusters means more open space, and increase the clusters&amp;rsquo; freedom of
 movement, allowing them to find a favorable global organization.&lt;/p&gt;
 &lt;p&gt;Once the theory behind t-SNE has been presented, the authors proceed to compare
 their method to seven others, using five different data sets. I will not really
@@ -844,7 +482,7 @@ relatively easy data set to work with.&lt;/p&gt;
 reduction, I will actually skip this part - even though it is interesting -
 since a lot of the methods they compare to are a bit &amp;ldquo;out of date&amp;rdquo; and I don&amp;rsquo;t
 have enough knowledge about them to put them into proper context or evaluate the
-authors&#39; claims. What I can say, is that the authors more or less claim
+authors&amp;rsquo; claims. What I can say, is that the authors more or less claim
 superiority to all the other methods, being: Sammon mapping, Isomap, LLE, CCA,
 SNE, MVU, and Laplacian Eigenmaps. From the results and their discussion, it
 seems like they have good grounds for these claims.&lt;/p&gt;
@@ -904,7 +542,7 @@ without further ado let us begin.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Paper Title :&lt;/strong&gt; &lt;em&gt;Normalization and variance stabilization of single-cell RNA-seq data using regularized negative binomial regression&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Authors :&lt;/strong&gt; Christoph Hafemeister and Rahul Satija&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Published&lt;/strong&gt; 23 December 2019&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;doi :&lt;/strong&gt; &lt;a href=&#34;https://doi.org/10.1186/s13059-019-1874-1&#34;&gt;https://doi.org/10.1186/s13059-019-1874-1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;doi :&lt;/strong&gt; &lt;a href=&#34;https://doi.org/10.1186/s13059-019-1874-1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://doi.org/10.1186/s13059-019-1874-1&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Review :&lt;/strong&gt; Anyone who has ever worked with single cell RNA-seq data knows that
 before any &amp;ldquo;flashy and cool&amp;rdquo; results can be extracted, we need to apply some
 pre-processing steps to our data. Aside from filtering for low quality
@@ -1140,7 +778,7 @@ Alas, let&amp;rsquo;s get started.&lt;/p&gt;
 Biancalani, Eyal Fisher, Andrew Butler, Anna Hupalowska, Leslie Gaffney, William
 Mauck, Gökçen Eraslan, John C. Marioni, Aviv Regev, Rahul Satija&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Published :&lt;/strong&gt; 12-12-2019&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;doi :&lt;/strong&gt; &lt;a href=&#34;https://doi.org/10.1016/j.cell.2019.11.019&#34;&gt;https://doi.org/10.1016/j.cell.2019.11.019&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;doi :&lt;/strong&gt; &lt;a href=&#34;https://doi.org/10.1016/j.cell.2019.11.019&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://doi.org/10.1016/j.cell.2019.11.019&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Review :&lt;/strong&gt; In ambitious projects like the &lt;a href=&#34;https://www.humancellatlas.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Human Cell
 Atlas&lt;/a&gt; we often rely on joint efforts from
 multiple labs, as well as collection of data across multiple individuals, ages,
@@ -1344,7 +982,7 @@ to somehow be able to describe them with equations rather than words. Equations
 are exact, definite, universal, but foremost, they are &lt;em&gt;predictive&lt;/em&gt;. The
 alluring property of mathematical models is that they do not only provide a
 description of our system, but they are also responsive, we may ask &lt;em&gt;&amp;ldquo;if I
-replace parameter X with parameter Y, what will my system look like?&amp;quot;&lt;/em&gt;.&lt;/p&gt;
+replace parameter X with parameter Y, what will my system look like?&amp;rdquo;&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Of course, our models - however beautiful or carefully constructed - are nothing
 but just that, models. And as the well known apohorism states, &lt;em&gt;&amp;ldquo;all models
 are wrong&amp;rdquo;&lt;/em&gt;. While this statement is true, it is far from detrimental.

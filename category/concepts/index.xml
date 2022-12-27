@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>concepts | almaan</title>
+    <link>/category/concepts/</link>
+      <atom:link href="/category/concepts/index.xml" rel="self" type="application/rss+xml" />
+    <description>concepts</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 27 Dec 2022 00:53:05 +0100</lastBuildDate>
+    <image>
+      <url>/images/icon_hu0976d26fdaec5d0ec6c053b09a4e039a_2013_512x512_fill_lanczos_center_3.png</url>
+      <title>concepts</title>
+      <link>/category/concepts/</link>
+    </image>
+    
+    <item>
+      <title>How to book a camping site in the US</title>
+      <link>/post/2022-12-26-camp/</link>
+      <pubDate>Tue, 27 Dec 2022 00:53:05 +0100</pubDate>
+      <guid>/post/2022-12-26-camp/</guid>
+      <description>&lt;h2 id=&#34;tldr&#34;&gt;TLDR&lt;/h2&gt;
+&lt;p&gt;I built a Python application that checks the availability of specific campsites
+listed at &lt;a href=&#34;https://www.recreation.gov&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Recration.gov&lt;/a&gt;, and if there is anything
+available, it sends you an email. The code can be found
+&lt;a href=&#34;https://github.com/almaan/campsite-checker&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;
+&lt;p&gt;A few weeks ago, me and some friends were eating popcorn at a bar in Oakland
+(genious concept); in addition the the normal banter, we ventured into the
+domain of hiking and camping. Especially, how hard it is to get a spot at the
+campsites in the more &amp;ldquo;popular&amp;rdquo; recreational areas (e.g., Yosemite). I
+have yet to figure exactly what laws apply and where you can camp, but I&amp;rsquo;m not
+stoked about getting shot for trespassing, so going to a designated campsite seems
+like the better option. However, there are some issues with this, which my
+friends explained as follows:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Almost everyone wants to use the campsites (because of the convinience)&lt;/li&gt;
+&lt;li&gt;There&amp;rsquo;s only a limited number of spots at each site&lt;/li&gt;
+&lt;li&gt;Due to the high demand, spots are being booked almost instantly after being
+released&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;My friend also made the following statement:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;All the engineers in SF knows how to code, so they just write bots that books
+the sites for them, meaning &amp;rsquo;normal&amp;rsquo; people never have a chance to book anything.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Now, I&amp;rsquo;m not a software engineer and I very rarley write code to interact with
+the web, but boldened by a few drinks I volunteered to assemble something that
+would help us in the battle of the campsites. As the old saying goes: &lt;em&gt;&amp;ldquo;if you
+can&amp;rsquo;t beat them, join them.&amp;rdquo;&lt;/em&gt;, so that&amp;rsquo;s how I decided to write a bot of our own.&lt;/p&gt;
+&lt;h2 id=&#34;project&#34;&gt;Project&lt;/h2&gt;
+&lt;p&gt;&lt;ins&gt;Initial objective&lt;/ins&gt;: &lt;strong&gt;Create a bot that will scrape the web for available campgrounds
+and notify the stakeholders if anything becomes/is available.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;After thinking a bit more about the intital objective and looking into the
+resources, a more specific objective and workflow emerged.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Instead of scraping &amp;rsquo;the web&amp;rsquo; - the focus would be on a single site
+&lt;a href=&#34;https://www.recreation.gov&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Recration.gov&lt;/a&gt;. This holds &lt;em&gt;a lot&lt;/em&gt; of campgrounds
+(113&#39;000) and had a decent web API that you could query for available dates
+(though with limited options)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Not every campground needs to be checked, only those of interest to us. This
+should be amenable to change, i.e., adding/removing campgrounds to our list
+needs to be seamless.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;We&amp;rsquo;re not available all the time, so campground availability should only be
+reported within certain windows of time.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Minimal effort should be required to take part of the information. Because&amp;hellip;
+well I&amp;rsquo;m lazy and busy.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The bot should not book anything, there are several reasons for this, but the
+two main ones are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;I don&amp;rsquo;t want to get into payments and validation of credit cards etc., that
+feels a bit risky (especially if you need to host that on an external
+site)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;I don&amp;rsquo;t want to risk excessive booking or unwanted transactions in case any
+bugs enter the codebase&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;We want assess availability continously, so repeated queries should be made.
+However, we want to avoid redundant information - &lt;em&gt;&amp;ldquo;if you don&amp;rsquo;t have anything
+new to say, then don&amp;rsquo;t say anything at all.&amp;rdquo;&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Having figured out and formalized &lt;em&gt;what&lt;/em&gt; I actually wanted to create, it was
+just to start building. Also, I decided to write this whole thing in Python,
+because that&amp;rsquo;s the language I&amp;rsquo;m most comfortable with - and I wanted this to be a small
+project not involving learning a new syntax/language.&lt;/p&gt;
+&lt;p&gt;The very first thing I had to do was to figure out how to query Recration.gov
+for availability. They have an &lt;a href=&#34;https://github.com/almaan/campsite-checker&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;API&lt;/a&gt;
+with documentation, but this was honestly not very helpful. Browsing
+other github projects with similar objectives, I figured that I
+could get all the information that I needed by sending a &lt;code&gt;GET&lt;/code&gt; request to their
+website. The tricky part was to understand exactly how this worked, after some
+time, I managed to wrap my had around it, using the &lt;code&gt;get&lt;/code&gt; function from the
+&lt;code&gt;requests&lt;/code&gt; module to send the &lt;code&gt;GET&lt;/code&gt; request, the arguments were:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;ins&gt;url&lt;/ins&gt;:
+&lt;code&gt;https://www.recreation.gov/api/camps/availability/campground/CAMPGROUND_ID/month&lt;/code&gt;
+Where &lt;code&gt;CAMPGROUND_ID&lt;/code&gt; is the ID of the campground you are interested in. This ID
+is easily extracted from the campground&amp;rsquo;s URL. For example, the campground
+&amp;ldquo;Rob Hill&amp;rdquo; has the following URL:
+&lt;code&gt;https://www.recreation.gov/camping/campgrounds/10172170&lt;/code&gt;. The ID of Rob
+Hill is &lt;code&gt;10172170&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;ins&gt;headers&lt;/ins&gt;: any valid header seemed to work, but I went with &lt;code&gt;{&amp;quot;User-Agent&amp;quot;:&amp;quot;Defined&amp;quot;}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;ins&gt;params&lt;/ins&gt;: this was actually the trickiest thing to figure out, but you need to
+specify a &amp;ldquo;start date&amp;rdquo;, but this &lt;strong&gt;has&lt;/strong&gt; to be the first of the month you are
+interested in, and also the format is very specific, namely:
+&lt;code&gt;YYYY-MM-01T00:00:00.000Z&lt;/code&gt;. A bit peculiar (to me at least) but easily done
+once I figured out the pattern.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A successful query would return a status &lt;code&gt;200&lt;/code&gt; and a response object with a
+&lt;code&gt;.json&lt;/code&gt; method, from which a dictionary containing all the relevant information
+can be extracted.&lt;/p&gt;
+&lt;p&gt;A brief comment on camping lingo:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;a &lt;strong&gt;campground&lt;/strong&gt; is a larger area that
+holds multiple &lt;strong&gt;campsites&lt;/strong&gt;. At Recretion.gov you search for a campground and
+get availability for the different campsites within that campground.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The dictionary obtained from our (hopefully) successful query, will hold
+different layers of information, but what&amp;rsquo;s most interesting to us is what we
+can access using the &lt;code&gt;campsites&lt;/code&gt; key; there we&amp;rsquo;ll have an entry for each
+campsite within a given campground, with the availability listed for all dates
+in the specified month. So this is exactly what we are looking for. The only
+addditional implementations was a loop over all the months of interest and
+filtering to only include dates that actually are available in the return value
+listing available dates.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m using a &lt;code&gt;config&lt;/code&gt; file (YAML) so specify the some of the parameters to this
+application, such as the months of interest (one could do specific dates, but I
+found it more conveinient to just say which month you want to check for dates
+since we want as many options as possible). I found a nice package called
+&lt;a href=&#34;https://dateparser.readthedocs.io/en/latest/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;em&gt;dateparser&lt;/em&gt;&lt;/a&gt; to help with
+parsing of the dates, using this allows for a more sloppy and more human
+friendly entry of dates.&lt;/p&gt;
+&lt;p&gt;Finally, this information is converted to an HTML text output which can be saved
+as an html file or added as the body of an email. HTML was the first
+&amp;lsquo;programming&amp;rsquo; language I learned, unfortunately my skills peaked at 12y/o&amp;hellip; so
+all I did was to convert this to a very basic table listing the campsites for
+each campground together with the available dates. For each &lt;em&gt;campsite&lt;/em&gt; there&amp;rsquo;s also a
+direct link to the booking page. Something like:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;Campground: Point Reyes National Seashore Campground
+
+    Campsite: BOAT A, 1-6 people
+      2023-03-01
+      2023-03-02
+      2023-03-03
+      2023-03-04
+    Campsite: BOAT B, 7-14 people
+      2023-03-01
+      2023-03-02
+      2023-03-03
+      ...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now, one of the criteria was that it should easy to add/remove campgrounds, and
+what&amp;rsquo;s more, I wanted different people to be able to make these changes -
+several people are in on this, and I don&amp;rsquo;t want every single change to go
+through me (that&amp;rsquo;d be a massive bottleneck). The solution to this was to create
+a &lt;em&gt;public&lt;/em&gt; Google Sheets document, where anyone we shared the link with could
+add/remove campgrounds as we went along. This was also very easy to implement, I
+used the &lt;code&gt;subprocess&lt;/code&gt; module&amp;rsquo;s &lt;code&gt;run&lt;/code&gt; function to make a &lt;code&gt;curl&lt;/code&gt; query, more
+specifically:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;curl -L https://docs.google.com/spreadsheets/d/SHEET_ID/export?format=csv&amp;amp;gid=GID --output TEMPFILE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Where &lt;code&gt;SHEET_ID&lt;/code&gt; is the ID of your sheet id and &lt;code&gt;GID&lt;/code&gt; is the tab id, you can
+grab both of these from the URL of your sheet.
+I found &lt;a href=&#34;https://stackoverflow.com/questions/24255472/download-export-public-google-spreadsheet-as-tsv-from-command-line&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this&lt;/a&gt;
+stackoverflow post quite helpfull.&lt;/p&gt;
+&lt;p&gt;As for how updates should be shared with those of us who are in on this
+whole scheme, I settled on the old traditional email. Everyone checks their
+email and it&amp;rsquo;s easy to set up. I&amp;rsquo;ll loop back to the email feature soon - but exactly how
+this would be implemented was more or less completely dictated by my choice of
+hosting service, so let&amp;rsquo;s say something about how this is being run.&lt;/p&gt;
+&lt;p&gt;I decided to host this whole thing on
+&lt;a href=&#34;https://www.pythonanywhere.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;pythonanywhere.com&lt;/a&gt; which was very affordable
+and seemed to allow enough customization. They also had a &amp;ldquo;Tasks&amp;rdquo; feature where
+you could launch reoccuring tasks just like a cronjob. Being cheap, I first went
+for the free subscription plan - and this made me choose
+&lt;a href=&#34;https://www.mailgun.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;mailgun.com&lt;/a&gt; which was whitelisted and didn&amp;rsquo;t require
+loads of configurations to be made (I&amp;rsquo;m looking at you Gmail&amp;hellip;). Now, in the
+end I went for a paid subscription of pythonanywhere, but I stayed with mailgun
+anyway. Why? Well honestly, they had a really simple API, for real - to send an
+email, all you need is your API key is:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def send_simple_message():
+    return requests.post(
+        &amp;quot;https://api.mailgun.net/v3/YOUR_DOMAIN_NAME/messages&amp;quot;,
+        auth=(&amp;quot;api&amp;quot;, &amp;quot;YOUR_API_KEY&amp;quot;),
+        data={&amp;quot;from&amp;quot;: &amp;quot;Excited User &amp;lt;mailgun@YOUR_DOMAIN_NAME&amp;gt;&amp;quot;,
+              &amp;quot;to&amp;quot;: [&amp;quot;bar@example.com&amp;quot;, &amp;quot;YOU@YOUR_DOMAIN_NAME&amp;quot;],
+              &amp;quot;subject&amp;quot;: &amp;quot;Hello&amp;quot;,
+              &amp;quot;text&amp;quot;: &amp;quot;Testing some Mailgun awesomness!&amp;quot;})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;However, what I didn&amp;rsquo;t register immediately was that you needed an external
+domain to send your emails through (to avoid spamers&amp;hellip; I think?). Fortunately I
+had this one (&lt;code&gt;differentiable.net&lt;/code&gt;) to use. It required me to setup some DNS
+configurations, but following their guide it took me at most ~20min.&lt;/p&gt;
+&lt;p&gt;To avoid redundant emails with the same availability information being sent over
+and over again, I opted for a semi-lazy solution. I&amp;rsquo;m saving the md5sum of the
+latest email (content) query, and if the result from a new query is the same -
+no email is sent. Evidently, this means that &lt;em&gt;any&lt;/em&gt; change would prompt a new
+email, additions of campsites as well as campsites being booked. The former is
+probably the most interesting, but filtering for this would require a bit more
+work (maybe for the future) and it&amp;rsquo;s kinda good to know when spots begin to
+disappear.&lt;/p&gt;
+&lt;p&gt;Ok, almost there. I wrapped the workflow into a CLI where the two input
+arguments consiting of the paths to two config files (YAML). Without getting
+into the nitty gritty details, one of these config files (static) contains
+emails to the people who should recieve the updates, API keys etc. this
+information never really changes and I don&amp;rsquo;t keep it in a public space. The
+other config file (dynamic) contains paths to the output directory as well as
+the dates that should be queried; this I keep at github, for reasons that soon
+will become clear.&lt;/p&gt;
+&lt;p&gt;Finally, I wrote a bash script that runs the CLI application every hour (by
+using the Task feature at pythonanywhere.com). However, in the bash script,
+before running the &amp;lsquo;campsite checker&amp;rsquo; I pull all the code from the github repo.
+Hence, any updates/changes to the code or the dynamic design file will be
+integrated in the next query.&lt;/p&gt;
+&lt;p&gt;So that&amp;rsquo;s about it. You can find the code
+&lt;a href=&#34;https://github.com/almaan/campsite-checker/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;, although with limited
+documentation as of now.&lt;/p&gt;
+&lt;p&gt;In total I think this project took somewhere between 5-8h,
+which is not a lot of time. It was a fun exercise in web interaction and made me
+somewhat inclined to look into JavaScript and React. Maybe for the next project?&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

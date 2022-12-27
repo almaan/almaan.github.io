@@ -7,7 +7,7 @@
     <description>machine learning</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 20 Feb 2021 10:53:05 +0100</lastBuildDate>
     <image>
-      <url>/images/icon_hu0976d26fdaec5d0ec6c053b09a4e039a_2013_512x512_fill_lanczos_center_2.png</url>
+      <url>/images/icon_hu0976d26fdaec5d0ec6c053b09a4e039a_2013_512x512_fill_lanczos_center_3.png</url>
       <title>machine learning</title>
       <link>/tag/machine-learning/</link>
     </image>
@@ -88,7 +88,7 @@ low dimensional space, with:&lt;/p&gt;
 &lt;p&gt;$$
 \begin{array}{ll}
 &amp;amp;p_{j|i} = \frac{\exp(-||x_i - x_j||^2 / 2\sigma_i^2)}{\sum_{k\neq i} \exp(-||x_i -
-x_k||^2/2\sigma_i^2)},\quad p_{i|i} = 0 \\&lt;br&gt;
+x_k||^2/2\sigma_i^2)},\quad p_{i|i} = 0 \\
 &amp;amp;q_{j|i} = \frac{\exp(-||y_i - y_j||^2 )}{\sum_{k\neq i} \exp(-||y_i -
 y_k||^2)},\quad q_{i|i} = 0
 \end{array}
@@ -131,13 +131,13 @@ observant reader have probably noted the similarity of the probabilities to the 
 a relationship between the two. The conditional probabilities above represent: &lt;em&gt;&amp;ldquo;the probability that point
 $i$ would pick point $j$ as its neighbor
 if neighbors were picked in proportion to their probability density under a
-Gaussian centered at point $i$.&amp;quot;&lt;/em&gt;. This is makes sense, but has one disadvantage;
+Gaussian centered at point $i$.&amp;rdquo;&lt;/em&gt;. This is makes sense, but has one disadvantage;
 the conditional probabilities (defined as above) are not symmetric, meaning that
 in general $p_{j|i} \neq p_{i|j}$ (and the same for $q$). And why does this
 matter again? Well, it renders a cost function ($C$) that is hard to optimize:&lt;/p&gt;
 &lt;p&gt;$$
 \begin{array}{l}
-&amp;amp;C = \sum_i KL(P_i||Q_i) = \sum_i\sum_j p_{j|i}\log \frac{p_{j|i}}{q_{j|i}}\rightarrow\\&lt;br&gt;
+&amp;amp;C = \sum_i KL(P_i||Q_i) = \sum_i\sum_j p_{j|i}\log \frac{p_{j|i}}{q_{j|i}}\rightarrow\\
 &amp;amp;\rightarrow \frac{\partial C}{\partial y_i} = 2 \sum_j (p_{j|i} - q_{j|i} + p_{i|j}- q_{i|j})(y_i-y_j)
 \end{array}
 $$&lt;/p&gt;
@@ -145,7 +145,7 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{array}{ll}
 &amp;amp;p_{ij} = \frac{\exp(-||x_i - x_j||^2 / 2\sigma_i^2)}{\sum_k\sum_{l\neq k} \exp(-||x_k -
-x_l||^2/2\sigma_i^2)},\quad  p_{ii} = 0 \\&lt;br&gt;
+x_l||^2/2\sigma_i^2)},\quad  p_{ii} = 0 \\
 &amp;amp;q_{ij} = \frac{\exp(-||y_i - y_j||^2)}{\sum_k\sum_{l\neq k} \exp(-||y_k -
 y_l||^2)},\quad q_{ii} = 0
 \end{array}
@@ -183,7 +183,7 @@ clusters rarely could be revoked, even though incorrect. Evidently, they saw
 room for improvements, and thus the idea of t-SNE was born.&lt;/p&gt;
 &lt;p&gt;The joint probabilities in t-SNE are given as:&lt;/p&gt;
 &lt;p&gt;$$\begin{array}{l}
-&amp;amp;p_{ij} = \frac{p_{j|i} + p_{i|j}}{2n}, \quad p_{j|i} = \frac{\exp(-||x_i - x_j||^2 / 2\sigma_i^2)}{\sum_k\sum_{l\neq k} \exp(-||x_k -x_l||^2/2\sigma_i^2)}, \quad p_{i|i} = 0 \\&lt;br&gt;
+&amp;amp;p_{ij} = \frac{p_{j|i} + p_{i|j}}{2n}, \quad p_{j|i} = \frac{\exp(-||x_i - x_j||^2 / 2\sigma_i^2)}{\sum_k\sum_{l\neq k} \exp(-||x_k -x_l||^2/2\sigma_i^2)}, \quad p_{i|i} = 0 \\
 &amp;amp;q_{ij} = \frac{(1+||y_i - y_j||^2)^{-1}}{\sum_k\sum_{l\neq k} (1+||y_k-y_l||^2)^{-1}}, \quad q_{ii}=0
 \end{array}$$&lt;/p&gt;
 &lt;p&gt;$p_{ij}$ is the same as for the symmetric SNE, but the $q_{ij}$ expression
@@ -226,7 +226,7 @@ the center). The second trick is &lt;em&gt;&amp;ldquo;early exaggeration&amp;rdq
 $p_{ij}$ value early on, which makes the $q_{ij}$ values too small to properly
 model their corresponding $p_{ij}$ value and thus encourage larger $q_{ij}$
 values (when appropriate); the result being that tight clusters tend to form.
-Tight clusters means more open space, and increase the clusters&#39; freedom of
+Tight clusters means more open space, and increase the clusters&amp;rsquo; freedom of
 movement, allowing them to find a favorable global organization.&lt;/p&gt;
 &lt;p&gt;Once the theory behind t-SNE has been presented, the authors proceed to compare
 their method to seven others, using five different data sets. I will not really
@@ -260,7 +260,7 @@ relatively easy data set to work with.&lt;/p&gt;
 reduction, I will actually skip this part - even though it is interesting -
 since a lot of the methods they compare to are a bit &amp;ldquo;out of date&amp;rdquo; and I don&amp;rsquo;t
 have enough knowledge about them to put them into proper context or evaluate the
-authors&#39; claims. What I can say, is that the authors more or less claim
+authors&amp;rsquo; claims. What I can say, is that the authors more or less claim
 superiority to all the other methods, being: Sammon mapping, Isomap, LLE, CCA,
 SNE, MVU, and Laplacian Eigenmaps. From the results and their discussion, it
 seems like they have good grounds for these claims.&lt;/p&gt;

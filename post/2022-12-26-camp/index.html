@@ -1,0 +1,1445 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  
+  
+  <meta name="generator" content="Wowchemy 5.0.0-beta.2 for Hugo">
+  
+
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Alma Andersson">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="When you really want to go camping in some of the more popular National Parks in the US, but there&#39;s fierce competition of the spots, what do you do to get an edge? You obviously write a bot to beat the other people to it.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="../../post/2022-12-26-camp/">
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+
+  
+  
+  
+  <meta name="theme-color" content="hsl(113, 100%, 50%)">
+  
+
+  
+  
+  
+  <script src="../../js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous" media="print" onload="this.media='all'">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'">
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js" integrity="sha512-TmDwFLhg3UA4ZG0Eb4MIyT1O1Mb+Oww5kFG0uHqXsdbyZz9DcvYQhKpGgNkamAI6h2lGGZq2X8ftOJvF/XjTUg==" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Playfair+Display+SC&family=Rhodium+Libre&family=Pragati+Narrow&family=Ubuntu+Mono&family=Oxygen&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Playfair+Display+SC&family=Rhodium+Libre&family=Pragati+Narrow&family=Ubuntu+Mono&family=Oxygen&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="../../css/wowchemy.5fd699b0d5422a8a206e54462238bbbb.css">
+
+  
+
+
+
+
+  
+
+  
+
+
+  
+  
+
+  
+
+  
+  <link rel="manifest" href="../../index.webmanifest">
+  
+
+  <link rel="icon" type="image/png" href="../../images/icon_hu0976d26fdaec5d0ec6c053b09a4e039a_2013_32x32_fill_lanczos_center_3.png">
+  <link rel="apple-touch-icon" type="image/png" href="../../images/icon_hu0976d26fdaec5d0ec6c053b09a4e039a_2013_180x180_fill_lanczos_center_3.png">
+
+  <link rel="canonical" href="../../post/2022-12-26-camp/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="almaan">
+  <meta property="og:url" content="/post/2022-12-26-camp/">
+  <meta property="og:title" content="How to book a camping site in the US | almaan">
+  <meta property="og:description" content="When you really want to go camping in some of the more popular National Parks in the US, but there&#39;s fierce competition of the spots, what do you do to get an edge? You obviously write a bot to beat the other people to it."><meta property="og:image" content="/images/icon_hu0976d26fdaec5d0ec6c053b09a4e039a_2013_512x512_fill_lanczos_center_3.png">
+  <meta property="twitter:image" content="/images/icon_hu0976d26fdaec5d0ec6c053b09a4e039a_2013_512x512_fill_lanczos_center_3.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2022-12-27T00:53:05&#43;01:00">
+    
+    <meta property="article:modified_time" content="2022-12-27T10:53:05&#43;01:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/post/2022-12-26-camp/"
+  },
+  "headline": "How to book a camping site in the US",
+  
+  "datePublished": "2022-12-27T00:53:05+01:00",
+  "dateModified": "2022-12-27T10:53:05+01:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Alma Andersson"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "almaan",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/images/icon_hu0976d26fdaec5d0ec6c053b09a4e039a_2013_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "When you really want to go camping in some of the more popular National Parks in the US, but there's fierce competition of the spots, what do you do to get an edge? You obviously write a bot to beat the other people to it."
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>How to book a camping site in the US | almaan</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper dark ">
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="../../js/wowchemy-init.min.bb94a4aecf80dd21bd93c6836f6acb42.js"></script>
+
+  
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="../../">almaan</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="../../">almaan</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="../../#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="../../#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="../../#talks"><span>Talks</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="../../#tags"><span>Topics</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="../../#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+      
+
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>How to book a camping site in the US</h1>
+
+  
+  <p class="page-subtitle">why and how I wrote a bot to look for available campsites..</p>
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  <span >
+      <a href="../../author/alma-andersson/">Alma Andersson</a></span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    Dec 27, 2022
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    9 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+  <span class="middot-divider"></span>
+  <a href="../../post/2022-12-26-camp/#disqus_thread"></a>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="../../category/concepts/">concepts</a></span>
+  
+
+</div>
+
+    
+
+
+
+
+<div class="btn-links mb-3">
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <h2 id="tldr">TLDR</h2>
+<p>I built a Python application that checks the availability of specific campsites
+listed at <a href="https://www.recreation.gov" target="_blank" rel="noopener">Recration.gov</a>, and if there is anything
+available, it sends you an email. The code can be found
+<a href="https://github.com/almaan/campsite-checker" target="_blank" rel="noopener">here</a>.</p>
+<h2 id="intro">Intro</h2>
+<p>A few weeks ago, me and some friends were eating popcorn at a bar in Oakland
+(genious concept); in addition the the normal banter, we ventured into the
+domain of hiking and camping. Especially, how hard it is to get a spot at the
+campsites in the more &ldquo;popular&rdquo; recreational areas (e.g., Yosemite). I
+have yet to figure exactly what laws apply and where you can camp, but I&rsquo;m not
+stoked about getting shot for trespassing, so going to a designated campsite seems
+like the better option. However, there are some issues with this, which my
+friends explained as follows:</p>
+<ul>
+<li>Almost everyone wants to use the campsites (because of the convinience)</li>
+<li>There&rsquo;s only a limited number of spots at each site</li>
+<li>Due to the high demand, spots are being booked almost instantly after being
+released</li>
+</ul>
+<p>My friend also made the following statement:</p>
+<blockquote>
+<p>All the engineers in SF knows how to code, so they just write bots that books
+the sites for them, meaning &rsquo;normal&rsquo; people never have a chance to book anything.</p>
+</blockquote>
+<p>Now, I&rsquo;m not a software engineer and I very rarley write code to interact with
+the web, but boldened by a few drinks I volunteered to assemble something that
+would help us in the battle of the campsites. As the old saying goes: <em>&ldquo;if you
+can&rsquo;t beat them, join them.&rdquo;</em>, so that&rsquo;s how I decided to write a bot of our own.</p>
+<h2 id="project">Project</h2>
+<p><ins>Initial objective</ins>: <strong>Create a bot that will scrape the web for available campgrounds
+and notify the stakeholders if anything becomes/is available.</strong></p>
+<p>After thinking a bit more about the intital objective and looking into the
+resources, a more specific objective and workflow emerged.</p>
+<ul>
+<li>
+<p>Instead of scraping &rsquo;the web&rsquo; - the focus would be on a single site
+<a href="https://www.recreation.gov" target="_blank" rel="noopener">Recration.gov</a>. This holds <em>a lot</em> of campgrounds
+(113'000) and had a decent web API that you could query for available dates
+(though with limited options)</p>
+</li>
+<li>
+<p>Not every campground needs to be checked, only those of interest to us. This
+should be amenable to change, i.e., adding/removing campgrounds to our list
+needs to be seamless.</p>
+</li>
+<li>
+<p>We&rsquo;re not available all the time, so campground availability should only be
+reported within certain windows of time.</p>
+</li>
+<li>
+<p>Minimal effort should be required to take part of the information. Because&hellip;
+well I&rsquo;m lazy and busy.</p>
+</li>
+<li>
+<p>The bot should not book anything, there are several reasons for this, but the
+two main ones are:</p>
+<ul>
+<li>
+<p>I don&rsquo;t want to get into payments and validation of credit cards etc., that
+feels a bit risky (especially if you need to host that on an external
+site)</p>
+</li>
+<li>
+<p>I don&rsquo;t want to risk excessive booking or unwanted transactions in case any
+bugs enter the codebase</p>
+</li>
+</ul>
+</li>
+<li>
+<p>We want assess availability continously, so repeated queries should be made.
+However, we want to avoid redundant information - <em>&ldquo;if you don&rsquo;t have anything
+new to say, then don&rsquo;t say anything at all.&rdquo;</em></p>
+</li>
+</ul>
+<p>Having figured out and formalized <em>what</em> I actually wanted to create, it was
+just to start building. Also, I decided to write this whole thing in Python,
+because that&rsquo;s the language I&rsquo;m most comfortable with - and I wanted this to be a small
+project not involving learning a new syntax/language.</p>
+<p>The very first thing I had to do was to figure out how to query Recration.gov
+for availability. They have an <a href="https://github.com/almaan/campsite-checker" target="_blank" rel="noopener">API</a>
+with documentation, but this was honestly not very helpful. Browsing
+other github projects with similar objectives, I figured that I
+could get all the information that I needed by sending a <code>GET</code> request to their
+website. The tricky part was to understand exactly how this worked, after some
+time, I managed to wrap my had around it, using the <code>get</code> function from the
+<code>requests</code> module to send the <code>GET</code> request, the arguments were:</p>
+<ul>
+<li><ins>url</ins>:
+<code>https://www.recreation.gov/api/camps/availability/campground/CAMPGROUND_ID/month</code>
+Where <code>CAMPGROUND_ID</code> is the ID of the campground you are interested in. This ID
+is easily extracted from the campground&rsquo;s URL. For example, the campground
+&ldquo;Rob Hill&rdquo; has the following URL:
+<code>https://www.recreation.gov/camping/campgrounds/10172170</code>. The ID of Rob
+Hill is <code>10172170</code></li>
+<li><ins>headers</ins>: any valid header seemed to work, but I went with <code>{&quot;User-Agent&quot;:&quot;Defined&quot;}</code></li>
+<li><ins>params</ins>: this was actually the trickiest thing to figure out, but you need to
+specify a &ldquo;start date&rdquo;, but this <strong>has</strong> to be the first of the month you are
+interested in, and also the format is very specific, namely:
+<code>YYYY-MM-01T00:00:00.000Z</code>. A bit peculiar (to me at least) but easily done
+once I figured out the pattern.</li>
+</ul>
+<p>A successful query would return a status <code>200</code> and a response object with a
+<code>.json</code> method, from which a dictionary containing all the relevant information
+can be extracted.</p>
+<p>A brief comment on camping lingo:</p>
+<blockquote>
+<p>a <strong>campground</strong> is a larger area that
+holds multiple <strong>campsites</strong>. At Recretion.gov you search for a campground and
+get availability for the different campsites within that campground.</p>
+</blockquote>
+<p>The dictionary obtained from our (hopefully) successful query, will hold
+different layers of information, but what&rsquo;s most interesting to us is what we
+can access using the <code>campsites</code> key; there we&rsquo;ll have an entry for each
+campsite within a given campground, with the availability listed for all dates
+in the specified month. So this is exactly what we are looking for. The only
+addditional implementations was a loop over all the months of interest and
+filtering to only include dates that actually are available in the return value
+listing available dates.</p>
+<p>I&rsquo;m using a <code>config</code> file (YAML) so specify the some of the parameters to this
+application, such as the months of interest (one could do specific dates, but I
+found it more conveinient to just say which month you want to check for dates
+since we want as many options as possible). I found a nice package called
+<a href="https://dateparser.readthedocs.io/en/latest/" target="_blank" rel="noopener"><em>dateparser</em></a> to help with
+parsing of the dates, using this allows for a more sloppy and more human
+friendly entry of dates.</p>
+<p>Finally, this information is converted to an HTML text output which can be saved
+as an html file or added as the body of an email. HTML was the first
+&lsquo;programming&rsquo; language I learned, unfortunately my skills peaked at 12y/o&hellip; so
+all I did was to convert this to a very basic table listing the campsites for
+each campground together with the available dates. For each <em>campsite</em> there&rsquo;s also a
+direct link to the booking page. Something like:</p>
+<pre><code class="language-html">Campground: Point Reyes National Seashore Campground
+
+    Campsite: BOAT A, 1-6 people
+      2023-03-01
+      2023-03-02
+      2023-03-03
+      2023-03-04
+    Campsite: BOAT B, 7-14 people
+      2023-03-01
+      2023-03-02
+      2023-03-03
+      ...
+</code></pre>
+<p>Now, one of the criteria was that it should easy to add/remove campgrounds, and
+what&rsquo;s more, I wanted different people to be able to make these changes -
+several people are in on this, and I don&rsquo;t want every single change to go
+through me (that&rsquo;d be a massive bottleneck). The solution to this was to create
+a <em>public</em> Google Sheets document, where anyone we shared the link with could
+add/remove campgrounds as we went along. This was also very easy to implement, I
+used the <code>subprocess</code> module&rsquo;s <code>run</code> function to make a <code>curl</code> query, more
+specifically:</p>
+<pre><code class="language-bash">curl -L https://docs.google.com/spreadsheets/d/SHEET_ID/export?format=csv&amp;gid=GID --output TEMPFILE
+</code></pre>
+<p>Where <code>SHEET_ID</code> is the ID of your sheet id and <code>GID</code> is the tab id, you can
+grab both of these from the URL of your sheet.
+I found <a href="https://stackoverflow.com/questions/24255472/download-export-public-google-spreadsheet-as-tsv-from-command-line" target="_blank" rel="noopener">this</a>
+stackoverflow post quite helpfull.</p>
+<p>As for how updates should be shared with those of us who are in on this
+whole scheme, I settled on the old traditional email. Everyone checks their
+email and it&rsquo;s easy to set up. I&rsquo;ll loop back to the email feature soon - but exactly how
+this would be implemented was more or less completely dictated by my choice of
+hosting service, so let&rsquo;s say something about how this is being run.</p>
+<p>I decided to host this whole thing on
+<a href="https://www.pythonanywhere.com" target="_blank" rel="noopener">pythonanywhere.com</a> which was very affordable
+and seemed to allow enough customization. They also had a &ldquo;Tasks&rdquo; feature where
+you could launch reoccuring tasks just like a cronjob. Being cheap, I first went
+for the free subscription plan - and this made me choose
+<a href="https://www.mailgun.com/" target="_blank" rel="noopener">mailgun.com</a> which was whitelisted and didn&rsquo;t require
+loads of configurations to be made (I&rsquo;m looking at you Gmail&hellip;). Now, in the
+end I went for a paid subscription of pythonanywhere, but I stayed with mailgun
+anyway. Why? Well honestly, they had a really simple API, for real - to send an
+email, all you need is your API key is:</p>
+<pre><code class="language-python">def send_simple_message():
+    return requests.post(
+        &quot;https://api.mailgun.net/v3/YOUR_DOMAIN_NAME/messages&quot;,
+        auth=(&quot;api&quot;, &quot;YOUR_API_KEY&quot;),
+        data={&quot;from&quot;: &quot;Excited User &lt;mailgun@YOUR_DOMAIN_NAME&gt;&quot;,
+              &quot;to&quot;: [&quot;bar@example.com&quot;, &quot;YOU@YOUR_DOMAIN_NAME&quot;],
+              &quot;subject&quot;: &quot;Hello&quot;,
+              &quot;text&quot;: &quot;Testing some Mailgun awesomness!&quot;})
+</code></pre>
+<p>However, what I didn&rsquo;t register immediately was that you needed an external
+domain to send your emails through (to avoid spamers&hellip; I think?). Fortunately I
+had this one (<code>differentiable.net</code>) to use. It required me to setup some DNS
+configurations, but following their guide it took me at most ~20min.</p>
+<p>To avoid redundant emails with the same availability information being sent over
+and over again, I opted for a semi-lazy solution. I&rsquo;m saving the md5sum of the
+latest email (content) query, and if the result from a new query is the same -
+no email is sent. Evidently, this means that <em>any</em> change would prompt a new
+email, additions of campsites as well as campsites being booked. The former is
+probably the most interesting, but filtering for this would require a bit more
+work (maybe for the future) and it&rsquo;s kinda good to know when spots begin to
+disappear.</p>
+<p>Ok, almost there. I wrapped the workflow into a CLI where the two input
+arguments consiting of the paths to two config files (YAML). Without getting
+into the nitty gritty details, one of these config files (static) contains
+emails to the people who should recieve the updates, API keys etc. this
+information never really changes and I don&rsquo;t keep it in a public space. The
+other config file (dynamic) contains paths to the output directory as well as
+the dates that should be queried; this I keep at github, for reasons that soon
+will become clear.</p>
+<p>Finally, I wrote a bash script that runs the CLI application every hour (by
+using the Task feature at pythonanywhere.com). However, in the bash script,
+before running the &lsquo;campsite checker&rsquo; I pull all the code from the github repo.
+Hence, any updates/changes to the code or the dynamic design file will be
+integrated in the next query.</p>
+<p>So that&rsquo;s about it. You can find the code
+<a href="https://github.com/almaan/campsite-checker/" target="_blank" rel="noopener">here</a>, although with limited
+documentation as of now.</p>
+<p>In total I think this project took somewhere between 5-8h,
+which is not a lot of time. It was a fun exercise in web interaction and made me
+somewhat inclined to look into JavaScript and React. Maybe for the next project?</p>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="../../tag/random/">random</a>
+  
+  <a class="badge badge-light" href="../../tag/outdoor/">outdoor</a>
+  
+  <a class="badge badge-light" href="../../tag/hikes/">hikes</a>
+  
+  <a class="badge badge-light" href="../../tag/python/">python</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=../../post/2022-12-26-camp/&amp;text=How%20to%20book%20a%20camping%20site%20in%20the%20US" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=/post/2022-12-26-camp/&amp;t=How%20to%20book%20a%20camping%20site%20in%20the%20US" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=How%20to%20book%20a%20camping%20site%20in%20the%20US&amp;body=/post/2022-12-26-camp/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=../../post/2022-12-26-camp/&amp;title=How%20to%20book%20a%20camping%20site%20in%20the%20US" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=How%20to%20book%20a%20camping%20site%20in%20the%20US%20/post/2022-12-26-camp/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=../../post/2022-12-26-camp/&amp;title=How%20to%20book%20a%20camping%20site%20in%20the%20US" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <img class="avatar mr-3 avatar-circle" src="../../author/alma-andersson/avatar_hu27f7dc34c9db8fd2b063f3fba6be9864_197873_270x270_fill_q75_lanczos_center.jpg" alt="Alma Andersson">
+    
+
+    <div class="media-body">
+      <h5 class="card-title">Alma Andersson</h5>
+      <h6 class="card-subtitle">Computational Biologist</h6>
+      <p class="card-text">My passion lies in understanding and modelling the latent structures that governs biological systems.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="../../alma.andersson@differentiable.net" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=t05MyGwAAAAJ&amp;hl=en" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/almaan" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/aalmaander" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+  
+
+
+
+
+
+
+
+<section id="comments">
+  
+    
+
+  
+</section>
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+    Published with
+    <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a>  —
+    the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">
+    open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+        <div class="search-hit-content">
+          <div class="search-hit-name">
+            <a href="{{relpermalink}}">{{title}}</a>
+            <div class="article-metadata search-hit-type">{{type}}</div>
+            <p class="search-hit-description">{{snippet}}</p>
+          </div>
+        </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="../../en/js/wowchemy.min.3a733e40878b1f7bf40131bb523dfd22.js"></script>
+
+    
+
+
+
+
+
+
+</body>
+</html>
