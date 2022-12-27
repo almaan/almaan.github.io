@@ -93,7 +93,7 @@ new to say, then don&amp;rsquo;t say anything at all.&amp;rdquo;&lt;/em&gt;&lt;/
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Having figured out and formalized &lt;em&gt;what&lt;/em&gt; I actually wanted to create, it was
-just to start building. Also, I decided to write this whole thing in Python,
+just to start building. Also, I decided to write this in Python,
 because that&amp;rsquo;s the language I&amp;rsquo;m most comfortable with - and I wanted this to be a small
 project not involving learning a new syntax/language.&lt;/p&gt;
 &lt;p&gt;The very first thing I had to do was to figure out how to query Recration.gov
@@ -177,11 +177,11 @@ grab both of these from the URL of your sheet.
 I found &lt;a href=&#34;https://stackoverflow.com/questions/24255472/download-export-public-google-spreadsheet-as-tsv-from-command-line&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this&lt;/a&gt;
 stackoverflow post quite helpfull.&lt;/p&gt;
 &lt;p&gt;As for how updates should be shared with those of us who are in on this
-whole scheme, I settled on the old traditional email. Everyone checks their
+&amp;ldquo;scheme&amp;rdquo;, I settled on the old traditional email. Everyone checks their
 email and it&amp;rsquo;s easy to set up. I&amp;rsquo;ll loop back to the email feature soon - but exactly how
 this would be implemented was more or less completely dictated by my choice of
 hosting service, so let&amp;rsquo;s say something about how this is being run.&lt;/p&gt;
-&lt;p&gt;I decided to host this whole thing on
+&lt;p&gt;I decided to host this at
 &lt;a href=&#34;https://www.pythonanywhere.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;pythonanywhere.com&lt;/a&gt; which was very affordable
 and seemed to allow enough customization. They also had a &amp;ldquo;Tasks&amp;rdquo; feature where
 you could launch reoccuring tasks just like a cronjob. Being cheap, I first went
