@@ -14,16 +14,13 @@
     <loc>/categories/</loc>
     <lastmod>2022-12-27T10:53:05+01:00</lastmod>
   </url><url>
-    <loc>/category/concepts/</loc>
-    <lastmod>2022-12-27T10:53:05+01:00</lastmod>
-  </url><url>
     <loc>/tag/hikes/</loc>
     <lastmod>2022-12-27T10:53:05+01:00</lastmod>
   </url><url>
-    <loc>/post/2022-12-26-camp/</loc>
+    <loc>/tag/outdoor/</loc>
     <lastmod>2022-12-27T10:53:05+01:00</lastmod>
   </url><url>
-    <loc>/tag/outdoor/</loc>
+    <loc>/category/personal-project/</loc>
     <lastmod>2022-12-27T10:53:05+01:00</lastmod>
   </url><url>
     <loc>/post/</loc>
@@ -36,6 +33,9 @@
     <lastmod>2022-12-27T10:53:05+01:00</lastmod>
   </url><url>
     <loc>/tags/</loc>
+    <lastmod>2022-12-27T10:53:05+01:00</lastmod>
+  </url><url>
+    <loc>/post/2022-12-26-camp/</loc>
     <lastmod>2022-12-27T10:53:05+01:00</lastmod>
   </url><url>
     <loc>/extras/scadv-info/</loc>
@@ -160,5 +160,7 @@
   </url><url>
     <loc>/talk/2020-04-22-emea/</loc>
     <lastmod>2020-04-22T12:09:43+01:00</lastmod>
+  </url><url>
+    <loc>/post/2022-05-06-capture-locations/</loc>
   </url>
 </urlset>

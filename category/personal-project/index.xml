@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>outdoor | almaan</title>
-    <link>/tag/outdoor/</link>
-      <atom:link href="/tag/outdoor/index.xml" rel="self" type="application/rss+xml" />
-    <description>outdoor</description>
+    <title>personal project | almaan</title>
+    <link>/category/personal-project/</link>
+      <atom:link href="/category/personal-project/index.xml" rel="self" type="application/rss+xml" />
+    <description>personal project</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 27 Dec 2022 00:53:05 +0100</lastBuildDate>
     <image>
       <url>/images/icon_hu0976d26fdaec5d0ec6c053b09a4e039a_2013_512x512_fill_lanczos_center_3.png</url>
-      <title>outdoor</title>
-      <link>/tag/outdoor/</link>
+      <title>personal project</title>
+      <link>/category/personal-project/</link>
     </image>
     
     <item>
