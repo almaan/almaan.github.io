@@ -7,7 +7,7 @@
     <description>reflections</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 06 May 2022 06:01:05 +0100</lastBuildDate>
     <image>
-      <url>/images/icon_hu0976d26fdaec5d0ec6c053b09a4e039a_2013_512x512_fill_lanczos_center_2.png</url>
+      <url>/images/icon_hu0976d26fdaec5d0ec6c053b09a4e039a_2013_512x512_fill_lanczos_center_3.png</url>
       <title>reflections</title>
       <link>/tag/reflections/</link>
     </image>
@@ -209,7 +209,7 @@ Convenient - easy to use and say, Multimodal - can be used in mulitmodal
 assays.&lt;/p&gt;
 &lt;p&gt;P.S. I&amp;rsquo;m acutely aware of the fact that &lt;em&gt;&amp;ldquo;being bothered by the inconsistency in
 naming of spatial locations&amp;rdquo;&lt;/em&gt; would be the perfect answer to &lt;em&gt;&amp;ldquo;tell me you have
-no real problems without saying you have no real problems.&amp;quot;&lt;/em&gt; Other &lt;em&gt;more
+no real problems without saying you have no real problems.&amp;rdquo;&lt;/em&gt; Other &lt;em&gt;more
 important&lt;/em&gt; things are happening around the world, I acknowledge that 100%, but I
 don&amp;rsquo;t want those things to engulf my whole existence. Silly discussions must
 also be allowed, just as happiness must be allowed space in times of grief and
@@ -296,7 +296,7 @@ is one of the easiest ways to identify areas where you can make a
 useful contribution.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;span style=&#34;color:#1eff00&#34;&gt;&lt;strong&gt;Seek diversity and honor others&#39; expertise&lt;/strong&gt;&lt;/span&gt;. The best
+&lt;p&gt;&lt;span style=&#34;color:#1eff00&#34;&gt;&lt;strong&gt;Seek diversity and honor others&amp;rsquo; expertise&lt;/strong&gt;&lt;/span&gt;. The best
 collaborations are those where the people involved have
 complementary strengths and show mutual respect for each other&amp;rsquo;s
 skills. There&amp;rsquo;s a difference to being proud of your expertise and
@@ -377,7 +377,7 @@ well-being or health for.&lt;/p&gt;
 &lt;p&gt;&lt;span style=&#34;color:#1eff00&#34;&gt;&lt;strong&gt;Perspective is everything.&lt;/strong&gt;&lt;/span&gt; There&amp;rsquo;s a quote from the, truly
 awful, series &lt;em&gt;&amp;ldquo;Pirates of the Caribbean&amp;rdquo;&lt;/em&gt; that reads: &lt;em&gt;&amp;ldquo;The problem
 is not the problem. The problem is your attitude about the
-problem.&amp;quot;&lt;/em&gt; Even though I cringe just by thinking about Captain Jack
+problem.&amp;rdquo;&lt;/em&gt; Even though I cringe just by thinking about Captain Jack
 Sparrow, these words have stayed with me. I&amp;rsquo;ve experienced first
 hand how you can&amp;rsquo;t plan every aspect of life. Unexpected things can,
 and will, happen. Our attitude determines how we experience these
@@ -456,7 +456,7 @@ causal links.&lt;/p&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;span style=&#34;color:#1eff00&#34;&gt;&lt;strong&gt;Challenges of multimodal analysis.&lt;/strong&gt;&lt;/span&gt; To me, the trend in
 technology development can best be summarized with the Pokémon
-slogan: &lt;em&gt;&amp;ldquo;Gotta Catch &amp;lsquo;Em All.&amp;quot;&lt;/em&gt; The transcriptome, epigenome,
+slogan: &lt;em&gt;&amp;ldquo;Gotta Catch &amp;lsquo;Em All.&amp;rdquo;&lt;/em&gt; The transcriptome, epigenome,
 proteome, and metabolome &amp;ndash; we want them all, at the same time, from
 the same cell. Alas, 10x Genomics already have an assay where
 RNA-seq and ATAC-seq data from the same cell can be obtained, as
@@ -481,14 +481,14 @@ Thus, data ($x_t$) collected from one modality at time $t$
 isn&amp;rsquo;t necessarily informative about the feature values ($y_t$)
 of a different modality at the same time point. Instead &amp;ndash; due to
 the lag &amp;ndash; $x_t$ relates to the values ($y_{t&amp;rsquo;}$) at a
-later point $t&#39;$. This discrepancy causes an issue in learning,
+later point $t&amp;rsquo;$. This discrepancy causes an issue in learning,
 because the two modalities are related according to:
-$$y_{t&#39;} = f(x_t)$$
+$$y_{t&amp;rsquo;} = f(x_t)$$
 However, in most multimodal assays, we observe
 $(x_t,y_t)$, meaning the data required to learn $f$ is not
-available. Potentially, $y_{t&#39;}$ could be inferred from
+available. Potentially, $y_{t&amp;rsquo;}$ could be inferred from
 $y_t$ by learning a second map $g$ such that
-$y_{t&#39;} = g(y_t)$. Then $f$ can be learnt by first
+$y_{t&amp;rsquo;} = g(y_t)$. Then $f$ can be learnt by first
 transforming $y_t$ through $g$. Now, to find $g$, the
 derivative $\partial y_{t}/\partial t$ must likely be deduced.
 To estimate this derivative, at least one more data point close in
@@ -502,19 +502,19 @@ Next, I&amp;rsquo;ll address the second caveat, that of missing data. The path
 from one modality to another often involves several steps and
 regulatory mechanisms, not exclusively relying on elements of the
 observed modality. Thus, the previous equation should be updated to:
-$$y_{t&#39;} = f(x_t,u_t)$$
+$$y_{t&amp;rsquo;} = f(x_t,u_t)$$
 Where $u_t$ represent entities with an
 influence over the regulatory mechanisms (e.g., enzyme levels or
 metabolic concentrations). Note that it&amp;rsquo;s possible that $u_t$ and
 $y_t$ overlaps. Assuming that the above equation is true, data must also be collected on
-$u_t$ for predictions about $y_{t&#39;}$ to be made, solely
+$u_t$ for predictions about $y_{t&amp;rsquo;}$ to be made, solely
 relying on $x_t$ is not sufficient. Thus, $x_t$ does not
 contain all the information needed to predict $y_t$. Of course,
-if $t \approx t&#39;$ and $f(x_t,u_t) \approx f(x_t)$, the
+if $t \approx t&amp;rsquo;$ and $f(x_t,u_t) \approx f(x_t)$, the
 problem is reduced to a much simpler one. Still, when such is not
 the case, we should accept that the prediction task is challenging.
 I definitely don&amp;rsquo;t think it&amp;rsquo;s beyond our capabilities, but while I
-expect methods for *integration* of different data modalities to
+expect methods for &lt;em&gt;integration&lt;/em&gt; of different data modalities to
 emerge soon after the experimental technologies, general methods to
 model intermodal relationships will take more time to mature.&lt;/p&gt;
 &lt;/li&gt;

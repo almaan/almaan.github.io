@@ -38,6 +38,21 @@
     <loc>/post/2022-12-26-camp/</loc>
     <lastmod>2022-12-27T10:53:05+01:00</lastmod>
   </url><url>
+    <loc>/tag/reflections/</loc>
+    <lastmod>2022-05-06T06:01:05+01:00</lastmod>
+  </url><url>
+    <loc>/category/reflections/</loc>
+    <lastmod>2022-05-06T06:01:05+01:00</lastmod>
+  </url><url>
+    <loc>/post/2022-05-06-capture-locations/</loc>
+    <lastmod>2022-05-06T06:01:05+01:00</lastmod>
+  </url><url>
+    <loc>/category/reviews/</loc>
+    <lastmod>2022-04-06T06:01:05+01:00</lastmod>
+  </url><url>
+    <loc>/post/2022-04-06-epilogue/</loc>
+    <lastmod>2022-04-06T06:01:05+01:00</lastmod>
+  </url><url>
     <loc>/extras/scadv-info/</loc>
     <lastmod>2021-08-29T06:13:42+00:00</lastmod>
   </url><url>
@@ -72,9 +87,6 @@
     <lastmod>2021-02-20T10:53:05+01:00</lastmod>
   </url><url>
     <loc>/tag/review/</loc>
-    <lastmod>2021-02-20T10:53:05+01:00</lastmod>
-  </url><url>
-    <loc>/category/reviews/</loc>
     <lastmod>2021-02-20T10:53:05+01:00</lastmod>
   </url><url>
     <loc>/tag/tsne/</loc>
@@ -160,7 +172,5 @@
   </url><url>
     <loc>/talk/2020-04-22-emea/</loc>
     <lastmod>2020-04-22T12:09:43+01:00</lastmod>
-  </url><url>
-    <loc>/post/2022-05-06-capture-locations/</loc>
   </url>
 </urlset>

@@ -241,6 +241,590 @@ somewhat inclined to look into JavaScript and React. Maybe for the next project?
     </item>
     
     <item>
+      <title>What is thy name?</title>
+      <link>/post/2022-05-06-capture-locations/</link>
+      <pubDate>Fri, 06 May 2022 06:01:05 +0100</pubDate>
+      <guid>/post/2022-05-06-capture-locations/</guid>
+      <description>&lt;p&gt;You know that feeling when you&amp;rsquo;re frustrated over something that has absolutely
+no real importance, but you just can&amp;rsquo;t let it go. That&amp;rsquo;s me right now. &lt;span
+style=&#34;color:#86fc8e&#34;&gt;I&amp;rsquo;m seriously bothered by the fact that every single
+publication seems to use a different term to denote the locations in
+spatial transcriptomics data.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s not that people aren&amp;rsquo;t using &lt;em&gt;my favorite&lt;/em&gt; term (FYI, I don&amp;rsquo;t have one)
+that annoys me, but the fact that there&amp;rsquo;s no consensus on which term to use.
+There are &lt;em&gt;beads, cells, features, voxels, pixels, spots, capture locations&lt;/em&gt;,
+and many other innovative alternatives. The current practice is &lt;strong&gt;confusing&lt;/strong&gt;,
+and settling on one term should not be that hard.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;If names are not correct, language will not be in accordance with the truth of things.&amp;rdquo;
+&amp;ndash; Confucius&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;My idea with this post was to present some of the different terms I&amp;rsquo;ve
+encountered so far (disclaimer: this is not an exhaustive list**, together with a
+bit of personal commentary - mainly to provide some context. To then couple this
+with a poll of some sort, and see what the thoughts of the community are.
+Perhaps this could spark some sort of discussion or reflection on the topic.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt; : this list was updated (2022-05-09) after posting
+&lt;a href=&#34;https://twitter.com/aalmaander/status/1523290638422188034?s=20&amp;amp;t=04LQK9AF-yQHLcgYT_K2dA&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this&lt;/a&gt;
+twitter post, where some other suggestions were presented. Thanks to all the
+people who contributed to a really nice discussion!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Bead&lt;/strong&gt; : popularized by
+&lt;a href=&#34;https://www.science.org/doi/10.1126/science.aaw1219&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Slide-seq&lt;/a&gt;, in which
+beads are used to capture the transcripts within the tissue. This also
+resonates well with data from the HDST platform. However, it makes zero sense
+with data from other platforms, like Visium, where capture probes are
+immobilized to a solid surface, nor to imaging-based techniques like MERFISH or
+SeqFISH where single molecules are visualized and there&amp;rsquo;s no &amp;ldquo;capture&amp;rdquo; going
+on.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Spot&lt;/strong&gt; : is used somewhat ambiguously in different techniques. In the
+&lt;a href=&#34;https://www.science.org/doi/10.1126/science.aaf2403&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ST&lt;/a&gt; and
+&lt;a href=&#34;https://www.10xgenomics.com/products/spatial-gene-expression&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Visium&lt;/a&gt;
+platform, the mRNA capture locations are printed onto the surface in a fashion
+similar to how
+&lt;a href=&#34;https://www.nature.com/scitable/definition/microarray-202/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;microarrays&lt;/a&gt; were
+constructed, which made the use of &amp;ldquo;spot&amp;rdquo; to describe the capture locations
+quite natural. But just as &amp;ldquo;beads&amp;rdquo; makes little sense to describe the capture
+locations in Visium data, &amp;ldquo;spots&amp;rdquo; makes no sense in Slide-seq data. What adds
+another layer of confusion is that in &lt;a href=&#34;https://www.nature.com/articles/s41598-019-43943-8&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;imaging-based
+methods&lt;/a&gt;, &amp;ldquo;spot&amp;rdquo; is
+sometimes used to describe the signal from a single molecule. This kind of
+ambiguity adds even more confusion to the already confusing situation. &amp;ldquo;Spot&amp;rdquo;
+is currently (2022-05-06) favored by 10x Genomics (the distributor of Visium).
+10x Genomics has a large reach and, i.e., whatever term they chose, a lot of
+people will use it.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Feature&lt;/strong&gt; : have been used by some authors to describe the spatial
+locations, for example, &lt;a href=&#34;https://doi.org/10.1016/j.molcel.2021.03.016&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this&lt;/a&gt;
+review. Without bashing too hard on the people who prefer this term, I must
+confess that I find it extremely impractical to use the word &amp;ldquo;feature&amp;rdquo; to
+describe the &amp;ldquo;observations&amp;rdquo;. To me, a feature is the information associated
+with the spatial location (i.e., gene expression). Also, most analysis
+frameworks (e.g., Seurat) tend to call the genes (if you&amp;rsquo;re analyzing gene
+expression data) features. If we were to use the term feature also for our
+spatial locations, would we then say that we have a &amp;ldquo;feature times feature&amp;rdquo;
+matrix? That&amp;rsquo;s not very helpful. If confusion is something we want to avoid,
+we should not pursue the use of this term.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Pixel&lt;/strong&gt; : a term that most of us are familiar with, but usually in the
+context of pictures or camera lenses. The word pixel is a portmanteau of the
+two words &amp;ldquo;picture&amp;rdquo; and &amp;ldquo;element&amp;rdquo; (where &amp;ldquo;pix&amp;rdquo; is used as short form of
+&amp;ldquo;picture&amp;rdquo;). I first saw this being used in the &lt;a href=&#34;https://www.nature.com/articles/s41587-021-00830-w&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RCTD
+paper&lt;/a&gt;, but have also
+heard other people use the term in presentations. To some extent, this is a
+slightly more general term than &amp;ldquo;bead&amp;rdquo; or &amp;ldquo;spot&amp;rdquo;, and it works with
+imaging-based spatial transcriptomics methods. Also, to some extent, you could
+consider the Visium or Slide-seq data as an &amp;ldquo;image&amp;rdquo; with ~20,000 channels (one
+channel - one gene) instead of the standard three channels (RGB), but that&amp;rsquo;s a
+bit of a stretch. Calling the spatial data a &amp;ldquo;picture&amp;rdquo; when it&amp;rsquo;s not really
+image data that we&amp;rsquo;re working does not really vibe with me.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Voxel&lt;/strong&gt; : is a lesser known relative to the pixel, where &amp;ldquo;vo&amp;rdquo; for &lt;em&gt;volume&lt;/em&gt;
+has replaced &amp;ldquo;pix&amp;rdquo; for picture; giving us a &lt;em&gt;&amp;ldquo;volume element&amp;rdquo;&lt;/em&gt;. My first
+exposure to the usage of this term to denote spatial locations was the
+&lt;a href=&#34;https://www.nature.com/articles/s41592-021-01264-7&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Tangram paper&lt;/a&gt;. I&amp;rsquo;m not
+fully sure why this term was preferred over pixel, but perhaps &amp;ldquo;volume&amp;rdquo; was
+considered a more general term that could describe elements in both 2D and 3D
+methods (if you consider area as a &amp;ldquo;2D volume&amp;rdquo;). Although, I believe, for most
+people, volume relates very much to 3D objects; thus, potentially puzzling
+some people.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Spatial location&lt;/strong&gt; : sometimes, often in an attempt to be method agnostic, I
+(and others) have used this term instead of any of the aforementioned
+alternatives. It definitely does the trick, it states exactly what we&amp;rsquo;re
+dealing with and there&amp;rsquo;s no room for confusion. But it&amp;rsquo;s terribly &lt;del&gt;unsexy&lt;/del&gt;
+boring, as well as being quite long (two words!) and inconvenient to use.
+Sure, one could go for yet another portmanteau, but referring to spatial locations
+as &lt;em&gt;&amp;ldquo;splocs&amp;rdquo;&lt;/em&gt; sounds&amp;hellip; ehm&amp;hellip; ridiculous.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Gexel&lt;/strong&gt; : a what? Yeah you read that correct, a &lt;em&gt;gexel&lt;/em&gt;. I stumbled upon
+this term when reading the 2021 &lt;a href=&#34;https://www.sciencedirect.com/science/article/pii/S2405471221001514&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MULTILAYER
+paper&lt;/a&gt;,
+where the authors got inspired by the pixels and conceived (I could not find
+any earlier use) of the &amp;ldquo;gexel&amp;rdquo;, being short for &lt;strong&gt;&amp;ldquo;gene expression
+element&amp;rdquo;&lt;/strong&gt;. At first I kind of frowned at this term, but the more I&amp;rsquo;ve been
+thinking about it, the more I&amp;rsquo;ve come to like it. It&amp;rsquo;s fully method agnostic,
+it&amp;rsquo;s short and convenient to use, and &amp;ldquo;gene expression element&amp;rdquo; captures the
+essence of what our spatial locations are. The big downside to this term is
+its lack of &lt;em&gt;generalization to other modalities&lt;/em&gt;, or multimodal assays where
+different kinds of information are registered at the same location. Perhaps
+one could use &lt;em&gt;daxel&lt;/em&gt; for &amp;ldquo;data element&amp;rdquo; or &lt;em&gt;spexel&lt;/em&gt; for &amp;ldquo;spatial expression
+element&amp;rdquo;, but both sound a bit &amp;ldquo;forced&amp;rdquo;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We can summarize this is a very basic table:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Term&lt;/th&gt;
+&lt;th&gt;Agnostic&lt;/th&gt;
+&lt;th&gt;Descriptive&lt;/th&gt;
+&lt;th&gt;Unambiguous&lt;/th&gt;
+&lt;th&gt;Convenient&lt;/th&gt;
+&lt;th&gt;Multimodal&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;bead&lt;/td&gt;
+&lt;td&gt;no&lt;/td&gt;
+&lt;td&gt;no&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;spot&lt;/td&gt;
+&lt;td&gt;no&lt;/td&gt;
+&lt;td&gt;no&lt;/td&gt;
+&lt;td&gt;no&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;feature&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;no&lt;/td&gt;
+&lt;td&gt;no&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;pixel&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;no&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;voxel&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;no&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;spatial location&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;no&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;gexel&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;yes (+)&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;no&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Columns: Agnostic - method agnostic, Descriptive - conveys information about what it
+represents, Unambiguous - will not be confused with other elements of the data,
+Convenient - easy to use and say, Multimodal - can be used in mulitmodal
+assays.&lt;/p&gt;
+&lt;p&gt;P.S. I&amp;rsquo;m acutely aware of the fact that &lt;em&gt;&amp;ldquo;being bothered by the inconsistency in
+naming of spatial locations&amp;rdquo;&lt;/em&gt; would be the perfect answer to &lt;em&gt;&amp;ldquo;tell me you have
+no real problems without saying you have no real problems.&amp;rdquo;&lt;/em&gt; Other &lt;em&gt;more
+important&lt;/em&gt; things are happening around the world, I acknowledge that 100%, but I
+don&amp;rsquo;t want those things to engulf my whole existence. Silly discussions must
+also be allowed, just as happiness must be allowed space in times of grief and
+sorrow.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Thesis Epilogue</title>
+      <link>/post/2022-04-06-epilogue/</link>
+      <pubDate>Wed, 06 Apr 2022 06:01:05 +0100</pubDate>
+      <guid>/post/2022-04-06-epilogue/</guid>
+      <description>&lt;p&gt;On the 18th of March 2022 I defended my PhD thesis: &lt;em&gt;&amp;ldquo;Computational methods for analysis of spatial transcriptomics data&amp;rdquo;&lt;/em&gt;. About a month before this date, I
+finalized the actual document to be defended. Having spent a considerable amount
+of time writing the thesis, I had two realizations upon submission: (1) aside
+from my supervisor, the opponent, and my thesis committee - only a handful
+people would at most read this thing I&amp;rsquo;ve worked so hard to compile; (2) the
+part I deemed most valuable was the &lt;em&gt;Epilogue&lt;/em&gt;, where I
+took the freedom to share some personal insights from these years.&lt;/p&gt;
+&lt;p&gt;Hence, I&amp;rsquo;ve decided to post an excerpt from the Epilogue here on the website. I
+like it not because it&amp;rsquo;s a literary masterpiece (it most certainly is not), but
+because it contains advice I wish I had known when starting my PhD. It consists
+of three parts:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;What I&amp;rsquo;ve learnt&lt;/strong&gt; : lessons learnt from my time as a PhD&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;What I predict&lt;/strong&gt; : some humble prediction about the future&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;What I hope&lt;/strong&gt; : hopes for the future&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For anyone interested in the full thesis, it can be found &lt;a href=&#34;http://kth.diva-portal.org/smash/record.jsf?pid=diva2%3A1639545&amp;amp;dswid=4029&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;what-ive-learnt&#34;&gt;What I&amp;rsquo;ve learnt&lt;/h1&gt;
+&lt;p&gt;The &lt;em&gt;&amp;ldquo;end of history illusion&amp;rdquo;&lt;/em&gt; is a phenomenon in psychology where
+individuals agree that up until the current point in time they&amp;rsquo;ve
+experienced continuous and significant growth, but believe that,
+henceforth, they will not change by any considerable amount. This
+illusion is persistent across all ages, and repeatedly proven to be
+incorrect. We humans are malleable and never seem to solidify. No matter
+where in life we are, we continue to develop, change, and grow.&lt;br&gt;
+&lt;br&gt;
+I was convinced that I&amp;rsquo;d learn a lot during my PhD, scientifically &amp;ndash;
+but would I be affected on a personal level? Most likely not. Despite me
+being aware of the aforementioned illusion, I was impermeable to the
+idea that this experience would leave much of an imprint on me. I guess
+that this is at its best described as arrogance and at its worst as
+stupidity.&lt;br&gt;
+&lt;br&gt;
+Starting my PhD on the 12:th of June 2019, I&amp;rsquo;ve spent exactly 1010 days
+&amp;ndash; or 2 years, 9 months, and 6 days &amp;ndash; pursuing my degree. This time has
+been nothing short of transformative. Agreeably, approximately three
+years is not a huge amount of time, but these years have been densely
+packed with new experiences, encounters, and impressions. I&amp;rsquo;ve acquired
+many new skills, but I also leave this era of my life as a very
+different person than the one who entered it. Below follows a curated
+list of insights that I&amp;rsquo;ve collected over the course of my PhD, relating
+to science as well as personal topics.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span style=&#34;color:#1eff00&#34;&gt;&lt;strong&gt;A high level of complexity does not equal a high level of
+success&lt;/strong&gt;&lt;/span&gt;. Among computational methods, it&amp;rsquo;s rarely the most
+advanced methods that surface as the most popular ones. If you
+desire spread and impact, study the field, seek questions that are
+frequently being asked but rarely answered; then tailor your method
+towards this. Never develop a method and &lt;em&gt;then&lt;/em&gt; invent a question
+for it to address.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span style=&#34;color:#1eff00&#34;&gt;&lt;strong&gt;Develop for you audience, not yourself&lt;/strong&gt;&lt;/span&gt;. If you&amp;rsquo;re capable of
+formulating a statistical or mathematical model, and then implement
+it in code, you are likely more proficient in these areas than the
+average user of your tool. Therefore, if you want people to use your
+software, make the interface intuitive and provide a layman&amp;rsquo;s
+explanation of how it works. Good documentation with loads of
+examples is key to success. If possible, integrate your method into
+already existing frameworks, this makes it easy for users to explore
+without having to learn a new syntax. From my experience, methods
+that are easy to operate are often favored over less user friendly
+ones, even though the latter might have much better performance.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span style=&#34;color:#1eff00&#34;&gt;&lt;strong&gt;Listen to people when they complain&lt;/strong&gt;&lt;/span&gt;. If someone expresses that
+they are struggling with something, they are likely not alone.
+Embrace the opportunity and be the one to deliver the solution. This
+is one of the easiest ways to identify areas where you can make a
+useful contribution.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span style=&#34;color:#1eff00&#34;&gt;&lt;strong&gt;Seek diversity and honor others&amp;rsquo; expertise&lt;/strong&gt;&lt;/span&gt;. The best
+collaborations are those where the people involved have
+complementary strengths and show mutual respect for each other&amp;rsquo;s
+skills. There&amp;rsquo;s a difference to being proud of your expertise and
+being arrogant about it. A project thrives when the members don&amp;rsquo;t
+consider their own contribution more (or less) important than anyone
+else&amp;rsquo;s, but acknowledge that everyone is essential for the process
+to move forward.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span style=&#34;color:#1eff00&#34;&gt;&lt;strong&gt;Time spent planning is often doubly rewarded.&lt;/strong&gt;&lt;/span&gt; I&amp;rsquo;m addicted to
+fast progress, but have learnt that a short pause can save plenty of
+time. Making informed design choices, and not just blindly throwing
+yourself at the first idea, almost always results in a more pleasant
+and faster overall process. A quick fix for the situation at hand
+might seem tempting, but adapting general solutions usually pays off
+in the end.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span style=&#34;color:#1eff00&#34;&gt;&lt;strong&gt;Garbage data will give you garbage results&lt;/strong&gt;&lt;/span&gt;. You wouldn&amp;rsquo;t pick up
+a roadkill, cook it, and then expect it to taste like a dish from a
+Michelin star restaurant. The same should hold true for data; one
+needs to have reasonable expectations about what information that
+can be derived from it. There&amp;rsquo;s a difference between a
+bioinformat&lt;em&gt;ician&lt;/em&gt; and a mag&lt;em&gt;ician&lt;/em&gt;, the latter can turn nothing
+into something, the former cannot. Sometimes, the data is just not
+good enough to answer certain questions, if such is the case, there
+are only two reasonable options: (i) ask a different question,
+or (ii) generate new data.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span style=&#34;color:#1eff00&#34;&gt;&lt;strong&gt;Don&amp;rsquo;t bring nuclear weapons to a gun fight.&lt;/strong&gt;&lt;/span&gt; Sometimes enthusiasm
+and excitement about new powerful methods makes us blind to the fact
+that the problem at hand likely could be solved with simpler means.
+For some questions, a simple regression model will do just as fine
+&amp;ndash; and possibly even better &amp;ndash; than a fancy deep learning model.
+It&amp;rsquo;s easy to be caught up in the storm of buzz words, but take some
+time to contemplate what level of complexity your problem actually
+requires.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span style=&#34;color:#1eff00&#34;&gt;&lt;strong&gt;Aim to be the dumbest person in the room&lt;/strong&gt;.&lt;/span&gt; The best way to grow
+is to position yourself in an environment where people are more
+skilled than yourself, it accelerates learning and forces you to be
+alert. Comfort is truly the enemy of improvement.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span style=&#34;color:#1eff00&#34;&gt;&lt;strong&gt;Don&amp;rsquo;t set yourself on fire to keep others warm&lt;/strong&gt;.&lt;/span&gt; I believe one
+should always strive to help others when we can, but at some point,
+it can also become problematic. If you &lt;em&gt;consistently&lt;/em&gt; are the one
+who does the extra work, covers for others, and stays late &amp;ndash; then
+you&amp;rsquo;re not helping, you&amp;rsquo;re being taken advantage of. We&amp;rsquo;re all
+familiar with the airplane safety instructions telling us to put on
+our own masks before helping someone else, this is equally
+applicable to the workplace. If you want to have a positive impact
+on the people around you, the most important thing is that you feel
+good about your own situation.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span style=&#34;color:#1eff00&#34;&gt;&lt;strong&gt;Never compromise on health&lt;/strong&gt;.&lt;/span&gt; In January 2021 I experienced
+something close to a physical collapse, my body simply quit on me. I
+could barely walk for two months, and for six more months, every day
+of my life felt like a living hell &amp;ndash; I did not enjoy living. Every
+morning, I put on an alarm that counted down the hours that I had
+left to be awake and aware of my situation. Still, when night came,
+I barely slept. Instead, I woke up multiple times having issues
+breathing or in a state of complete sleep paralysis. A combination
+of bad nutrition, an extreme (according to some people) amount of
+exercise, and working ten to twelve hours a day (including weekends)
+put me in a state of severe exhaustion. It was not until I became a
+prisoner of my own body that I realized how much my previous freedom
+meant to me. It&amp;rsquo;s hard realizing that you&amp;rsquo;re not an exception, but
+just as human as everyone else. However, in the end, this
+realization is healthy. If there&amp;rsquo;s one thing I will bring with me
+from these years, it&amp;rsquo;s that &lt;em&gt;nothing&lt;/em&gt; is worth sacrificing one&amp;rsquo;s
+well-being or health for.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span style=&#34;color:#1eff00&#34;&gt;&lt;strong&gt;Perspective is everything.&lt;/strong&gt;&lt;/span&gt; There&amp;rsquo;s a quote from the, truly
+awful, series &lt;em&gt;&amp;ldquo;Pirates of the Caribbean&amp;rdquo;&lt;/em&gt; that reads: &lt;em&gt;&amp;ldquo;The problem
+is not the problem. The problem is your attitude about the
+problem.&amp;rdquo;&lt;/em&gt; Even though I cringe just by thinking about Captain Jack
+Sparrow, these words have stayed with me. I&amp;rsquo;ve experienced first
+hand how you can&amp;rsquo;t plan every aspect of life. Unexpected things can,
+and will, happen. Our attitude determines how we experience these
+events, whether it becomes a tragedy or a lesson. I&amp;rsquo;ve tried to
+adopt more of a &amp;ldquo;gratitude mindset&amp;rdquo;; instead of being frustrated
+when things don&amp;rsquo;t go my way, I try to celebrate what has gone right
+so far. This attitude is not always easy to maintain, and one is of
+course allowed to feel anger, but it&amp;rsquo;s a feeling that becomes toxic
+if we let it linger for too long. Implementing this mindset have
+made me a much happier individual and helped me through some really
+dark times.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;what-i-predict&#34;&gt;What I predict&lt;/h1&gt;
+&lt;p&gt;In 2016, when the Spatial Transcriptomics (ST) technique was published,
+I had just finished the second year of my bachelor and was yet to hear
+the term &amp;ldquo;transcriptomics&amp;rdquo;. Thus, I&amp;rsquo;m acutely aware of the fact that I
+belong to the younger generation of the transcriptomics field, and do
+not have the same experience as many of my peers. Still, having worked
+somewhat intensively in the niche of computational method development
+for spatial transcriptomics, I have a few predictions about the future,
+which I&amp;rsquo;ll take the freedom to share here.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span style=&#34;color:#1eff00&#34;&gt;&lt;strong&gt;Deep learning methods will become staple goods&lt;/strong&gt;&lt;/span&gt;. Although I&amp;rsquo;m
+fascinated by deep learning (DL) methods, none of my works have so
+far exploited the power of these architectures &amp;ndash; mainly because
+I&amp;rsquo;ve felt as if the questions I had could be addressed with simpler
+methods, or because the data wasn&amp;rsquo;t there. However, the trend of
+access to more data, increasingly sophisticated and user friendly
+frameworks &amp;ndash; paired with the development of new kinds of models &amp;ndash;
+makes me certain that DL will revolutionize the single cell and
+spatial transcriptomics fields, just as it has many other aspects of
+our life. Currently, a lot of the DL-based methods simply apply
+existing general models (e.g., taken from the natural language
+processing field) to a problem in the transcriptomics sphere.
+However, I believe we&amp;rsquo;ll migrate from this approach towards using
+&lt;em&gt;bespoke models&lt;/em&gt;, where prior information about the biological
+systems are integrated into the model architecture. In the very near
+future, methods leveraging graph convolutional networks (GCNs) and
+their aptitude for irregular data will likely become a popular
+element in many methods for analysis of spatial transcriptomics
+data.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span style=&#34;color:#1eff00&#34;&gt;&lt;strong&gt;Emergence of perturbation studies.&lt;/strong&gt;&lt;/span&gt; The majority of publications
+and projects that include spatial transcriptomics data have so far
+been observational. A sample is collected, analyzed, and relevant
+observations presented. At some rare occasions, samples representing
+case and control exist, but usually with limited meta data and no
+control over confounding variables. While interesting, this setup
+mainly permits exploratory data analysis (EDA), but does not lend
+itself well to infer causal relationships. To go beyond mere
+associations or correlations, an intervention or &lt;em&gt;perturbation&lt;/em&gt; of
+the system is necessary. Thus, I&amp;rsquo;m certain that it&amp;rsquo;s just a question
+of time until techniques to the likes of Perturb-seq are combined
+with spatial assays. With the introduction of perturbations, we&amp;rsquo;ll
+be able to deduce how gene expression impacts spatial structure, and
+potentially also the reciprocal relationships. With access to such
+data, &lt;em&gt;causal inference&lt;/em&gt; will likely become an essential tool for
+modeling and understanding causative effects. This is something I&amp;rsquo;m
+genuinely excited about.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span style=&#34;color:#1eff00&#34;&gt;&lt;strong&gt;Preference of generative models.&lt;/strong&gt;&lt;/span&gt; Many of the models we currently
+employ are of a discriminative nature, but I anticipate a shift
+towards &lt;em&gt;generative models&lt;/em&gt;. Discriminative models assumes some
+functional form of the posterior, in contrast, generative models
+learns the joint probability distribution over all variables.
+Generative models are more susceptible to incorporation of prior
+information about the systems being studied, and better at
+representing causal relationships. Thus, they neatly tie together
+the two previous statement about a need for bespoke models and
+causal links.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span style=&#34;color:#1eff00&#34;&gt;&lt;strong&gt;Challenges of multimodal analysis.&lt;/strong&gt;&lt;/span&gt; To me, the trend in
+technology development can best be summarized with the Pokémon
+slogan: &lt;em&gt;&amp;ldquo;Gotta Catch &amp;lsquo;Em All.&amp;rdquo;&lt;/em&gt; The transcriptome, epigenome,
+proteome, and metabolome &amp;ndash; we want them all, at the same time, from
+the same cell. Alas, 10x Genomics already have an assay where
+RNA-seq and ATAC-seq data from the same cell can be obtained, as
+well as an second assay where spatial RNA-seq information and
+protein abundance are collected simultaneously. Except for increased
+ability to resolve cell types and states, very few examples where
+multimodal data is superior to unimodal data have so far been
+presented, but there&amp;rsquo;s no lack of ideas.&lt;br&gt;
+&lt;br&gt;
+One of the commonly mentioned aspirations is to learn relationships
+between the different modalities, which can be used to &lt;em&gt;predict&lt;/em&gt; one
+modality from another, for example, deducing protein levels from
+gene expression. Here, I will take a somewhat controversial and
+conservative stance by stating that: prediction of one modality from
+another will prove to be more challenging than many expect. I base
+this statement on two concepts: &lt;em&gt;temporal delays&lt;/em&gt; and &lt;em&gt;missing
+information&lt;/em&gt;. I&amp;rsquo;ll elaborate on both these issues below.&lt;br&gt;
+&lt;br&gt;
+Changes to one part of the central dogma usually don&amp;rsquo;t manifest
+immediately in other parts, some form of delay tends to be present.
+Thus, data ($x_t$) collected from one modality at time $t$
+isn&amp;rsquo;t necessarily informative about the feature values ($y_t$)
+of a different modality at the same time point. Instead &amp;ndash; due to
+the lag &amp;ndash; $x_t$ relates to the values ($y_{t&amp;rsquo;}$) at a
+later point $t&amp;rsquo;$. This discrepancy causes an issue in learning,
+because the two modalities are related according to:
+$$y_{t&amp;rsquo;} = f(x_t)$$
+However, in most multimodal assays, we observe
+$(x_t,y_t)$, meaning the data required to learn $f$ is not
+available. Potentially, $y_{t&amp;rsquo;}$ could be inferred from
+$y_t$ by learning a second map $g$ such that
+$y_{t&amp;rsquo;} = g(y_t)$. Then $f$ can be learnt by first
+transforming $y_t$ through $g$. Now, to find $g$, the
+derivative $\partial y_{t}/\partial t$ must likely be deduced.
+To estimate this derivative, at least one more data point close in
+time (w.r.t. protein turnover timescales) is required.
+Unfortunately, experimental assays only capture a single snapshot of
+the system at a particular time. As a consequence, estimation of
+such derivatives is usually infeasible. The dilemma described above
+is what I refer to as temporal delay.&lt;br&gt;
+&lt;br&gt;
+Next, I&amp;rsquo;ll address the second caveat, that of missing data. The path
+from one modality to another often involves several steps and
+regulatory mechanisms, not exclusively relying on elements of the
+observed modality. Thus, the previous equation should be updated to:
+$$y_{t&amp;rsquo;} = f(x_t,u_t)$$
+Where $u_t$ represent entities with an
+influence over the regulatory mechanisms (e.g., enzyme levels or
+metabolic concentrations). Note that it&amp;rsquo;s possible that $u_t$ and
+$y_t$ overlaps. Assuming that the above equation is true, data must also be collected on
+$u_t$ for predictions about $y_{t&amp;rsquo;}$ to be made, solely
+relying on $x_t$ is not sufficient. Thus, $x_t$ does not
+contain all the information needed to predict $y_t$. Of course,
+if $t \approx t&amp;rsquo;$ and $f(x_t,u_t) \approx f(x_t)$, the
+problem is reduced to a much simpler one. Still, when such is not
+the case, we should accept that the prediction task is challenging.
+I definitely don&amp;rsquo;t think it&amp;rsquo;s beyond our capabilities, but while I
+expect methods for &lt;em&gt;integration&lt;/em&gt; of different data modalities to
+emerge soon after the experimental technologies, general methods to
+model intermodal relationships will take more time to mature.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span style=&#34;color:#1eff00&#34;&gt;&lt;strong&gt;The group before the individual.&lt;/strong&gt;&lt;/span&gt; As mentioned in the background, both
+internal and external factors influence a cell&amp;rsquo;s state. In my opinion,
+there&amp;rsquo;s still a need for general methods that tries to model how the local
+environment of a cell affects its behavior. Conditional models for gene
+expression already exist, one example being those that condition on cell
+type, often resulting in sets of marker genes or gene signatures. These
+models could be expanded to also include conditioning on the local
+environment of a cell, for example, the proportion of different cell types
+in its neighborhood. Such models add a new, interconnected, layer of
+information to our understanding of how cells operate in biological systems.
+Indeed, early attempts to construct models of this kind have already been
+made (e.g., node-centric expression modeling by the Theis Lab), and I dare
+to predict an abundance of them in a couple of years from now.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;what-i-hope&#34;&gt;What I hope&lt;/h1&gt;
+&lt;p&gt;Having outlined the lessons I&amp;rsquo;ve learnt and my predictions for the
+future, only one thing remains: listing some of the thing I hope for,
+but am less certain of.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span style=&#34;color:#1eff00&#34;&gt;&lt;strong&gt;Revised educational programs.&lt;/strong&gt;&lt;/span&gt; In genomics, almost every new
+technological method is accompanied by a suite of computational
+tools to analyze the data. Ever more frequently, high impact
+journals publish purely computational methods designed to unveil
+previously occluded insights that only emerge by clever modeling of
+the data. Thus, it&amp;rsquo;s evident that computational expertise is just as
+important to advance life science as biological and technical
+knowledge. If further proof is needed, in 2021, SciLifeLab and the
+Wallenberg National Program announced several DDLS (data driven life
+science) fellowships, acknowledging the importance of computational
+competence. Still, the essential skills needed in computational
+biology, such as: statistics, mathematics, probability theory,
+modeling, and programming, are severely underrepresented in many of
+the biotechnology programs at Swedish universities. We need to step
+up our game if we want maintain our status within the life sciences
+as an innovative and leading nation, and remain competitive with
+international institutions like the Broad or the Wellcome Trust
+Sanger Institute. The foundation must be laid early on, educating
+PhD students is not good enough, computational biology tracks should
+be instituted already at the Master level and potentially even seep
+into the bachelor programs. I sincerely hope that the educational
+programs will be updated, to also prepare students &amp;ndash; with an
+interest &amp;ndash; for the challenges a computational biologist faces.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span style=&#34;color:#1eff00&#34;&gt;&lt;strong&gt;Increased diversity.&lt;/strong&gt;&lt;/span&gt; If there&amp;rsquo;s one thing I&amp;rsquo;m not stoked about,
+it&amp;rsquo;s gender quotation and female-exclusive events; to me they have
+an opposite effect of their intended purpose. These actions belittle
+women&amp;rsquo;s competence and give the impression that we need extra help
+or special rules to succeed. However, women are clearly
+underrepresented in the computational field; at many hackathons or
+meetings, I&amp;rsquo;ve found myself &amp;ndash; as a woman &amp;ndash; in a very small
+minority, and am often assumed to be someone representing the
+wet-lab side. I&amp;rsquo;m not upset by this, and have never been met with
+anything but respect when correcting people, but I don&amp;rsquo;t think it
+has to be like this. Girls and young women should be equally
+encouraged to purse STEM subjects as their male counterparts, and
+all of us &amp;ndash; me included &amp;ndash; should probably revise or abolish some
+of our stereotypes. So, I dearly hope for a future where the
+computational fields become more diverse and inclusive. Of course,
+diversity extends beyond gender, the same arguments can &amp;ndash; and
+should &amp;ndash; be made about ethnicity, age, religion, sexual identity,
+etc. Being a white woman living in Sweden, I fully acknowledge my
+privileges, and that my encounters with prejudice are probably
+dwarfed by those from other &amp;ndash; less fortunate &amp;ndash; groups. Still, I
+can only speak of my own experiences and observations.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span style=&#34;color:#1eff00&#34;&gt;&lt;strong&gt;Breaking the limit&lt;/strong&gt;.&lt;/span&gt; My third, and final, wish for the future is
+to pass the qualifying time for the Boston Marathon. To then &amp;ndash; of
+course &amp;ndash; complete the race.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
       <title>2021 SIB/NBIS course resources</title>
       <link>/extras/scadv-info/</link>
       <pubDate>Sun, 29 Aug 2021 06:13:42 +0000</pubDate>
@@ -2997,14 +3581,6 @@ allowing you to follow each and every step.&lt;/p&gt;
       <link>/talk/2020-04-22-emea/</link>
       <pubDate>Wed, 22 Apr 2020 12:09:43 +0100</pubDate>
       <guid>/talk/2020-04-22-emea/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>/post/2022-05-06-capture-locations/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/post/2022-05-06-capture-locations/</guid>
       <description></description>
     </item>
     
