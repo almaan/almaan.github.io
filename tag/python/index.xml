@@ -17,14 +17,14 @@
       <link>/post/2022-12-26-camp/</link>
       <pubDate>Tue, 27 Dec 2022 00:53:05 +0100</pubDate>
       <guid>/post/2022-12-26-camp/</guid>
-      <description>&lt;h2 id=&#34;tldr&#34;&gt;TLDR:&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;tldr&#34;&gt;TLDR;&lt;/h2&gt;
 &lt;p&gt;I built a Python application that checks the availability of specific campsites
 listed at &lt;a href=&#34;https://www.recreation.gov&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Recration.gov&lt;/a&gt;, and if there is anything
 available, it sends you an email. The code can be found
 &lt;a href=&#34;https://github.com/almaan/campsite-checker&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;
 &lt;p&gt;A few weeks ago, me and some friends were eating popcorn at a bar in Oakland
-(genious concept); in addition the the usual banter, we ventured into the domain
+(genius concept); in addition to the usual banter, we ventured into the domain
 of hiking and camping. Especially, how hard it is to get a spot at the campsites
 in the more &amp;ldquo;popular&amp;rdquo; recreational areas (e.g., Yosemite). I am yet to figure
 out exactly what laws that apply and where you can (legally) camp, but I&amp;rsquo;m not
@@ -42,14 +42,14 @@ released&lt;/li&gt;
 &lt;p&gt;All the engineers in SF know how to code, so they just write bots that book
 all the campsites for them, meaning &amp;rsquo;normal&amp;rsquo; people never have a chance to book anything.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Now, I&amp;rsquo;m not a software engineer and I very rarley write code to interact with
-the web, but boldened by a few drinks I volunteered to assemble something that
+&lt;p&gt;Now, I&amp;rsquo;m not a software engineer and I very rarely write code to interact with
+the web, but emboldened by a few drinks I volunteered to assemble something that
 would help us in the battle of these coveted campsites. So that&amp;rsquo;s, in a
 nutshell, how I decided to write a bot of our own.&lt;/p&gt;
 &lt;h2 id=&#34;project&#34;&gt;Project&lt;/h2&gt;
 &lt;p&gt;&lt;ins&gt;Initial objective&lt;/ins&gt;: &lt;strong&gt;Create a bot that will scrape the web for available campsites
 and notify the stakeholders if anything becomes/is available.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;After thinking a bit more about the intital objective and looking into the
+&lt;p&gt;After thinking a bit more about the initial objective and looking into the
 resources, a more specific objective and workflow emerged:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -87,7 +87,7 @@ bugs enter the codebase&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;We want to assess the availability continously, so repeated queries should be made.
+&lt;p&gt;We want to assess the availability continuously, so repeated queries should be made.
 However, we want to avoid redundant information - &lt;em&gt;&amp;ldquo;if you don&amp;rsquo;t have anything
 new to say, then don&amp;rsquo;t say anything at all.&amp;rdquo;&lt;/em&gt;&lt;/p&gt;
 &lt;/li&gt;
@@ -134,11 +134,11 @@ accessed using the &lt;code&gt;campsites&lt;/code&gt; key; this is a new diction
 each campsite within the queried campground; among an abundance of information,
 the availability is listed for all
 dates in the specified month. So this is exactly what we are looking for. The
-only addditional implementations was a loop over all the months of interest and
+only additional implementations was a loop over all the months of interest and
 filtering to only include dates where sites are available.&lt;/p&gt;
 &lt;p&gt;I&amp;rsquo;m using a &lt;code&gt;config&lt;/code&gt; file (YAML) to specify the some of the parameters to this
 application, such as the months of interest (one could do specific dates, but I
-found it more conveinient to just say which month you want to check for dates
+found it more convenient to just say which month you want to check for dates
 since we want as many options as possible). I found a nice package called
 &lt;a href=&#34;https://dateparser.readthedocs.io/en/latest/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;em&gt;dateparser&lt;/em&gt;&lt;/a&gt; to help with
 parsing of the dates, using this allows for a more sloppy and more human
@@ -175,7 +175,7 @@ specifically:&lt;/p&gt;
 &lt;p&gt;Where &lt;code&gt;SHEET_ID&lt;/code&gt; is the ID of your sheet id and &lt;code&gt;GID&lt;/code&gt; is the tab id, you can
 grab both of these from the URL of your sheet.
 I found &lt;a href=&#34;https://stackoverflow.com/questions/24255472/download-export-public-google-spreadsheet-as-tsv-from-command-line&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this&lt;/a&gt;
-stackoverflow post quite helpfull.&lt;/p&gt;
+stackoverflow post quite helpful.&lt;/p&gt;
 &lt;p&gt;As for how updates should be shared with those of us who are in on this
 &amp;ldquo;scheme&amp;rdquo;, I settled on something that feels as old as stone tablets: email.
 Everyone checks their email, we already have apps for it, and it&amp;rsquo;s easy to set
@@ -185,7 +185,7 @@ service, so let&amp;rsquo;s say something about how that first.&lt;/p&gt;
 &lt;p&gt;I decided to host this at
 &lt;a href=&#34;https://www.pythonanywhere.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;pythonanywhere.com&lt;/a&gt; which was affordable
 and seemed to allow enough customization. They also had a &amp;ldquo;Tasks&amp;rdquo; feature where
-you could launch reoccuring tasks just like a cronjob. Being cheap, I first went
+you could launch recurring tasks just like a cronjob. Being cheap, I first went
 for the free subscription plan - and this made me sign up for
 &lt;a href=&#34;https://www.mailgun.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;mailgun.com&lt;/a&gt; as a service for email. This site was
 whitelisted for outgoing requests and didn&amp;rsquo;t require
@@ -206,7 +206,7 @@ email, all you need is your API key and the follwoing function:&lt;/p&gt;
 the other people in the group are bcc:ed. We all know each other, but as this
 grows it&amp;rsquo;s nice to not expose everyone&amp;rsquo;s email.&lt;/p&gt;
 &lt;p&gt;Now, what I didn&amp;rsquo;t register immediately with mailgun.com was that you needed an
-external domain to send your emails through (to avoid spamers&amp;hellip; I think?).
+external domain to send your emails through (to avoid spammers&amp;hellip; I think?).
 Fortunately, I had &lt;em&gt;this&lt;/em&gt; one (&lt;code&gt;differentiable.net&lt;/code&gt;) to use. It required me to
 setup some DNS configurations, but following their guide it took me at most
 ~20min.&lt;/p&gt;
@@ -216,12 +216,12 @@ latest email (content) query, and if the result from a new query is the same -
 no email is sent. Evidently, this means that &lt;em&gt;any&lt;/em&gt; change would prompt a new
 email, additions of campsites as well as campsites being booked. The former is
 probably the most interesting, but filtering for this would require a bit more
-work (maybe for the future) and it&amp;rsquo;s kinda good to know when spots begin to
+work (maybe for the future) and it&amp;rsquo;s kind of good to know when spots begin to
 disappear.&lt;/p&gt;
 &lt;p&gt;Ok, almost there. I wrapped the workflow into a CLI where the two input
-arguments consit of the paths to each of two config files (YAML). Without
+arguments consist of the paths to each of two config files (YAML). Without
 getting into the nitty gritty details, one of these config files (static)
-contains emails to the people who should recieve the updates, API keys etc., this
+contains emails to the people who should receive the updates, API keys etc., this
 information never really changes and I don&amp;rsquo;t keep it in a public space. The
 other config file (dynamic) contains paths to the output directory as well as
 the dates that should be queried; this I keep at github, for reasons that soon
@@ -229,14 +229,14 @@ will become clear.&lt;/p&gt;
 &lt;p&gt;Finally, I wrote a bash script that runs the CLI application every hour (by
 using the Task feature at pythonanywhere.com). However, in the bash script,
 before running the &amp;lsquo;campsite checker&amp;rsquo; (the incredibly creative name of this bot)
-I pull the source code from its github repo. Hence, any updates/changes to the
+I pull the source code from its github repository. Hence, any updates/changes to the
 code or the dynamic design file will be integrated in the next query.&lt;/p&gt;
 &lt;p&gt;So that&amp;rsquo;s about it. You can find the code
 &lt;a href=&#34;https://github.com/almaan/campsite-checker/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;, although with limited
 documentation as of now.&lt;/p&gt;
-&lt;p&gt;In total I&amp;rsquo;d estimate that this project took somewhere between 5-8h of my time,
-which isn&amp;rsquo;t very much. It was a fun exercise in web interaction and made me
-somewhat inclined to look into JavaScript and React. Maybe for the next project?&lt;/p&gt;
+&lt;p&gt;In total I&amp;rsquo;d estimate that this project took somewhere between 5-8h of my time.
+It was a fun exercise in web interaction and made me somewhat inclined to look
+into JavaScript and React. Maybe for the next project?&lt;/p&gt;
 </description>
     </item>
     

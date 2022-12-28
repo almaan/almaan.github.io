@@ -811,14 +811,14 @@
   <div class="article-container">
 
     <div class="article-style">
-      <h2 id="tldr">TLDR:</h2>
+      <h2 id="tldr">TLDR;</h2>
 <p>I built a Python application that checks the availability of specific campsites
 listed at <a href="https://www.recreation.gov" target="_blank" rel="noopener">Recration.gov</a>, and if there is anything
 available, it sends you an email. The code can be found
 <a href="https://github.com/almaan/campsite-checker" target="_blank" rel="noopener">here</a>.</p>
 <h2 id="intro">Intro</h2>
 <p>A few weeks ago, me and some friends were eating popcorn at a bar in Oakland
-(genious concept); in addition the the usual banter, we ventured into the domain
+(genius concept); in addition to the usual banter, we ventured into the domain
 of hiking and camping. Especially, how hard it is to get a spot at the campsites
 in the more &ldquo;popular&rdquo; recreational areas (e.g., Yosemite). I am yet to figure
 out exactly what laws that apply and where you can (legally) camp, but I&rsquo;m not
@@ -836,14 +836,14 @@ released</li>
 <p>All the engineers in SF know how to code, so they just write bots that book
 all the campsites for them, meaning &rsquo;normal&rsquo; people never have a chance to book anything.</p>
 </blockquote>
-<p>Now, I&rsquo;m not a software engineer and I very rarley write code to interact with
-the web, but boldened by a few drinks I volunteered to assemble something that
+<p>Now, I&rsquo;m not a software engineer and I very rarely write code to interact with
+the web, but emboldened by a few drinks I volunteered to assemble something that
 would help us in the battle of these coveted campsites. So that&rsquo;s, in a
 nutshell, how I decided to write a bot of our own.</p>
 <h2 id="project">Project</h2>
 <p><ins>Initial objective</ins>: <strong>Create a bot that will scrape the web for available campsites
 and notify the stakeholders if anything becomes/is available.</strong></p>
-<p>After thinking a bit more about the intital objective and looking into the
+<p>After thinking a bit more about the initial objective and looking into the
 resources, a more specific objective and workflow emerged:</p>
 <ul>
 <li>
@@ -881,7 +881,7 @@ bugs enter the codebase</p>
 </ul>
 </li>
 <li>
-<p>We want to assess the availability continously, so repeated queries should be made.
+<p>We want to assess the availability continuously, so repeated queries should be made.
 However, we want to avoid redundant information - <em>&ldquo;if you don&rsquo;t have anything
 new to say, then don&rsquo;t say anything at all.&rdquo;</em></p>
 </li>
@@ -928,11 +928,11 @@ accessed using the <code>campsites</code> key; this is a new dictionary with an 
 each campsite within the queried campground; among an abundance of information,
 the availability is listed for all
 dates in the specified month. So this is exactly what we are looking for. The
-only addditional implementations was a loop over all the months of interest and
+only additional implementations was a loop over all the months of interest and
 filtering to only include dates where sites are available.</p>
 <p>I&rsquo;m using a <code>config</code> file (YAML) to specify the some of the parameters to this
 application, such as the months of interest (one could do specific dates, but I
-found it more conveinient to just say which month you want to check for dates
+found it more convenient to just say which month you want to check for dates
 since we want as many options as possible). I found a nice package called
 <a href="https://dateparser.readthedocs.io/en/latest/" target="_blank" rel="noopener"><em>dateparser</em></a> to help with
 parsing of the dates, using this allows for a more sloppy and more human
@@ -969,7 +969,7 @@ specifically:</p>
 <p>Where <code>SHEET_ID</code> is the ID of your sheet id and <code>GID</code> is the tab id, you can
 grab both of these from the URL of your sheet.
 I found <a href="https://stackoverflow.com/questions/24255472/download-export-public-google-spreadsheet-as-tsv-from-command-line" target="_blank" rel="noopener">this</a>
-stackoverflow post quite helpfull.</p>
+stackoverflow post quite helpful.</p>
 <p>As for how updates should be shared with those of us who are in on this
 &ldquo;scheme&rdquo;, I settled on something that feels as old as stone tablets: email.
 Everyone checks their email, we already have apps for it, and it&rsquo;s easy to set
@@ -979,7 +979,7 @@ service, so let&rsquo;s say something about how that first.</p>
 <p>I decided to host this at
 <a href="https://www.pythonanywhere.com" target="_blank" rel="noopener">pythonanywhere.com</a> which was affordable
 and seemed to allow enough customization. They also had a &ldquo;Tasks&rdquo; feature where
-you could launch reoccuring tasks just like a cronjob. Being cheap, I first went
+you could launch recurring tasks just like a cronjob. Being cheap, I first went
 for the free subscription plan - and this made me sign up for
 <a href="https://www.mailgun.com/" target="_blank" rel="noopener">mailgun.com</a> as a service for email. This site was
 whitelisted for outgoing requests and didn&rsquo;t require
@@ -1000,7 +1000,7 @@ email, all you need is your API key and the follwoing function:</p>
 the other people in the group are bcc:ed. We all know each other, but as this
 grows it&rsquo;s nice to not expose everyone&rsquo;s email.</p>
 <p>Now, what I didn&rsquo;t register immediately with mailgun.com was that you needed an
-external domain to send your emails through (to avoid spamers&hellip; I think?).
+external domain to send your emails through (to avoid spammers&hellip; I think?).
 Fortunately, I had <em>this</em> one (<code>differentiable.net</code>) to use. It required me to
 setup some DNS configurations, but following their guide it took me at most
 ~20min.</p>
@@ -1010,12 +1010,12 @@ latest email (content) query, and if the result from a new query is the same -
 no email is sent. Evidently, this means that <em>any</em> change would prompt a new
 email, additions of campsites as well as campsites being booked. The former is
 probably the most interesting, but filtering for this would require a bit more
-work (maybe for the future) and it&rsquo;s kinda good to know when spots begin to
+work (maybe for the future) and it&rsquo;s kind of good to know when spots begin to
 disappear.</p>
 <p>Ok, almost there. I wrapped the workflow into a CLI where the two input
-arguments consit of the paths to each of two config files (YAML). Without
+arguments consist of the paths to each of two config files (YAML). Without
 getting into the nitty gritty details, one of these config files (static)
-contains emails to the people who should recieve the updates, API keys etc., this
+contains emails to the people who should receive the updates, API keys etc., this
 information never really changes and I don&rsquo;t keep it in a public space. The
 other config file (dynamic) contains paths to the output directory as well as
 the dates that should be queried; this I keep at github, for reasons that soon
@@ -1023,14 +1023,14 @@ will become clear.</p>
 <p>Finally, I wrote a bash script that runs the CLI application every hour (by
 using the Task feature at pythonanywhere.com). However, in the bash script,
 before running the &lsquo;campsite checker&rsquo; (the incredibly creative name of this bot)
-I pull the source code from its github repo. Hence, any updates/changes to the
+I pull the source code from its github repository. Hence, any updates/changes to the
 code or the dynamic design file will be integrated in the next query.</p>
 <p>So that&rsquo;s about it. You can find the code
 <a href="https://github.com/almaan/campsite-checker/" target="_blank" rel="noopener">here</a>, although with limited
 documentation as of now.</p>
-<p>In total I&rsquo;d estimate that this project took somewhere between 5-8h of my time,
-which isn&rsquo;t very much. It was a fun exercise in web interaction and made me
-somewhat inclined to look into JavaScript and React. Maybe for the next project?</p>
+<p>In total I&rsquo;d estimate that this project took somewhere between 5-8h of my time.
+It was a fun exercise in web interaction and made me somewhat inclined to look
+into JavaScript and React. Maybe for the next project?</p>
 
     </div>
 
