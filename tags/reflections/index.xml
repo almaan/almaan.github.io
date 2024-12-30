@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Reflections on Alma Andersson</title>
-    <link>http://localhost:1313/tags/reflections/</link>
+    <link>https://example.org/tags/reflections/</link>
     <description>Recent content in Reflections on Alma Andersson</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 06 May 2022 06:01:05 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/reflections/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://example.org/tags/reflections/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>What is thy name?</title>
-      <link>http://localhost:1313/blog/2022-05-06-capture-locations/</link>
+      <link>https://example.org/blog/2022-05-06-capture-locations/</link>
       <pubDate>Fri, 06 May 2022 06:01:05 +0100</pubDate>
-      <guid>http://localhost:1313/blog/2022-05-06-capture-locations/</guid>
+      <guid>https://example.org/blog/2022-05-06-capture-locations/</guid>
       <description>A brief discussion about the naming convention of the observations in spatial transcriptomics.</description>
     </item>
     <item>
       <title>Thesis Epilogue</title>
-      <link>http://localhost:1313/blog/2022-04-06-epilogue/</link>
+      <link>https://example.org/blog/2022-04-06-epilogue/</link>
       <pubDate>Wed, 06 Apr 2022 06:01:05 +0100</pubDate>
-      <guid>http://localhost:1313/blog/2022-04-06-epilogue/</guid>
+      <guid>https://example.org/blog/2022-04-06-epilogue/</guid>
       <description>An excerpt from the Epilogue of my PhD thesis. These are the lessons I&amp;rsquo;ve learnt, the predictions I have, and the hopes I harbor.</description>
     </item>
   </channel>

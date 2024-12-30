@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Alma Andersson</title>
-    <link>http://localhost:1313/categories/</link>
+    <link>https://example.org/categories/</link>
     <description>Recent content in Categories on Alma Andersson</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 27 Mar 2023 10:53:05 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://example.org/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Notes</title>
-      <link>http://localhost:1313/categories/notes/</link>
+      <link>https://example.org/categories/notes/</link>
       <pubDate>Mon, 27 Mar 2023 00:53:05 +0100</pubDate>
-      <guid>http://localhost:1313/categories/notes/</guid>
+      <guid>https://example.org/categories/notes/</guid>
       <description></description>
     </item>
     <item>
       <title>Personal Project</title>
-      <link>http://localhost:1313/categories/personal-project/</link>
+      <link>https://example.org/categories/personal-project/</link>
       <pubDate>Tue, 27 Dec 2022 00:53:05 +0100</pubDate>
-      <guid>http://localhost:1313/categories/personal-project/</guid>
+      <guid>https://example.org/categories/personal-project/</guid>
       <description></description>
     </item>
     <item>
       <title>Reflections</title>
-      <link>http://localhost:1313/categories/reflections/</link>
+      <link>https://example.org/categories/reflections/</link>
       <pubDate>Fri, 06 May 2022 06:01:05 +0100</pubDate>
-      <guid>http://localhost:1313/categories/reflections/</guid>
+      <guid>https://example.org/categories/reflections/</guid>
       <description></description>
     </item>
     <item>
       <title>Reviews</title>
-      <link>http://localhost:1313/categories/reviews/</link>
+      <link>https://example.org/categories/reviews/</link>
       <pubDate>Wed, 06 Apr 2022 06:01:05 +0100</pubDate>
-      <guid>http://localhost:1313/categories/reviews/</guid>
+      <guid>https://example.org/categories/reviews/</guid>
       <description></description>
     </item>
   </channel>

@@ -2,106 +2,108 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://example.org/</loc>
     <lastmod>2024-08-20T21:04:20-07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/recs/</loc>
+    <loc>https://example.org/recs/</loc>
     <lastmod>2024-08-20T21:04:20-07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/</loc>
+    <loc>https://example.org/blog/</loc>
     <lastmod>2023-03-27T10:53:05+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://example.org/categories/</loc>
     <lastmod>2023-03-27T10:53:05+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/2023-03-27-howitravel/</loc>
+    <loc>https://example.org/blog/2023-03-27-howitravel/</loc>
     <lastmod>2023-03-27T10:53:05+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/notes/</loc>
+    <loc>https://example.org/categories/notes/</loc>
     <lastmod>2023-03-27T10:53:05+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/random/</loc>
+    <loc>https://example.org/tags/random/</loc>
     <lastmod>2023-03-27T10:53:05+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://example.org/tags/</loc>
     <lastmod>2023-03-27T10:53:05+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/tips/</loc>
+    <loc>https://example.org/tags/tips/</loc>
     <lastmod>2023-03-27T10:53:05+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/traveling/</loc>
+    <loc>https://example.org/tags/traveling/</loc>
     <lastmod>2023-03-27T10:53:05+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/hikes/</loc>
+    <loc>https://example.org/tags/hikes/</loc>
     <lastmod>2022-12-27T10:53:05+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/outdoor/</loc>
+    <loc>https://example.org/tags/outdoor/</loc>
     <lastmod>2022-12-27T10:53:05+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/personal-project/</loc>
+    <loc>https://example.org/categories/personal-project/</loc>
     <lastmod>2022-12-27T10:53:05+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/python/</loc>
+    <loc>https://example.org/tags/python/</loc>
     <lastmod>2022-12-27T10:53:05+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/2022-12-26-camp/</loc>
+    <loc>https://example.org/blog/2022-12-26-camp/</loc>
     <lastmod>2022-12-27T10:53:05+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/reflections/</loc>
+    <loc>https://example.org/tags/reflections/</loc>
     <lastmod>2022-05-06T06:01:05+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/reflections/</loc>
+    <loc>https://example.org/categories/reflections/</loc>
     <lastmod>2022-05-06T06:01:05+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/2022-05-06-capture-locations/</loc>
+    <loc>https://example.org/blog/2022-05-06-capture-locations/</loc>
     <lastmod>2022-05-06T06:01:05+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/reviews/</loc>
+    <loc>https://example.org/categories/reviews/</loc>
     <lastmod>2022-04-06T06:01:05+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/2022-04-06-epilogue/</loc>
+    <loc>https://example.org/blog/2022-04-06-epilogue/</loc>
     <lastmod>2022-04-06T06:01:05+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/machine-learning/</loc>
+    <loc>https://example.org/tags/machine-learning/</loc>
     <lastmod>2021-02-20T10:53:05+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/manifold/</loc>
+    <loc>https://example.org/tags/manifold/</loc>
     <lastmod>2021-02-20T10:53:05+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/2021-02-20-tsne/</loc>
+    <loc>https://example.org/blog/2021-02-20-tsne/</loc>
     <lastmod>2021-02-20T10:53:05+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/review/</loc>
+    <loc>https://example.org/tags/review/</loc>
     <lastmod>2021-02-20T10:53:05+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/tsne/</loc>
+    <loc>https://example.org/tags/tsne/</loc>
     <lastmod>2021-02-20T10:53:05+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/normalization/</loc>
+    <loc>https://example.org/tags/normalization/</loc>
     <lastmod>2021-01-31T12:47:31+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/2021-01-31-nbreg/</loc>
+    <loc>https://example.org/blog/2021-01-31-nbreg/</loc>
     <lastmod>2021-01-31T12:47:31+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/regression/</loc>
+    <loc>https://example.org/tags/regression/</loc>
     <lastmod>2021-01-31T12:47:31+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/sctransform/</loc>
+    <loc>https://example.org/tags/sctransform/</loc>
     <lastmod>2021-01-31T12:47:31+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/ccf/</loc>
+    <loc>https://example.org/tags/ccf/</loc>
     <lastmod>2021-01-19T15:01:37+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/common-coordinate-framework/</loc>
+    <loc>https://example.org/tags/common-coordinate-framework/</loc>
     <lastmod>2021-01-19T15:01:37+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/2021-01-19-ccf-rev/</loc>
+    <loc>https://example.org/blog/2021-01-19-ccf-rev/</loc>
     <lastmod>2021-01-19T15:01:37+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/2021-01-12-liver-biorxiv/</loc>
+    <loc>https://example.org/blog/2021-01-12-liver-biorxiv/</loc>
     <lastmod>2021-01-12T11:59:19+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/2021-01-08-celltracker/</loc>
+    <loc>https://example.org/blog/2021-01-08-celltracker/</loc>
     <lastmod>2021-01-08T10:25:51+01:00</lastmod>
+  </url><url>
+    <loc>https://example.org/publications/</loc>
   </url>
 </urlset>
