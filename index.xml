@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Alma Andersson</title>
+    <title>About Me on Alma Andersson</title>
     <link>http://localhost:1313/</link>
-    <description>Recent content on Alma Andersson</description>
+    <description>Recent content in About Me on Alma Andersson</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 27 Mar 2023 10:53:05 +0100</lastBuildDate>
@@ -70,13 +70,6 @@
       <pubDate>Fri, 08 Jan 2021 10:25:51 +0100</pubDate>
       <guid>http://localhost:1313/blog/2021-01-08-celltracker/</guid>
       <description>I&amp;rsquo;ve always found it appealing, or rather enticing, to study biological systems from a more formal and mathematical perspective; with the main objective to somehow be able to describe them with equations rather than words. Equations are exact, definite, universal, but foremost, they are predictive. The alluring property of mathematical models is that they do not only provide a description of our system, but they are also responsive, we may ask &amp;ldquo;if I replace parameter X with parameter Y, what will my system look like?</description>
-    </item>
-    <item>
-      <title>About Me</title>
-      <link>http://localhost:1313/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/about/</guid>
-      <description>Hej! I’m Alma, a Swedish produced and SF-based scientist working at Genentech (SSF). I’m interested in developing and designing new computational methods founded in machine learning and statistical inference that (hopefully) can bring new biological insights. You often find me tinkering with random problems and questions relating to everything from science to the mundane. My big passion in life is running and exploring the outdoors, Strava is the only social media I care about.</description>
     </item>
   </channel>
 </rss>
