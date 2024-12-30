@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reflections on Alma Andersson</title>
+    <link>http://localhost:1313/categories/reflections/</link>
+    <description>Recent content in Reflections on Alma Andersson</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 06 May 2022 06:01:05 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/reflections/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What is thy name?</title>
+      <link>http://localhost:1313/blog/2022-05-06-capture-locations/</link>
+      <pubDate>Fri, 06 May 2022 06:01:05 +0100</pubDate>
+      <guid>http://localhost:1313/blog/2022-05-06-capture-locations/</guid>
+      <description>A brief discussion about the naming convention of the observations in spatial transcriptomics.</description>
+    </item>
+  </channel>
+</rss>
