@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Outdoor on Alma Andersson</title>
-    <link>https://example.org/tags/outdoor/</link>
+    <link>https://almaan.github.io/tags/outdoor/</link>
     <description>Recent content in Outdoor on Alma Andersson</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 27 Dec 2022 10:53:05 +0100</lastBuildDate>
-    <atom:link href="https://example.org/tags/outdoor/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://almaan.github.io/tags/outdoor/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>What it takes to book a campsite in the US</title>
-      <link>https://example.org/blog/2022-12-26-camp/</link>
+      <link>https://almaan.github.io/blog/2022-12-26-camp/</link>
       <pubDate>Tue, 27 Dec 2022 00:53:05 +0100</pubDate>
-      <guid>https://example.org/blog/2022-12-26-camp/</guid>
+      <guid>https://almaan.github.io/blog/2022-12-26-camp/</guid>
       <description>Imagine that you really want to go camping in any of the more popular National Parks here in the US, but there&amp;rsquo;s fierce competition to get the spots, what do you do to get an edge? You obviously write a bot to beat the other people to it.</description>
     </item>
   </channel>

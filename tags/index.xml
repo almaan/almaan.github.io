@@ -2,122 +2,122 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Alma Andersson</title>
-    <link>https://example.org/tags/</link>
+    <link>https://almaan.github.io/tags/</link>
     <description>Recent content in Tags on Alma Andersson</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 27 Mar 2023 10:53:05 +0100</lastBuildDate>
-    <atom:link href="https://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://almaan.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Random</title>
-      <link>https://example.org/tags/random/</link>
+      <link>https://almaan.github.io/tags/random/</link>
       <pubDate>Mon, 27 Mar 2023 00:53:05 +0100</pubDate>
-      <guid>https://example.org/tags/random/</guid>
+      <guid>https://almaan.github.io/tags/random/</guid>
       <description></description>
     </item>
     <item>
       <title>Tips</title>
-      <link>https://example.org/tags/tips/</link>
+      <link>https://almaan.github.io/tags/tips/</link>
       <pubDate>Mon, 27 Mar 2023 00:53:05 +0100</pubDate>
-      <guid>https://example.org/tags/tips/</guid>
+      <guid>https://almaan.github.io/tags/tips/</guid>
       <description></description>
     </item>
     <item>
       <title>Traveling</title>
-      <link>https://example.org/tags/traveling/</link>
+      <link>https://almaan.github.io/tags/traveling/</link>
       <pubDate>Mon, 27 Mar 2023 00:53:05 +0100</pubDate>
-      <guid>https://example.org/tags/traveling/</guid>
+      <guid>https://almaan.github.io/tags/traveling/</guid>
       <description></description>
     </item>
     <item>
       <title>Hikes</title>
-      <link>https://example.org/tags/hikes/</link>
+      <link>https://almaan.github.io/tags/hikes/</link>
       <pubDate>Tue, 27 Dec 2022 00:53:05 +0100</pubDate>
-      <guid>https://example.org/tags/hikes/</guid>
+      <guid>https://almaan.github.io/tags/hikes/</guid>
       <description></description>
     </item>
     <item>
       <title>Outdoor</title>
-      <link>https://example.org/tags/outdoor/</link>
+      <link>https://almaan.github.io/tags/outdoor/</link>
       <pubDate>Tue, 27 Dec 2022 00:53:05 +0100</pubDate>
-      <guid>https://example.org/tags/outdoor/</guid>
+      <guid>https://almaan.github.io/tags/outdoor/</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
-      <link>https://example.org/tags/python/</link>
+      <link>https://almaan.github.io/tags/python/</link>
       <pubDate>Tue, 27 Dec 2022 00:53:05 +0100</pubDate>
-      <guid>https://example.org/tags/python/</guid>
+      <guid>https://almaan.github.io/tags/python/</guid>
       <description></description>
     </item>
     <item>
       <title>Reflections</title>
-      <link>https://example.org/tags/reflections/</link>
+      <link>https://almaan.github.io/tags/reflections/</link>
       <pubDate>Fri, 06 May 2022 06:01:05 +0100</pubDate>
-      <guid>https://example.org/tags/reflections/</guid>
+      <guid>https://almaan.github.io/tags/reflections/</guid>
       <description></description>
     </item>
     <item>
       <title>Machine Learning</title>
-      <link>https://example.org/tags/machine-learning/</link>
+      <link>https://almaan.github.io/tags/machine-learning/</link>
       <pubDate>Sat, 20 Feb 2021 10:53:05 +0100</pubDate>
-      <guid>https://example.org/tags/machine-learning/</guid>
+      <guid>https://almaan.github.io/tags/machine-learning/</guid>
       <description></description>
     </item>
     <item>
       <title>Manifold</title>
-      <link>https://example.org/tags/manifold/</link>
+      <link>https://almaan.github.io/tags/manifold/</link>
       <pubDate>Sat, 20 Feb 2021 10:53:05 +0100</pubDate>
-      <guid>https://example.org/tags/manifold/</guid>
+      <guid>https://almaan.github.io/tags/manifold/</guid>
       <description></description>
     </item>
     <item>
       <title>Review</title>
-      <link>https://example.org/tags/review/</link>
+      <link>https://almaan.github.io/tags/review/</link>
       <pubDate>Sat, 20 Feb 2021 10:53:05 +0100</pubDate>
-      <guid>https://example.org/tags/review/</guid>
+      <guid>https://almaan.github.io/tags/review/</guid>
       <description></description>
     </item>
     <item>
       <title>Tsne</title>
-      <link>https://example.org/tags/tsne/</link>
+      <link>https://almaan.github.io/tags/tsne/</link>
       <pubDate>Sat, 20 Feb 2021 10:53:05 +0100</pubDate>
-      <guid>https://example.org/tags/tsne/</guid>
+      <guid>https://almaan.github.io/tags/tsne/</guid>
       <description></description>
     </item>
     <item>
       <title>Normalization</title>
-      <link>https://example.org/tags/normalization/</link>
+      <link>https://almaan.github.io/tags/normalization/</link>
       <pubDate>Sun, 31 Jan 2021 12:47:31 +0100</pubDate>
-      <guid>https://example.org/tags/normalization/</guid>
+      <guid>https://almaan.github.io/tags/normalization/</guid>
       <description></description>
     </item>
     <item>
       <title>Regression</title>
-      <link>https://example.org/tags/regression/</link>
+      <link>https://almaan.github.io/tags/regression/</link>
       <pubDate>Sun, 31 Jan 2021 12:47:31 +0100</pubDate>
-      <guid>https://example.org/tags/regression/</guid>
+      <guid>https://almaan.github.io/tags/regression/</guid>
       <description></description>
     </item>
     <item>
       <title>Sctransform</title>
-      <link>https://example.org/tags/sctransform/</link>
+      <link>https://almaan.github.io/tags/sctransform/</link>
       <pubDate>Sun, 31 Jan 2021 12:47:31 +0100</pubDate>
-      <guid>https://example.org/tags/sctransform/</guid>
+      <guid>https://almaan.github.io/tags/sctransform/</guid>
       <description></description>
     </item>
     <item>
       <title>CCF</title>
-      <link>https://example.org/tags/ccf/</link>
+      <link>https://almaan.github.io/tags/ccf/</link>
       <pubDate>Tue, 19 Jan 2021 15:01:37 +0100</pubDate>
-      <guid>https://example.org/tags/ccf/</guid>
+      <guid>https://almaan.github.io/tags/ccf/</guid>
       <description></description>
     </item>
     <item>
       <title>Common Coordinate Framework</title>
-      <link>https://example.org/tags/common-coordinate-framework/</link>
+      <link>https://almaan.github.io/tags/common-coordinate-framework/</link>
       <pubDate>Tue, 19 Jan 2021 15:01:37 +0100</pubDate>
-      <guid>https://example.org/tags/common-coordinate-framework/</guid>
+      <guid>https://almaan.github.io/tags/common-coordinate-framework/</guid>
       <description></description>
     </item>
   </channel>

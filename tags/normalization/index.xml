@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Normalization on Alma Andersson</title>
-    <link>https://example.org/tags/normalization/</link>
+    <link>https://almaan.github.io/tags/normalization/</link>
     <description>Recent content in Normalization on Alma Andersson</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 31 Jan 2021 12:47:31 +0100</lastBuildDate>
-    <atom:link href="https://example.org/tags/normalization/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://almaan.github.io/tags/normalization/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Paper Review | Normalization and variance stabilization of single-cell RNA-seq data using regularized negative binomial regression</title>
-      <link>https://example.org/blog/2021-01-31-nbreg/</link>
+      <link>https://almaan.github.io/blog/2021-01-31-nbreg/</link>
       <pubDate>Sun, 31 Jan 2021 12:47:31 +0100</pubDate>
-      <guid>https://example.org/blog/2021-01-31-nbreg/</guid>
+      <guid>https://almaan.github.io/blog/2021-01-31-nbreg/</guid>
       <description>For this bi-weekly paper review, my choice fell upon a paper that I&amp;rsquo;ve skimmed through multiple times before, but never gave the proper read-through it deserves. It was a definite given when I started to curate a list of papers that I wanted to include in this series of reviews. Not only do I find it to be an elegant and well-composed paper, but it has had nothing but an /imperative/ influence on the RNA-seq based analysis these last years.</description>
     </item>
   </channel>

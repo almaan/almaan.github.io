@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Notes on Alma Andersson</title>
-    <link>https://example.org/categories/notes/</link>
+    <link>https://almaan.github.io/categories/notes/</link>
     <description>Recent content in Notes on Alma Andersson</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 27 Mar 2023 10:53:05 +0100</lastBuildDate>
-    <atom:link href="https://example.org/categories/notes/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://almaan.github.io/categories/notes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How I travel</title>
-      <link>https://example.org/blog/2023-03-27-howitravel/</link>
+      <link>https://almaan.github.io/blog/2023-03-27-howitravel/</link>
       <pubDate>Mon, 27 Mar 2023 00:53:05 +0100</pubDate>
-      <guid>https://example.org/blog/2023-03-27-howitravel/</guid>
+      <guid>https://almaan.github.io/blog/2023-03-27-howitravel/</guid>
       <description>Every person has their own style of traveling reflecting their interests, prioritize, budget, and physical abilities/limitations. I&amp;rsquo;ve had the privilege to travel quite a lot during the last five years, usually by extending work trips by a few days but sometimes just for pure pleasure. Most of these trips have been solo but there are a few exceptions. When traveling with others, I tend to adapt to their preferences, but when alone I have a fairly particular way of operating: I tend to cover a lot of ground in a small amount of time and also manage to keep the budget fairly low.</description>
     </item>
   </channel>

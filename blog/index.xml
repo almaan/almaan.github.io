@@ -2,73 +2,73 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blogs on Alma Andersson</title>
-    <link>https://example.org/blog/</link>
+    <link>https://almaan.github.io/blog/</link>
     <description>Recent content in Blogs on Alma Andersson</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 27 Mar 2023 10:53:05 +0100</lastBuildDate>
-    <atom:link href="https://example.org/blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://almaan.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How I travel</title>
-      <link>https://example.org/blog/2023-03-27-howitravel/</link>
+      <link>https://almaan.github.io/blog/2023-03-27-howitravel/</link>
       <pubDate>Mon, 27 Mar 2023 00:53:05 +0100</pubDate>
-      <guid>https://example.org/blog/2023-03-27-howitravel/</guid>
+      <guid>https://almaan.github.io/blog/2023-03-27-howitravel/</guid>
       <description>Every person has their own style of traveling reflecting their interests, prioritize, budget, and physical abilities/limitations. I&amp;rsquo;ve had the privilege to travel quite a lot during the last five years, usually by extending work trips by a few days but sometimes just for pure pleasure. Most of these trips have been solo but there are a few exceptions. When traveling with others, I tend to adapt to their preferences, but when alone I have a fairly particular way of operating: I tend to cover a lot of ground in a small amount of time and also manage to keep the budget fairly low.</description>
     </item>
     <item>
       <title>What it takes to book a campsite in the US</title>
-      <link>https://example.org/blog/2022-12-26-camp/</link>
+      <link>https://almaan.github.io/blog/2022-12-26-camp/</link>
       <pubDate>Tue, 27 Dec 2022 00:53:05 +0100</pubDate>
-      <guid>https://example.org/blog/2022-12-26-camp/</guid>
+      <guid>https://almaan.github.io/blog/2022-12-26-camp/</guid>
       <description>Imagine that you really want to go camping in any of the more popular National Parks here in the US, but there&amp;rsquo;s fierce competition to get the spots, what do you do to get an edge? You obviously write a bot to beat the other people to it.</description>
     </item>
     <item>
       <title>What is thy name?</title>
-      <link>https://example.org/blog/2022-05-06-capture-locations/</link>
+      <link>https://almaan.github.io/blog/2022-05-06-capture-locations/</link>
       <pubDate>Fri, 06 May 2022 06:01:05 +0100</pubDate>
-      <guid>https://example.org/blog/2022-05-06-capture-locations/</guid>
+      <guid>https://almaan.github.io/blog/2022-05-06-capture-locations/</guid>
       <description>A brief discussion about the naming convention of the observations in spatial transcriptomics.</description>
     </item>
     <item>
       <title>Thesis Epilogue</title>
-      <link>https://example.org/blog/2022-04-06-epilogue/</link>
+      <link>https://almaan.github.io/blog/2022-04-06-epilogue/</link>
       <pubDate>Wed, 06 Apr 2022 06:01:05 +0100</pubDate>
-      <guid>https://example.org/blog/2022-04-06-epilogue/</guid>
+      <guid>https://almaan.github.io/blog/2022-04-06-epilogue/</guid>
       <description>An excerpt from the Epilogue of my PhD thesis. These are the lessons I&amp;rsquo;ve learnt, the predictions I have, and the hopes I harbor.</description>
     </item>
     <item>
       <title>Paper Review | Visualizing Data using t-SNE</title>
-      <link>https://example.org/blog/2021-02-20-tsne/</link>
+      <link>https://almaan.github.io/blog/2021-02-20-tsne/</link>
       <pubDate>Sat, 20 Feb 2021 10:53:05 +0100</pubDate>
-      <guid>https://example.org/blog/2021-02-20-tsne/</guid>
+      <guid>https://almaan.github.io/blog/2021-02-20-tsne/</guid>
       <description>t-SNE is one of the most commonly used methods for dimensionality reduction in RNA-seq analysis, yet few people know how it actually works. Here we&amp;rsquo;ll walk through the original t-SNE paper by van der Maaten and Hinton; looking at the motivation behind it, the mathematics that fuel its power, and how to interpret its hyperparameters.</description>
     </item>
     <item>
       <title>Paper Review | Normalization and variance stabilization of single-cell RNA-seq data using regularized negative binomial regression</title>
-      <link>https://example.org/blog/2021-01-31-nbreg/</link>
+      <link>https://almaan.github.io/blog/2021-01-31-nbreg/</link>
       <pubDate>Sun, 31 Jan 2021 12:47:31 +0100</pubDate>
-      <guid>https://example.org/blog/2021-01-31-nbreg/</guid>
+      <guid>https://almaan.github.io/blog/2021-01-31-nbreg/</guid>
       <description>For this bi-weekly paper review, my choice fell upon a paper that I&amp;rsquo;ve skimmed through multiple times before, but never gave the proper read-through it deserves. It was a definite given when I started to curate a list of papers that I wanted to include in this series of reviews. Not only do I find it to be an elegant and well-composed paper, but it has had nothing but an /imperative/ influence on the RNA-seq based analysis these last years.</description>
     </item>
     <item>
       <title>Paper Review | Toward a Common Coordinate Framework for the Human Body</title>
-      <link>https://example.org/blog/2021-01-19-ccf-rev/</link>
+      <link>https://almaan.github.io/blog/2021-01-19-ccf-rev/</link>
       <pubDate>Tue, 19 Jan 2021 15:01:37 +0100</pubDate>
-      <guid>https://example.org/blog/2021-01-19-ccf-rev/</guid>
+      <guid>https://almaan.github.io/blog/2021-01-19-ccf-rev/</guid>
       <description>For quite some while now, I&amp;rsquo;ve carried a slight sensation of guilt within me. Guilt for being so caught up in my own projects and activities that I&amp;rsquo;ve come to neglect one of the most essential duties as a researcher: to survey, read, and contemplate upon new (and old) material that have been published. It&amp;rsquo;s so easy to put that interesting paper aside in order to finish a project deadline, as no immediate gains are observed from reading through the former in contrast to completing the latter.</description>
     </item>
     <item>
       <title>Manuscript | Spatial Transcriptomics to define transcriptional patterns of zonation and structural components in the liver</title>
-      <link>https://example.org/blog/2021-01-12-liver-biorxiv/</link>
+      <link>https://almaan.github.io/blog/2021-01-12-liver-biorxiv/</link>
       <pubDate>Tue, 12 Jan 2021 11:59:19 +0100</pubDate>
-      <guid>https://example.org/blog/2021-01-12-liver-biorxiv/</guid>
+      <guid>https://almaan.github.io/blog/2021-01-12-liver-biorxiv/</guid>
       <description>I&amp;rsquo;m thrilled to announce that a collaboration with my good friend and colleague, Franziska Hildebrandt, now has matured to the state of being ready for journal submission, which also coincides with a pre-print upload to bioRxiv.&#xA;The pre-print is titled &amp;ldquo;Spatial Transcriptomics to define transcriptional patterns of zonation and structural components in the liver&amp;rdquo;, and focus on the application of ST2K (similar to the old legacy ST1K and the newer Visium platform).</description>
     </item>
     <item>
       <title>Models and automated cell tracking</title>
-      <link>https://example.org/blog/2021-01-08-celltracker/</link>
+      <link>https://almaan.github.io/blog/2021-01-08-celltracker/</link>
       <pubDate>Fri, 08 Jan 2021 10:25:51 +0100</pubDate>
-      <guid>https://example.org/blog/2021-01-08-celltracker/</guid>
+      <guid>https://almaan.github.io/blog/2021-01-08-celltracker/</guid>
       <description>I&amp;rsquo;ve always found it appealing, or rather enticing, to study biological systems from a more formal and mathematical perspective; with the main objective to somehow be able to describe them with equations rather than words. Equations are exact, definite, universal, but foremost, they are predictive. The alluring property of mathematical models is that they do not only provide a description of our system, but they are also responsive, we may ask &amp;ldquo;if I replace parameter X with parameter Y, what will my system look like?</description>
     </item>
   </channel>

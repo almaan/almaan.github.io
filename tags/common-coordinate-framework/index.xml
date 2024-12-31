@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Common Coordinate Framework on Alma Andersson</title>
-    <link>https://example.org/tags/common-coordinate-framework/</link>
+    <link>https://almaan.github.io/tags/common-coordinate-framework/</link>
     <description>Recent content in Common Coordinate Framework on Alma Andersson</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 19 Jan 2021 15:01:37 +0100</lastBuildDate>
-    <atom:link href="https://example.org/tags/common-coordinate-framework/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://almaan.github.io/tags/common-coordinate-framework/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Paper Review | Toward a Common Coordinate Framework for the Human Body</title>
-      <link>https://example.org/blog/2021-01-19-ccf-rev/</link>
+      <link>https://almaan.github.io/blog/2021-01-19-ccf-rev/</link>
       <pubDate>Tue, 19 Jan 2021 15:01:37 +0100</pubDate>
-      <guid>https://example.org/blog/2021-01-19-ccf-rev/</guid>
+      <guid>https://almaan.github.io/blog/2021-01-19-ccf-rev/</guid>
       <description>For quite some while now, I&amp;rsquo;ve carried a slight sensation of guilt within me. Guilt for being so caught up in my own projects and activities that I&amp;rsquo;ve come to neglect one of the most essential duties as a researcher: to survey, read, and contemplate upon new (and old) material that have been published. It&amp;rsquo;s so easy to put that interesting paper aside in order to finish a project deadline, as no immediate gains are observed from reading through the former in contrast to completing the latter.</description>
     </item>
   </channel>
