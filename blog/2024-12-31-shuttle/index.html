@@ -40,7 +40,7 @@ In this case optimization means that I want to find the time by which I should l
 In this case optimization means that I want to find the time by which I should leave from home that:">
   <meta itemprop="datePublished" content="2024-12-31T00:53:05+01:00">
   <meta itemprop="dateModified" content="2024-12-31T00:53:05+01:00">
-  <meta itemprop="wordCount" content="675">
+  <meta itemprop="wordCount" content="739">
   <meta itemprop="keywords" content="Random">
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
@@ -225,35 +225,40 @@ leave from home that:</p>
 <li>Minimizes the time I had to wait for the bus to arrive</li>
 </ol>
 <p>Both criteria are important; if I only cared about not missing the bus I could
-leave 6h before the bus departs and just wait there. It would definitely
-guarantee not missing the bus, but that&rsquo;s ehm&hellip; not ideal. Conversely, I don&rsquo;t
-ever want to be in the risk of missing the bus. It&rsquo;s a balance of not stressing,
-while also not wasting time just waiting.</p>
-<p>First I had <strong>to collect data</strong> &#x1f50d;. My process was simple, the moment I
-stepped out of the apartment door I started the stopwatch on my phone, as I
-reached the bus stop I paused it and took a screen shot of the time. This was
-something I kept up for about two months, which resulted in <strong>19 datapoints</strong> -
+leave 2h before the bus departs and just wait there. It would definitely make me
+not miss the bus, but who wants to stand waiting at a bus stop for 1.5h?
+However, I don&rsquo;t want to push it and have to sprint to the bus or risk missing
+it. In short, it&rsquo;s a balance of not stressing while also not wasting time just
+waiting.</p>
+<p>To figure this out I first had <strong>to collect data</strong> &#x1f50d;. My process was simple, the moment I
+stepped out of the apartment door I started the stopwatch on my phone and as I
+reached the bus stop I paused it while also taking a screen shot. This was
+something I kept up for about two months, which resulted in <strong>19 data points</strong> -
 the math doesn&rsquo;t fully add up because I forgot to time my walk multiple times&hellip;</p>
-<p>With only 19 datapoints I could just have transferred the screenshots
-into a text file manually and used for any downstream analysis - but that&rsquo;s no fun.
-Instead I uploaded all of the screenshots to my computer and processed them with
-a simple python script that: read the images, cropped the area around the
-watch&rsquo;s face, and extracted the text from the crops using OCR. For the OCR I
-used <a href="https://pypi.org/project/pytesseract/">pytesseract</a> (a wrapper around
-Tesseract OCR) &ndash; this was very straightforward to use despite no prior
-experience. You can see some examples below &#x1f447;.</p>
+<p>With only 19 data points, I could have manually transferred the times from the
+screenshots into a text file for downstream analysis &ndash; but that’s no fun. Instead,
+I uploaded all the screenshots to my computer and processed them with a simple
+Python script that: read the images, cropped the area around the watch face, and
+extracted the text from the cropped sections using OCR. I used
+<a href="https://pypi.org/project/pytesseract/">pytesseract</a> (a wrapper around Tesseract
+OCR) for the OCR step &ndash; this was very straightforward to use despite no prior
+experience. You can see some examples below &#x1f447;</p>
 <p><img src="imgs/watches.png" alt="clock"></p>
 <p>The red dashed box indicates the cropped out area, &ldquo;time&rdquo; is the time format and
 &ldquo;minute&rdquo; is the decimal format of the time.</p>
 <p>This is a <del>tiny</del> minuscule dataset that doesn&rsquo;t really hold up for rigorous
-statistical analysis, but we can still play around with it just for fun!</p>
-<p>We&rsquo;re going to assume that the data follows a normal distribution, i.e.,</p>
-$$x \sim \mathcal{N}(\mu,\sigma)$$<p>we then put some priors on our parameters $(\mu, \sigma)$</p>
-$$\mu \sim \mathcal{N}(20,1), \qquad \sigma  \sim \textrm{Inverse-Gamma}(2,2) $$<p>these are the <a href="https://en.wikipedia.org/wiki/Conjugate_prior#Table_of_conjugate_distributions">conjugate
+statistical analysis, but we can still play around with it just for fun.</p>
+<p>To make things simple, we&rsquo;re going to assume that the data follows a normal
+distribution i.e.,</p>
+$$x \sim \mathcal{N}(\mu,\sigma)$$<p>which given the shape of the observed data, is at least not horribly wrong:</p>
+<p><img src="imgs/obsdist.png" alt="obs"></p>
+<p>Next, we put some priors on our parameters $(\mu, \sigma)$ &ndash; I always say that
+it takes on average 20min to get to work so we&rsquo;ll use that to inform the prior for the mean</p>
+$$\mu \sim \mathcal{N}(20,1), \qquad \sigma  \sim \textrm{Inverse-Gamma}(2,2) $$<p>These are the <a href="https://en.wikipedia.org/wiki/Conjugate_prior#Table_of_conjugate_distributions">conjugate
 priors</a>,
 meaning the conditional probabilities for each parameter has a closed form
 (given the other parameter and the data). With this we can use Gibbs sampling to
-get the posterior of the parameters and the <em>posterior predictive</em>.</p>
+get the posterior of the parameters and the <em>posterior predictive</em> of the data.</p>
 $$ \mu_* | \sigma_{*}^2, X \sim \mathcal{N}(\hat{\mu}, \hat{\sigma}^2), \quad \textrm{with}
 \quad \hat{\mu} = \frac{\sigma_0^2\bar{x} + \sigma_*^2\mu_0}{\sigma_0^2 + \sigma_*^2}
 \qquad \hat{\sigma}^2 = \frac{\sigma_0^2\sigma_*^2}{\sigma_0^2 + \sigma_*^2}$$<p>and</p>
@@ -271,7 +276,7 @@ results.</p>
 <p>From this, I should be in the clear if I leave approximately 21min (20.5min rounded
 up) before any bus departs. Leaving at this time, I should be able to stroll at
 my regular pace without ever having to worry about getting late. &#x1f60e;</p>
-<p>Fun thing is that a short while after I was done with these calculations i moved
+<p>Fun fact, a short while after I was done with this little project I moved
 in with my amazing girlfriend &#x2764;&#xfe0f; I&rsquo;m obviously happier than ever, but since my route has
 changed I&rsquo;m now back to the data collection step again! &#x1f4aa;</p>
 
