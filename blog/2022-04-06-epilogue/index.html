@@ -174,7 +174,7 @@
   MathJax = {
     tex: {
       displayMath: [['\\[', '\\]'], ['$$', '$$']],  
-      inlineMath: [['\\(', '\\)']]                  
+      inlineMath: [['\\(', '\\)'],['$','$']]                  
     }
   };
 </script>
@@ -467,16 +467,16 @@ immediately in other parts, some form of delay tends to be present.
 Thus, data ($x_t$) collected from one modality at time $t$
 isn&rsquo;t necessarily informative about the feature values ($y_t$)
 of a different modality at the same time point. Instead &ndash; due to
-the lag &ndash; $x_t$ relates to the values ($y_{t&rsquo;}$) at a
-later point $t&rsquo;$. This discrepancy causes an issue in learning,
+the lag &ndash; $x_t$ relates to the values ($y_{t'}$) at a
+later point $t'$. This discrepancy causes an issue in learning,
 because the two modalities are related according to:
 </p>
 $$y_{t'} = f(x_t)$$<p>
 However, in most multimodal assays, we observe
 $(x_t,y_t)$, meaning the data required to learn $f$ is not
-available. Potentially, $y_{t&rsquo;}$ could be inferred from
+available. Potentially, $y_{t'}$ could be inferred from
 $y_t$ by learning a second map $g$ such that
-$y_{t&rsquo;} = g(y_t)$. Then $f$ can be learnt by first
+$y_{t'} = g(y_t)$. Then $f$ can be learnt by first
 transforming $y_t$ through $g$. Now, to find $g$, the
 derivative $\partial y_{t}/\partial t$ must likely be deduced.
 To estimate this derivative, at least one more data point close in
@@ -496,10 +496,10 @@ Where $u_t$ represent entities with an
 influence over the regulatory mechanisms (e.g., enzyme levels or
 metabolic concentrations). Note that it&rsquo;s possible that $u_t$ and
 $y_t$ overlaps. Assuming that the above equation is true, data must also be collected on
-$u_t$ for predictions about $y_{t&rsquo;}$ to be made, solely
+$u_t$ for predictions about $y_{t'}$ to be made, solely
 relying on $x_t$ is not sufficient. Thus, $x_t$ does not
 contain all the information needed to predict $y_t$. Of course,
-if $t \approx t&rsquo;$ and $f(x_t,u_t) \approx f(x_t)$, the
+if $t \approx t'$ and $f(x_t,u_t) \approx f(x_t)$, the
 problem is reduced to a much simpler one. Still, when such is not
 the case, we should accept that the prediction task is challenging.
 I definitely don&rsquo;t think it&rsquo;s beyond our capabilities, but while I

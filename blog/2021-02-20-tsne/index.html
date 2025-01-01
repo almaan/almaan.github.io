@@ -177,7 +177,7 @@
   MathJax = {
     tex: {
       displayMath: [['\\[', '\\]'], ['$$', '$$']],  
-      inlineMath: [['\\(', '\\)']]                  
+      inlineMath: [['\\(', '\\)'],['$','$']]                  
     }
   };
 </script>
@@ -347,7 +347,7 @@ sensitive to otuliers. If  $x_i$ was an outlier it would have very small $p_{ij}
 all $x_j$&rsquo;s, meaning its position wouldn&rsquo;t be well determined by the remaining
 data. To circumvent this we discard the previous definition of the joint distribution
 (in high dimensional space) and instead use the (also symmetric) alternative:</p>
-$$ p_{ij} = \frac{p_{j|i} + p_{i|j}}{2n}$$<p>This means that $\sum_j p_{ij} &gt; \frac{1}{2n}$, which will ensure that every
+$$ p_{ij} = \frac{p_{j|i} + p_{i|j}}{2n}$$<p>This means that $\sum_j p_{ij} > \frac{1}{2n}$, which will ensure that every
 $x_i$ have a significant contribution to the cost function, meaning it&rsquo;s
 placement in the low dimensional space actually matters now. Excellent.</p>
 <p>Finally, thanks to our symmetric joint probabilities we end up with &ldquo;friendlier&rdquo;
@@ -373,9 +373,9 @@ room for improvements, and thus the idea of t-SNE was born.</p>
 $$\begin{array}{l}
 &p_{ij} = \frac{p_{j|i} + p_{i|j}}{2n}, \quad p_{j|i} = \frac{\exp(-||x_i - x_j||^2 / 2\sigma_i^2)}{\sum_k\sum_{l\neq k} \exp(-||x_k -x_l||^2/2\sigma_i^2)}, \quad p_{i|i} = 0 \\\\
 &q_{ij} = \frac{(1+||y_i - y_j||^2)^{-1}}{\sum_k\sum_{l\neq k} (1+||y_k-y_l||^2)^{-1}}, \quad q_{ii}=0
-\end{array}$$<p>$p_{ij}$ is the same as for the symmetric SNE, but the $q_{ij}$ expression
+\end{array}$$<p>$p\_{ij}$ is the same as for the symmetric SNE, but the $q\_{ij}$ expression
 has changed; and albeit similar to SNE, the modifications are <strong>imperative</strong> for
-the superiority of t-SNE. The new form of $q_{ii}$ also relates to a statistical
+the superiority of t-SNE. The new form of $q\_{ii}$ also relates to a statistical
 distribution, namely the Student&rsquo;s <strong>t-distribution</strong> with one degree of freedom
 (a.k.a. Cauchy distribution). The Cauchy distribution has the pdf:</p>
 $$
@@ -384,7 +384,7 @@ $$<p>Furthermore, the Cauchy distribution has heavier tails than the Gaussian di
 better accommodates for outlier values; this allows us to place points with moderate
 distances in the high-dimensional space very far away without having to worry
 about our system collapsing. Conveniently, we also get rid of the
-exponentials in the $q_{ij}$ expression, which reduces computational cost.</p>
+exponentials in the $q\_{ij}$ expression, which reduces computational cost.</p>
 <p>Gradients for t-SNE are given as:</p>
 $$
 \frac{\partial C}{\partial y_i} =  4 \sum_j (p_{ij} - q_{ij})(y_i - y_j)(1+||y_i -
@@ -403,12 +403,12 @@ $$
 C}{\partial\mathcal{Y}} + \alpha(t)(\mathcal{Y}^{t-1} - \mathcal{Y}^{t-1})
 $$<p>Where $\mathcal{Y}$ is the complete set of lower dimensional points. They
 further suggest two &ldquo;tricks&rdquo; to improve the results. The first one being
-referred to as <em>&ldquo;early compression&rdquo;</em>, where they force map points ($y_i$) to stay together
-in the initial phase of the optimization, implemented by adding an $L_{2}$
+referred to as <em>&ldquo;early compression&rdquo;</em>, where they force map points ($y\_i$) to stay together
+in the initial phase of the optimization, implemented by adding an $L\_{2}$
 penalty to the cost function (proportional to the sum of squared distances from
 the center). The second trick is <em>&ldquo;early exaggeration&rdquo;</em> where they &ldquo;enlarge&rdquo; the
-$p_{ij}$ value early on, which makes the $q_{ij}$ values too small to properly
-model their corresponding $p_{ij}$ value and thus encourage larger $q_{ij}$
+$p\_{ij}$ value early on, which makes the $q\_{ij}$ values too small to properly
+model their corresponding $p_{ij}$ value and thus encourage larger $q\_{ij}$
 values (when appropriate); the result being that tight clusters tend to form.
 Tight clusters means more open space, and increase the clusters&rsquo; freedom of
 movement, allowing them to find a favorable global organization.</p>
@@ -430,7 +430,7 @@ $\mathcal{O}(n^2)$, performance gets a bit shaky after this. Their solution is
 to only use a subset of the data (hopefully representative of the whole
 population). The authors &ndash; and I fully agree that this is a must &ndash; are very keen
 to still use the complete data set somehow to learn the correct character of the
-underlying manifold. Thus, what they do is that they compute their $p_{ij}$
+underlying manifold. Thus, what they do is that they compute their $p\_{ij}$
 values from the complete data set, but only embed a subset in the low
 dimensional space. To do this, they randomly select their
 landmark points (the subset that will be used), construct a neighborhood graph
@@ -455,7 +455,7 @@ potential weaknesses of their method:</p>
 <li><em>Dimensionality reduction for other purposes</em>: the authors say that they have
 not examined performance of t-SNE when the low dimensional space is supposed
 to be higher than 2 or 3 dimensions. It&rsquo;s likely that if we want the output
-to be in higher dimensions ($d&gt;3$) a different degree of freedom is required
+to be in higher dimensions ($d>3$) a different degree of freedom is required
 for the Student&rsquo;s t-distribution.</li>
 <li><em>Curse of intrinsinc dimensionality</em> : since euclidean distances are used,
 t-SNE implicitly assumes a local linearity of the data manifold. If the data

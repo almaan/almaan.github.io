@@ -176,7 +176,7 @@
   MathJax = {
     tex: {
       displayMath: [['\\[', '\\]'], ['$$', '$$']],  
-      inlineMath: [['\\(', '\\)']]                  
+      inlineMath: [['\\(', '\\)'],['$','$']]                  
     }
   };
 </script>
@@ -332,7 +332,7 @@ are used, and the cells are divided into five equally-sized groups with
 increasing average sequencing depth (group 1 having the highest value). Next,
 they calculated the total variance in each gene to then see how much each cell
 group contributed to this value. In perfectly normalized data, one would expect
-to see an equal contribution (here $20\%$) between the cell groups, as gene
+to see an equal contribution (here $20\\%$) between the cell groups, as gene
 expression should be uncorrelated with sequencing depth (criterion 1 from their
 &ldquo;objectives&rdquo;).</p>
 <p><img src="./imgs/res.png" alt="compilation"></p>
@@ -365,7 +365,7 @@ they compare outcomes of a DE (Differential Expression) analysis. They construct
 a simple but clever experiment, where they first grabbed all CD14+ monocytes (5551
 cells) from the PBMC data set they use throughout the paper. They then split
 this set into two equally-sized (and mutually exhaustive) subsets, followed by
-downsampling of the UMIs in <em>one of the subsets</em>, giving them $50\%$ of their
+downsampling of the UMIs in <em>one of the subsets</em>, giving them $50\\%$ of their
 original UMI counts but with the same distribution as before across the genes. They then
 subjected the two groups to a <em>t</em>-test in order to find DE genes. Obviously,
 since these are cells from the same population, we expect zero DE genes if our
@@ -374,7 +374,7 @@ data is properly normalized. As you can see in the figure below (modified Figure
 <p><img src="./imgs/de.png" alt="de-genes"></p>
 <p>Rather than finding zero DE genes, using log-normalization gave us $2331$ of them. The
 regularized negative binomial regression wasn&rsquo;t perfect either, but it gave us
-$11$ false positives, about $0.5\%$ of $2331$. The authors also point out that
+$11$ false positives, about $0.5\\%$ of $2331$. The authors also point out that
 these $11$ genes are all highly expressed genes, where we know the
 regularization process had some issues. They also looked into masking of true DE
 genes between populations of different sequencing depths and showed how
@@ -390,7 +390,7 @@ log-transformation</em>&rdquo;, might be a bit of a stretch. Indeed, they don&rs
 pseudocount in a log-transformation, but they use a variant of the geometric
 mean (more robust than the arithmetic mean to outliers) when computing gene
 average expression:</p>
-$$\exp(\frac{1}{|C|}\sum_{c\in C} \log(x_{gc}+\varepsilon)) - \varepsilon $$<p>where $\varepsilon$ is &ldquo;<em>a small fixed value to avoid $\:\log(0)$</em>&rdquo;, which they set
+$$\exp(\frac{1}{|C|}\sum_{c\in C} \log(x_{gc}+\varepsilon)) - \varepsilon $$<p>where $\varepsilon$ is &ldquo;<em>a small fixed value to avoid $\\:\log(0)$</em>&rdquo;, which they set
 to $\varepsilon = 1$ after trying several values in the range $[0.0001,1]$. In
 my ears this sounds an awful lot like a pseudocount, but again, minor detail.</p>
 <p>The most time-consuming step, as expected, is to fit a GLM to each gene (before
