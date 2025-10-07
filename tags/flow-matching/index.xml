@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Flow Matching on Alma Andersson</title>
+    <link>https://almaan.github.io/tags/flow-matching/</link>
+    <description>Recent content in Flow Matching on Alma Andersson</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 10 Jun 2025 00:53:05 +0100</lastBuildDate>
+    <atom:link href="https://almaan.github.io/tags/flow-matching/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Flow Matching : 101</title>
+      <link>https://almaan.github.io/blog/2025-10-06-flows/</link>
+      <pubDate>Mon, 06 Oct 2025 00:53:05 +0100</pubDate>
+      <guid>https://almaan.github.io/blog/2025-10-06-flows/</guid>
+      <description>&amp;#x1f44b; Introduction I usually write about my own &amp;ldquo;projects&amp;rdquo; or ideas here, but this time I wanted to do something a bit more educational. Lately, I’ve been working on models that incorporate — or entirely rely on — the idea of Flow Matching, and I’ve grown to really enjoy this class of models. So I figured I’d write a short and (hopefully 🤞) approachable overview of how they work.&#xA;We’ll keep things simple and structure it as follows:</description>
+    </item>
+  </channel>
+</rss>

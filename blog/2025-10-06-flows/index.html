@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Flow Matching : 101 | Alma Andersson</title>
+<meta name="title" content="Flow Matching : 101" />
+<meta name="description" content="&#x1f44b; Introduction I usually write about my own &ldquo;projects&rdquo; or ideas here, but this time I wanted to do something a bit more educational. Lately, I’ve been working on models that incorporate — or entirely rely on — the idea of Flow Matching, and I’ve grown to really enjoy this class of models. So I figured I’d write a short and (hopefully 🤞) approachable overview of how they work.
+We’ll keep things simple and structure it as follows:" />
+<meta name="keywords" content="flow matching,generative,AI," />
+
+
+<meta property="og:url" content="https://almaan.github.io/blog/2025-10-06-flows/">
+  <meta property="og:site_name" content="Alma Andersson">
+  <meta property="og:title" content="Flow Matching : 101">
+  <meta property="og:description" content="👋 Introduction I usually write about my own “projects” or ideas here, but this time I wanted to do something a bit more educational. Lately, I’ve been working on models that incorporate — or entirely rely on — the idea of Flow Matching, and I’ve grown to really enjoy this class of models. So I figured I’d write a short and (hopefully 🤞) approachable overview of how they work.
+We’ll keep things simple and structure it as follows:">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2025-10-06T00:53:05+01:00">
+    <meta property="article:modified_time" content="2025-06-10T00:53:05+01:00">
+    <meta property="article:tag" content="Flow Matching">
+    <meta property="article:tag" content="Generative">
+    <meta property="article:tag" content="AI">
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Flow Matching : 101">
+  <meta name="twitter:description" content="👋 Introduction I usually write about my own “projects” or ideas here, but this time I wanted to do something a bit more educational. Lately, I’ve been working on models that incorporate — or entirely rely on — the idea of Flow Matching, and I’ve grown to really enjoy this class of models. So I figured I’d write a short and (hopefully 🤞) approachable overview of how they work.
+We’ll keep things simple and structure it as follows:">
+
+
+
+
+  <meta itemprop="name" content="Flow Matching : 101">
+  <meta itemprop="description" content="👋 Introduction I usually write about my own “projects” or ideas here, but this time I wanted to do something a bit more educational. Lately, I’ve been working on models that incorporate — or entirely rely on — the idea of Flow Matching, and I’ve grown to really enjoy this class of models. So I figured I’d write a short and (hopefully 🤞) approachable overview of how they work.
+We’ll keep things simple and structure it as follows:">
+  <meta itemprop="datePublished" content="2025-10-06T00:53:05+01:00">
+  <meta itemprop="dateModified" content="2025-06-10T00:53:05+01:00">
+  <meta itemprop="wordCount" content="2043">
+  <meta itemprop="keywords" content="Flow Matching,Generative,AI">
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+    color: #3273dc;
+     
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 14px;
+    overflow-x: auto;
+  }
+
+  div.highlight pre {
+    background-color: initial;
+    color: initial;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px;
+    text-align: center;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+</style>
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  
+      inlineMath: [['\\(', '\\)'],['$','$']]                  
+    }
+  };
+</script>
+
+  
+
+  
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>Alma Andersson</h2>
+</a>
+<nav><a href="/">Home</a>
+
+
+<a href="/blog">Blog</a>
+
+</nav>
+</header>
+  <main>
+
+<h1>Flow Matching : 101</h1>
+<p>
+  <i>
+    <time datetime='2025-10-06' pubdate>
+      06 Oct, 2025
+    </time>
+  </i>
+</p>
+
+<content>
+  <h3 id="wave-introduction">&#x1f44b; Introduction</h3>
+<p>I usually write about my own &ldquo;projects&rdquo; or ideas here, but this time I wanted
+to do something a bit more educational. Lately, I’ve been working on models that
+incorporate — or entirely rely on — the idea of <strong>Flow Matching</strong>, and I’ve grown
+to really enjoy this class of models. So I figured I’d write a short and (hopefully 🤞) approachable
+overview of how they work.</p>
+<p>We’ll keep things simple and structure it as follows:</p>
+<ul>
+<li><strong>Theory</strong></li>
+<li><strong>Implementation</strong></li>
+<li><strong>Example</strong></li>
+</ul>
+<p>This isn’t meant to be a comprehensive deep dive — just a compact introduction to
+the core ideas behind flow matching and how they’re put into practice.</p>
+<hr>
+<h3 id="a-brief-bit-of-theory">A Brief Bit of Theory</h3>
+<p>The idea behind flow matching (FM) follows that of most current generative
+strategies: <em>&ldquo;We want to sample from distribution $p$, but this is hard, so
+instead we will sample from distribution $q$ (easy) and transform the output
+into a sample of $p$.&rdquo;</em></p>
+<p>In <strong>denoising diffusion models</strong>, we do this by learning how to remove Gaussian
+noise one step at a time; in <strong>normalizing flows</strong>, we use <strong>invertible
+transformations</strong> to map samples from a simple base distribution $q$ (e.g. a
+standard Gaussian) into samples of the complex target distribution $p$, while
+being able to compute exact likelihoods through the change-of-variables formula.</p>
+<p><strong>Flow matching</strong> takes this idea further: instead of explicitly parameterizing
+an invertible map, it defines a <em>continuous flow</em> between $q$ and $p$, and
+learns a <em>vector field</em> that describes how samples move along
+this path.</p>
+<hr>
+<p>If you&rsquo;re from an engineering background, you&rsquo;re probably already familiar with
+vector fields — if not, imagine <strong>leaves drifting in a river</strong> &#x1f343; &#x1f30a;. Each point in
+the river has its own current, with a direction and a speed. The vector field is
+the map of these currents: drop a leaf anywhere, and it tells you where it will
+move next and how fast. By following these directions over time, you can trace
+the entire <strong>trajectory</strong> of the leaf until it hits the bank downstream.</p>
+<p>More formally, we write:</p>
+$$
+\frac{d x_t}{d t} = v_t(x_t),
+$$<p>where $x_t$ would be the <em>position</em> your leaf at time $t$ and $v_t$ is the vector field describing the current. If you drop a leaf at position $x_0$ and
+let it <em>flow</em> for $t$ time units, your new position $x_t$ can be calculated by integrating the vector field over time:</p>
+$$
+x_t = x_0 + \int_0^t v_\tau(x_\tau) \, d\tau.
+$$<p>Imagine dropping a bunch of leaves upstream and watching them drift along the
+river. If you knew the exact vector field — the local currents at every point —
+you could predict (using the above equation) where each leaf would end up. In fact, you can predict the <em>full distribution</em> of
+leaves downstream.</p>
+<p>Now assume you have a specific goal for how the leaves should spread out
+downstream, and also full control over how you drop them in. In other words, you
+know the starting distribution of the leaves and the target distribution you
+want to reach. What you need to find is the river with the right current — the
+vector field — that carries the leaves from the former to the latter.</p>
+<p>This is really the core idea behind <strong>flow matching</strong>: <em>we learn a vector field
+that moves samples from the source distribution $q$ toward the target
+distribution $p$.</em> Once learned, we can draw samples from $q$ and let the vector
+field $v_t$ carry them along the flow until they match $p$.</p>
+<p>This would <em>not</em> work if the river was inhabited by, say, leaf-eating fish,
+meaning some leaves never reach the riverbank at all. It would also fail if
+trees hung over the river and occasionally dropped new leaves into the flow.
+In mathematical terms, these are <strong>sinks</strong> and <strong>sources</strong> — parts of the vector
+field where probability mass disappears or is created.</p>
+<p>The total number of leaves must stay the
+same as they move downstream — they can spread out or cluster together (that’s
+local compression and expansion), but none can vanish or appear out of thin air.
+If they did, the final distribution would no longer represent the same total
+mass — in probability terms, it would stop being a valid, normalized
+distribution.</p>
+<p>This means, that our flow must be mass- or probability preserving. So before we
+start finding these vector fields, let&rsquo;s prove that <em>if</em> we find such a vector
+field we <em>will</em> have a probability preserving transformation (as we step forward in time).</p>
+<hr>
+<h4 id="mission-show-that-the-transformation-induced-by-v_t-is-probability-preserving">Mission: Show that the transformation induced by $v_t$ is probability preserving.</h4>
+<p>So where do we start? If you&rsquo;ve ever taken a chemical engineering class, all this
+talk about probability distributions or <em>densities</em> over time might make you
+think of the <em>Transport Equation</em>, which literally tells us how a density changes
+in a flow over time. Seems like a good place to start, right? This equation reads as:</p>
+$$
+\frac{\partial p_t(x_t)}{\partial t} = - \nabla_x \cdot (p_t(x_t) v_t(x_t))
+$$<p>stating that the change in density at a given location equals the <strong>negative
+divergence of the probability flux</strong> $p_t(x)\,v_t(x)$. In other words, $p_t(x)$
+<strong>decreases</strong> when probability is flowing <strong>out</strong> of an infinitesimal neighborhood
+around $x$, and <strong>increases</strong> when probability is flowing <strong>in</strong>.</p>
+<p>The partial derivative only describes the flow for a fixed position ($x_t$); but
+if we want to understand how the flow changes around a particle as it moves
+along its trajectory, we must account for the fact that at each time point, it’s
+being nudged in the direction of the flow. Hence, we need to look at the <em>total
+derivative</em>:</p>
+$$
+\frac{d}{d t} p_t(x_t) = \frac{\partial p_t(x_t)}{\partial t} + \nabla_x p_t(x_t)^T  \underbrace{\frac{d x_t}{d t}}_{v_t(x_t)}
+$$<p>where we used the chain rule to get the total derivative. Next we insert the expression from the transport equation and get:</p>
+$$
+\frac{d}{d t} p_t(x_t) = - \nabla_x \cdot (p_t(x_t) v_t(x_t))  + \nabla_x p_t(x_t)^T v_t(x_t)
+$$<p>We expand this using the divergence product rule:</p>
+$$
+  \frac{d}{d t} p_t(x_t) = - [p_t(x_t)(\nabla_x \cdot v_t(x_t)) + \nabla_x p_t(x_t)^T v_t(x_t) ] + \nabla_x p_t(x_t)^T v_t(x_t)
+$$<p>Which gives us (terms cancel out):</p>
+$$
+\frac{d}{d t} p_t(x_t) = - p_t(x_t)(\nabla_x \cdot v_t(x_t))
+$$<p>To see why this is probability preserving we will look at the probability mass
+in a small volume around the given point $x_t$. This is given by the volume
+$V_t$ times the density $p_t$, hence the change of mass for any given point can
+be written as:</p>
+$$
+\frac{d}{d t} [p_t(x_t)V_t] = \frac{d p_t(x_t)}{d t} V_t + p_t(x_t) \frac{d V_t}{d t}, \qquad  \frac{dV_t}{d t} = V_t (\nabla_x \cdot v_t(x_t))
+$$<p>We replace this with the expression from above:</p>
+$$
+\frac{d}{d t} [p_t(x_t)V_t] = [-p_t(x_t)(\nabla_x \cdot v_t)(x_t)]V_t + p_t(x_t)V_t(\nabla_x \cdot v_t(x_t)) = 0
+$$<p>Since this has to hold true for any $x_t$, it means that probability mass isn&rsquo;t
+created nor destroyed as the samples move; it&rsquo;s just being redistributed. That is, we&rsquo;ve shown that it is <em>probability preserving</em> (&#x1f389;).</p>
+<p><strong>The key insight</strong> from all of this is that a well-defined vector field doesn’t
+just move samples around — it moves <em>distributions</em> in a way that preserves total
+probability. This means that if we can learn such a vector field, we can
+continuously transform one distribution into another without losing or creating
+mass along the way. In other words, flow matching gives us a principled,
+probability-preserving way to morph $q$ into $p$.</p>
+<hr>
+<h3 id="implementation----learning-the-vector-field">Implementation &ndash; Learning the vector field</h3>
+<p>Knowing that <em>finding</em> such a vector field comes with certain guarantees, we can
+now focus on <strong>learning</strong> the optimal vector field directly, rather than
+optimizing the log-likelihood as in a normalizing flow. To do so, we use a
+<strong>regression-based loss</strong>:</p>
+$$
+L_{\textrm{FM}}(\theta) = \mathbb{E}_{t \sim \mathcal{U}(0,1)} \, \mathbb{E}_{x_t \sim p_t} 
+\left[ \, \| v_{\theta}(t, x_t) - v_t^*(x_t) \|^2 \, \right].
+$$<p>At first glance, this seems impossible to compute — we need the true velocity
+field $v_t^*(x_t)$ to evaluate the loss, but that’s exactly what we’re trying to
+learn.</p>
+<p>However, this isn’t a problem. The loss above is what we <em>want</em> to minimize, but
+as long as we use an alternative formulation that yields <strong>equivalent
+gradients</strong>, we can still train the model correctly.</p>
+<p>To achieve this, we follow the idea introduced by
+<a href="https://arxiv.org/abs/2302.00482">Tong et al., 2023</a>, who proposed
+<strong>Conditional Flow Matching (CFM)</strong>. The key insight in CFM is to work with
+<em>conditional</em> rather than <em>marginal</em> flows.</p>
+<p>Practically, this means we condition each trajectory on a specific data point
+$x_1 \sim p_1$, and define a deterministic path between a source sample
+$x_0 \sim p_0$ and its target $x_1$. The simplest choice is a <strong>linear
+interpolation</strong>:</p>
+$$
+x_t \triangleq (1 - t) x_0 + t x_1, \qquad t \in [0,1].
+$$<p>In this case we have:</p>
+$$
+v_t(x_t \mid x_0, x_1) = \frac{d x_t}{d t} 
+= \frac{d}{d t} \big[(1 - t) x_0 + t x_1\big] 
+= x_1 - x_0.
+$$<p>This <strong>conditional velocity</strong> is trivial to compute — it’s just a subtraction.</p>
+<p>If we use this conditional vector field instead of the marginal one in our loss,
+and sample the two anchors independently, we obtain:</p>
+$$
+\mathcal{L}_{\textrm{CFM}}(\theta) 
+= \mathbb{E}_{t \sim \mathcal{U}(0,1),\; (x_0, x_1) \sim p_0, p_1}
+\left[ \, \| v_{\theta}(t, x_t) - v_t(x_t \mid x_0, x_1) \|^2 \, \right].
+$$<p>While beyond the scope of this post, one can show that:</p>
+$$
+\nabla_\theta \mathcal{L}_{\textrm{CFM}}(\theta)
+= \nabla_\theta \mathcal{L}_{\textrm{FM}}(\theta).
+$$<p>Kind of wild, right? &#x1f92f;</p>
+<p>But also <em>very</em> convenient — this result means we can train using the
+<strong>conditional surrogate loss</strong> while still obtaining <strong>gradients identical</strong> to
+those of the true (but intractable) flow-matching objective.</p>
+<hr>
+<h3 id="implementation-example">Implementation (Example!)</h3>
+<p>To see what the implementation looks like in practice, let’s walk through a
+simple example. We’ll try to learn how to sample from a <strong>star-shaped
+distribution</strong> by training a model to push samples from a <strong>standard normal</strong>
+distribution toward it.</p>
+<p>To put things into context, the image below shows (top row) several samples
+drawn from each of the two distributions, and (bottom row) their corresponding
+densities. Here, the normal distribution serves as the <strong>source/base
+distribution</strong> ($q$), while the star distribution represents the <strong>target</strong>
+($p$).</p>
+<p><img src="imgs/star_problem.png" alt="problem"></p>
+<p>We’ll use the following neural network (<code>FlowModel</code>) to parameterize the vector
+field. The architecture isn’t particularly sensitive to design choices — I use a
+<code>SiLU</code> activation to avoid &ldquo;Dying <code>ReLU</code>&rdquo;, but
+alternatives like <code>ELU</code> or <code>GELU</code> also work well. The <code>step</code> method performs a
+single integration step of size $\Delta t$ using a <strong>midpoint (2nd-order
+Runge–Kutta)</strong> solver to approximate the flow.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> torch
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> torch <span style="color:#f92672">import</span> nn
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> torch <span style="color:#f92672">import</span> Tensor
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FlowModel</span>(nn<span style="color:#f92672">.</span>Module):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, dim: int <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>, h: int <span style="color:#f92672">=</span> <span style="color:#ae81ff">128</span>):
+</span></span><span style="display:flex;"><span>        super()<span style="color:#f92672">.</span>__init__()
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>v_star <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>Sequential(
+</span></span><span style="display:flex;"><span>            nn<span style="color:#f92672">.</span>Linear(dim <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, h), nn<span style="color:#f92672">.</span>SiLU(),
+</span></span><span style="display:flex;"><span>            nn<span style="color:#f92672">.</span>Linear(h, h), nn<span style="color:#f92672">.</span>SiLU(),
+</span></span><span style="display:flex;"><span>            nn<span style="color:#f92672">.</span>Linear(h, h), nn<span style="color:#f92672">.</span>SiLU(),
+</span></span><span style="display:flex;"><span>            nn<span style="color:#f92672">.</span>Linear(h, dim))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">forward</span>(self, t: Tensor, x_t: Tensor) <span style="color:#f92672">-&gt;</span> Tensor:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>v_star(torch<span style="color:#f92672">.</span>cat((t, x_t), <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">step</span>(self, x_t: Tensor, t_start: Tensor, t_end: Tensor) <span style="color:#f92672">-&gt;</span> Tensor:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        h <span style="color:#f92672">=</span> (t_end <span style="color:#f92672">-</span> t_start)<span style="color:#f92672">.</span>view(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>        t0 <span style="color:#f92672">=</span> t_start<span style="color:#f92672">.</span>view(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>)<span style="color:#f92672">.</span>expand(x_t<span style="color:#f92672">.</span>size(<span style="color:#ae81ff">0</span>), <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>        t_mid <span style="color:#f92672">=</span> t0 <span style="color:#f92672">+</span> <span style="color:#ae81ff">0.5</span> <span style="color:#f92672">*</span> h
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Evaluate the vector field at start and midpoint</span>
+</span></span><span style="display:flex;"><span>        k1 <span style="color:#f92672">=</span> self(t<span style="color:#f92672">=</span>t0, x_t<span style="color:#f92672">=</span>x_t)
+</span></span><span style="display:flex;"><span>        k2 <span style="color:#f92672">=</span> self(t<span style="color:#f92672">=</span>t_mid, x_t<span style="color:#f92672">=</span>x_t <span style="color:#f92672">+</span> <span style="color:#ae81ff">0.5</span> <span style="color:#f92672">*</span> h <span style="color:#f92672">*</span> k1)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> x_t <span style="color:#f92672">+</span> h <span style="color:#f92672">*</span> k2
+</span></span></code></pre></div><p>To train this we do:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> torch
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> torch.nn <span style="color:#66d9ef">as</span> nn
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> tqdm
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> generators <span style="color:#f92672">import</span> StarGenerator <span style="color:#75715e"># (my own implementation)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># --- Model &amp; training setup -------------------------------------------------</span>
+</span></span><span style="display:flex;"><span>flow <span style="color:#f92672">=</span> FlowModel()
+</span></span><span style="display:flex;"><span>optimizer <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>optim<span style="color:#f92672">.</span>Adam(flow<span style="color:#f92672">.</span>parameters(), lr<span style="color:#f92672">=</span><span style="color:#ae81ff">5e-4</span>)
+</span></span><span style="display:flex;"><span>loss_fn <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>MSELoss()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># --- Training loop ----------------------------------------------------------</span>
+</span></span><span style="display:flex;"><span>num_steps <span style="color:#f92672">=</span> int(<span style="color:#ae81ff">5e4</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> step <span style="color:#f92672">in</span> tqdm<span style="color:#f92672">.</span>tqdm(range(num_steps), desc<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Training Flow Model&#34;</span>):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Sample target and initial data</span>
+</span></span><span style="display:flex;"><span>    x_target <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>tensor(StarGenerator<span style="color:#f92672">.</span>sample())
+</span></span><span style="display:flex;"><span>    x_source <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>randn_like(x_target)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Sample random interpolation times</span>
+</span></span><span style="display:flex;"><span>    t <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>rand(len(x_target), <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Interpolate between source and target</span>
+</span></span><span style="display:flex;"><span>    x_t <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> t) <span style="color:#f92672">*</span> x_source <span style="color:#f92672">+</span> t <span style="color:#f92672">*</span> x_target
+</span></span><span style="display:flex;"><span>    dx_t <span style="color:#f92672">=</span> x_target <span style="color:#f92672">-</span> x_source
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># --- Forward &amp; backward passes ------------------------------------------</span>
+</span></span><span style="display:flex;"><span>    optimizer<span style="color:#f92672">.</span>zero_grad()
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    pred_dx <span style="color:#f92672">=</span> flow(t<span style="color:#f92672">=</span>t, x_t<span style="color:#f92672">=</span>x_t)
+</span></span><span style="display:flex;"><span>    loss <span style="color:#f92672">=</span> loss_fn(pred_dx, dx_t)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    loss<span style="color:#f92672">.</span>backward()
+</span></span><span style="display:flex;"><span>    optimizer<span style="color:#f92672">.</span>step()
+</span></span></code></pre></div><p>We can inspect what it looks like as we try to push our base distribution ($q$)
+towards the target ones, below are the different densities that we observe as we
+step forward along the trajectory:</p>
+<p><img src="imgs/star_transform.png" alt="result"></p>
+<p>Kind of cool - right?! &#x2b50; As you can see we go from a normal distribution towards something that&rsquo;s more
+and more similar to the star distribution.</p>
+<h2 id="other-resources">Other Resources</h2>
+<p>Different explanations work well for different people, and I&rsquo;m by no means
+claiming this is the most intuitive or best explanations of the ideas behind
+Flow Matching. This I want to recommend a few other resources that might be helpful for the interested reader:</p>
+<ul>
+<li><a href="https://arxiv.org/pdf/2412.06264">https://arxiv.org/pdf/2412.06264</a></li>
+<li><a href="https://mlg.eng.cam.ac.uk/blog/2024/01/20/flow-matching.html">https://mlg.eng.cam.ac.uk/blog/2024/01/20/flow-matching.html</a></li>
+<li><a href="https://github.com/atong01/conditional-flow-matching">https://github.com/atong01/conditional-flow-matching</a></li>
+<li><a href="https://dl.heeere.com/conditional-flow-matching/blog/conditional-flow-matching/">https://dl.heeere.com/conditional-flow-matching/blog/conditional-flow-matching/</a></li>
+</ul>
+
+</content>
+<p>
+  
+  <a href="https://almaan.github.io/tags/flow-matching/">#Flow Matching</a>
+  
+  <a href="https://almaan.github.io/tags/generative/">#Generative</a>
+  
+  <a href="https://almaan.github.io/tags/ai/">#AI</a>
+  
+</p>
+
+  </main>
+  <footer>Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
+
+    
+</body>
+
+</html>
