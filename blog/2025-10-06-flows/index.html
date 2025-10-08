@@ -42,7 +42,7 @@ We’ll keep things simple and structure it as follows:">
 We’ll keep things simple and structure it as follows:">
   <meta itemprop="datePublished" content="2025-10-06T00:53:05+01:00">
   <meta itemprop="dateModified" content="2025-06-10T00:53:05+01:00">
-  <meta itemprop="wordCount" content="2043">
+  <meta itemprop="wordCount" content="2045">
   <meta itemprop="keywords" content="Flow Matching,Generative,AI">
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
@@ -234,7 +234,7 @@ strategies: <em>&ldquo;We want to sample from distribution $p$, but this is hard
 instead we will sample from distribution $q$ (easy) and transform the output
 into a sample of $p$.&rdquo;</em></p>
 <p>In <strong>denoising diffusion models</strong>, we do this by learning how to remove Gaussian
-noise one step at a time; in <strong>normalizing flows</strong>, we use <strong>invertible
+noise one step at a time; in (discrete) <strong>normalizing flows</strong>, we use <strong>invertible
 transformations</strong> to map samples from a simple base distribution $q$ (e.g. a
 standard Gaussian) into samples of the complex target distribution $p$, while
 being able to compute exact likelihoods through the change-of-variables formula.</p>
@@ -242,13 +242,14 @@ being able to compute exact likelihoods through the change-of-variables formula.
 an invertible map, it defines a <em>continuous flow</em> between $q$ and $p$, and
 learns a <em>vector field</em> that describes how samples move along
 this path.</p>
-<hr>
+<p>&ndash;</p>
 <p>If you&rsquo;re from an engineering background, you&rsquo;re probably already familiar with
 vector fields — if not, imagine <strong>leaves drifting in a river</strong> &#x1f343; &#x1f30a;. Each point in
 the river has its own current, with a direction and a speed. The vector field is
 the map of these currents: drop a leaf anywhere, and it tells you where it will
 move next and how fast. By following these directions over time, you can trace
 the entire <strong>trajectory</strong> of the leaf until it hits the bank downstream.</p>
+<p><img src="imgs/river2.png" alt="leaf anaology"></p>
 <p>More formally, we write:</p>
 $$
 \frac{d x_t}{d t} = v_t(x_t),
