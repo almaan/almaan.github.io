@@ -1,0 +1,54 @@
+/* The same restrained window treatment as the homepage. */
+.archive-heading { margin: 0 0 24px; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+.archive-heading h1 { margin: 0; font-size: 26px; font-weight: 600; letter-spacing: -.025em; }
+ul.blog-posts { margin: 0 3px 30px 0; padding: 0; list-style: none; }
+ul.blog-posts li {
+  display: block;
+  margin-bottom: 23px;
+  padding: 0;
+  background: #fff;
+  border: 1px solid var(--window-border);
+  border-radius: 0;
+  box-shadow: 3px 3px 0 var(--window-shadow);
+}
+ul.blog-posts li > span, .post-date {
+  display: block;
+  margin: 0;
+  padding: 9px 22px;
+  color: #202020;
+  background: var(--window-bar);
+  border-bottom: 1px solid var(--window-divider);
+  font: 600 13px/1.6 'Courier New', monospace;
+  font-variant-numeric: tabular-nums;
+}
+ul.blog-posts li i { font-style: normal; }
+.post-body { padding: 21px 22px 23px; }
+ul.blog-posts h2 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: -.025em;
+}
+ul.blog-posts h2 a, ul.blog-posts li > a {
+  color: var(--ink);
+  text-decoration: none;
+}
+ul.blog-posts li > a { display: block; padding: 20px 22px; }
+ul.blog-posts li a:visited { color: var(--ink); }
+ul.blog-posts li a:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 4px; }
+ul.blog-posts .post-excerpt { margin: 11px 0 0; color: #606060; font-size: 14px; line-height: 1.75; }
+ul.blog-posts li:focus-within { border-color: var(--accent); }
+.archive-tags { margin: 30px 0 12px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 13px; }
+.archive-tags summary { color: #606060; cursor: pointer; width: fit-content; }
+.archive-tags .tag-links { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px 16px; }
+.archive-tags a { color: var(--muted); font-size: 12px; text-decoration: none; }
+.archive-tags a:hover { text-decoration: underline; }
+@media (max-width: 480px) {
+  .post-body { padding: 18px; }
+  ul.blog-posts li > span, .post-date { padding: 8px 18px; }
+  ul.blog-posts li > a { padding: 18px; }
+  ul.blog-posts h2 { font-size: 17px; }
+  .archive-heading { margin-bottom: 20px; }
+}

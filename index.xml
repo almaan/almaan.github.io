@@ -6,8 +6,15 @@
     <description>Recent content on Alma Andersson</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 30 Sep 2025 00:53:05 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2026 00:00:00 -0700</lastBuildDate>
     <atom:link href="https://almaan.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>When and when not to polish a turd -- an information theoretic approach</title>
+      <link>https://almaan.github.io/blog/2026-10-29-polish-a-turd/</link>
+      <pubDate>Thu, 29 Oct 2026 00:00:00 -0700</pubDate>
+      <guid>https://almaan.github.io/blog/2026-10-29-polish-a-turd/</guid>
+      <description>For the last few years I’ve been working a lot on generative models for multimodal data. They have many different and exciting applications, but one thing we’re often asked about is “imputing missing data”. For example, you collect some cheap data modality X and want to generate fancy (and expensive) data modality Y. X could be tissue images, while Y might be molecular data. This is not the most exciting application, but it’s really common when working with clinical data.</description>
+    </item>
     <item>
       <title>Flow Matching : 101</title>
       <link>https://almaan.github.io/blog/2025-10-06-flows/</link>
