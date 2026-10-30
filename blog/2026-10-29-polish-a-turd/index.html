@@ -7,14 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>When to and when not to polish a turd — an information-theoretic approach | Alma Andersson</title>
 <meta name="title" content="When to and when not to polish a turd — an information-theoretic approach" />
-<meta name="description" content="For the last few years I’ve been working a lot on generative models for multimodal data. They have many different and exciting applications, but one thing we’re often asked about is “imputing missing data”. For example, you collect some cheap data modality X and want to generate fancy (and expensive) data modality Y. X could be tissue images, while Y might be molecular data. This is not the most exciting application, but it’s really common when working with clinical data." />
+<meta name="description" content="For the last few years I’ve been working a lot on generative models for multimodal data. They have many different and exciting applications, but one thing we’re often asked about is “imputing missing data”.
+For example, you collect some cheap data modality X and want to generate fancy (and expensive) data modality Y. X could be tissue images, while Y might be molecular data. This is not the most exciting application, but it’s really common when working with clinical data." />
 <meta name="keywords" content="" />
 
 
 <meta property="og:url" content="https://almaan.github.io/blog/2026-10-29-polish-a-turd/">
   <meta property="og:site_name" content="Alma Andersson">
   <meta property="og:title" content="When to and when not to polish a turd — an information-theoretic approach">
-  <meta property="og:description" content="For the last few years I’ve been working a lot on generative models for multimodal data. They have many different and exciting applications, but one thing we’re often asked about is “imputing missing data”. For example, you collect some cheap data modality X and want to generate fancy (and expensive) data modality Y. X could be tissue images, while Y might be molecular data. This is not the most exciting application, but it’s really common when working with clinical data.">
+  <meta property="og:description" content="For the last few years I’ve been working a lot on generative models for multimodal data. They have many different and exciting applications, but one thing we’re often asked about is “imputing missing data”.
+For example, you collect some cheap data modality X and want to generate fancy (and expensive) data modality Y. X could be tissue images, while Y might be molecular data. This is not the most exciting application, but it’s really common when working with clinical data.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="blog">
@@ -26,16 +28,18 @@
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="When to and when not to polish a turd — an information-theoretic approach">
-  <meta name="twitter:description" content="For the last few years I’ve been working a lot on generative models for multimodal data. They have many different and exciting applications, but one thing we’re often asked about is “imputing missing data”. For example, you collect some cheap data modality X and want to generate fancy (and expensive) data modality Y. X could be tissue images, while Y might be molecular data. This is not the most exciting application, but it’s really common when working with clinical data.">
+  <meta name="twitter:description" content="For the last few years I’ve been working a lot on generative models for multimodal data. They have many different and exciting applications, but one thing we’re often asked about is “imputing missing data”.
+For example, you collect some cheap data modality X and want to generate fancy (and expensive) data modality Y. X could be tissue images, while Y might be molecular data. This is not the most exciting application, but it’s really common when working with clinical data.">
 
 
 
 
   <meta itemprop="name" content="When to and when not to polish a turd — an information-theoretic approach">
-  <meta itemprop="description" content="For the last few years I’ve been working a lot on generative models for multimodal data. They have many different and exciting applications, but one thing we’re often asked about is “imputing missing data”. For example, you collect some cheap data modality X and want to generate fancy (and expensive) data modality Y. X could be tissue images, while Y might be molecular data. This is not the most exciting application, but it’s really common when working with clinical data.">
+  <meta itemprop="description" content="For the last few years I’ve been working a lot on generative models for multimodal data. They have many different and exciting applications, but one thing we’re often asked about is “imputing missing data”.
+For example, you collect some cheap data modality X and want to generate fancy (and expensive) data modality Y. X could be tissue images, while Y might be molecular data. This is not the most exciting application, but it’s really common when working with clinical data.">
   <meta itemprop="datePublished" content="2026-10-29T00:00:00-07:00">
   <meta itemprop="dateModified" content="2026-10-29T00:00:00-07:00">
-  <meta itemprop="wordCount" content="958">
+  <meta itemprop="wordCount" content="981">
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
   <style>
@@ -181,6 +185,10 @@
 
   <link rel="stylesheet" href="/css/theme.css?v=af3bcce3635cb856f4a5f8eb0c91bcdf">
 
+
+
+<link rel="stylesheet" href="/css/reading.css?v=2d25c5e163d53d7524228edaff678ade">
+
 </head>
 
 <body>
@@ -196,7 +204,7 @@
 </header>
   <main>
 
-<h1>When to and when not to polish a turd — an information-theoretic approach</h1>
+<h1>When to and when <em>not</em> to polish a turd — an information-theoretic approach</h1>
 <p>
   <i>
     <time datetime='2026-10-29' pubdate>
@@ -205,51 +213,77 @@
   </i>
 </p>
 
-<content>
-  <p>For the last few years I’ve been working a lot on generative models for multimodal data. They have many different and exciting applications, but one thing we’re often asked about is “imputing missing data”. For example, you collect some cheap data modality X and want to generate fancy (and expensive) data modality Y. X could be tissue images, while Y might be molecular data. This is not the most exciting application, but it’s really common when working with clinical data. People basically want to get more bang for their buck. This could be done with non-generative predictive models, but there are some nice benefits to the generative ones (not to be discussed here).</p>
+<content class="reading-layout">
+  <p>For the last few years I’ve been working a lot on generative models for multimodal data. They have many different and exciting applications, but one thing we’re often asked about is “imputing missing data”.</p>
+<p>For example, you collect some cheap data modality X and want to generate fancy (and expensive) data modality Y. X could be tissue images, while Y might be molecular data. This is not the most exciting application, but it’s really common when working with clinical data. People basically want to get more bang for their buck.</p>
+<p>This could be done with non-generative predictive models, but there are some nice benefits to the generative ones (not to be discussed here).</p>
 <p>There’s nothing wrong with this idea of transforming X to Y. We build for this, and we do this. I support this. However, a lot of people want to use this for completely wrong reasons.</p>
+<h2 id="the-misconception">🤦 The misconception</h2>
 <p>I have had so many meetings where I’ve heard people say something like <em>“I want to transform X to Y to give me a better prediction of some given label(s)”</em>. This is not good. This is like trying to <strong>polish a turd</strong>.</p>
 <p>Let’s be clear, it is possible, and probably likely, that training a classifier on Y rather than X gives you better results. However, if Y is <em>predicted solely from X</em>, it cannot contain more information about the label than X already did. This is because we can’t magically add information by just transforming something; a fact also known as the <a href="https://en.wikipedia.org/wiki/Data_processing_inequality">Data Processing Inequality</a>, an idea presented already in Claude Shannon’s 1948 <a href="https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf">paper</a> (Appendix 7, Page 54).</p>
-<p><em><strong>Note:</strong></em> <em>A particular classifier might still perform better on inferred Y than on X if Y happens to better fit that classifier. But the Bayes-optimal classifier using X can always perform at least as well as the Bayes-optimal classifier using Y.</em></p>
+<div class="article-callout article-note">
+<em><strong>Note:</strong></em> <em>A particular classifier might still perform better on inferred Y than on X if Y happens to better fit that classifier. But the Bayes-optimal classifier using X can always perform at least as well as the Bayes-optimal classifier using Y.</em>
+</div>
+
 <p>The book &ldquo;<a href="https://dl.icdst.org/pdfs/files/aea72e61329cd4684709fa24f15ac098.pdf">Elements of Information Theory</a>&rdquo; does a good job of describing the modern form in text:</p>
 <blockquote>
 <p>[&hellip;] no clever manipulation of the data can improve the inferences that can be made from the data.</p>
 </blockquote>
+<h2 id="why-information-cant-increase">🙅 Why information can’t increase</h2>
 <p>Let us look at why. Also, I&rsquo;ll be talking about this in terms of classification, but the underlying principle is not specific to classification.</p>
 <p>We start by introducing three random variables $W,X,Y$. Let $W$ represent a label, for example a cat&rsquo;s breed. $X$ is a photograph of the cat, and $Y$ is a 3D rendering <em>generated from</em> the 2D image $X$.</p>
 <p>The label $W$ and image $X$ are statistically related, i.e., the distribution of image properties will depend on the breed, which we can describe through $p(x\mid w)$. Notably, $Y$ is solely constructed from $X$ through some learnable function $f$, which can be expressed as:</p>
-<p>$Y=f(X)$</p>
-<p>Therefore, once $X$ is known, knowing $W$ provides no additional information about $Y$:</p>
-<p>$p(y\mid x,w)=p(y\mid x)$</p>
-<p>The joint distribution can consequently be factorized as</p>
-<p>$p(w,x,y)=p(w)p(x\mid w)p(y\mid x,w)=p(w)p(x\mid w)p(y\mid x)$</p>
-<p>By definition, this means that $W,X,Y$ form a Markov chain,</p>
-<p>$W\rightarrow X\rightarrow Y$</p>
-<blockquote>
+$$
+Y=f(X)
+$$<p>Therefore, once $X$ is known, knowing $W$ provides no additional information about $Y$:</p>
+$$
+p(y\mid x,w)=p(y\mid x)
+$$<p>The joint distribution can consequently be factorized as</p>
+$$
+p(w,x,y)=p(w)p(x\mid w)p(y\mid x,w)=p(w)p(x\mid w)p(y\mid x)
+$$<p>By definition, this means that $W,X,Y$ form a Markov chain,</p>
+$$
+W\rightarrow X\rightarrow Y
+$$<blockquote>
 <p><strong>Definition</strong> Random variables W,X,Y are said to form a Markov chain in that order (denoted by $W \rightarrow X \rightarrow Y$) if the conditional distribution of Y depends only on X and is conditionally independent of W. Specifically, W, X, and Y form a Markov chain $W \rightarrow X \rightarrow Y$ if the joint probability mass function can be written as $p(w,x,y) = p(w)p(x|w)p(y|x)$
 <em>Cover, T. M., &amp; Thomas, J. A. (2006). Elements of Information Theory (2nd ed.). Wiley. §2.8.</em></p>
 </blockquote>
 <p>We can now consider the <a href="https://en.wikipedia.org/wiki/Mutual_information">Mutual Information</a> between $W$ and the pair $(X,Y)$. By the chain rule,</p>
-<p>$I(W;X,Y)=I(W;X)+I(W;Y\mid X).$</p>
-<p>Because $W$ and $Y$ are conditionally independent given $X$,</p>
-<p>$I(W;Y\mid X)=0,$</p>
-<p>and therefore</p>
-<p>$I(W;X,Y)=I(W;X).$</p>
-<p>We can expand the same quantity in the opposite order:</p>
-<p>$I(W;X,Y)=I(W;Y)+I(W;X\mid Y).$</p>
-<p>Combining the two expressions gives</p>
-<p>$I(W;X)=I(W;Y)+I(W;X\mid Y),$</p>
-<p>or</p>
-<p>$I(W;Y)=I(W;X)-I(W;X\mid Y).$</p>
-<p>Since conditional mutual information is nonnegative,</p>
-<p>$I(W;X\mid Y)\ge 0,$</p>
-<p>we obtain</p>
-<p>$\boxed{I(W;Y)\le I(W;X)}.$</p>
+$$
+I(W;X,Y)=I(W;X)+I(W;Y\mid X).
+$$<p>Because $W$ and $Y$ are conditionally independent given $X$,</p>
+$$
+I(W;Y\mid X)=0,
+$$<p>and therefore</p>
+$$
+I(W;X,Y)=I(W;X).
+$$<p>We can expand the same quantity in the opposite order:</p>
+$$
+I(W;X,Y)=I(W;Y)+I(W;X\mid Y).
+$$<p>Combining the two expressions gives</p>
+$$
+I(W;X)=I(W;Y)+I(W;X\mid Y),
+$$<p>or</p>
+$$
+I(W;Y)=I(W;X)-I(W;X\mid Y).
+$$<p>Since conditional mutual information is nonnegative,</p>
+$$
+I(W;X\mid Y)\ge 0,
+$$<p>we obtain</p>
+<div class="article-callout article-result">
+$$
+\boxed{I(W;Y)\le I(W;X)}.
+$$
+</div>
+
 <p>This tells us that the information that the transformed variable $Y$ contains about the label $W$ can only ever be equal to or <em>less than</em> the information about $W$ already present in the original form $X$.</p>
+<h2 id="so-why-bother">🤷 So why bother?</h2>
 <p>Ok but then why would we even bother with these models that go from one modality to another? Why are people spending countless hours on predicting gene expression from H&amp;E images, single-cell data from bulk RNA-seq, etc.?</p>
 <p>To me the answer is: 1) interpretability and 2) actionability. Perhaps our inferred $Y$ carries no more information about the label $W$ than $X$ did, but it might allow you to better interpret the results and derive more actionable insights.</p>
 <p>To give you an example by looking at the task of predicting molecular information (e.g., bulk RNA-seq) from images (e.g., H&amp;E). And maybe the label is, say, response to some treatment. That is: $X$ image, $Y$ <em>inferred</em> molecular data, $W$ treatment response.</p>
-<p>We have established that the inferred molecular data cannot contain <em>more information</em> about treatment outcome than the image it was generated from, <strong>but</strong> looking at that data might allow us to better understand <em>why</em> some patients respond differently. Perhaps it&rsquo;s the activation of a certain gene program that correlates with treatment response, or one gene that is strongly down-regulated. This is <em>very</em> helpful for understanding the response mechanism, and to then derive an <em>action</em> to test our hypothesis. We can knock that gene out in a relevant model system and see if it results in the same response as we saw among the patients. We could not have come up with a similar suggestion just by looking at the image with our eyes.</p>
+<p>We have established that the inferred molecular data cannot contain <em>more information</em> about treatment outcome than the image it was generated from, <strong>but</strong> looking at that data might allow us to better understand <em>why</em> some patients respond differently.</p>
+<p>Perhaps it&rsquo;s the activation of a certain gene program that correlates with treatment response, or one gene that is strongly down-regulated. This is <em>very</em> helpful for understanding the response mechanism, and to then derive an <em>action</em> to test our hypothesis.</p>
+<p>We can knock that gene out in a relevant model system and see if it results in the same response as we saw among the patients. We could not have come up with a similar suggestion just by looking at the image with our eyes.</p>
 <p>Despite not carrying any more information than the original data, the inferred data may support better hypothesis generation &ndash; and that is worth a lot.</p>
 <p>I think that&rsquo;s the end of my rant. If you made it this far, I appreciate it.</p>
 

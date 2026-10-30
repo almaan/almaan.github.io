@@ -1,0 +1,48 @@
+/* Extra reading structure for the information-theory essay. */
+.reading-layout { display: block; line-height: 1.8; }
+.reading-layout > p { margin: 0 0 23px; }
+.reading-layout h2 {
+  margin: 46px 0 22px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 23px;
+  line-height: 1.35;
+  letter-spacing: -.025em;
+}
+.reading-layout blockquote {
+  margin: 28px 0;
+  padding: 3px 0 3px 20px;
+  border-left: 3px solid #c9b9dd;
+  font-style: normal;
+  font-size: 15px;
+  line-height: 1.8;
+}
+.reading-layout blockquote p { margin: 8px 0; }
+.reading-layout .article-callout {
+  margin: 30px 0;
+  padding: 18px 22px;
+  border: 1px solid #d7cbe4;
+  background: #fff;
+}
+.reading-layout .article-note {
+  border-left: 3px solid #b49bce;
+  font-size: 14px;
+  line-height: 1.8;
+}
+.reading-layout .article-note em { font-style: normal; }
+.reading-layout .article-callout > p { margin: 0; }
+.reading-layout .article-result { text-align: center; padding: 8px 18px; }
+.reading-layout mjx-container[display='true'] {
+  display: block;
+  margin: 25px 0 !important;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 5px 0;
+}
+@media (max-width: 480px) {
+  .reading-layout h2 { margin-top: 36px; font-size: 21px; }
+  .reading-layout .article-callout { padding: 16px; }
+  .reading-layout mjx-container[display='true'] { font-size: 90%; }
+}
