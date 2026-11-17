@@ -16,6 +16,13 @@
       <description>For the last few years I’ve been working a lot on generative models for multimodal data. They have many different and exciting applications, but one thing we’re often asked about is “imputing missing data”. For example, you collect some cheap data modality X and want to generate fancy (and expensive) data modality Y. X could be tissue images, while Y might be molecular data. This is not the most exciting application, but it’s really common when working with clinical data.</description>
     </item>
     <item>
+      <title>Cell Editing with Interpretable Generative Models</title>
+      <link>https://www.guidelabs.ai/post/single-cell-concept-bottleneck-generative-models/</link>
+      <pubDate>Fri, 26 Jun 2026 00:00:00 -0700</pubDate>
+      <guid>https://www.guidelabs.ai/post/single-cell-concept-bottleneck-generative-models/</guid>
+      <description>My coauthor Aya Ismail’s write-up on Guide Labs of our paper on single-cell concept bottleneck generative models, on which I’m first author.</description>
+    </item>
+    <item>
       <title>Flow Matching : 101</title>
       <link>https://almaan.github.io/blog/2025-10-06-flows/</link>
       <pubDate>Tue, 30 Sep 2025 00:53:05 +0100</pubDate>
