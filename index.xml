@@ -6,8 +6,15 @@
     <description>Recent content on Alma Andersson</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 29 Oct 2026 00:00:00 -0700</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 00:00:00 -0800</lastBuildDate>
     <atom:link href="https://almaan.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Multicellular Transformer: learning contextual gene embeddings</title>
+      <link>https://almaan.github.io/blog/2026-11-20-mct/</link>
+      <pubDate>Fri, 20 Nov 2026 00:00:00 -0800</pubDate>
+      <guid>https://almaan.github.io/blog/2026-11-20-mct/</guid>
+      <description>Learning gene embeddings from single-cell data to capture relationships within and across cells.</description>
+    </item>
     <item>
       <title>When to and when not to polish a turd — an information-theoretic approach</title>
       <link>https://almaan.github.io/blog/2026-10-29-polish-a-turd/</link>

@@ -1,0 +1,87 @@
+/* Give this post and its detailed figures a wider layout. */
+body { max-width: 900px; }
+main > h1, main > p,
+.reading-layout > * {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.reading-layout > p:has(> img:only-child) {
+  max-width: 900px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+.reading-layout > p > img:only-child {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Section hierarchy and captions for the MCT post. */
+.reading-layout h3 {
+  margin: 32px 0 14px;
+  font-size: 19px;
+  line-height: 1.4;
+}
+.reading-layout li { margin-bottom: 10px; }
+.reading-layout figure {
+  margin: 34px auto;
+  width: 100%;
+}
+.reading-layout figure a { display: block; }
+.reading-layout figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.reading-layout figcaption {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+.reading-layout figcaption p { margin: 0; }
+.reading-layout .article-callout { box-sizing: border-box; }
+@media (max-width: 480px) {
+  .reading-layout h3 { font-size: 18px; }
+  .reading-layout figure { margin: 26px 0; }
+}
+
+/* Emphasize the post's sections and central objective. */
+.reading-layout h2 { font-size: 27px; border-top: 2px solid #b49bce; }
+.reading-layout h3 { color: var(--ink); font-weight: 700; }
+.reading-layout .article-goal { background: #ffffff; border-left: 4px solid #a99c8b; font-size: 17px; }
+@media (max-width: 480px) { .reading-layout h2 { font-size: 23px; } }
+
+/* Distinct, soft backgrounds for the main sections. */
+.reading-layout .post-section {
+  box-sizing: border-box;
+  margin: 28px auto;
+  padding: 30px 36px;
+  border-radius: 16px;
+}
+.post-section-lavender { background: #f5f3f0; }
+.post-section-blue { background: #f1f0ed; }
+.post-section-peach { background: #f8f5f1; }
+.post-section-green { background: #f2f1ee; }
+.reading-layout .post-section > h2:first-child {
+  border: 0;
+  margin: 0 0 24px;
+  padding: 0;
+}
+.reading-layout .post-section > p { margin: 0 0 23px; }
+.reading-layout .post-section > :last-child { margin-bottom: 0; }
+@media (max-width: 480px) {
+  .reading-layout .post-section { padding: 24px 20px; border-radius: 12px; }
+}
+
+.reading-layout .animated-figure iframe { display: block; width: 100%; aspect-ratio: 1100 / 910; height: auto; border: 0; background: #f7f7f7; }
+
+.post-section-intro { background: #f4f4f4; }
+
+.reading-layout .post-nav { display: flex; align-items: baseline; flex-wrap: wrap; column-gap: 18px; row-gap: 8px; margin: 18px 0 26px; padding: 15px 18px; background: #eee9e3; border-radius: 10px; font-size: 14px; line-height: 1.5; }
+.reading-layout .post-nav-label { font-weight: 700; }
+.reading-layout .post-nav a { margin: 0; text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 480px) { .reading-layout .post-nav { column-gap: 14px; padding: 14px 16px; } }
+
+.post-section-acknowledgments { background: #eaf3f6; }
