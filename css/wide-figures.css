@@ -28,7 +28,7 @@ main > h1, main > p,
   margin: 34px auto;
   width: 100%;
 }
-.reading-layout figure a { display: block; }
+.reading-layout figure > a { display: block; }
 .reading-layout figure img {
   display: block;
   width: 100%;

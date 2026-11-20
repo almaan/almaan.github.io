@@ -35,7 +35,7 @@
   <meta itemprop="description" content="Learning gene embeddings from single-cell data to capture relationships within and across cells.">
   <meta itemprop="datePublished" content="2026-11-20T00:00:00-08:00">
   <meta itemprop="dateModified" content="2026-11-20T00:00:00-08:00">
-  <meta itemprop="wordCount" content="1575">
+  <meta itemprop="wordCount" content="1670">
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
   <style>
@@ -187,7 +187,7 @@
 
 
 
-<link rel="stylesheet" href="/css/wide-figures.css?v=27ecb06967b85fb9d331cbfd7b57dbed">
+<link rel="stylesheet" href="/css/wide-figures.css?v=04bd3a2d2795090f1c5745af5e9c64ce">
 
 </head>
 
@@ -215,9 +215,9 @@
 
 <content class="reading-layout">
   <section class="post-section post-section-intro">
-<p>A while ago, we asked ourselves a question: could we learn representations of genes that capture not only what happens within cells, but also how genes relate to one another <em>across</em> cells? And could these representations be <em>contextual</em>, changing depending on the biological environment?</p>
-<p>In our <a href="https://www.biorxiv.org/content/10.64898/2026.11.14.766251v1">bioRxiv paper</a>, we introduce the <strong>Multicellular Transformer (MCT)</strong>, a model we developed in Genentech’s AI for Biology &amp; Translation (AIBT) department. MCT takes a population of cells from a sample and learns gene embeddings that reflect both the sample&rsquo;s cellular environment and relationships among genes. This lets us study relationships within cells as well as relationships that can span different cell types.</p>
-<p>I&rsquo;ll walk through why we chose this approach, how the model works, and two results I find particularly interesting: predicting ligand–receptor interactions and identifying disease-associated changes in gene relationships.</p>
+<p>A while ago, we asked ourselves a question: <em>could we learn representations of genes that capture not only what happens within cells, but also how genes relate to one another across cells?</em> And could these representations be <em>contextual</em>, changing depending on the biological environment?</p>
+<p>In our <a href="https://www.biorxiv.org/content/10.64898/2026.11.14.766251v1">bioRxiv paper</a>, we introduce the <strong>Multicellular Transformer (MCT)</strong>, a model we developed in Genentech’s AI for Biology &amp; Translation (AIBT) department to address these questions. MCT takes a population of cells from a sample and learns contextual gene embeddings that capture relationships among genes both within and <strong>across cells</strong>, reflecting the sample&rsquo;s multicellular environment.</p>
+<p>In this post, I&rsquo;ll walk you through why we wanted these representations, how we built MCT to address these questions, and two results I find particularly exciting.</p>
 
 </section>
 
@@ -226,13 +226,13 @@
   <a href="#why-genes-and-context">Why genes and context?</a>
   <a href="#how-mct-works">How MCT works</a>
   <a href="#example-1-predicting-ligandreceptor-interactions">Ligand–receptor prediction</a>
-  <a href="#example-2-context-aware-gene-embeddings-reveal-genes-dysregulated-in-disease">Context-aware embeddings in disease</a>
+  <a href="#example-2-context-aware-gene-embeddings-reveal-disease-associated-gene-relationships">Context-aware embeddings in disease</a>
 </nav>
 <hr>
 <section class="post-section post-section-lavender">
 <h2 id="why-genes-and-context">Why genes and context?</h2>
 <h3 id="why-gene-embeddings">Why gene embeddings?</h3>
-<p>Whether we&rsquo;re working with tissue-level data, such as bulk RNA-seq, or cell-level data, such as single-cell RNA-seq, we&rsquo;re often ultimately interested in <strong>gene-level information</strong>—especially in drug target discovery. Genes and their protein products are actionable and testable: we can knock them out, overexpress them, or otherwise perturb their activity. A cell cluster or tissue phenotype is harder to target directly, while a gene or protein gives us something more concrete to act on.</p>
+<p>Whether we&rsquo;re working with tissue-level data (e.g., bulk RNA-seq) or cell-level data (e.g., single-cell RNA-seq), we&rsquo;re often ultimately interested in <strong>gene-level information</strong>—especially in drug target discovery. Genes and their protein products are actionable and testable: we can knock them out, overexpress them, or otherwise perturb their activity. A cell cluster or tissue phenotype is harder to target directly, while a gene or protein gives us something more concrete to act on.</p>
 <p>So why go through the hoops of learning tissue- or cell-level embeddings, rather than going directly to genes?</p>
 <h3 id="why-contextual">Why contextual?</h3>
 <p>Gene relationships aren&rsquo;t necessarily fixed. Take TGFB1: in healthy epithelial tissue, TGF-β signaling helps regulate cell proliferation, while in cancer it can promote epithelial-to-mesenchymal transition (EMT), tissue remodeling, and immune suppression. We&rsquo;d want the gene&rsquo;s representation to reflect these differences, rather than assigning it one fixed set of relationships across every sample.</p>
@@ -248,21 +248,21 @@
 <h2 id="how-mct-works">How MCT works</h2>
 <figure class="animated-figure"><iframe src="/blog/2026-11-20-mct/figure_01_animated.html" title="Animated diagram of the Multicellular Transformer" loading="lazy"></iframe><figcaption>Figure 1. How MCT turns expression across a cell population into contextual gene embeddings. The input and model diagram is illustrative. <a href="/blog/2026-11-20-mct/figure_01_animated.html">Open animation full size</a>.</figcaption></figure>
 <h3 id="1-represent-each-gene-across-a-cell-population">1. Represent each gene across a cell population</h3>
-<p>The key idea was to treat the entire sample (cell population) as a single observation, similar to a set. We also needed to make a mental switch and think of <strong>genes as observations rather than features</strong>. The features are the expression of each gene across different cells.</p>
-<p>We started with a pretraining corpus of over <strong>14 million cells across 4,200 samples</strong>, harmonized the cell type labels, and assigned fixed input slots to each cell type based on its abundance in the corpus. For example, with 1,024 slots, if macrophages made up 0.5% of the cells, roughly 5 slots would be reserved for macrophages. For each sample, we randomly sampled cells to fill these slots, padding with zeros when needed. This gave us a vector for each gene describing its expression across the cell population.</p>
+<p>The key idea was to treat the entire sample (cell population) as a single observation, similar to a set. We also needed to make a mental switch and think of <strong>genes as observations rather than features</strong>. The features are the expression of each gene across the cells in the sample.</p>
+<p>We started with a pretraining corpus of over <strong>14 million cells across 4,200 samples</strong>, harmonized the cell type labels, and assigned fixed input slots to each cell type based on its abundance in the corpus. For example, with 1,024 slots, if macrophages made up 5% of the cells, roughly 51 slots would be reserved for macrophages. For each sample, we randomly sampled cells to fill these slots, padding with zeros when needed. This gave us a vector for each gene describing its expression across the cell population.</p>
 <h3 id="2-let-genes-exchange-information">2. Let genes exchange information</h3>
-<p>The workhorse of this model is a transformer, but before feeding the data into it, we needed to do some massaging. For each gene, we combined a learned gene identity embedding with an expression embedding produced by a two-layer MLP. Together, these form our <strong>multicellular gene embeddings</strong>.</p>
-<p>We fed these embeddings to the transformer module, a <strong>12-layer transformer encoder</strong>. Our multicellular embeddings already capture each gene&rsquo;s expression across cells, but still represent genes independently. Through self-attention, genes can incorporate information from one another, allowing the model to learn relationships that span different cell types, such as a ligand expressed in one cell type and its receptor in another. The outputs are our <strong>contextual gene embeddings</strong>.</p>
+<p>The workhorse of the model is a transformer. For each gene, we want to capture both its identity and how it is expressed across the cell population. We therefore combine a learned gene identity embedding with an expression embedding produced by a two-layer MLP. Together, these form what we call <strong>multicellular gene embeddings</strong>; notably, these are not yet <em>contextual</em>.</p>
+<p>To make the embeddings contextual, we feed them to a <strong>12-layer transformer encoder</strong>. Through self-attention, each gene can incorporate information from other genes, allowing the model to learn cross-cell (intercellular) relationships—for example, between a ligand expressed in one cell type and its receptor in another. The resulting embeddings reflect both the cell population and the other genes in the sample.</p>
 <h3 id="3-learn-by-reconstructing-expression-and-predicting-identity">3. Learn by reconstructing expression and predicting identity</h3>
 <p>We trained the model with two objectives:</p>
 <ol>
 <li><strong>Gene expression reconstruction:</strong> Reconstruct each gene&rsquo;s expression across the cell population from its contextual embedding.</li>
 <li><strong>Masked gene identity prediction:</strong> Inspired by BERT, we selected 15% of genes, masking their identity (70%), masking their expression (10%), replacing their identity with a random one (10%), or leaving them unchanged (10%). The model then predicted the original gene identity.</li>
 </ol>
-<p>Reconstruction was applied to all genes, including masked ones. <strong>By hiding parts of a gene&rsquo;s information, we encourage the transformer to use other genes to infer what&rsquo;s missing.</strong> Since each gene already carries cross-cell expression information, the model can learn relationships extending beyond individual cells.</p>
+<p><strong>By hiding parts of a gene&rsquo;s information, we encourage the transformer to use other genes to infer what&rsquo;s missing.</strong> Since each gene already carries expression information across cells, the model can learn relationships between genes that extend beyond individual cells.</p>
 <p>The paper contains several results, but we&rsquo;ll highlight two of my favorites here:</p>
 <ul>
-<li><strong>Predicting ligand-receptor interactions</strong> from gene embeddings, an inherently cross-cell task.</li>
+<li><strong>Predicting ligand-receptor interactions</strong> from gene embeddings, a task relevant to cell–cell communication.</li>
 <li><strong>Identifying disease-associated changes in gene relationships</strong> using contextual embeddings.</li>
 </ul>
 
@@ -270,23 +270,24 @@
 
 <section class="post-section post-section-peach">
 <h2 id="example-1-predicting-ligandreceptor-interactions">Example 1: Predicting ligand–receptor interactions</h2>
+<p>In this task, we try to identify which ligands pair with which receptors. I like this task a lot because it&rsquo;s often inherently cross-cell: a ligand produced by one cell can bind to a receptor on another.</p>
 <p>For ligand-receptor prediction, we&rsquo;re actually <em>not</em> going to use the contextual embeddings. Instead, we extract static, zero-shot gene embeddings from the gene identity classifier weights. While whether a ligand and receptor actually interact depends on the biological context, their underlying ability to interact is often conserved. We&rsquo;d therefore expect some of these relationships to be captured during pretraining, regardless of the particular sample.</p>
-<p>We compute cosine similarity between the respective embeddings of each ligand and receptor, derived from the final gene identity classifier weights. We do this for known ligand-receptor pairs and for a set of negative pairs (e.g., a ligand and a receptor not known to interact). We then calculate the AUROC to see whether <strong>cognate ligand-receptor pairs tend to be closer in embedding space than unrelated pairs</strong>.</p>
+<p>We compute cosine similarity between the respective embeddings of each ligand and receptor, derived from the final gene identity classifier weights. We do this for known ligand-receptor pairs and for a set of randomly sampled negative pairs (which may include interactions not yet known). We then calculate the AUROC to see whether <strong>known ligand-receptor pairs tend to be closer in embedding space than sampled negative pairs</strong>.</p>
 <p>MCT outperformed all the evaluated foundation model baselines, reaching an <strong>AUROC of 0.71</strong>, compared with <strong>0.65 for the second-best model, scGPT</strong>. Interestingly, this includes CellPLM, which also incorporates multicellular information, but primarily learns cell-level representations rather than gene-level ones.</p>
 <figure><a href="figure_02.svg"><img src="/blog/2026-11-20-mct/figure_02.svg"
-    alt="Gene embedding benchmark results for ligand-receptor, transcription factor-target, and protein-protein relationships"></a><figcaption>
-      <p>Figure 2. Gene embedding benchmarks: ligand–receptor, transcription factor–target, and protein–protein relationships. Bars show mean AUROC; error bars show standard deviation across seeds.</p>
+    alt="Gene embedding benchmark results for ligand-receptor and transcription factor-target relationships"></a><figcaption>
+      <p>Figure 2. Gene embedding benchmarks: ligand–receptor and transcription factor–target relationships. Bars show mean AUROC; error bars show standard deviation across negative-sampling seeds. The co-expression baselines are from a separate local evaluation, so pair coverage may differ.</p>
     </figcaption>
 </figure>
-<p>This improvement doesn&rsquo;t appear to come at the expense of intracellular relationships. We evaluated the embeddings on two additional tasks: predicting <strong>transcription factor-target relationships</strong> and <strong>protein-protein interactions</strong>. Here, MCT performed competitively with existing methods, suggesting that learning multicellular relationships doesn&rsquo;t necessarily mean sacrificing intracellular ones.</p>
+<p>We also wanted to know whether learning cross-cell relationships came at the expense of relationships within cells. As a comparison, we evaluated <strong>transcription factor–target relationships</strong> (TF regulons): transcription factors regulate the expression of other genes within the same cell. This gives us a useful within-cell task to test whether MCT also captures intracellular gene relationships. MCT performed comparably to existing methods on this benchmark, with only small differences in AUROC, suggesting that learning multicellular relationships doesn&rsquo;t necessarily mean sacrificing intracellular ones.</p>
 
 </section>
 
 <section class="post-section post-section-green">
-<h2 id="example-2-context-aware-gene-embeddings-reveal-genes-dysregulated-in-disease">Example 2: Context-aware gene embeddings reveal genes dysregulated in disease</h2>
+<h2 id="example-2-context-aware-gene-embeddings-reveal-disease-associated-gene-relationships">Example 2: Context-aware gene embeddings reveal disease-associated gene relationships</h2>
 <p>For the second result, we turn to the contextual gene embeddings. Unlike the static embeddings used above, these are produced for each sample, so the representation of a gene can change with the cell population it is embedded in.</p>
 <p>We used single-cell data from patients with systemic lupus erythematosus (SLE), an autoimmune disease, and from healthy controls. We wanted to find genes whose <strong>relationships with other genes changed between health and disease</strong>.</p>
-<p>For each sample, MCT produces a contextual embedding for every gene. We can then look at a gene&rsquo;s nearest neighbors: the genes with the most similar embeddings in that sample. Together, these neighbors give us a picture of the gene&rsquo;s learned relationships in that context.</p>
+<p>For each sample, MCT produces a contextual embedding for each gene included in the sample. We can then look at a gene&rsquo;s nearest neighbors: the genes with the most similar embeddings in that sample. Together, these neighbors give us a picture of the gene&rsquo;s learned relationships in that multicellular context, including relationships that may span cells.</p>
 <p>We compared these neighborhoods across samples. A gene stood out if its neighbors were similar among samples from the same condition, but different between healthy and SLE samples. This suggests that the gene&rsquo;s relationships change with the disease context.</p>
 <p><em>For the comparison, we measured neighborhood overlap using Jaccard similarity. We used each gene&rsquo;s 20 nearest neighbors for comparisons within a condition and the 40 most common neighbors in each condition for comparisons between conditions.</em></p>
 <h3 id="oas2-a-changing-gene-neighborhood">OAS2: a changing gene neighborhood</h3>
@@ -304,7 +305,7 @@
 
 <section class="post-section post-section-blue">
 <h2 id="-looking-ahead">🌱 Looking ahead</h2>
-<p>We think MCT is a first step toward representing genes in the context of the multicellular environments they&rsquo;re part of. By treating the tissue sample as a population of cells, rather than looking at cells in isolation, we hope this approach will help us better understand how genes coordinate across cells and generate testable hypotheses about tissue biology and disease. There is still much to improve, and we&rsquo;re excited to see how these ideas develop.</p>
+<p>We think MCT is a first step toward representing genes in the context of the multicellular environments they&rsquo;re part of. By treating the tissue sample as a population of cells, rather than looking at cells in isolation, we hope this approach will help us better understand how genes relate to and coordinate with one another across cells, and generate testable hypotheses about tissue biology and disease. There is still much to improve, and we&rsquo;re excited to see how these ideas develop.</p>
 </section>
 
 <section class="post-section post-section-acknowledgments">
