@@ -35,7 +35,7 @@
   <meta itemprop="description" content="Learning gene embeddings from single-cell data to capture relationships within and across cells.">
   <meta itemprop="datePublished" content="2026-11-20T00:00:00-08:00">
   <meta itemprop="dateModified" content="2026-11-20T00:00:00-08:00">
-  <meta itemprop="wordCount" content="1555">
+  <meta itemprop="wordCount" content="1575">
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
   <style>
@@ -216,7 +216,7 @@
 <content class="reading-layout">
   <section class="post-section post-section-intro">
 <p>A while ago, we asked ourselves a question: could we learn representations of genes that capture not only what happens within cells, but also how genes relate to one another <em>across</em> cells? And could these representations be <em>contextual</em>, changing depending on the biological environment?</p>
-<p>In our <a href="https://www.biorxiv.org/content/10.64898/2026.11.14.766251v1">bioRxiv paper</a>, we introduce the <strong>Multicellular Transformer (MCT)</strong>, a model designed around that idea. MCT takes a population of cells from a sample and learns gene embeddings that reflect both the sample&rsquo;s cellular environment and relationships among genes. This lets us study relationships within cells as well as relationships that can span different cell types.</p>
+<p>In our <a href="https://www.biorxiv.org/content/10.64898/2026.11.14.766251v1">bioRxiv paper</a>, we introduce the <strong>Multicellular Transformer (MCT)</strong>, a model we developed in Genentech’s AI for Biology &amp; Translation (AIBT) department. MCT takes a population of cells from a sample and learns gene embeddings that reflect both the sample&rsquo;s cellular environment and relationships among genes. This lets us study relationships within cells as well as relationships that can span different cell types.</p>
 <p>I&rsquo;ll walk through why we chose this approach, how the model works, and two results I find particularly interesting: predicting ligand–receptor interactions and identifying disease-associated changes in gene relationships.</p>
 
 </section>
@@ -309,7 +309,7 @@
 
 <section class="post-section post-section-acknowledgments">
 <h2 id="acknowledgments">Acknowledgments</h2>
-<p>A big shoutout to <a href="https://macwiatrak.github.io/">Maciej Wiatrak</a>, our excellent intern who spearheaded this project and brought so many creative ideas to it, and to <a href="https://www.linkedin.com/in/aichabt">Aicha BenTaieb</a>, the PI who oversaw the project.</p>
+<p>This work was carried out in Genentech’s AI for Biology &amp; Translation department. A big shoutout to <a href="https://macwiatrak.github.io/">Maciej Wiatrak</a>, our excellent intern who spearheaded this project and brought so many creative ideas to it, and to <a href="https://www.linkedin.com/in/aichabt">Aicha BenTaieb</a>, the PI who oversaw the project.</p>
 </section>
 
 <hr>
